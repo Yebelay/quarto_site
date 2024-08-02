@@ -1,0 +1,45 @@
+project:
+  type: website
+  render:
+    - "pages/about.qmd"
+    - "puplications.qmd"
+    - "talks/**/*.qmd"
+    - "talks/index.qmd"
+    - "blog/**/*.qmd"
+    - "blog/index.qmd"
+    - "index.qmd"
+    - "contact.qmd"
+    - "404.qmd"
+
+website:
+  site-url: "https://yebelay.netlify.app/"
+  title: "Yebelay Berehan"
+  description: "Welcome to my website"
+  navbar:
+    left:
+      - pages/about.qmd
+      - puplications.qmd
+      - href: talks/index.qmd
+        text: Presentations
+      
+    right:
+      - href: blog/index.qmd
+        text: Blog
+      - href: contact.qmd
+        text: Contact
+      - icon: github
+        href: https://github.com/Yebelay
+  page-footer: 
+    center: "Copyright 2024, Yebelay Berehan" 
+    border: true
+  open-graph: true
+format:
+  html:
+    theme: [cosmo, theme.scss]
+    toc: true
+    link-external-newwindow: true
+    metadata:
+      pagetitle: "Yebelay Berehan"
+# Other nice themes: lumen, sandstone (with dark banner) or flatly & darkly
+
+

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Philipp Kollenda">
+<meta name="dcterms.date" content="2022-08-18">
+
+<title>Yebelay Berehan - Excess attraction in the Bundesliga</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="../../site_libs/core-js-2.5.3/shim.min.js"></script>
+<script src="../../site_libs/react-17.0.0/react.min.js"></script>
+<script src="../../site_libs/react-17.0.0/react-dom.min.js"></script>
+<script src="../../site_libs/reactwidget-1.0.0/react-tools.js"></script>
+<script src="../../site_libs/htmlwidgets-1.5.4/htmlwidgets.js"></script>
+<script src="../../site_libs/reactable-binding-0.3.0/reactable.js"></script>
+<link href="../../site_libs/tippyjs-3.2.0/themes/google.css" rel="stylesheet">
+<link href="../../site_libs/tippyjs-3.2.0/themes/light-border.css" rel="stylesheet">
+<link href="../../site_libs/tippyjs-3.2.0/themes/light.css" rel="stylesheet">
+<link href="../../site_libs/tippyjs-3.2.0/themes/translucent.css" rel="stylesheet">
+<script src="../../site_libs/tippyjs-3.2.0/tippy.all.min.js"></script>
+<script src="../../site_libs/tippy-binding-0.1.0/tippy.js"></script>
+
+
+<meta property="og:title" content="Yebelay Berehan - Excess attraction in the Bundesliga">
+<meta property="og:description" content="Which teams would have the most members if location was the only thing that mattered?">
+<meta property="og:image" content="https://yebelay.netlify.app/posts/rp_bundesliga-table/images/table.png">
+<meta property="og:site_name" content="Yebelay Berehan">
+<meta property="og:image:height" content="464">
+<meta property="og:image:width" content="948">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Yebelay Berehan</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/education.html"> 
+<span class="menu-text">Education</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/exprience.html"> 
+<span class="menu-text">Expreniece</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/puplications.html"> 
+<span class="menu-text">Publications</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../pages/presentations.html"> 
+<span class="menu-text">Presentations</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../blog.html"> 
+<span class="menu-text">Blog</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/Yebelay"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Excess attraction in the Bundesliga</h1>
+            <p class="subtitle lead">Which teams would have the most members if location was the only thing that mattered?</p>
+                                <div class="quarto-categories">
+                <div class="quarto-category">interactive</div>
+                <div class="quarto-category">football</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Philipp Kollenda </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">August 18, 2022</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="how-many-members-would-bundesliga-clubs-have-if-everyone-supported-their-closest-club" class="level1">
+<h1>How many members would Bundesliga clubs have if everyone supported their closest club?</h1>
+<p>In August 2022, <a href="https://twitter.com/_ansgar">Ansgar Wolsing</a> shared a visualization that shows how many Germans live closest to each football club in the first and second division (<a href="#the-tweet">here is the tweet</a>). Interestingly, RB Leipzig came out on top which shows two things: first, there are few football clubs in eastern Germany in the first two divisions relative to the population (Magdeburg, Rostock, Union Berlin, Hertha BSC Berlin and RB Leibzig) and second, the number of people who live close to a club does not necessarily translate into many fans or members. After all, in 2021/2022 RB Leibzig only had the 8th most fans in their Red Bull Arena out of the 18 clubs in the first division. The club also only has 21 members, <a href="https://www.dw.com/en/rb-leipzig-red-bull-ceo-dietrich-mateschitz-and-politics-its-complicated/a-50208315">because of reasons…</a>.</p>
+<p>Obviously, RB Leibzig is an extreme example. But still, I was curious how membership numbers relate to the share of the German population that live closest to each club.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>The table below shows the answer. Have fun investigating, you can search for your favorite club, filter by league and sort by excess attraction, membership and population.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="fu">here</span>(<span class="st">"posts"</span>, <span class="st">"rp_bundesliga-table"</span>, <span class="st">"data"</span>, <span class="st">"club-data.csv"</span>), <span class="at">show_col_types =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">share_population =</span> population <span class="sc">/</span> <span class="fu">sum</span>(population),</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>         <span class="at">expected_members =</span> share_population <span class="sc">*</span> <span class="fu">sum</span>(members), </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">excess_members =</span> members <span class="sc">-</span> expected_members)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>with_tooltip <span class="ot">&lt;-</span> <span class="cf">function</span>(value, tooltip, ...) {</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">div</span>(<span class="at">style =</span> <span class="st">"text-decoration: underline; text-decoration-style: dotted; cursor: help"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tippy</span>(value, tooltip, ...))</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">reactable</span>(</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>  data[, <span class="fu">c</span>(<span class="st">"league"</span>, <span class="st">"name"</span>, <span class="st">"excess_members"</span>, <span class="st">"members"</span>, <span class="st">"population"</span>)],</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">searchable =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">defaultColDef =</span> <span class="fu">colDef</span>(<span class="at">format =</span> <span class="fu">colFormat</span>(<span class="at">separators =</span> <span class="cn">TRUE</span>), <span class="at">sortable =</span> <span class="cn">TRUE</span>, <span class="at">align =</span> <span class="st">"center"</span>),</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">columns =</span> <span class="fu">list</span>(</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">league =</span> <span class="fu">colDef</span>(<span class="st">"League"</span>, <span class="at">width =</span> <span class="dv">50</span>, <span class="at">sortable =</span> <span class="cn">FALSE</span>, <span class="at">filterable =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>                    <span class="at">filterInput =</span> <span class="cf">function</span>(values, name) {</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>                      tags<span class="sc">$</span><span class="fu">select</span>(</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>                        <span class="at">onchange =</span> <span class="fu">sprintf</span>(<span class="st">"Reactable.setFilter('league-select', '%s', event.target.value || undefined)"</span>, name),</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>                        tags<span class="sc">$</span><span class="fu">option</span>(<span class="at">value =</span> <span class="st">""</span>, <span class="st">"All"</span>),</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>                        <span class="fu">lapply</span>(<span class="fu">unique</span>(values), tags<span class="sc">$</span>option),</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>                        <span class="st">"aria-label"</span> <span class="ot">=</span> <span class="fu">sprintf</span>(<span class="st">"Filter %s"</span>, name),</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>                        <span class="at">style =</span> <span class="st">"width: 100%; height: 28px;"</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>                        )</span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>                      }</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>                    ),</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">name =</span> <span class="fu">colDef</span>(<span class="at">cell =</span> <span class="cf">function</span>(value) {</span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>      image <span class="ot">&lt;-</span> <span class="fu">img</span>(<span class="at">src =</span> <span class="fu">sprintf</span>(<span class="st">"team_icons/%s.png"</span>, value), <span class="at">style =</span> <span class="st">"height: 24px;"</span>, <span class="at">alt =</span> value)</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>      <span class="fu">tagList</span>(</span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>        <span class="fu">div</span>(<span class="at">style =</span> <span class="st">"display: inline-block; width: 60px; text-align: center;"</span>, image),</span>
+<span id="cb2-26"><a href="#cb2-26" aria-hidden="true" tabindex="-1"></a>        value</span>
+<span id="cb2-27"><a href="#cb2-27" aria-hidden="true" tabindex="-1"></a>      )</span>
+<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a>    }, <span class="at">name =</span> <span class="st">"Club"</span>, <span class="at">width =</span> <span class="dv">210</span>, <span class="at">sortable =</span> <span class="cn">FALSE</span>, <span class="at">align =</span> <span class="st">"left"</span>),</span>
+<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">excess_members =</span> <span class="fu">colDef</span>(<span class="at">header =</span> <span class="fu">with_tooltip</span>(<span class="st">"Excess attraction"</span>, <span class="st">"The difference between the number of members and the expected number of members if everyone would support the club closest to where they live."</span>), </span>
+<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a>                            <span class="at">cell =</span> <span class="fu">data_bars</span>(data, <span class="at">number_fmt =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>(), <span class="at">text_position =</span> <span class="st">"outside-end"</span>, <span class="at">fill_color =</span> <span class="fu">c</span>(<span class="st">"#E74C3C"</span>, <span class="st">"#2C3E50"</span>)), <span class="at">minWidth =</span> <span class="dv">200</span>, <span class="at">sortable =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">members =</span> <span class="fu">colDef</span>(<span class="st">"Members"</span>, <span class="at">cell =</span> <span class="fu">data_bars</span>(data, <span class="at">text_position =</span> <span class="st">"outside-end"</span>, <span class="at">number_fmt =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>(), <span class="at">background =</span> <span class="cn">NULL</span>, <span class="at">fill_color =</span> <span class="st">"#C9C5BA"</span>), <span class="at">sortable =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">population =</span> <span class="fu">colDef</span>(<span class="st">"Potential reach"</span>, <span class="at">cell =</span> <span class="fu">data_bars</span>(data, <span class="at">text_position =</span> <span class="st">"outside-end"</span>, <span class="at">number_fmt =</span> scales<span class="sc">::</span><span class="fu">label_comma</span>(), <span class="at">background =</span> <span class="cn">NULL</span>, <span class="at">fill_color =</span> <span class="st">"#C9C5BA"</span>), <span class="at">sortable =</span> <span class="cn">TRUE</span>)),</span>
+<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a>  <span class="at">bordered =</span> <span class="cn">TRUE</span>, <span class="at">highlight =</span> <span class="cn">TRUE</span>, <span class="at">showSortable =</span> <span class="cn">TRUE</span>, <span class="at">wrap =</span> <span class="cn">FALSE</span>,</span>
+<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a>  <span class="at">elementId =</span> <span class="st">"league-select"</span>,</span>
+<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a>  <span class="at">defaultPageSize =</span> <span class="dv">9</span>,</span>
+<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a>  <span class="at">theme =</span> <span class="fu">espn</span>()</span>
+<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_title</span>(<span class="st">"Club Membership"</span>, <span class="at">font_size =</span> <span class="dv">24</span>, <span class="at">letter_spacing =</span> <span class="dv">3</span>, <span class="at">word_spacing =</span> <span class="dv">3</span>, <span class="at">margin =</span> <span class="fu">margin</span>(<span class="dv">0</span>, <span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">0</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_subtitle</span>(<span class="st">"Bayern Munich has 215,000 more members than we would expect given the number of Germans for whom Bayern is the closest club."</span>, <span class="at">font_size =</span> <span class="dv">16</span>, <span class="at">font_weight =</span> <span class="st">"normal"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">add_source</span>(<span class="st">"Based on and inspired by Ansgar Wolsing (@_ansgar). Additional membership data from transfermarkt.de"</span>, <span class="at">align =</span> <span class="st">"right"</span>, <span class="at">font_size =</span> <span class="dv">12</span>, <span class="at">font_color =</span> <span class="st">"gray"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<h1 style="color:#000;background:#FFFFFF;text-align:left;font-size:24px;font-style:normal;font-weight:bold;text-decoration:;letter-spacing:3px;word-spacing:3px;text-transform:;text-shadow:;margin-top:0px;margin-right:0px;margin-bottom:10px;margin-left:0px">Club Membership</h1>
+<h2 style="color:#000;background:#FFFFFF;text-align:left;font-size:16px;font-style:normal;font-weight:normal;text-decoration:;letter-spacing:px;word-spacing:px;text-transform:;text-shadow:;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px" class="anchored" data-anchor-id="how-many-members-would-bundesliga-clubs-have-if-everyone-supported-their-closest-club">Bayern Munich has 215,000 more members than we would expect given the number of Germans for whom Bayern is the closest club.</h2>
+<div id="league-select" class="reactable html-widget" style="width:auto;height:auto;"></div>
+<p style="color:gray;background:#FFFFFF;text-align:right;font-size:12px;font-style:normal;font-weight:normal;text-decoration:;letter-spacing:px;word-spacing:px;text-transform:;text-shadow:;margin-top:0px;margin-right:0px;margin-bottom:0px;margin-left:0px">Based on and inspired by Ansgar Wolsing (@_ansgar). Additional membership data from transfermarkt.de</p>
+<script type="application/json" data-for="league-select">{"x":{"tag":{"name":"Reactable","attribs":{"data":{"league":[1,1,1,1,1,1,1,1,1,2,1,2,2,2,2,1,2,1,1,2,2,1,2,1,2,2,2,2,2,2,2,2,1,2,1,1],"name":["RB Leipzig","FC Bayern Munich","Eintracht Frankfurt","VfB Stuttgart","Hertha BSC Berlin","1. FC Köln","SV Werder Bremen","1. FC Union Berlin","FC Schalke 04","Arminia Bielefeld","Borussia Dortmund","SpVgg Greuther Fürth","FC St. Pauli","SC Paderborn 07","1. FC Kaiserslautern","SC Freiburg","SSV Jahn Regensburg","1. FSV Mainz 05","Bayer 04 Leverkusen","Hannover 96","Fortuna Düsseldorf","FC Augsburg","1. FC Heidenheim","Borussia Mönchengladbach","Karlsruher SC","SV Sandhausen","Holstein Kiel","Hamburger SV","FC Hansa Rostock","SV Darmstadt 98","Eintracht Braunschweig","1. FC Nürnberg","VfL Bochum","1. FC Magdeburg","TSG 1899 Hoffenheim","VfL Wolfsburg"],"excess_members":[-118149.737473764,214998.051962689,25281.3693403301,3187.97753037438,-21194.1872107896,58544.4314746256,-18125.2610861735,-16856.3264577155,105706.817375946,-36609.2666382431,105461.832402994,-48624.9039080499,-20633.7214678099,-37682.364231431,-21499.1982624278,-3942.46544535716,-37232.4362913307,-25661.6317715653,-12394.7202598155,-17952.2631250403,-12902.8287913759,-18086.8163646496,-33811.0411576682,62215.1149433226,-19450.0894927066,-28774.610244992,-25720.0131187823,58871.2668218399,-5868.43992035669,-18079.9298017158,-19937.9054616682,-3886.29638052967,-2704.82737212272,-11645.036917244,-6749.55424084465,9909.0110420476],"members":[21,293000,100000,75000,40051,117962,40376,40531,160023,15009,157000,2550,30400,5338,21000,37000,3600,14200,27462,20500,25247,19847,2550,94100,11126,950,2685,85360,20585,8000,5304,21023,20000,9596,11000,21500],"population":[6279647.5,4145059.5,3970582.5,3816124,3254597.5,3157477,3108784,3049589,2886387,2743018.5,2738762,2719458,2711955.5,2286122,2258427,2175701.5,2169854.5,2118265.5,2118004.5,2043371,2027299.5,2015820.5,1932242.5,1694377.5,1624827.5,1579579.5,1509455.5,1407623.5,1405748,1385899.5,1341366.5,1323691.5,1206545,1128758.5,943219.5,615950.5]},"columns":[{"accessor":"league","name":"League","type":"numeric","sortable":false,"format":{"cell":{"separators":true},"aggregated":{"separators":true}},"align":"center","filterable":true,"filterInput":{"name":"select","attribs":{"aria-label":"Filter league","style":{"width":"100%","height":"28px"},"onChange":"function(_e){(function(event){Reactable.setFilter('league-select', 'league', event.target.value || undefined)}).apply(event.target,[_e])}"},"children":[{"name":"option","attribs":{"value":""},"children":["All"]},{"name":"option","attribs":{},"children":["1"]},{"name":"option","attribs":{},"children":["2"]}]},"width":50},{"accessor":"name","name":"Club","type":"character","sortable":false,"format":{"cell":{"separators":true},"aggregated":{"separators":true}},"align":"left","cell":[{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/RB Leipzig.png","style":{"height":"24px"},"alt":"RB Leipzig"},"children":[]}]},"RB Leipzig"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/FC Bayern Munich.png","style":{"height":"24px"},"alt":"FC Bayern Munich"},"children":[]}]},"FC Bayern Munich"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Eintracht Frankfurt.png","style":{"height":"24px"},"alt":"Eintracht Frankfurt"},"children":[]}]},"Eintracht Frankfurt"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/VfB Stuttgart.png","style":{"height":"24px"},"alt":"VfB Stuttgart"},"children":[]}]},"VfB Stuttgart"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Hertha BSC Berlin.png","style":{"height":"24px"},"alt":"Hertha BSC Berlin"},"children":[]}]},"Hertha BSC Berlin"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/1. FC Köln.png","style":{"height":"24px"},"alt":"1. FC Köln"},"children":[]}]},"1. FC Köln"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/SV Werder Bremen.png","style":{"height":"24px"},"alt":"SV Werder Bremen"},"children":[]}]},"SV Werder Bremen"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/1. FC Union Berlin.png","style":{"height":"24px"},"alt":"1. FC Union Berlin"},"children":[]}]},"1. FC Union Berlin"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/FC Schalke 04.png","style":{"height":"24px"},"alt":"FC Schalke 04"},"children":[]}]},"FC Schalke 04"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Arminia Bielefeld.png","style":{"height":"24px"},"alt":"Arminia Bielefeld"},"children":[]}]},"Arminia Bielefeld"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Borussia Dortmund.png","style":{"height":"24px"},"alt":"Borussia Dortmund"},"children":[]}]},"Borussia Dortmund"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/SpVgg Greuther Fürth.png","style":{"height":"24px"},"alt":"SpVgg Greuther Fürth"},"children":[]}]},"SpVgg Greuther Fürth"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/FC St. Pauli.png","style":{"height":"24px"},"alt":"FC St. Pauli"},"children":[]}]},"FC St. Pauli"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/SC Paderborn 07.png","style":{"height":"24px"},"alt":"SC Paderborn 07"},"children":[]}]},"SC Paderborn 07"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/1. FC Kaiserslautern.png","style":{"height":"24px"},"alt":"1. FC Kaiserslautern"},"children":[]}]},"1. FC Kaiserslautern"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/SC Freiburg.png","style":{"height":"24px"},"alt":"SC Freiburg"},"children":[]}]},"SC Freiburg"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/SSV Jahn Regensburg.png","style":{"height":"24px"},"alt":"SSV Jahn Regensburg"},"children":[]}]},"SSV Jahn Regensburg"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/1. FSV Mainz 05.png","style":{"height":"24px"},"alt":"1. FSV Mainz 05"},"children":[]}]},"1. FSV Mainz 05"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Bayer 04 Leverkusen.png","style":{"height":"24px"},"alt":"Bayer 04 Leverkusen"},"children":[]}]},"Bayer 04 Leverkusen"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Hannover 96.png","style":{"height":"24px"},"alt":"Hannover 96"},"children":[]}]},"Hannover 96"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Fortuna Düsseldorf.png","style":{"height":"24px"},"alt":"Fortuna Düsseldorf"},"children":[]}]},"Fortuna Düsseldorf"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/FC Augsburg.png","style":{"height":"24px"},"alt":"FC Augsburg"},"children":[]}]},"FC Augsburg"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/1. FC Heidenheim.png","style":{"height":"24px"},"alt":"1. FC Heidenheim"},"children":[]}]},"1. FC Heidenheim"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Borussia Mönchengladbach.png","style":{"height":"24px"},"alt":"Borussia Mönchengladbach"},"children":[]}]},"Borussia Mönchengladbach"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Karlsruher SC.png","style":{"height":"24px"},"alt":"Karlsruher SC"},"children":[]}]},"Karlsruher SC"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/SV Sandhausen.png","style":{"height":"24px"},"alt":"SV Sandhausen"},"children":[]}]},"SV Sandhausen"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Holstein Kiel.png","style":{"height":"24px"},"alt":"Holstein Kiel"},"children":[]}]},"Holstein Kiel"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Hamburger SV.png","style":{"height":"24px"},"alt":"Hamburger SV"},"children":[]}]},"Hamburger SV"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/FC Hansa Rostock.png","style":{"height":"24px"},"alt":"FC Hansa Rostock"},"children":[]}]},"FC Hansa Rostock"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/SV Darmstadt 98.png","style":{"height":"24px"},"alt":"SV Darmstadt 98"},"children":[]}]},"SV Darmstadt 98"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/Eintracht Braunschweig.png","style":{"height":"24px"},"alt":"Eintracht Braunschweig"},"children":[]}]},"Eintracht Braunschweig"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/1. FC Nürnberg.png","style":{"height":"24px"},"alt":"1. FC Nürnberg"},"children":[]}]},"1. FC Nürnberg"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/VfL Bochum.png","style":{"height":"24px"},"alt":"VfL Bochum"},"children":[]}]},"VfL Bochum"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/1. FC Magdeburg.png","style":{"height":"24px"},"alt":"1. FC Magdeburg"},"children":[]}]},"1. FC Magdeburg"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/TSG 1899 Hoffenheim.png","style":{"height":"24px"},"alt":"TSG 1899 Hoffenheim"},"children":[]}]},"TSG 1899 Hoffenheim"]},{"name":"Fragment","attribs":[],"children":[{"name":"div","attribs":{"style":{"display":"inline-block","width":"60px","text-align":"center"}},"children":[{"name":"img","attribs":{"src":"team_icons/VfL Wolfsburg.png","style":{"height":"24px"},"alt":"VfL Wolfsburg"},"children":[]}]},"VfL Wolfsburg"]}],"width":210},{"accessor":"excess_members","name":"excess_members","type":"numeric","sortable":true,"format":{"cell":{"separators":true},"aggregated":{"separators":true}},"align":"center","cell":[{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-118,150",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"54.9538641839728%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","right":"1px","backgroundColor":"#666666","float":"left"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","background":"transparent","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"marginLeft":"-1px","boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginRight":"6px","background":"#2C3E50FF","backgroundImage":null,"border":"  ","width":"100%","height":18,"transition":"width 1s ease","display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[]},"214,998"]}]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","right":"1px","backgroundColor":"#666666","float":"left"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","background":"transparent","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"marginLeft":"-1px","boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginRight":"6px","background":"#2C3E50FF","backgroundImage":null,"border":"  ","width":"11.7588829803525%","height":18,"transition":"width 1s ease","display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[]},"25,281"]}]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","right":"1px","backgroundColor":"#666666","float":"left"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","background":"transparent","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"marginLeft":"-1px","boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginRight":"6px","background":"#2C3E50FF","backgroundImage":null,"border":"  ","width":"1.48279368174351%","height":18,"transition":"width 1s ease","display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[]},"3,188"]}]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-21,194",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"9.85785081181465%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","right":"1px","backgroundColor":"#666666","float":"left"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","background":"transparent","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"marginLeft":"-1px","boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginRight":"6px","background":"#2C3E50FF","backgroundImage":null,"border":"  ","width":"27.2302148508701%","height":18,"transition":"width 1s ease","display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[]},"58,544"]}]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-18,125",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"8.43043037865242%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-16,856",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"7.84022287822438%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","right":"1px","backgroundColor":"#666666","float":"left"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","background":"transparent","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"marginLeft":"-1px","boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginRight":"6px","background":"#2C3E50FF","backgroundImage":null,"border":"  ","width":"49.1664070492557%","height":18,"transition":"width 1s ease","display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[]},"105,707"]}]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-36,609",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"17.0277201602721%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","right":"1px","backgroundColor":"#666666","float":"left"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","background":"transparent","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"marginLeft":"-1px","boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginRight":"6px","background":"#2C3E50FF","backgroundImage":null,"border":"  ","width":"49.0524595177709%","height":18,"transition":"width 1s ease","display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[]},"105,462"]}]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-48,625",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"22.6164392952213%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-20,634",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"9.5971667089294%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-37,682",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"17.5268398422375%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-21,499",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"9.9997177026324%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-3,942",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"1.83372147299332%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-37,232",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"17.3175691367623%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-25,662",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"11.9357508299743%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-12,395",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"5.76503840228584%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-17,952",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"8.34996548162016%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-12,903",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"6.0013700931649%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-18,087",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"8.41254895081019%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-33,811",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"15.7262081442188%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","right":"1px","backgroundColor":"#666666","float":"left"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","background":"transparent","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"marginLeft":"-1px","boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginRight":"6px","background":"#2C3E50FF","backgroundImage":null,"border":"  ","width":"28.9375249567933%","height":18,"transition":"width 1s ease","display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[]},"62,215"]}]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-19,450",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"9.04663522071447%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-28,775",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"13.3836609133489%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-25,720",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"11.9629051909948%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","right":"1px","backgroundColor":"#666666","float":"left"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","background":"transparent","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"marginLeft":"-1px","boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginRight":"6px","background":"#2C3E50FF","backgroundImage":null,"border":"  ","width":"27.3822326688134%","height":18,"transition":"width 1s ease","display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[]},"58,871"]}]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-5,868",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"2.72953167100096%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-18,080",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"8.4093458692609%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-19,938",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"9.27352842486602%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-3,886",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"1.80759608984927%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-2,705",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"1.25807064177126%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-11,645",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"5.41634531612635%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","backgroundColor":"#666666","float":"right"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","justifyContent":"flex-end","color":"black","fontWeight":"normal","fontSize":null,"background":"transparent"}},"children":["-6,750",{"name":"div","attribs":{"style":{"boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginLeft":"6px","background":"#E74C3CFF","backgroundImage":null,"border":"  ","width":"3.13935599845154%","height":18,"transition":"width 1s ease","textAlign":"left","display":"flex","alignItems":"center"}},"children":[]}]}]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]}]},{"name":"div","attribs":{"style":{"display":"flex"}},"children":[{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[]},{"name":"div","attribs":{"style":{"flex":"1 1 0"}},"children":[{"name":"div","attribs":{"style":{"position":"relative","width":"1px","height":"1000%","top":"-50px","right":"1px","backgroundColor":"#666666","float":"left"}},"children":[]},{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","background":"transparent","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"marginLeft":"-1px","boxShadow":null,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","marginRight":"6px","background":"#2C3E50FF","backgroundImage":null,"border":"  ","width":"4.6088841045719%","height":18,"transition":"width 1s ease","display":"flex","alignItems":"center","justifyContent":"flex-end"}},"children":[]},"9,909"]}]}]}],"header":{"name":"div","attribs":{"style":{"text-decoration":"underline","text-decoration-style":"dotted","cursor":"help"}},"children":[{"name":"WidgetContainer","attribs":{"key":"179e3c1412b2aa24022b0bbaddf0796f"},"children":[{"name":"Fragment","attribs":[],"children":[{"name":"span","attribs":{"id":"htmlwidget-0f5a26ae5279b2978a2b","width":"100%","height":"338px","className":"tippy html-widget"},"children":[]},{"name":"script","attribs":{"type":"application/json","data-for":"htmlwidget-0f5a26ae5279b2978a2b"},"children":["{\"x\":{\"opts\":{\"content\":\"The difference between the number of members and the expected number of members if everyone would support the club closest to where they live.\"},\"text\":\"Excess attraction\"},\"evals\":[],\"jsHooks\":[]}"]}]}]}]},"minWidth":200},{"accessor":"members","name":"Members","type":"numeric","sortable":true,"format":{"cell":{"separators":true},"aggregated":{"separators":true}},"align":"center","cell":[{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"0.00716723549488055%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"21"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"100%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"293,000"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"34.1296928327645%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"100,000"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"25.5972696245734%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"75,000"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"13.6692832764505%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"40,051"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"40.2600682593857%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"117,962"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"13.780204778157%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"40,376"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"13.8331058020478%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"40,531"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"54.6153583617747%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"160,023"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"5.12252559726962%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"15,009"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"53.5836177474403%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"157,000"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"0.870307167235495%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,550"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"10.3754266211604%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"30,400"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"1.82184300341297%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"5,338"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"7.16723549488055%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"21,000"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"12.6279863481229%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"37,000"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"1.22866894197952%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"3,600"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"4.84641638225256%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"14,200"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"9.37269624573379%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"27,462"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"6.99658703071672%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"20,500"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"8.61672354948806%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"25,247"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"6.77372013651877%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"19,847"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"0.870307167235495%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,550"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"32.1160409556314%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"94,100"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"3.79726962457338%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"11,126"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"0.324232081911263%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"950"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"0.916382252559727%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,685"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"29.1331058020478%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"85,360"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"7.02559726962457%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"20,585"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"2.73037542662116%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"8,000"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"1.81023890784983%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"5,304"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"7.17508532423208%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"21,023"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"6.8259385665529%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"20,000"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"3.27508532423208%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"9,596"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"3.7542662116041%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"11,000"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"7.33788395904437%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"21,500"]}]}]}]},{"accessor":"population","name":"Potential reach","type":"numeric","sortable":true,"format":{"cell":{"separators":true},"aggregated":{"separators":true}},"align":"center","cell":[{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"100%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"6,279,648"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"66.0078372233473%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"4,145,060"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"63.2293850888923%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"3,970,582"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"60.7697167715226%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"3,816,124"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"51.8277100744907%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"3,254,598"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"50.2811184863482%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"3,157,477"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"49.5057087201153%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"3,108,784"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"48.563060267316%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"3,049,589"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"45.9641564275702%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,886,387"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"43.681090379675%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,743,018"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"43.6133079125859%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,738,762"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"43.3059021226908%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,719,458"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"43.1864288560783%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,711,956"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"36.4052600086231%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,286,122"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"35.9642320687586%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,258,427"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"34.646873092797%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,175,702"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"34.5537627709199%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,169,854"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"33.7322357664184%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,118,266"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"33.7280794821684%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,118,004"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"32.5395812424185%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,043,371"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"32.283651271827%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,027,300"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"32.1008543871292%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"2,015,820"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"30.7699198083969%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,932,242"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"26.9820479573097%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,694,378"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"25.874501713671%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,624,828"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"25.1539517146464%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,579,580"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"24.0372648305498%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,509,456"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"22.4156451456869%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,407,624"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"22.3857788195914%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,405,748"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"22.0697021608299%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,385,900"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"21.3605381512258%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,341,366"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"21.0790733078568%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,323,692"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"19.2135784691736%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,206,545"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"17.974870404748%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"1,128,758"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"15.0202618857189%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"943,220"]}]}]},{"name":"div","attribs":{},"children":[{"name":"div","attribs":{"style":{"flexGrow":1,"borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","background":null}},"children":[{"name":"div","attribs":{"style":{"display":"flex","alignItems":"center","color":"black","fontSize":null,"fontWeight":"normal"}},"children":[{"name":"div","attribs":{"style":{"alignText":"right","display":"flex","alignItems":"center","justifyContent":"flex-end","borderTopLeftRadius":"0px","borderBottomLeftRadius":"0px","borderTopRightRadius":"0px","borderBottomRightRadius":"0px","boxShadow":null,"border":"  ","background":"#C9C5BAFF","backgroundImage":null,"width":"9.80867954769754%","height":18,"transition":"width 1s ease","marginRight":"6px"}},"children":[]},"615,950"]}]}]}]}],"searchable":true,"defaultPageSize":9,"paginationType":"numbers","showPageInfo":true,"minRows":1,"highlight":true,"bordered":true,"nowrap":true,"showSortable":true,"theme":{"color":"#6C6D6F","backgroundColor":"#ffffff","borderColor":"#ededed","borderWidth":"1px","stripedColor":"#fafafa","highlightColor":"#fafafa","cellPadding":7,"tableStyle":{"fontSize":12},"headerStyle":{"borderTop":"1px solid #e1e2e4","borderBottom":"1px solid #e1e2e4","padding":"4px","background":"#ffffff","borderColor":"#ffffff","color":"#48494a","textTransform":"uppercase","&:hover":{"color":"#004D9A"},"fontSize":11},"groupHeaderStyle":{"borderTop":"1px solid #e1e2e4","borderLeft":"1px solid #e1e2e4","borderRight":"1px solid #e1e2e4","backgroundColor":"#ffffff","textTransform":"uppercase","fontSize":"11px","color":"#6C6D6F","fontSize.1":11},"rowSelectedStyle":{"backgroundColor":"#48494a"},"inputStyle":{"backgroundColor":"#ffffff","color":"#6C6D6F"},"searchInputStyle":{"color":"#6C6D6F","fontSize":"13px"},"selectStyle":{"color":"#48494a"},"paginationStyle":{"color":"#48494a","fontSize":"13px"},"pageButtonStyle":{"color":"#48494a","fontSize":"13px"}},"elementId":"league-select","dataKey":"4b62c303c1ba98dae6a6e218c621f688"},"children":[]},"class":"reactR_markup"},"evals":["tag.attribs.columns.0.filterInput.attribs.onChange"],"jsHooks":[]}</script>
+</div>
+</div>
+<p><br>
+</p>
+<section id="the-tweet" class="level3">
+<h3 class="anchored" data-anchor-id="the-tweet">The tweet that inspired this table</h3>
+<blockquote class="twitter-tweet blockquote">
+<p lang="de" dir="ltr">
+Was wäre wenn jeder den nächstgelegenen Verein in der 1. oder 2. Bundesliga unterstützte?<br><br>⚽️ Jeder Kreis gibt an, für wie viele Menschen das Stadion des jeweiligen Vereins das nächste ist.<br><br>🥇 RB Leipzig<br>🥈 Bayern München<br>🥉 Eintracht Frankfurt<a href="https://twitter.com/hashtag/rstats?src=hash&amp;ref_src=twsrc%5Etfw">#rstats</a> <a href="https://twitter.com/hashtag/datavisualization?src=hash&amp;ref_src=twsrc%5Etfw">#datavisualization</a> <a href="https://twitter.com/hashtag/maps?src=hash&amp;ref_src=twsrc%5Etfw">#maps</a> <a href="https://t.co/L8VPZ1tBoz">pic.twitter.com/L8VPZ1tBoz</a>
+</p>
+— Ansgar Wolsing (<span class="citation" data-cites="_ansgar">@_ansgar</span>) <a href="https://twitter.com/_ansgar/status/1558463386597445634?ref_src=twsrc%5Etfw">August 13, 2022</a>
+</blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+</section>
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Technically, I calculate <strong>excess attraction</strong> as the difference between the actual number of members a club has and the number of members that we would expect if the total number of all club members are redistributed according to the share of population which live closest to each club.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The value calculated by Ansgar Wolsing.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">
+<p>Copyright 2024, Yebelay Berehan</p>
+</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
