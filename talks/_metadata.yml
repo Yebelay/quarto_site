@@ -4,7 +4,6 @@ date-format: "YYYY-MM-DD"
 # Enable banner style title blocks
 title-block-banner: true
 
-
 # Add blog-post class to the banner header area
 format: 
   html:
@@ -24,6 +23,4 @@ format:
 
 #freeze: true
 
-# Default author
-#author:
-#  - name: Meghan Hall
+

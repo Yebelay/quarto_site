@@ -12,7 +12,7 @@ project:
     - "404.qmd"
 
 website:
-  site-url: "https://yebelay.netlify.app/"
+  site-url: ""
   title: "Yebelay Berehan"
   description: "Welcome to my website"
   navbar:
