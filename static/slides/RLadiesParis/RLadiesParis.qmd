@@ -1,7 +1,7 @@
 ---
 title: "Keeping it Tidy"
 subtitle: "<span style='font-size: 0.75em'>*Using the Tidyverse to Organize, Transform, and Visualize Data*</style>"
-author: "Meghan Hall<br>R-Ladies Paris<br>September 8, 2022"
+author: "Yebelay<br>R-Ladies<br>September 8, 2022"
 format: 
   revealjs:
     logo: corgi.png
