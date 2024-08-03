@@ -1,9 +1,6 @@
 ---
 title: "Keeping it Tidy"
-subtitle: "RLadies Paris"
-author: "Meghan Hall"
-date: "2022-09-08"
-image: "featured.png"
+author: "Yebelay"
 summary: Using the tidyverse to organize, transform, and visualize data.
 categories: ["R", "tidyverse"]
 extsite: "https://meghan.quarto.pub/keeping-it-tidy/"
