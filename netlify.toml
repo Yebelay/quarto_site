@@ -1,0 +1,18 @@
+[build]
+  base = ""
+  publish = "_site"
+  command = "quarto render"
+
+[context.production.environment]
+  QUARTO_VERSION = "1.3.194"  # Replace with the latest Quarto version if needed
+
+[context.production]
+  command = """
+    # Install Quarto
+    wget -O quarto.tar.gz https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.tar.gz
+    tar -xzf quarto.tar.gz -C /opt/
+    export PATH=/opt/quarto-${QUARTO_VERSION}/bin:$PATH
+    
+    # Render the site
+    quarto render
+  """
