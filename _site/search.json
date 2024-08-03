@@ -284,7 +284,7 @@
     "href": "blog/index.html",
     "title": "\nBlog Posts\n",
     "section": "",
-    "text": "Moving My Website from blogdown to Quarto 2024-02-11 \n    \n            \n                \n                \n                    quarto\n                \n                \n            \n            \n    Tips on migrating a website from Hugo/blogdown to Quarto.\n  \n\n\n\n\nNo matching items"
+    "text": "Website with Quarto 2024-08-03 \n    \n            \n                \n                \n                    quarto\n                \n                \n            \n            \n    Tips on quarto website\n  \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/2022-10-11-creating-custom-color-palettes-with-ggplot2/index.html",
@@ -324,9 +324,9 @@
   {
     "objectID": "blog/2024-02-11-moving-to-quarto/index.html",
     "href": "blog/2024-02-11-moving-to-quarto/index.html",
-    "title": "Moving My Website from blogdown to Quarto",
+    "title": "Website with Quarto",
     "section": "",
-    "text": "I’ve been a devoted Quarto user for nearly two years and finally (!) got around to moving my website over to Quarto. (In my defense, I spent 2023 not doing anything “extra” outside of work and enjoying my new baby girl.) This post is not meant to be a comprehensive guide to creating or moving a Quarto website—there are, among many others, great ones here on moving from distill and here on moving from blogdown—but rather a collection of things I had to figure out as a fairly experienced Quarto user moving my website over from Hugo Apéro/blogdown."
+    "text": "If you use Netlify (which I highly recommed, as the Quarto/GitHub/Netlify integration is so seamless), you can supply a redirects file that lists all the old urls and their new locations. Netlify builds from Quarto’s _site directory, so just put the _redirects file (here’s mine) in your _site folder, right? I tried that first, but it doesn’t work because the _site directory rebuilds when you rerender your site. Instead, I moved my file into the static folder, which gets copied over to _site as described above.\nMy use case here for redirects is pretty simple: I had a small number of urls to switch, and I don’t expect to frequently add to that list. If your situation is more complicated and/or you want that _redirects file to automatically generate shorter urls when you create new pages, there are options described here and here."
   },
   {
     "objectID": "blog/2024-02-11-moving-to-quarto/index.html#site-organization",
