@@ -1,1 +1,1 @@
-Sitemap: https://yebelay.netlify.app/sitemap.xml
+Sitemap: /sitemap.xml

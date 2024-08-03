@@ -174,7 +174,7 @@ ul.task-list li input[type="checkbox"] {
 <li><p><strong>Berelie, Y.,</strong> Yeshiwas, D., Yismaw, L., Alene, M. (2020). Determinants of institutional delivery service utilization in Ethiopia: a population-based cross-sectional study. <a href="https://bmcpublichealth.biomedcentral.com/">BMC Public Health</a>, 20, 1077. <a href="https://doi.org/10.1186/s12889-020-09125-2">doi link</a></p></li>
 <li><p>Alene M, Yismaw L, <strong>Berelie Y</strong>, Kassie B, Yeshambel R, Assemie MA (2020). Prevalence and determinants of unintended pregnancy in Ethiopia: A systematic review and meta-analysis of observational studies. <a href="https://journals.plos.org/plosone/">PLoS ONE</a> 15(4): e0231012. <a href="https://doi.org/10.1371/journal.pone.0231012">doi link</a>.</p></li>
 <li><p>Yeshiwas, D., &amp; <strong>Berelie, Y.</strong> (2020). Forecasting the Covolatility of Coffee Arabica and Crude Oil Prices: A Multivariate GARCH Approach with High-Frequency Data. <a href="https://onlinelibrary.wiley.com/journal/5139">Journal of Probability and Statistics</a> 2020(2):1-10. <a href="https://doi.org/10.1155/2020/1424020">Doi link</a>.</p></li>
-<li><p><strong>Berelie, Y.,</strong> Yismaw, L., Tesfa, E., &amp; Alene, M. (2019). Risk factors for under-five mortality in Ethiopia: Evidence from the 2016 Ethiopian Demographic and Health Survey. South African Journal of Child Health, 13(3), 137-140. <a href="https://doi.org/10.7196/SAJCH.2019.v13i3.1645">DOI link</a> 10.7196/SAJCH.2019.v13i3.1645</p></li>
+<li><p><strong>Berelie, Y.,</strong> Yismaw, L., Tesfa, E., &amp; Alene, M. (2019). Risk factors for under-five mortality in Ethiopia: Evidence from the 2016 Ethiopian Demographic and Health Survey. <a href="http://www.sajch.org.za/index.php/SAJCH">South African Journal of Child Health</a>, 13(3), 137-140. <a href="https://doi.org/10.7196/SAJCH.2019.v13i3.1645">DOI link</a>.</p></li>
 <li><p>Alene, M., Yismaw, L., <strong>Berelie, Y</strong>., &amp; Kassie, B. (2019). Health care utilization for common childhood illnesses in rural parts of Ethiopia: evidence from the 2016 Ethiopian demographic and health survey. <a href="https://bmcpublichealth.biomedcentral.com/">BMC Public Health</a>, 19(1), 57. <a href="https://doi.org/10.1186/s12889-019-6397-x">Doi link</a></p></li>
 </ol>
 </section>
@@ -284,7 +284,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yebelay\.netlify\.app\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

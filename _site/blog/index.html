@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
     const options = {
       valueNames: ['listing-image','listing-date','listing-title','listing-subtitle','listing-author','listing-summary','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-language","listing-date-format","listing-title-block-banner","listing-toc","listing-toc-title","listing-toc-location","listing-freeze","listing-author","listing-date","listing-categories","listing-summary","listing-title","listing-from","listing-path","listing-outputHref","listing-date-modified","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+      searchColumns: ["listing-project","listing-website","listing-format","listing-language","listing-date-format","listing-title-block-banner","listing-toc","listing-toc-title","listing-toc-location","listing-freeze","listing-author","listing-title","listing-date","listing-summary","listing-categories","listing-path","listing-outputHref","listing-date-modified","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -156,7 +156,7 @@ window.Quarto = {
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../pages/puplications.html"> 
+    <a class="nav-link" href="../puplications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
@@ -238,48 +238,6 @@ Blog Posts<br>
             </span>
             
     <span class="summary-text">Tips on migrating a website from Hugo/blogdown to Quarto.</span><br><br>
-  </div>
-
-  <div class="li2" "li"="" data-index="1" data-categories="R,ggplot2,data viz" data-listing-date-sort="1665608400000" data-listing-file-modified-sort="1722598083253" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1549">
-    <a href="../blog/2022-10-11-creating-custom-color-palettes-with-ggplot2/index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none">
-      <span class="post-title">Creating Custom Color Palettes with ggplot2</span><span style="float:right;"><span class="main-date"> 2022-10-13</span></span></a> <br>
-    
-            <span class="post-categories listing-categories">
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('R'); return false;">
-                    R
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('ggplot2'); return false;">
-                    ggplot2
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('data viz'); return false;">
-                    data viz
-                </div>
-                
-            </span>
-            
-    <span class="summary-text">How to define custom colors and color palettes in R and create your own scale_color and scale_fill functions to use in ggplot2.</span><br><br>
-  </div>
-
-  <div class="li2" "li"="" data-index="2" data-categories="R,quarto" data-listing-date-sort="1664053200000" data-listing-file-modified-sort="1722598083163" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1417">
-    <a href="../blog/2022-09-25-tips-for-custom-parameterized-pdfs-in-quarto/index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none">
-      <span class="post-title">Tips for Custom Parameterized PDFs in Quarto</span><span style="float:right;"><span class="main-date"> 2022-09-25</span></span></a> <br>
-    
-            <span class="post-categories listing-categories">
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('R'); return false;">
-                    R
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('quarto'); return false;">
-                    quarto
-                </div>
-                
-            </span>
-            
-    <span class="summary-text">Tips and tricks for creating parameterized reports with R and Quarto and customizing the PDFs with LaTeX.</span><br><br>
   </div>
 
 </ul>
@@ -369,7 +327,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yebelay\.netlify\.app\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -75,7 +75,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="../talks.css">
 <meta property="og:title" content="Yebelay Berehan">
 <meta property="og:description" content="RLadies Paris">
-<meta property="og:image" content="https://yebelay.netlify.app/talks/2022-09-08-rladies-paris/featured.png">
+<meta property="og:image" content="/talks/2022-09-08-rladies-paris/featured.png">
 <meta property="og:site_name" content="Yebelay Berehan">
 <meta property="og:image:height" content="380">
 <meta property="og:image:width" content="676">
@@ -103,16 +103,12 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../pages/puplications.html"> 
+    <a class="nav-link" href="../../puplications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../pages/presentations.html"> 
-<span class="menu-text">Presentations</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="../../talks/index.html"> 
-<span class="menu-text">TALKS</span></a>
+<span class="menu-text">Presentations</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -261,7 +257,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yebelay\.netlify\.app\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
