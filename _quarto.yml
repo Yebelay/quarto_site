@@ -1,15 +1,5 @@
 project:
   type: website
-  render:
-    - "pages/about.qmd"
-    - "puplications.qmd"
-    - "talks/**/*.qmd"
-    - "talks/index.qmd"
-    - "blog/**/*.qmd"
-    - "blog/index.qmd"
-    - "index.qmd"
-    - "contact.qmd"
-    - "404.qmd"
 
 website:
   site-url: ""
@@ -17,9 +7,10 @@ website:
   description: "Welcome to my website"
   navbar:
     left:
-      - pages/about.qmd
+      - href: pages/about.qmd
+        icon: person-circle
       - puplications.qmd
-      - href: talks/index.qmd
+      - href: talks.qmd
         text: Presentations
       
     right:

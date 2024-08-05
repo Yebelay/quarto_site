@@ -277,7 +277,7 @@
     "href": "talks/index.html",
     "title": "Yebelay Berehan",
     "section": "",
-    "text": "Keeping it Tidy\n       \n            \n                \n                \n                    R\n                \n                \n                \n                    tidyverse\n                \n                \n            \n            \n    Using the tidyverse to organize, transform, and visualize data.\n    \n        Details\n    \n    \n    \n        Slides\n    \n    \n    \n    \n        Website\n    \n    \n    \n  \n\n  \n    \n       \n    \n    Introduction to R\n       \n            \n                \n                \n                    R\n                \n                \n                \n                    base\n                \n                \n            \n            \n    \n    \n        Details\n    \n    \n    \n        Slides\n    \n    \n    \n    \n        Website\n    \n    \n    \n  \n\n  \n    \n      rstudio::conf(2022) 2022-07-28\n    \n    Cultivating Your Own R Ecosystem as a Solo Contributor\n       \n            \n                \n                \n                    R\n                \n                \n                \n                    tidyverse\n                \n                \n            \n            \n    Learn how you can begin to build your own R ecosystem, step by step, to increase the efficiency and impact of your work, even as a solo contributor.\n    \n        Details\n    \n    \n    \n        Slides\n    \n    \n    \n    \n  \n\n\n\n\nNo matching items"
+    "text": "rstudio::conf(2022) 2022-07-28\n    \n    Cultivating Your Own R Ecosystem as a Solo Contributor\n       \n            \n                \n                \n                    R\n                \n                \n                \n                    tidyverse\n                \n                \n            \n            \n    Learn how you can begin to build your own R ecosystem, step by step, to increase the efficiency and impact of your work, even as a solo contributor.\n    \n        Details\n    \n    \n    \n        Slides\n    \n    \n    \n    \n  \n\n\n\n\nNo matching items"
   },
   {
     "objectID": "blog/index.html",
@@ -474,5 +474,82 @@
     "title": "Publications",
     "section": "Seminar presentation:",
     "text": "Seminar presentation:\n\nDifference-in-Differences (DID) for Impact Evaluation, October 25, 2021, Stellenbosch University, South Africa.\nInsight to Different Methods for Handling Missing Data: Application with R, July 5, 2021, Debre Markos University, Ethiopia."
+  },
+  {
+    "objectID": "talks.html",
+    "href": "talks.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Upcoming\nNone at this time.\n\n\nPast\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSpatial data analaysis Training\n\n\n\n\n\n\nR\n\n\nsf\n\n\nSpatial analysis\n\n\n\nA step by step procedure for learning spatial from scrach\n\n\n\n\n\nFeb 21, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nParameterized Reports with Quarto: R-Ladies DC Workshop\n\n\n\n\n\n\nR\n\n\nQuarto\n\n\nparameterized reports\n\n\nworkshop\n\n\n\n2-hour code-along workshop on parameterized reports with Quarto\n\n\n\n\n\nJan 18, 2024\n\n\n\n\n\n\n\n\n\n\n\n\nParameterized Quarto reports improve understanding of soil health\n\n\n\n\n\n\nR\n\n\nQuarto\n\n\nparameterized reports\n\n\nagriculture\n\n\nsoil health\n\n\n\nCreating custom soil health reports with Quarto\n\n\n\n\n\nSep 25, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nShiny optimization of climate benefits from a statewide agricultural grant program\n\n\n\n\n\n\nR\n\n\nshiny\n\n\nagriculture\n\n\nclimate\n\n\n\nDevelopment process of {WaCSE} shiny app\n\n\n\n\n\nAug 19, 2023\n\n\n\n\n\n\n\n\n\n\n\n\nWashington Soil Health Initative and Climate Smart Estimator\n\n\n\n\n\n\nagriculture\n\n\nsoil health\n\n\nclimate\n\n\n\nOverview of the WA Soil Health Initative & WA Climate Smart Estimator {WaCSE} shiny app\n\n\n\n\n\nJun 13, 2023\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "talks/2024-02-21_rladies-abuja-quarto-params/index.html",
+    "href": "talks/2024-02-21_rladies-abuja-quarto-params/index.html",
+    "title": "Spatial data analaysis Training",
+    "section": "",
+    "text": "Course website  Slides  Code\n\n\nDetails\n📆 February 21, 2024 // 4:30 pm - 6:30 pm WAT\n🏨 Virtual\n🏡 Workshop website\n🔖 Source tag\n\n\nSlides\n\n\n\n\n\n\nCitationBibTeX citation:@online{berehan2024,\n  author = {Berehan, Yebelay},\n  title = {Spatial Data Analaysis {Training}},\n  date = {2024-02-21},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBerehan, Yebelay. 2024. “Spatial Data Analaysis Training.”\nFebruary 21, 2024."
+  },
+  {
+    "objectID": "talks/2023-09-25_posit_parameterized-quarto/index.html",
+    "href": "talks/2023-09-25_posit_parameterized-quarto/index.html",
+    "title": "Parameterized Quarto reports improve understanding of soil health",
+    "section": "",
+    "text": "Slides  Code  Video \n\nDetails\n📆 September 25, 2023 // 5:30 pm - 5:40 pm CDT 🏨 Chicago, IL\n🌠 posit::conf(2023)\n\n\nAbstract\nSoil sampling data are notoriously challenging to tidy and effectively communicate to farmers. We used functional programming with the tidyverse to reproducibly streamline data cleaning and summarization. To improve project outreach, we developed a Quarto project to dynamically create interactive HTML reports and printable PDFs. Custom to every farmer, reports include project goals, measured parameter descriptions, summary statistics, maps, tables, and graphs.\nOur case study presents a workflow for data preparation and parameterized reporting, with best practices for effective data visualization, interpretation, and accessibility.\nSee an example HTML report.\nLearn more about the Washington Soil Health Initiative State of the Soils Assessment.\n\n\nSlides\n\n\n\n\nRecording\n\n\n\n\n\nCitationBibTeX citation:@online{ryan2023,\n  author = {Ryan, Jadey and McIlquham, Molly and Sarpong, Kwabena and\n    Michel, Leslie and Potter, Teal and Griffin LaHue, Deirdre and\n    Gelardi, Dani},\n  title = {Parameterized {Quarto} Reports Improve Understanding of Soil\n    Health},\n  date = {2023-09-25},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nRyan, Jadey, Molly McIlquham, Kwabena Sarpong, Leslie Michel, Teal\nPotter, Deirdre Griffin LaHue, and Dani Gelardi. 2023.\n“Parameterized Quarto Reports Improve Understanding of Soil\nHealth.” September 25, 2023."
+  },
+  {
+    "objectID": "talks/2023-06-13_wade_washi-wacse/index.html",
+    "href": "talks/2023-06-13_wade_washi-wacse/index.html",
+    "title": "Washington Soil Health Initative and Climate Smart Estimator",
+    "section": "",
+    "text": "Slides  Video \n\nDetails\n📆 June 13, 2023 // 1:30 pm - 2:20 pm PT\n🏨 Leavenworth, WA\n🌠 Washington Association of District Employees (WADE) conference\n\n\nAbstract\nWashington Soil Health Initiative overview and updates.\nHow to get the most of the Sustainable Farms and Fields Washington Climate Smart Estimator (WaCSE) tool.\n\n\nSlides\n\n\nOops! Your browser doesn’t seem to support embedded PDFs.\n\n\nTry downloading instead.\n\n\n\n\nRecording\n\n\n\n\n\nCitationBibTeX citation:@online{ryan2023,\n  author = {Ryan, Jadey and Michel, Leslie and Gelardi, Dani},\n  title = {Washington {Soil} {Health} {Initative} and {Climate} {Smart}\n    {Estimator}},\n  date = {2023-06-13},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nRyan, Jadey, Leslie Michel, and Dani Gelardi. 2023. “Washington\nSoil Health Initative and Climate Smart Estimator.” June 13,\n2023."
+  },
+  {
+    "objectID": "talks/2023-08-19_cascadia_shiny-wacse/index.html",
+    "href": "talks/2023-08-19_cascadia_shiny-wacse/index.html",
+    "title": "Shiny optimization of climate benefits from a statewide agricultural grant program",
+    "section": "",
+    "text": "Slides  Code  Video \n\nDetails\n📆 August 19, 2023 // 2:05 pm - 2:20 pm PT\n🏨 Seattle, WA\n🌠 Cascadia R Conf\n\n\nAbstract\nWashington’s Sustainable Farms and Fields program provides grants to growers to increase soil carbon or reduce greenhouse gas (GHG) emissions on their farms. To optimize the climate benefits of the program, we developed the Washington Climate Smart Estimator {WaCSE} using R and Shiny.\nIntegrating national climate models and datasets, this intuitive, regionally specific user interface allows farmers and policymakers to compare the climate benefits of different agricultural practices across Washington’s diverse counties and farm sizes. Users can explore GHG estimates in interactive tables and plots, download results in spreadsheets and figures, and generate PDF reports. In this talk, we present the development process of {WaCSE} and discuss the lessons we learned from creating our first ever Shiny app.\n\n\nSlides\n\n\n\n\nRecording\n\n\n\n\n\nCitationBibTeX citation:@online{ryan2023,\n  author = {Ryan, Jadey and Michel, Leslie and Gelardi, Dani},\n  title = {Shiny Optimization of Climate Benefits from a Statewide\n    Agricultural Grant Program},\n  date = {2023-08-19},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nRyan, Jadey, Leslie Michel, and Dani Gelardi. 2023. “Shiny\nOptimization of Climate Benefits from a Statewide Agricultural Grant\nProgram.” August 19, 2023."
+  },
+  {
+    "objectID": "talks/2024-01-18_rladies-dc_quarto-params/index.html",
+    "href": "talks/2024-01-18_rladies-dc_quarto-params/index.html",
+    "title": "Parameterized Reports with Quarto: R-Ladies DC Workshop",
+    "section": "",
+    "text": "Course website  Slides  Code  Video \n\nDetails\n📆 January 18, 2024 // 6:30 pm - 8:30 pm EDT\n🏨 Virtual\n🆓 FREE with registration\n🏡 Workshop website\n🔖 Source tag\n\n\nAbstract\nTired of manually adjusting Quarto reports for different regions, time periods, or clients? Dreaming of using just one template to generate both interactive HTML and static Word/PDF versions of your reports?\nJoin our workshop to unlock the power of parameterized reporting with Quarto and leave with your own template and examples to modify for your own projects.\nGet a sneak preview of what you’ll learn by checking out the slides for my posit::conf(2023) talk.\nEveryone is welcome to attend. If you’re new to Quarto, we recommend watching Tom Mock’s excellent 2-hour introduction to Quarto.\n\n\nSlides\n\n\n\n\nRecording\n\n\n\n\n\nCitationBibTeX citation:@online{ryan2024,\n  author = {Ryan, Jadey},\n  title = {Parameterized {Reports} with {Quarto:} {R-Ladies} {DC}\n    {Workshop}},\n  date = {2024-01-18},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nRyan, Jadey. 2024. “Parameterized Reports with Quarto: R-Ladies DC\nWorkshop.” January 18, 2024."
+  },
+  {
+    "objectID": "presentations/2024-01-18_rladies-dc_quarto-params/index.html",
+    "href": "presentations/2024-01-18_rladies-dc_quarto-params/index.html",
+    "title": "Joint Models Workshop",
+    "section": "",
+    "text": "Slides  Code\n\nSlides\n\n\n\n\n\n\nCitationBibTeX citation:@online{berehan2024,\n  author = {Berehan, Yebelay},\n  title = {Joint {Models} {Workshop}},\n  date = {2024-01-18},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBerehan, Yebelay. 2024. “Joint Models Workshop.” January\n18, 2024."
+  },
+  {
+    "objectID": "presentations/2023-08-19_cascadia_shiny-wacse/index.html",
+    "href": "presentations/2023-08-19_cascadia_shiny-wacse/index.html",
+    "title": "Introduction to Rmarkdown",
+    "section": "",
+    "text": "Slides\n\nSlides\n\n\n\n\n\n\nCitationBibTeX citation:@online{berehan2023,\n  author = {Berehan, Yebelay},\n  title = {Introduction to {Rmarkdown}},\n  date = {2023-08-19},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBerehan, Yebelay. 2023. “Introduction to Rmarkdown.” August\n19, 2023."
+  },
+  {
+    "objectID": "presentations/2023-06-13_wade_washi-wacse/index.html",
+    "href": "presentations/2023-06-13_wade_washi-wacse/index.html",
+    "title": "Washington Soil Health Initative and Climate Smart Estimator",
+    "section": "",
+    "text": "Slides  Video \n\nDetails\n📆 June 13, 2023 // 1:30 pm - 2:20 pm PT\n🏨 Leavenworth, WA\n🌠 Washington Association of District Employees (WADE) conference\n\n\nAbstract\nWashington Soil Health Initiative overview and updates.\nHow to get the most of the Sustainable Farms and Fields Washington Climate Smart Estimator (WaCSE) tool.\n\n\nSlides\n\n\nOops! Your browser doesn’t seem to support embedded PDFs.\n\n\nTry downloading instead.\n\n\n\n\nRecording\n\n\n\n\n\nCitationBibTeX citation:@online{ryan2023,\n  author = {Ryan, Jadey and Michel, Leslie and Gelardi, Dani},\n  title = {Washington {Soil} {Health} {Initative} and {Climate} {Smart}\n    {Estimator}},\n  date = {2023-06-13},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nRyan, Jadey, Leslie Michel, and Dani Gelardi. 2023. “Washington\nSoil Health Initative and Climate Smart Estimator.” June 13,\n2023."
+  },
+  {
+    "objectID": "presentations/2023-09-25_posit_parameterized-quarto/index.html",
+    "href": "presentations/2023-09-25_posit_parameterized-quarto/index.html",
+    "title": "C4ED Presentation them",
+    "section": "",
+    "text": "Slides\n\nSlides\n\n\n\n\n\n\nCitationBibTeX citation:@online{berehan2023,\n  author = {Berehan, Yebelay},\n  title = {C4ED {Presentation} Them},\n  date = {2023-09-25},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBerehan, Yebelay. 2023. “C4ED Presentation Them.” September\n25, 2023."
+  },
+  {
+    "objectID": "presentations/2024-02-21_rladies-abuja-quarto-params/index.html",
+    "href": "presentations/2024-02-21_rladies-abuja-quarto-params/index.html",
+    "title": "Spatial data analaysis Training",
+    "section": "",
+    "text": "Course website  Slides  Code\n\n\nDetails\n📆 February 21, 2024 // 4:30 pm - 6:30 pm WAT\n🏨 Virtual\n🏡 Workshop website\n🔖 Source tag\n\n\nSlides\n\n\n\n\n\n\nCitationBibTeX citation:@online{berehan2024,\n  author = {Berehan, Yebelay},\n  title = {Spatial Data Analaysis {Training}},\n  date = {2024-02-21},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBerehan, Yebelay. 2024. “Spatial Data Analaysis Training.”\nFebruary 21, 2024."
   }
 ]

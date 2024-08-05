@@ -1,9 +1,0 @@
----
-title: "Introduction to R"
-author: "Yebelay Berehan"
-categories: ["R", "base"]
-extsite: "https://meghan.quarto.pub/keeping-it-tidy/"
-slides: "https://github.com/Yebelay/quarto_site/blob/main/static/slides/Rintro/Day%201.html"
----
-[{{< fa tv >}} SLIDES](https://github.com/Yebelay/quarto_site/blob/main/static/slides/Rintro/Day%201.html){class="btn btn-secondary" target="_blank"} [{{< fa link >}} WORKSHOP WEBSITE](https://github.com/Yebelay/quarto_site/blob/main/static/slides/Rintro/Day%201.html){class="btn btn-secondary" target="_blank"}
-

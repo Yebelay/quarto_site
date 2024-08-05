@@ -206,7 +206,7 @@
   </url>
   <url>
     <loc>/talks/2022-07-28-conf/index.html</loc>
-    <lastmod>2024-08-02T11:29:10.470Z</lastmod>
+    <lastmod>2024-08-04T12:05:06.059Z</lastmod>
   </url>
   <url>
     <loc>/talks/2022-09-08-rladies-paris/index.html</loc>
@@ -222,6 +222,50 @@
   </url>
   <url>
     <loc>/talks/2024-08-03-rintro/index.html</loc>
-    <lastmod>2024-08-03T11:23:45.019Z</lastmod>
+    <lastmod>2024-08-03T18:04:58.836Z</lastmod>
+  </url>
+  <url>
+    <loc>/talks.html</loc>
+    <lastmod>2024-08-04T20:29:19.434Z</lastmod>
+  </url>
+  <url>
+    <loc>/talks/2024-02-21_rladies-abuja-quarto-params/index.html</loc>
+    <lastmod>2024-08-04T20:17:40.320Z</lastmod>
+  </url>
+  <url>
+    <loc>/talks/2023-09-25_posit_parameterized-quarto/index.html</loc>
+    <lastmod>2024-08-04T19:36:06.403Z</lastmod>
+  </url>
+  <url>
+    <loc>/talks/2023-06-13_wade_washi-wacse/index.html</loc>
+    <lastmod>2024-08-04T19:36:06.235Z</lastmod>
+  </url>
+  <url>
+    <loc>/talks/2023-08-19_cascadia_shiny-wacse/index.html</loc>
+    <lastmod>2024-08-04T19:36:06.321Z</lastmod>
+  </url>
+  <url>
+    <loc>/talks/2024-01-18_rladies-dc_quarto-params/index.html</loc>
+    <lastmod>2024-08-04T19:36:06.495Z</lastmod>
+  </url>
+  <url>
+    <loc>/presentations/2024-01-18_rladies-dc_quarto-params/index.html</loc>
+    <lastmod>2024-08-04T20:37:28.769Z</lastmod>
+  </url>
+  <url>
+    <loc>/presentations/2023-08-19_cascadia_shiny-wacse/index.html</loc>
+    <lastmod>2024-08-04T20:52:44.209Z</lastmod>
+  </url>
+  <url>
+    <loc>/presentations/2023-06-13_wade_washi-wacse/index.html</loc>
+    <lastmod>2024-08-04T19:36:06.235Z</lastmod>
+  </url>
+  <url>
+    <loc>/presentations/2023-09-25_posit_parameterized-quarto/index.html</loc>
+    <lastmod>2024-08-04T20:50:11.754Z</lastmod>
+  </url>
+  <url>
+    <loc>/presentations/2024-02-21_rladies-abuja-quarto-params/index.html</loc>
+    <lastmod>2024-08-04T20:17:40.320Z</lastmod>
   </url>
 </urlset>
