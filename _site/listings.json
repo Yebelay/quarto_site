@@ -35,11 +35,20 @@
   {
     "listing": "/talks.html",
     "items": [
-      "/presentations/2024-02-21_rladies-abuja-quarto-params/index.html",
-      "/presentations/2024-01-18_rladies-dc_quarto-params/index.html",
-      "/presentations/2023-09-25_posit_parameterized-quarto/index.html",
-      "/presentations/2023-08-19_cascadia_shiny-wacse/index.html",
-      "/presentations/2023-06-13_wade_washi-wacse/index.html"
+      "/presentations/index.html",
+      "/presentations/2024-07-21_Spatial-data-visualization/index.html",
+      "/presentations/2023-10-18_Joint-Models-EPHI/index.html",
+      "/presentations/2023-09-25_c4ed-theme/index.html",
+      "/presentations/2023-08-19_Rmarkdown/index.html"
+    ]
+  },
+  {
+    "listing": "/presentations/index.html",
+    "items": [
+      "/presentations/2024-07-21_Spatial-data-visualization/index.html",
+      "/presentations/2023-10-18_Joint-Models-EPHI/index.html",
+      "/presentations/2023-09-25_c4ed-theme/index.html",
+      "/presentations/2023-08-19_Rmarkdown/index.html"
     ]
   }
 ]

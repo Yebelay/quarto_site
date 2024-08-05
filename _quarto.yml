@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  site-url: ""
+  site-url: "https://yebelay.rbind.io/"
   title: "Yebelay Berehan"
   description: "Welcome to my website"
   navbar:
@@ -10,7 +10,7 @@ website:
       - href: pages/about.qmd
         icon: person-circle
       - puplications.qmd
-      - href: talks.qmd
+      - href: presentations/index.qmd
         text: Presentations
       
     right:
@@ -31,6 +31,6 @@ format:
     link-external-newwindow: true
     metadata:
       pagetitle: "Yebelay Berehan"
-# Other nice themes: lumen, sandstone (with dark banner) or flatly & darkly
 
-
+header-includes:
+    - '<meta name="google-site-verification" content="X-rOcrlZrFLBgUJZQigAahlBd2T_crpYhrBMXuzl6IA" />'
