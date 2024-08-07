@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="/site_libs/quarto-search/fuse.min.js"></script>
 <script src="/site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="/">
+<link href="/./Icon.png" rel="icon" type="image/png">
 <script src="/site_libs/quarto-html/quarto.js"></script>
 <script src="/site_libs/quarto-html/popper.min.js"></script>
 <script src="/site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -91,20 +92,17 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="/pages/about.html"> 
+    <a class="nav-link" href="/pages/about.html"> <i class="bi bi-person-circle" role="img">
+</i> 
 <span class="menu-text">About Me</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/pages/puplications.html"> 
+    <a class="nav-link" href="/puplications.html"> 
 <span class="menu-text">Publications</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="/pages/presentations.html"> 
+    <a class="nav-link" href="/presentations/index.html"> 
 <span class="menu-text">Presentations</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="/talks/index.html"> 
-<span class="menu-text">TALKS</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -248,7 +246,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/yebelay\.netlify\.app\/");
+      var filterRegex = new RegExp("https:\/\/yebelay\.rbind\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -5,9 +5,9 @@ comments: false
 listing:
   contents: "index.qmd"
   sort: "date desc"
-  type: "default"
+  type: "table"
   date-format: "iso"
-  fields: [image, date, title, subtitle, author, summary, description, slides, extsite, repo]  
+  fields: [image, date, title, subtitle, author, slides]  
   page-size: 6
   template: talk-listing.ejs
 page-layout: full
