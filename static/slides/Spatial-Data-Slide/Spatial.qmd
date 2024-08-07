@@ -16,7 +16,7 @@ title-slide-attributes:
 format: 
   revealjs:
     slide-number: true
-    logo: logo-title-slide.png
+    #logo: logo-title-slide.png
     footer: "[?](https://github.com/Yebelay)&nbsp;&nbsp;&nbsp;"
     theme: custom.scss
     code-link: true
@@ -62,30 +62,30 @@ execute:
 
 ## Spatial Data Formats
 
-- Let us see a basic way to represent the spatial data. 
+-   Let us see a basic way to represent the spatial data.
 
-- But there is a variety of data formats to represent the data to suit different applications. 
+-   But there is a variety of data formats to represent the data to suit different applications.
 
-- In most cases, spatial data formats are an extension of existing data formats.
+-   In most cases, spatial data formats are an extension of existing data formats.
 
-    | **Type**          | **Non-Spatial Data**       | **Spatial Data**                    |
-    |------------------|------------------------|------------------------------|
-    | Text              | csv, json, xml             | csv, geojson, gml, kml              |
-    | Binary/Compressed | pdf, xls, zip              | **[shapefile]{style="color:red;"}**, geopdf, geopackage       |
-    | Images            | tiff, jpg, png             | geotiff, jpeg2000                   |
-    | Databases         | SQLite, PostgreSQL, Oracle | Spatialite, PostGIS, Oracle Spatial |
+    | **Type**          | **Non-Spatial Data**       | **Spatial Data**                                        |
+    |-------------------|----------------------------|---------------------------------------------------------|
+    | Text              | csv, json, xml             | csv, geojson, gml, kml                                  |
+    | Binary/Compressed | pdf, xls, zip              | [**shapefile**]{style="color:red;"}, geopdf, geopackage |
+    | Images            | tiff, jpg, png             | geotiff, jpeg2000                                       |
+    | Databases         | SQLite, PostgreSQL, Oracle | Spatialite, PostGIS, Oracle Spatial                     |
 
 ## Spatial Data Types
 
 Spatial Data can be broadly categorized into 2 types - Vector and Raster.
 
-| **Type**                               | **Sub Types**                                                                                                            | **Examples**                                                                                                     |
-|------------------|----------------------------|--------------------------|
-| [Vector Data]{style="color:blue;"} | [Points:]{style="color:red;"} Represents features with a single coordinate pair [(x, y)]{style="color:purple;"}. | Locations of [ATMs]{style="color:green;"}, [tree]{style="color:green;"}                                  |
-|                                        | [Lines:]{style="color:red;"} Represents linear features as ordered sequences of points.                              | [Roads]{style="color:green;"}, [rivers]{style="color:green;"}, [utility lines]{style="color:green;"} |
-|                                        | [Polygons:]{style="color:red;"} Represents areas enclosed by closed loops of lines.                                  | [Buildings]{style="color:green;"}, [lakes]{style="color:green;"}, [zones]{style="color:green;"}      |
-| [Raster Data]{style="color:blue;"} | **Grids:** Represents continuous data across a surface.                                                                  | [Satellite images]{style="color:green;"}, [digital elevation models (DEMs)]{style="color:green;"}        |
-|                                        | **Pixels:** Smallest units in a raster dataset, each with a specific value.                                              | Values representing color, temperature,                                                                          |
+| **Type**                           | **Sub Types**                                                                                                    | **Examples**                                                                                         |
+|------------------------------------|------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------|
+| [Vector Data]{style="color:blue;"} | [Points:]{style="color:red;"} Represents features with a single coordinate pair [(x, y)]{style="color:purple;"}. | Locations of [ATMs]{style="color:green;"}, [tree]{style="color:green;"}                              |
+|                                    | [Lines:]{style="color:red;"} Represents linear features as ordered sequences of points.                          | [Roads]{style="color:green;"}, [rivers]{style="color:green;"}, [utility lines]{style="color:green;"} |
+|                                    | [Polygons:]{style="color:red;"} Represents areas enclosed by closed loops of lines.                              | [Buildings]{style="color:green;"}, [lakes]{style="color:green;"}, [zones]{style="color:green;"}      |
+| [Raster Data]{style="color:blue;"} | **Grids:** Represents continuous data across a surface.                                                          | [Satellite images]{style="color:green;"}, [digital elevation models (DEMs)]{style="color:green;"}    |
+|                                    | **Pixels:** Smallest units in a raster dataset, each with a specific value.                                      | Values representing color, temperature,                                                              |
 
 ------------------------------------------------------------------------
 
@@ -201,10 +201,12 @@ head(ethR_shape, 2)
 
 ------------------------------------------------------------------------
 
--   The `sf` object `ethR_shape` is a `data.frame` containing a collection with 
-     - **[11 simple features (rows)] {style="color:#ae01c7;"}** and [6 attributes (columns)]{style="color:blue;"} [plus a list-column with the geometry of each feature] {style="color:red;"}.
+-   The `sf` object `ethR_shape` is a `data.frame` containing a collection with
+
+    -   **\[11 simple features (rows)\] {style="color:#ae01c7;"}** and [6 attributes (columns)]{style="color:blue;"} \[plus a list-column with the geometry of each feature\] {style="color:red;"}.
 
 -   A `sf` object contains the following objects of class `sf`, `sfc` and `sfg`:
+
     -   `sf` (simple feature): *each row* of the `data.frame` [is a single simple feature consisting of attributes and geometry]{style="color:#ae01c7;"}.
     -   `sfc` (simple feature geometry list-column): the `geometry` *column* of the `data.frame` [is a list-column of class `sfc` with the geometry of each simple feature]{style="color:blue;"}.
     -   `sfg` (simple feature geometry): *each of the rows* of the `sfc` list-column corresponds to the simple feature geometry (`sfg`) of a single simple feature.

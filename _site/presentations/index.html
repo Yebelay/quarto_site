@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="">
+<meta name="description" content="A presentations of example documents, websites, books, and presentations created with Quarto.">
 
-<title>Yebelay Berehan</title>
+<title>Gallery</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -73,20 +73,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    const listingTargetEl = window.document.querySelector('#listing-presentations .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-image','listing-date','listing-title','listing-subtitle','listing-author','listing-slides',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-date-modified-sort'] },{ data: ['listing-file-modified-sort'] },{ data: ['listing-reading-time-sort'] },{ data: ['listing-word-count-sort'] }],
+      valueNames: ['listing-category','listing-description','listing-tiles',{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-project","listing-website","listing-format","listing-language","listing-date-format","listing-title-block-banner","listing-title","listing-author","listing-date","listing-image","listing-categories","listing-path","listing-outputHref","listing-date-modified","listing-description","listing-filename","listing-file-modified","listing-reading-time","listing-word-count"],
+      searchColumns: ["listing-category","listing-description","listing-tiles"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+    window['quarto-listings']['listing-presentations'] = new List('listing-presentations', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -130,15 +130,15 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="talks.css">
-<meta property="og:title" content="Yebelay Berehan">
+<meta property="og:title" content="Gallery">
+<meta property="og:description" content="A presentations of example documents, websites, books, and presentations created with Quarto.">
 <meta property="og:site_name" content="Yebelay Berehan">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+  <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
@@ -188,151 +188,235 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
-    </div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-custom" id="listing-listing">
-<ul class="pub-list list">
-
-  <div class="li2" "li"="" data-index="0" data-categories="R,sf,Spatial analysis" data-listing-date-sort="1708462800000" data-listing-file-modified-sort="1722919327704" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="9">
-    <a href="../presentations/2024-07-21_Spatial-data-visualization/index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none">
-      <span class="h2"></span><span style="float:right;"><span class="main-date"> 2024-02-21</span></span><br>
-    </a>
-    <span class="h4">Spatial data analaysis Training</span><br>
-       
-            <span class="post-categories listing-categories">
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('R'); return false;">
-                    R
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('sf'); return false;">
-                    sf
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('Spatial analysis'); return false;">
-                    Spatial analysis
-                </div>
-                
-            </span>
-            
-    <span class="listing-author"></span><br>
-    <a href="../presentations/2024-07-21_Spatial-data-visualization/index.html" class="btn btn-secondary">
-      <i class="bi bi-plus-square"></i>&nbsp;&nbsp;Details
-    </a>
-    
-    
-    
-  </div>
-
-  <div class="li2" "li"="" data-index="1" data-categories="Xaringan,Joint Model,workshop" data-listing-date-sort="1705525200000" data-listing-file-modified-sort="1722835333294" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="17">
-    <a href="../presentations/2023-10-18_Joint-Models-EPHI/index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none">
-      <span class="h2"></span><span style="float:right;"><span class="main-date"> 2024-01-18</span></span><br>
-    </a>
-    <span class="h4">Joint Models Workshop</span><br>
-       
-            <span class="post-categories listing-categories">
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('Xaringan'); return false;">
-                    Xaringan
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('Joint Model'); return false;">
-                    Joint Model
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('workshop'); return false;">
-                    workshop
-                </div>
-                
-            </span>
-            
-    <span class="listing-author"></span><br>
-    <a href="../presentations/2023-10-18_Joint-Models-EPHI/index.html" class="btn btn-secondary">
-      <i class="bi bi-plus-square"></i>&nbsp;&nbsp;Details
-    </a>
-    
-    
-    
-  </div>
-
-  <div class="li2" "li"="" data-index="2" data-categories="R,Xaringan,C4ED theme" data-listing-date-sort="1695589200000" data-listing-file-modified-sort="1722839767225" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
-    <a href="../presentations/2023-09-25_c4ed-theme/index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none">
-      <span class="h2"></span><span style="float:right;"><span class="main-date"> 2023-09-25</span></span><br>
-    </a>
-    <span class="h4">C4ED Presentation them</span><br>
-       
-            <span class="post-categories listing-categories">
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('R'); return false;">
-                    R
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('Xaringan'); return false;">
-                    Xaringan
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('C4ED theme'); return false;">
-                    C4ED theme
-                </div>
-                
-            </span>
-            
-    <span class="listing-author"></span><br>
-    <a href="../presentations/2023-09-25_c4ed-theme/index.html" class="btn btn-secondary">
-      <i class="bi bi-plus-square"></i>&nbsp;&nbsp;Details
-    </a>
-    
-    
-    
-  </div>
-
-  <div class="li2" "li"="" data-index="3" data-categories="R Markdown,xaringan" data-listing-date-sort="1692392400000" data-listing-file-modified-sort="1722840823814" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="11">
-    <a href="../presentations/2023-08-19_Rmarkdown/index.html" target="_blank" rel="noopener noreferrer" style="text-decoration: none">
-      <span class="h2"></span><span style="float:right;"><span class="main-date"> 2023-08-19</span></span><br>
-    </a>
-    <span class="h4">Introduction to Rmarkdown</span><br>
-       
-            <span class="post-categories listing-categories">
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('R Markdown'); return false;">
-                    R Markdown
-                </div>
-                
-                <div class="post-category listing-category" onclick="window.quartoListingCategory('xaringan'); return false;">
-                    xaringan
-                </div>
-                
-            </span>
-            
-    <span class="listing-author"></span><br>
-    <a href="../presentations/2023-08-19_Rmarkdown/index.html" class="btn btn-secondary">
-      <i class="bi bi-plus-square"></i>&nbsp;&nbsp;Details
-    </a>
-    
-    
-    
-  </div>
-
+<ul>
+<li><a href="#presentations">Presentations</a></li>
 </ul>
+<div id="listing-presentations" class="column-page quarto-listing quarto-listing-container-custom">
+
+<h2 class="anchored">Presentations</h2>
+
+<p>Create presentations (slide show) in a variety of formats.
+</p>
+
+<div class="list grid" style="column-gap: 10px;">
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="0">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html" class="listing-title">Spatial presentations</a>
+         
+        <a href="https://github.com/Yebelay/quarto_site/blob/main/static/slides/Spatial-Data-Slide/Spatial.qmd" title="View source code" class="source-code card-text float-end inline-block">
+          <i class="bi-code-slash"></i>
+        </a>
+        
+        <span class="text-muted listing-subtitle"></span>
+      </small>
+    </div>
+    <a href="https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html">
+      <img src="presentations/spa.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="1">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="https://meghan.rbind.io/slides/neair/neair.html" class="listing-title">Streamlining with R</a>
+         
+        <a href="https://github.com/meghall06/personal-website/blob/master/static/slides/NEAIR/NEAIR.qmd" title="View source code" class="source-code card-text float-end inline-block">
+          <i class="bi-code-slash"></i>
+        </a>
+        
+        <span class="text-muted listing-subtitle"></span>
+      </small>
+    </div>
+    <a href="https://meghan.rbind.io/slides/neair/neair.html">
+      <img src="presentations/spa1.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="2">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="https://mine-cetinkaya-rundel.github.io/tidyperspective/talks/dagstat-2022.html" class="listing-title">An educator's perspective of the tidyverse</a>
+         
+        <a href="https://github.com/mine-cetinkaya-rundel/tidyperspective/blob/main/talks/dagstat-2022.qmd" title="View source code" class="source-code card-text float-end inline-block">
+          <i class="bi-code-slash"></i>
+        </a>
+        
+        <span class="text-muted listing-subtitle"></span>
+      </small>
+    </div>
+    <a href="https://mine-cetinkaya-rundel.github.io/tidyperspective/talks/dagstat-2022.html">
+      <img src="presentations/spa.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="3">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="https://emitanaka.org/slides/toronto2022/" class="listing-title">An anthology of experimental designs</a>
+         
+        <a href="https://github.com/emitanaka/talks/tree/master/Toronto2022" title="View source code" class="source-code card-text float-end inline-block">
+          <i class="bi-code-slash"></i>
+        </a>
+        
+        <span class="text-muted listing-subtitle"></span>
+      </small>
+    </div>
+    <a href="https://emitanaka.org/slides/toronto2022/">
+      <img src="presentations/presentations-anthology-experimental-designs.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="4">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="https://apreshill.github.io/palmerpenguins-useR-2022/" class="listing-title">The untold story of palmerpenguins</a>
+         
+        <a href="https://github.com/apreshill/palmerpenguins-useR-2022" title="View source code" class="source-code card-text float-end inline-block">
+          <i class="bi-code-slash"></i>
+        </a>
+        
+        <span class="text-muted listing-subtitle"></span>
+      </small>
+    </div>
+    <a href="https://apreshill.github.io/palmerpenguins-useR-2022/">
+      <img src="presentations/presentations-penguins-story.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="5">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="https://jthomasmock.github.io/arrow-dplyr/" class="listing-title">Outrageously efficient EDA</a>
+         
+        <a href="https://github.com/jthomasmock/arrow-dplyr" title="View source code" class="source-code card-text float-end inline-block">
+          <i class="bi-code-slash"></i>
+        </a>
+        
+        <span class="text-muted listing-subtitle"></span>
+      </small>
+    </div>
+    <a href="https://jthomasmock.github.io/arrow-dplyr/">
+      <img src="presentations/presentations-arrow-dplyr.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+  <div class="card border-2 rounded-3 g-col-12 g-col-sm-6 g-col-md-4 mb-2" data-index="6">
+    <div class="card-header py-1 px-2 border-bottom border-1 bg-light">
+      <small class="card-text inline-block">
+        <a href="https://emilhvitfeldt.github.io/talk-useR2022-textrecipes/" class="listing-title">Improvements in textrecipes</a>
+         
+        <a href="https://github.com/EmilHvitfeldt/talk-useR2022-textrecipes" title="View source code" class="source-code card-text float-end inline-block">
+          <i class="bi-code-slash"></i>
+        </a>
+        
+        <span class="text-muted listing-subtitle"></span>
+      </small>
+    </div>
+    <a href="https://emilhvitfeldt.github.io/talk-useR2022-textrecipes/">
+      <img src="presentations/presentations-textrecipes.png" alt="" class="card-img-top">
+    </a>
+    
+    
+    
+  </div>
+
+</div>
 
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div></main> <!-- /main -->
+</div>
+<style>
+
+#hero-banner {
+  padding-top: 35px;
+  background-color: rgb(237,243,249);
+}
+
+#quarto-content main { 
+  margin-top: 0;
+  padding-top: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.headline {
+  font-size: 1.25em;
+  font-weight: 300;
+  padding-bottom: 1em;
+}
+
+.headline p {
+  margin: 0;
+  padding-bottom: 0.2rem;
+}
+
+.headline a {
+  text-decoration: none;
+}
+
+.headline ul li {
+  margin-bottom: 0.3em;
+}
+
+.carousel.card {
+  padding-top: 2em;
+}
+
+.carousel img {
+  width: 70%;
+  margin-bottom: 110px;
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  margin-bottom: 110px;
+}
+
+.carousel-caption {
+  padding-top: 1em;
+}
+
+.touch {
+  
+}
+</style>
+
+
+
+
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {

@@ -581,13 +581,6 @@
     "text": "Slides  Code\n\nSlides\n\n\n\n\n\n\nCitationBibTeX citation:@online{berehan2024,\n  author = {Berehan, Yebelay},\n  title = {Joint {Models} {Workshop}},\n  date = {2024-01-18},\n  langid = {en}\n}\nFor attribution, please cite this work as:\nBerehan, Yebelay. 2024. “Joint Models Workshop.” January\n18, 2024."
   },
   {
-    "objectID": "presentations/index.html",
-    "href": "presentations/index.html",
-    "title": "Yebelay Berehan",
-    "section": "",
-    "text": "2024-02-21\n    \n    Spatial data analaysis Training\n       \n            \n                \n                \n                    R\n                \n                \n                \n                    sf\n                \n                \n                \n                    Spatial analysis\n                \n                \n            \n            \n    \n    \n        Details\n    \n    \n    \n    \n  \n\n  \n    \n       2024-01-18\n    \n    Joint Models Workshop\n       \n            \n                \n                \n                    Xaringan\n                \n                \n                \n                    Joint Model\n                \n                \n                \n                    workshop\n                \n                \n            \n            \n    \n    \n        Details\n    \n    \n    \n    \n  \n\n  \n    \n       2023-09-25\n    \n    C4ED Presentation them\n       \n            \n                \n                \n                    R\n                \n                \n                \n                    Xaringan\n                \n                \n                \n                    C4ED theme\n                \n                \n            \n            \n    \n    \n        Details\n    \n    \n    \n    \n  \n\n  \n    \n       2023-08-19\n    \n    Introduction to Rmarkdown\n       \n            \n                \n                \n                    R Markdown\n                \n                \n                \n                    xaringan\n                \n                \n            \n            \n    \n    \n        Details\n    \n    \n    \n    \n  \n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "static/slides/Spatail-Data-Slide/Spatial.html",
     "href": "static/slides/Spatail-Data-Slide/Spatial.html",
     "title": "Spatial data analaysis Training",
@@ -954,351 +947,799 @@
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#section",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#section",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "",
-    "text": "Outlines\n\nWhat is spatial data and why should we use it?\nTypes of spatial data\nSpatial data in R: how to store, load, and tidy spatial data\nVisualizing spatial data\nExploring spatial data: Spatial authorization and spatial statistics to quantify relationships"
+    "text": "What is spatial data and why should we use it?\nTypes of spatial data\nSpatial data in R: how to store, load, and tidy spatial data\nVisualizing spatial data\nExploring spatial data: Spatial authorization and spatial statistics to quantify relationships"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#what-is-spatial-data-and-why-should-we-use-it",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#what-is-spatial-data-and-why-should-we-use-it",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "What is Spatial data and why should we use it?",
     "text": "What is Spatial data and why should we use it?\n\nSpatial data, also known as geospatial data, refers to information that identifies the geographic location and characteristics of natural or constructed features and boundaries on the Earth.\nThis data is often represented in terms of Cartesian coordinates (x,y) for two-dimensional maps, but may also include altitude (z) for a three-dimensional representation.\nSpatial data can come in various forms including points, lines, and polygons.\nThe concept of spatial data is integral to a variety of applications that require an understanding of how different elements relate to each other within a geographical space.\nThis data can be collected through various means, including but not limited to, satellite imagery, aerial photography, and ground-based surveys."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#spatial-data-formats",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#spatial-data-formats",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Spatial Data Formats",
-    "text": "Spatial Data Formats\n\nLet us see a basic way to represent the spatial data.\nBut there is a variety of data formats to represent the data to suit different applications.\n\nIn most cases, spatial data formats are an extension of existing data formats.\n\n\n\n\n\n\n\nType\nNon-Spatial Data\nSpatial Data\n\n\n\nText\ncsv, json, xml\ncsv, geojson, gml, kml\n\n\nBinary/Compressed\npdf, xls, zip\n\nshapefile, geopdf, geopackage\n\n\nImages\ntiff, jpg, png\ngeotiff, jpeg2000\n\n\nDatabases\nSQLite, PostgreSQL, Oracle\nSpatialite, PostGIS, Oracle Spatial"
+    "text": "Spatial Data Formats\n\nLet us see a basic way to represent the spatial data.\nBut there is a variety of data formats to represent the data to suit different applications.\nIn most cases, spatial data formats are an extension of existing data formats.\n\n\n\n\n\n\n\n\nType\nNon-Spatial Data\nSpatial Data\n\n\n\n\nText\ncsv, json, xml\ncsv, geojson, gml, kml\n\n\nBinary/Compressed\npdf, xls, zip\nshapefile, geopdf, geopackage\n\n\nImages\ntiff, jpg, png\ngeotiff, jpeg2000\n\n\nDatabases\nSQLite, PostgreSQL, Oracle\nSpatialite, PostGIS, Oracle Spatial"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#spatial-data-types",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#spatial-data-types",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Spatial Data Types",
-    "text": "Spatial Data Types\nSpatial Data can be broadly categorized into 2 types - Vector and Raster.\n\n\n\n\n\n\n\nType\nSub Types\nExamples\n\n\n\nVector Data\n\nPoints: Represents features with a single coordinate pair (x, y).\nLocations of ATMs, tree\n\n\n\n\n\nLines: Represents linear features as ordered sequences of points.\n\nRoads, rivers, utility lines\n\n\n\n\n\nPolygons: Represents areas enclosed by closed loops of lines.\n\nBuildings, lakes, zones\n\n\n\nRaster Data\n\nGrids: Represents continuous data across a surface.\n\nSatellite images, digital elevation models (DEMs)\n\n\n\n\n\nPixels: Smallest units in a raster dataset, each with a specific value.\nValues representing color, temperature,"
+    "text": "Spatial Data Types\nSpatial Data can be broadly categorized into 2 types - Vector and Raster.\n\n\n\n\n\n\n\n\nType\nSub Types\nExamples\n\n\n\n\nVector Data\nPoints: Represents features with a single coordinate pair (x, y).\nLocations of ATMs, tree\n\n\n\nLines: Represents linear features as ordered sequences of points.\nRoads, rivers, utility lines\n\n\n\nPolygons: Represents areas enclosed by closed loops of lines.\nBuildings, lakes, zones\n\n\nRaster Data\nGrids: Represents continuous data across a surface.\nSatellite images, digital elevation models (DEMs)\n\n\n\nPixels: Smallest units in a raster dataset, each with a specific value.\nValues representing color, temperature,"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#other-data-associated-with-vector-and-raster",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#other-data-associated-with-vector-and-raster",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Other data associated with Vector and Raster",
-    "text": "Other data associated with Vector and Raster\n\n\nAttribute data: Additional information describing the characteristics of spatial features.\nFor example in Vector data:\n\n\nSchools: have school name, number of students, education level.\n\nRoads:have road type, traffic volume, maintenance status.\n\nRegions: have population density, average income, and land use type.\n\n\n\nIn Raster Data: Each pixel can have multiple attributes, such as vegetation type or pollution levels."
+    "text": "Other data associated with Vector and Raster\n\nAttribute data: Additional information describing the characteristics of spatial features.\nFor example in Vector data:\n\nSchools: have school name, number of students, education level.\nRoads:have road type, traffic volume, maintenance status.\nRegions: have population density, average income, and land use type.\n\n\nIn Raster Data: Each pixel can have multiple attributes, such as vegetation type or pollution levels."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#what-are-the-components-of-spatial-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#what-are-the-components-of-spatial-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "What are the components of spatial data",
-    "text": "What are the components of spatial data\n\n\nGeometry: Refers to the coordinates that define the shape of an object.\n\n\nCoordinates: These can be in different coordinate systems, such as geographic (latitude) and longitude) or projected systems.\n\nTypes of Geometries: Common types include points, lines, and polygons.\n\nDimension: Geometry can also have dimensional attributes like 2D (x, y), 3D (x, y, z), or even 4D (x, y, z, time).\n\n\n\nTopology: Refers to the spatial relationships between geometric entities.\n\n\nSpatial Relationships\n\n\nAdjacency: How entities are next to each other.\n\nConnectivity: How entities are connected.\n\nContainment: How one entity is contained within another.\n\n\n\nRules and Constraints: Enforces rules such as:\n\nNo overlapping polygons.\nLines meeting at nodes.\nEnsuring polygon boundaries are closed loops."
+    "text": "What are the components of spatial data\n\nGeometry: Refers to the coordinates that define the shape of an object.\n\nCoordinates: These can be in different coordinate systems, such as geographic (latitude) and longitude) or projected systems.\nTypes of Geometries: Common types include points, lines, and polygons.\nDimension: Geometry can also have dimensional attributes like 2D (x, y), 3D (x, y, z), or even 4D (x, y, z, time).\n\nTopology: Refers to the spatial relationships between geometric entities.\n\nSpatial Relationships\n\nAdjacency: How entities are next to each other.\nConnectivity: How entities are connected.\nContainment: How one entity is contained within another.\n\nRules and Constraints: Enforces rules such as:\n\nNo overlapping polygons.\nLines meeting at nodes.\nEnsuring polygon boundaries are closed loops."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#section-1",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#section-1",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "",
-    "text": "Attribute Data: provide detailed information about spatial features.\n\nExample: A point representing a city may have attributes like population, elevation, and city name.\n\nTypes of Attributes: Attribute data is either,\n\n\nNumeric (population size),\n\nCategorical (land use type), or\n\nTemporal (date of a satellite image).\n\n\nAttribute data is often stored in tables and linked to geometry through unique identifiers."
+    "text": "Attribute Data: provide detailed information about spatial features.\n\nExample: A point representing a city may have attributes like population, elevation, and city name.\nTypes of Attributes: Attribute data is either,\n\nNumeric (population size),\nCategorical (land use type), or\nTemporal (date of a satellite image).\n\nAttribute data is often stored in tables and linked to geometry through unique identifiers."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#how-does-the-workflow-of-handling-spatial-data-effectively",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#how-does-the-workflow-of-handling-spatial-data-effectively",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "How does the workflow of handling spatial data effectively",
-    "text": "How does the workflow of handling spatial data effectively\nData Collection: Data can be collected in either\n\nSatellite Imagery: Captured by remote sensing satellites, these images can provide data on land cover, vegetation, weather patterns, and more.\nGPS Surveys: Use Global Positioning System technology to collect precise location data for mapping and navigation purposes.\nTraditional Surveying Methods: Involve measuring angles, distances, and elevations to map out areas accurately, often using tools like theodolites and total stations."
+    "text": "How does the workflow of handling spatial data effectively\nData Collection: Data can be collected in either\n\nSatellite Imagery: Captured by remote sensing satellites, these images can provide data on land cover, vegetation, weather patterns, and more.\nGPS Surveys: Use Global Positioning System technology to collect precise location data for mapping and navigation purposes.\nTraditional Surveying Methods: Involve measuring angles, distances, and elevations to map out areas accurately, often using tools like theodolites and total stations.\n\n\nData Storage:\n\nShapefiles: A popular vector data format that stores geometric locations and associated attribute data.\n\nIt consists of at least three files with extensions .shp (geometry), .shx (shape index), and .dbf (attribute data).\n\nGeoJSON: A format for encoding a variety of geographic data structures using JavaScript Object Notation (JSON).\nGeoTIFF: A raster format that includes spatial metadata embedded within the file, making it suitable for georeferenced raster data like satellite images.\nSpatial Databases: PostgreSQL with PostGIS extensions enables the storage, querying, and manipulation of spatial data within a relational database system, supporting complex spatial operations and large datasets."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#practice-for-spatial-data-in-r",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#practice-for-spatial-data-in-r",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Practice for Spatial Data in R",
-    "text": "Practice for Spatial Data in R\n\n\nSpatial Data: Information about the location and shape of geographic features.\n\nTypes: Vector Data and Raster Data.\n\nShapefile\n\n\nShapefile: A common format for representing vector data.\n\n\n.shp: Contains geometry data.\n\n.shx: Positional index of the geometry data.\n\n.dbf: Stores attributes for each shape.\n\n\n\nAdditional Files:\n\n\n.prj: Describes the projection (plain text).\n\n.sbn and .sbx: Spatial indices of the geometry data.\n\n.shp.xml: Contains spatial metadata in XML format."
+    "text": "Practice for Spatial Data in R\n\nSpatial Data: Information about the location and shape of geographic features.\nTypes: Vector Data and Raster Data.\n\n\nShapefile\n\nShapefile: A common format for representing vector data.\n\n.shp: Contains geometry data.\n.shx: Positional index of the geometry data.\n.dbf: Stores attributes for each shape.\n\nAdditional Files:\n\n.prj: Describes the projection (plain text).\n.sbn and .sbx: Spatial indices of the geometry data.\n.shp.xml: Contains spatial metadata in XML format."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#the-sf-package-for-spatial-vector-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#the-sf-package-for-spatial-vector-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "The sf package for spatial vector data",
-    "text": "The sf package for spatial vector data\n\nThe sf package stores geometric features (termed simple features, hence sf) in a data frame.\nGeographic data is stored in the special geometry column.\nThe sf package is a modern alternative to the traditional sp, rgeos, and rgdal packages.\nSupports a wide range of geometry types: points, lines, polygons, and their ‘multi’ versions.\nUseful for handling geographic vector data.\n\nUnderstanding Shapefiles\n\nShapefiles are a simple non-topological format to store geometric location and attribute information for geographical features.\nThey are commonly used in spatial analyses as a type of map.\nWe can read a shapefile or a sf object with the st_read() function of sf.\nFor example, here we read the Eth_Region_2013.shp shapefile of sf which contains the regions of Ethiopia, with their name, and Region and country code."
+    "text": "The sf package for spatial vector data\n\nThe sf package stores geometric features (termed simple features, hence sf) in a data frame.\nGeographic data is stored in the special geometry column.\nThe sf package is a modern alternative to the traditional sp, rgeos, and rgdal packages.\nSupports a wide range of geometry types: points, lines, polygons, and their ‘multi’ versions.\nUseful for handling geographic vector data.\n\n\nUnderstanding Shapefiles\n\nShapefiles are a simple non-topological format to store geometric location and attribute information for geographical features.\nThey are commonly used in spatial analyses as a type of map.\nWe can read a shapefile or a sf object with the st_read() function of sf.\nFor example, here we read the Eth_Region_2013.shp shapefile of sf which contains the regions of Ethiopia, with their name, and Region and country code."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#reading-a-shapefile-with-sf",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#reading-a-shapefile-with-sf",
-    "title": "",
-    "section": "Reading a Shapefile with sf\n",
-    "text": "Reading a Shapefile with sf\n\n\nCodelibrary(sf)\nethR_shape &lt;- st_read(\"Ethiopia_All/Eth_Region_2013.shp\", \n                      quiet = TRUE)\nclass(ethR_shape)\n\n[1] \"sf\"         \"data.frame\"\n\nCodehead(ethR_shape, 2)\n\nSimple feature collection with 2 features and 6 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 460361.8 ymin: 976360 xmax: 864787.5 ymax: 1602973\nProjected CRS: Adindan / UTM zone 37N\n   REGIONNAME REG_P_CODE REG_Pcode      HRname HRpcode HRparent\n1 Addis Ababa         14      ET14 Addis Ababa    ET14       ET\n2        Afar          2      ET02        Afar    ET02       ET\n                        geometry\n1 MULTIPOLYGON (((475625.4 10...\n2 MULTIPOLYGON (((626409.3 16..."
+    "title": "Spatial data analaysis Training",
+    "section": "Reading a Shapefile with sf",
+    "text": "Reading a Shapefile with sf\n\nlibrary(sf)\n\nLinking to GEOS 3.12.1, GDAL 3.8.4, PROJ 9.3.1; sf_use_s2() is TRUE\n\nethR_shape &lt;- st_read(\"Ethiopia_All/Eth_Region_2013.shp\", \n                      quiet = TRUE)\nclass(ethR_shape)\n\n[1] \"sf\"         \"data.frame\"\n\nhead(ethR_shape, 2)\n\nSimple feature collection with 2 features and 6 fields\nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: 460361.8 ymin: 976360 xmax: 864787.5 ymax: 1602973\nProjected CRS: Adindan / UTM zone 37N\n   REGIONNAME REG_P_CODE REG_Pcode      HRname HRpcode HRparent\n1 Addis Ababa         14      ET14 Addis Ababa    ET14       ET\n2        Afar          2      ET02        Afar    ET02       ET\n                        geometry\n1 MULTIPOLYGON (((475625.4 10...\n2 MULTIPOLYGON (((626409.3 16...\n\n\n\n\nThe sf object ethR_shape is a data.frame containing a collection with\n\n[11 simple features (rows)] {style=“color:#ae01c7;”} and 6 attributes (columns) [plus a list-column with the geometry of each feature] {style=“color:red;”}.\n\nA sf object contains the following objects of class sf, sfc and sfg:\n\nsf (simple feature): each row of the data.frame is a single simple feature consisting of attributes and geometry.\nsfc (simple feature geometry list-column): the geometry column of the data.frame is a list-column of class sfc with the geometry of each simple feature.\nsfg (simple feature geometry): each of the rows of the sfc list-column corresponds to the simple feature geometry (sfg) of a single simple feature.\n\nThe sf package stores geometric features in a data frame.\nGeographic data is stored in the special geometry column.\n\n\n\nUsing dim() and names() functions we can see how many rows and columns it contains, as well as the names of the columns.\n\n\ndim(ethR_shape)\n\n[1] 11  7\n\nnames(ethR_shape)\n\n[1] \"REGIONNAME\" \"REG_P_CODE\" \"REG_Pcode\"  \"HRname\"     \"HRpcode\"   \n[6] \"HRparent\"   \"geometry\"  \n\n\n\nEach row represents a geographic element, in this case, one of the 11 regions of Ethiopia.\nColumns contain information about the region, including the name and administrative code.\nThe last column is the geometry column."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#displaying-the-first-few-geometries",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#displaying-the-first-few-geometries",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Displaying the First Few Geometries",
-    "text": "Displaying the First Few Geometries\n\nCodehead(ethR_shape$geometry)\n\nGeometry set for 6 features \nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -162404.5 ymin: 695805 xmax: 866537.7 ymax: 1602973\nProjected CRS: Adindan / UTM zone 37N\nFirst 5 geometries:\n\n\nEach region is captured as a multipolygon geometry."
+    "text": "Displaying the First Few Geometries\n\nhead(ethR_shape$geometry)\n\nGeometry set for 6 features \nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -162404.5 ymin: 695805 xmax: 866537.7 ymax: 1602973\nProjected CRS: Adindan / UTM zone 37N\nFirst 5 geometries:\n\n\nMULTIPOLYGON (((475625.4 1005122, 477066.7 1003...\n\n\nMULTIPOLYGON (((626409.3 1602131, 631762.1 1600...\n\n\nMULTIPOLYGON (((232286 1502975, 232875.5 150268...\n\n\nMULTIPOLYGON (((197369 992969.9, 194511.6 99040...\n\n\nMULTIPOLYGON (((858131.4 1069094, 857695.8 1068...\n\n\nEach region is captured as a multipolygon geometry."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#plotting-the-shapefile",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#plotting-the-shapefile",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Plotting the Shapefile",
-    "text": "Plotting the Shapefile\n\nCodeeth_reg &lt;- ethR_shape %&gt;%\n  dplyr::select(region_name = REGIONNAME)\nplot(eth_reg, main = \"Region name\")\n\n\n\nThe default behavior of plot with an sf object is to create a map for each column of data that describes the geography."
+    "text": "Plotting the Shapefile\n\neth_reg &lt;- ethR_shape %&gt;%\n  dplyr::select(region_name = REGIONNAME)\nplot(eth_reg, main = \"Region name\")\n\n\n\n\n\n\n\n\n\nThe default behavior of plot with an sf object is to create a map for each column of data that describes the geography."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#plotting-with-ggplot2",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#plotting-with-ggplot2",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Plotting with ggplot2",
-    "text": "Plotting with ggplot2\n\nCodelibrary(ggplot2)\nregion_map &lt;- ggplot(ethR_shape) +geom_sf(aes(fill=REGIONNAME))+\n  scale_fill_discrete(\"Region\") + coord_sf(datum = NA) +\n  theme_bw() + labs(x = NULL, y = NULL) + \n  ggtitle(\"Map of regions in Ethiopia\")\nprint(region_map)\n\n\n\nggplot2 is flexible once you learn the syntax.\nThe plot shows each region filled with different colors."
+    "text": "Plotting with ggplot2\n\nlibrary(ggplot2)\nregion_map &lt;- ggplot(ethR_shape) +geom_sf(aes(fill=REGIONNAME))+\n  scale_fill_discrete(\"Region\") + coord_sf(datum = NA) +\n  theme_bw() + labs(x = NULL, y = NULL) + \n  ggtitle(\"Map of regions in Ethiopia\")\nprint(region_map)\n\n\n\n\n\n\n\n\n\nggplot2 is flexible once you learn the syntax.\nThe plot shows each region filled with different colors."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#adding-labels-to-the-map",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#adding-labels-to-the-map",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Adding Labels to the Map",
-    "text": "Adding Labels to the Map\n\nAdding labels to each region ensures they do not overlap.\n\n\nCodemap_label &lt;- ggplot() + geom_sf(data = ethR_shape) +\n  ggrepel::geom_label_repel(data = ethR_shape,\n    aes(label = REGIONNAME, geometry = geometry),\n    stat = \"sf_coordinates\",min.segment.length = 0) + \n  labs(x = NULL, y = NULL)+ coord_sf(datum = NA) +  theme_bw()\nprint(map_label)\n\n\n\nThe st_geometry() function can be used to retrieve the simple feature geometry list-column (sfc)."
+    "text": "Adding Labels to the Map\n\nAdding labels to each region ensures they do not overlap.\n\n\nmap_label &lt;- ggplot() + geom_sf(data = ethR_shape) +\n  ggrepel::geom_label_repel(data = ethR_shape,\n    aes(label = REGIONNAME, geometry = geometry),\n    stat = \"sf_coordinates\",min.segment.length = 0) + \n  labs(x = NULL, y = NULL)+ coord_sf(datum = NA) +  theme_bw()\nprint(map_label)\n\n\n\n\n\n\n\n\n\nThe st_geometry() function can be used to retrieve the simple feature geometry list-column (sfc).\n\n\n\n# Geometries printed in abbreviated form \nst_geometry(ethR_shape) # View complete geometry \n\nGeometry set for 11 features \nGeometry type: MULTIPOLYGON\nDimension:     XY\nBounding box:  xmin: -162404.5 ymin: 375657.9 xmax: 1491092 ymax: 1641360\nProjected CRS: Adindan / UTM zone 37N\nFirst 5 geometries:\n\n\nMULTIPOLYGON (((475625.4 1005122, 477066.7 1003...\n\n\nMULTIPOLYGON (((626409.3 1602131, 631762.1 1600...\n\n\nMULTIPOLYGON (((232286 1502975, 232875.5 150268...\n\n\nMULTIPOLYGON (((197369 992969.9, 194511.6 99040...\n\n\nMULTIPOLYGON (((858131.4 1069094, 857695.8 1068...\n\nst_geometry(ethR_shape)[[1]]\n\nMULTIPOLYGON (((475625.4 1005122, 477066.7 1003356, 478017.5 1003453, 478585 1003869, 479491.6 1003613, 480739.7 1003156, 482699.6 1003456, 483464.2 1003407, 484258.3 1003998, 485518.6 1004151, 486408.7 1003783, 486715 1003114, 487027.6 1002343, 487139.3 1001449, 487135.5 1000524, 487506.8 999939.2, 488278 998878.8, 488642.2 998134.8, 489136.4 996928.2, 489558.3 995813.2, 489673.7 994490.2, 489485.1 993896.1, 489546.6 993007, 489694 992266.7, 489457.5 991396, 489313.4 990607.8, 488593.1 989770.7, 489127.6 988809.2, 488650.2 987801.8, 488063.6 987504, 487036.5 987710.5, 485652.9 988089.4, 484765.3 988427.7, 484120.5 987943.3, 484700.5 987267, 485495.9 986762.8, 486091.8 986335.4, 486746.3 985733.7, 486497.3 985094, 486071 984272.6, 486530.5 983243.5, 486081.7 982415.1, 485687.7 981584.2, 485564.9 980728.7, 485025.6 981813.9, 484429.6 981901.2, 483835.1 981696.4, 483185.8 981501.7, 482483.3 981483.4, 481636.3 981822.1, 480868.5 981521.2, 480970.9 980800.3, 481242.7 980260.3, 480982.5 979649.7, 480897.7 979026.3, 480636.8 978489.2, 480628.2 977791.6, 480689.6 977226, 479930.4 977000.9, 479386.9 977081.1, 478611.4 976775.1, 477741.1 976360, 477129.9 976613.7, 476539.2 976559.2, 475873 976630.2, 475630.2 977281.4, 475530 978455, 475038.4 979012.8, 473781 978587.6, 473220.8 978546.6, 472963 979138.5, 472017.8 979673.2, 471983.4 980343.9, 472214.2 981191.4, 471759.8 981551.4, 471905.6 982844.6, 471808.8 984002.6, 471031 983860, 470432.8 984280.5, 470010.1 984916.8, 469583.1 985330.3, 469122.3 985898.2, 467944.5 986031.7, 467234.5 986553.3, 466670.3 987336.4, 466343.1 988352.6, 465689.6 988114.8, 464891.6 988264.6, 464927.5 989212.5, 464407.8 990090.7, 463218.9 990476.1, 461894.6 990678.4, 460736.1 991006, 460361.8 991910.9, 461362.8 992126.6, 462037.3 992230, 462559.4 993165.4, 462385.1 994206.5, 461645 995055.6, 461743.7 995916.8, 462637.8 995811.1, 463402.8 995886.9, 463348.5 996628.2, 463424.9 997678.3, 463959.6 998442, 464016.9 999053, 464475.2 999549.4, 465220.7 1000308, 465239 1001359, 465239 1002108, 465428.1 1002850, 466433.4 1003369, 467107.3 1003676, 467774.2 1003821, 468861.9 1004474, 470011 1004248, 471211 1004375, 472621.9 1004779, 473549 1005371, 474200.2 1005620, 474863.1 1005625, 475625.4 1005122)))"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#creating-a-sf-object",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#creating-a-sf-object",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Creating a sf object",
-    "text": "Creating a sf object\n\nWe can use the st_sf() function to create a sf object by providing two elements, namely, a data.frame with the attributes of each feature, and a simple feature geometry list-column sfc containing simple feature geometries sfg.\nIn more detail, we create simple feature geometries sfg and use the st_sfc() function to create a simple feature geometry list-column sfc with them.\nThen, we use st_sf() to put the data.frame with the attributes and the simple feature geometry list-column sfc together.\n\nSimple feature geometries sfg objects can be, for example, of type POINT (single point), MULTIPOINT (set of points) or POLYGON (polygon), and can be created with st_point(), st_multipoint() and st_polygon(), respectively."
+    "text": "Creating a sf object\n\nWe can use the st_sf() function to create a sf object by providing two elements, namely, a data.frame with the attributes of each feature, and a simple feature geometry list-column sfc containing simple feature geometries sfg.\nIn more detail, we create simple feature geometries sfg and use the st_sfc() function to create a simple feature geometry list-column sfc with them.\nThen, we use st_sf() to put the data.frame with the attributes and the simple feature geometry list-column sfc together.\n\nSimple feature geometries sfg objects can be, for example, of type POINT (single point), MULTIPOINT (set of points) or POLYGON (polygon), and can be created with st_point(), st_multipoint() and st_polygon(), respectively.\n\n\nHere, we create a sf object containing two single points, a set of points, and a polygon, with one attribute.\nFirst, we create the simple feature geometry objects (sfg) of type POINT, MULTIPOINT, and POLYGON.\nThen, we use st_sfc() to create a simple feature geometry list-column sfc with the sfg objects.\nFinally, we use st_sf() to put the data.frame with the attribute and the simple feature geometry list-column sfc together.\n\n\n\n# Single point (point as a vector) \np1_sfg &lt;- st_point(c(2, 2)) \np2_sfg &lt;- st_point(c(2.5, 3))  # Set of points \np &lt;- rbind(c(6, 2), c(6.1, 2.6), c(6.8, 2.5), \n           c(6.2, 1.5), c(6.8, 1.8)) \nmp_sfg &lt;- st_multipoint(p)  \n\n\n\n#|ccolumn: true\np1 &lt;- rbind(c(10, 0), c(11, 0), c(13, 2), c(12, 4), \n            c(11, 4), c(10, 0)) \np2 &lt;- rbind(c(11, 1), c(11, 2), c(12, 2), c(11, 1)) \npol_sfg &lt;- st_polygon(list(p1, p2))  # Create sf object \np_sfc &lt;- st_sfc(p1_sfg, p2_sfg, mp_sfg, pol_sfg) \ndf &lt;- data.frame(v1 = c(\"A\", \"B\", \"C\", \"D\"))\n\n# Plot single points, set of points and polygon\np_sf &lt;- st_sf(df, geometry = p_sfc)  \nlibrary(ggplot2) \nggplot(p_sf) + geom_sf(aes(col = v1), size = 3) + \n  theme_bw()"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#st_-functions",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#st_-functions",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "st_*() functions",
-    "text": "st_*() functions\nCommon functions to manipulate sf objects include the following:\n\nst_read() reads a sf object,\nst_write() writes a sf object,\nst_crs() gets or sets a new coordinate reference system (CRS),\nst_transform() transforms data to a new CRS,\nst_intersection() intersects sf objects,\nst_union() combines several sf objects into one,\nst_simplify() simplifies a sf object,\nst_coordinates() retrieves coordinates of a sf object,\nst_as_sf() converts a foreign object to a sf object."
+    "text": "st_*() functions\nCommon functions to manipulate sf objects include the following:\n\nst_read() reads a sf object,\nst_write() writes a sf object,\nst_crs() gets or sets a new coordinate reference system (CRS),\nst_transform() transforms data to a new CRS,\nst_intersection() intersects sf objects,\nst_union() combines several sf objects into one,\nst_simplify() simplifies a sf object,\nst_coordinates() retrieves coordinates of a sf object,\nst_as_sf() converts a foreign object to a sf object.\n\n\n\nWe can delete some of the polygons by taking a subset of the rows of map.\n\n\n# Delete polygon \nmap &lt;- ethR_shape %&gt;%\n  st_filter(ethR_shape[ethR_shape$REG_P_CODE %in% c(\"3\", \"4\"), ])\n\nggplot(map) + geom_sf(aes(fill = HRname))  \n\n\n\n\n\n\n\n\n\n# Combine geometries \nggplot(st_union(map, by_feature=FALSE) %&gt;% st_sf())+geom_sf() \n# Simplify\nggplot(st_simplify(map, dTolerance =10000))+geom_sf()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsf object obtained by deleting some of its polygons (top), combining polygons (middle), and simplifying polygons (bottom)."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#transforming-point-data-to-an-sf-object",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#transforming-point-data-to-an-sf-object",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Transforming Point Data to an sf Object",
-    "text": "Transforming Point Data to an sf Object\n\nThe st_as_sf() function allows us to convert a foreign object to an sf object.\nThis can be specifying in the argument coords the name of the columns that contain the point coordinates.\nExample: Converting a Data Frame to an sf Object\nHere, we use st_as_sf() to turn a data frame containing coordinates long and lat and two variables place and value into an sf object.\nThen, we use st_crs() to set the coordinate reference system given by the EPSG code 4326 to represent longitude and latitude coordinates."
+    "text": "Transforming Point Data to an sf Object\n\nThe st_as_sf() function allows us to convert a foreign object to an sf object.\nThis can be specifying in the argument coords the name of the columns that contain the point coordinates.\nExample: Converting a Data Frame to an sf Object\nHere, we use st_as_sf() to turn a data frame containing coordinates long and lat and two variables place and value into an sf object.\nThen, we use st_crs() to set the coordinate reference system given by the EPSG code 4326 to represent longitude and latitude coordinates.\n\n\n\nlibrary(sf)\nlibrary(mapview)\n\nWarning: package 'mapview' was built under R version 4.4.1\n\nd &lt;- data.frame(\n  place = c(\"Ethiopia\", \"Kenya\", \"Somalia\", \"Sudan\"),\n  long = c(39.9559, 37.9062, 45.0792, 30.2176),\n  lat = c(9.145, -1.286389, 2.046934, 19.6133),\n  value = c(200, 150, 100, 300))\nclass(d)\n\n[1] \"data.frame\"\n\ndsf &lt;- st_as_sf(d, coords = c(\"long\", \"lat\"))\nst_crs(dsf) &lt;- 4326\nclass(dsf)\n\n[1] \"sf\"         \"data.frame\"\n\nmapview(dsf)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#counting-the-number-of-points-within-polygons",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#counting-the-number-of-points-within-polygons",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Counting the Number of Points within Polygons",
-    "text": "Counting the Number of Points within Polygons\nUsing st_intersects()\n\n\nWe can use the st_intersects() function of sf to count the number of points within the polygons of an sf object.\nThe returned object is a list with feature ids intersected in each of the polygons.\nWe can use the lengths() function to calculate the number of points inside each feature.\n\nExample: Counting Points within Polygons\nIn this example, we create a map with divisions (an sf object) and generate random points over the map."
+    "text": "Counting the Number of Points within Polygons\n\nUsing st_intersects()\n\nWe can use the st_intersects() function of sf to count the number of points within the polygons of an sf object.\nThe returned object is a list with feature ids intersected in each of the polygons.\nWe can use the lengths() function to calculate the number of points inside each feature.\n\n\n\nExample: Counting Points within Polygons\nIn this example, we create a map with divisions (an sf object) and generate random points over the map.\n\nWe then count the number of points within each polygon using st_intersects() and visualize the results with ggplot2.\n\nlibrary(sf)\nlibrary(ggplot2)\n# Points over map (simple feature geometry list-column sfc)\npoints &lt;- st_sample(map, size = 100)\n# Map of points within polygons\nggplot() + geom_sf(data = map) + geom_sf(data = points)\n\n\n\n\n\n\n\n# Intersection (first argument map, then points)\ninter &lt;- st_intersects(map, points)\n# Add point count to each polygon\nmap$count &lt;- lengths(inter)\n# Map of number of points within polygons\nggplot(map) + geom_sf(aes(fill = count))"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#identifying-polygons-containing-points",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#identifying-polygons-containing-points",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Identifying Polygons Containing Points",
-    "text": "Identifying Polygons Containing Points\nUsing st_intersects()\n\n\nGiven an sf object with points and an sf object with polygons, we can use the st_intersects() function to obtain the polygon each of the points belongs to.\n\nExample: Identifying Polygons Containing Points\n\nIn this example, we create a map with divisions (an sf object) and generate three random points over the map.\nWe then identify which polygons contain these points and add the polygon names to the points data.\n\n\nCodelibrary(sf)\nlibrary(ggplot2)\n\n# Points over map (sf object)\npoints &lt;- st_sample(map, size = 3) %&gt;% st_as_sf()\ninter &lt;- st_intersects(points, map)# first points, then map\npoints$areaname &lt;- map[unlist(inter), \"HRname\", drop = TRUE] # drop geometry\npoints\n\nSimple feature collection with 3 features and 1 field\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 269607.2 ymin: 618893.7 xmax: 586025.9 ymax: 978585.7\nProjected CRS: Adindan / UTM zone 37N\n                          x areaname\n1 POINT (586025.9 618893.7)   Oromia\n2 POINT (530963.7 978585.7)   Amhara\n3 POINT (269607.2 886652.4)   Oromia\n\nCode# Map\nggplot(map) + geom_sf() + geom_sf(data = points) + \n geom_sf_label(data = map[unlist(inter), ], aes(label = HRname), nudge_y = 0.2)"
+    "text": "Identifying Polygons Containing Points\n\nUsing st_intersects()\n\nGiven an sf object with points and an sf object with polygons, we can use the st_intersects() function to obtain the polygon each of the points belongs to.\n\n\n\nExample: Identifying Polygons Containing Points\n\nIn this example, we create a map with divisions (an sf object) and generate three random points over the map.\nWe then identify which polygons contain these points and add the polygon names to the points data.\n\n\nlibrary(sf)\nlibrary(ggplot2)\n\n# Points over map (sf object)\npoints &lt;- st_sample(map, size = 3) %&gt;% st_as_sf()\ninter &lt;- st_intersects(points, map)# first points, then map\npoints$areaname &lt;- map[unlist(inter), \"HRname\", drop = TRUE] # drop geometry\npoints\n\nSimple feature collection with 3 features and 1 field\nGeometry type: POINT\nDimension:     XY\nBounding box:  xmin: 175658 ymin: 1186496 xmax: 912580.8 ymax: 1260013\nProjected CRS: Adindan / UTM zone 37N\n                         x         areaname\n1   POINT (175658 1260013) Beneshangul Gumu\n2 POINT (912580.8 1223935)           Somali\n3 POINT (567991.9 1186496)           Amhara\n\n# Map\nggplot(map) + geom_sf() + geom_sf(data = points) + \n geom_sf_label(data = map[unlist(inter), ], aes(label = HRname), nudge_y = 0.2)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#joining-map-and-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#joining-map-and-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Joining Map and Data",
-    "text": "Joining Map and Data\nUsing left_join()\n\n\nSometimes, a map and its corresponding data are available separately and we may wish to create an sf object representing the map with the added data that we can manipulate and plot.\nWe can create an sf map with the data attributes by joining the map and the data with the left_join() function of the dplyr package.\n\nExample: Adding Air Pollution Data to a World Map\nFirst, we use the ne_countries() function of rnaturalearth to download the world map with the country polygons of class sf.\n\nCodelibrary(rnaturalearth)\nmap &lt;- ne_countries(returnclass = \"sf\")"
+    "text": "Joining Map and Data\n\nUsing left_join()\n\nSometimes, a map and its corresponding data are available separately and we may wish to create an sf object representing the map with the added data that we can manipulate and plot.\nWe can create an sf map with the data attributes by joining the map and the data with the left_join() function of the dplyr package.\n\n\n\nExample: Adding Air Pollution Data to a World Map\nFirst, we use the ne_countries() function of rnaturalearth to download the world map with the country polygons of class sf.\n\nlibrary(rnaturalearth)\n\nWarning: package 'rnaturalearth' was built under R version 4.4.1\n\nmap &lt;- ne_countries(returnclass = \"sf\")\n\n\n\nThen, we use the wbstats package to download a data frame of air pollution data from the World Bank.\n\nSpecifically, we search the pollution indicators with wb_search(), and use wb_data() to download PM2.5 in the year 2016 by specifying the indicator corresponding to PM2.5, and the start and end dates.\n\n\n\nlibrary(wbstats)\n\nWarning: package 'wbstats' was built under R version 4.4.1\n\nindicators &lt;- wb_search(pattern = \"pollution\")\n#d &lt;- wb_data(indicator = \"EN.ATM.PM25.MC.M3\", start_date = 2016, end_date = 2016)\n\n\n\nNext, we use the left_join() function of dplyr to join the map and the data, specifying the argument by with the variables we wish to join by. Here, we use the ISO3 standard code of the countries rather than the country names, since names can be written differently in the map and the data frame.\n\n\nlibrary(dplyr)\nlibrary(ggplot2)\nlibrary(viridis)\n\nmap1 &lt;- left_join(map, d, by = c(\"iso_a3\" = \"iso3c\"))\nggplot(map1) + geom_sf(aes(fill = EN.ATM.PM25.MC.M3)) +\n  scale_fill_viridis() + labs(fill = \"PM2.5\") + theme_bw()\n\n\n\n\nNote\nWhen we use left_join(), the class of the resulting object is the same as the class of the first argument.\n\nmap1 &lt;- left_join(map, d, by = c(\"iso_a3\" = \"iso3c\"))\nclass(map1)\n# [1] \"sf\" \"data.frame\"\n\nd1 &lt;- left_join(d, map, by = c(\"iso3c\" = \"iso_a3\"))\nclass(d1)\n# [1] \"data.frame\""
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#raster-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#raster-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Raster Data",
-    "text": "Raster Data\n\n\nRaster Data: A spatial data structure that divides the study region into equal-sized rectangles called cells or pixels, storing one or more values for each cell.\n\nUses: Represent spatially continuous phenomena such as elevation, temperature, or air pollution values.\n\nMain Packages:\n\n\nterra: Primary package for working with raster data. Also supports vector data.\n\nraster: Previously used for raster data; terra is faster and has more functionality.\n\nstars: Used for analyzing raster data and spatial data cubes (arrays with spatial dimensions)."
+    "text": "Raster Data\n\nRaster Data: A spatial data structure that divides the study region into equal-sized rectangles called cells or pixels, storing one or more values for each cell.\nUses: Represent spatially continuous phenomena such as elevation, temperature, or air pollution values.\nMain Packages:\n\nterra: Primary package for working with raster data. Also supports vector data.\nraster: Previously used for raster data; terra is faster and has more functionality.\nstars: Used for analyzing raster data and spatial data cubes (arrays with spatial dimensions)."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#geotiff",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#geotiff",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "GeoTIFF",
-    "text": "GeoTIFF\n\n\nGeoTIFF: A common format for raster data, with the extension .tif.\n\nExample: Reading the elev.tif file from the terra package, representing elevation in Luxembourg.\n\n\nCode# Load the terra package \nlibrary(terra)\npathraster &lt;- system.file(\"ex/elev.tif\", package = \"terra\")\nr &lt;- terra::rast(pathraster)\nprint(r)\n\nclass       : SpatRaster \ndimensions  : 90, 95, 1  (nrow, ncol, nlyr)\nresolution  : 0.008333333, 0.008333333  (x, y)\nextent      : 5.741667, 6.533333, 49.44167, 50.19167  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (EPSG:4326) \nsource      : elev.tif \nname        : elevation \nmin value   :       141 \nmax value   :       547"
+    "text": "GeoTIFF\n\nGeoTIFF: A common format for raster data, with the extension .tif.\nExample: Reading the elev.tif file from the terra package, representing elevation in Luxembourg.\n\n\n# Load the terra package \nlibrary(terra)\n\nWarning: package 'terra' was built under R version 4.4.1\n\n\nterra 1.7.78\n\npathraster &lt;- system.file(\"ex/elev.tif\", package = \"terra\")\nr &lt;- terra::rast(pathraster)\nprint(r)\n\nclass       : SpatRaster \ndimensions  : 90, 95, 1  (nrow, ncol, nlyr)\nresolution  : 0.008333333, 0.008333333  (x, y)\nextent      : 5.741667, 6.533333, 49.44167, 50.19167  (xmin, xmax, ymin, ymax)\ncoord. ref. : lon/lat WGS 84 (EPSG:4326) \nsource      : elev.tif \nname        : elevation \nmin value   :       141 \nmax value   :       547 \n\n\n\n\n# Plot the raster data\nplot(r)\n\n\n\n\n\n\n\n\n\n\nEPSG Codes and CRS Transformation\n\nEPSG Codes\n\nMost common CRSs can be specified by providing their EPSG (European Petroleum Survey Group) codes or their Proj4 strings.\n\nDetails of a given projection can be inspected using the st_crs() function of the sf package.\n\nExample: EPSG Code 4326\nEPSG code 4326 refers to the WGS84 longitude/latitude projection.\n\n\nst_crs(\"EPSG:4326\")$Name\n\n[1] \"WGS 84\"\n\nst_crs(\"EPSG:4326\")$proj4string\n\n[1] \"+proj=longlat +datum=WGS84 +no_defs\"\n\nst_crs(\"EPSG:4326\")$epsg\n\n[1] 4326"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#transforming-crs-with-sf-and-terra",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#transforming-crs-with-sf-and-terra",
-    "title": "",
-    "section": "Transforming CRS with sf and terra\n",
-    "text": "Transforming CRS with sf and terra\n\n\nFunctions sf::st_crs() and terra::crs() allow us to get the CRS of spatial data.\nThese functions also allow us to set a CRS to spatial data by using st_crs(x) &lt;- value if x is a sf object, and crs(r) &lt;- value if r is a raster.\n\nImportant Note\n\nSetting a CRS does not transform the data; it just changes the CRS label.\nWe may want to set a CRS to data that does not come with CRS, and the CRS should be what it is, not what we would like it to be.\nWe use sf::st_transform() and terra::project() to transform the sf or raster data, respectively, to a new CRS."
+    "title": "Spatial data analaysis Training",
+    "section": "Transforming CRS with sf and terra",
+    "text": "Transforming CRS with sf and terra\n\nFunctions sf::st_crs() and terra::crs() allow us to get the CRS of spatial data.\nThese functions also allow us to set a CRS to spatial data by using st_crs(x) &lt;- value if x is a sf object, and crs(r) &lt;- value if r is a raster.\n\n\nImportant Note\n\nSetting a CRS does not transform the data; it just changes the CRS label.\nWe may want to set a CRS to data that does not come with CRS, and the CRS should be what it is, not what we would like it to be.\nWe use sf::st_transform() and terra::project() to transform the sf or raster data, respectively, to a new CRS."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#working-with-sf-package",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#working-with-sf-package",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Working with sf Package",
-    "text": "Working with sf Package\nReading and Getting the CRS\n\nCodelibrary(sf)\npathshp &lt;- system.file(\"shape/nc.shp\", package = \"sf\")\nmap &lt;- st_read(pathshp, quiet = TRUE)\n# Get CRS\nst_crs(map)\n\nCoordinate Reference System:\n  User input: NAD27 \n  wkt:\nGEOGCRS[\"NAD27\",\n    DATUM[\"North American Datum 1927\",\n        ELLIPSOID[\"Clarke 1866\",6378206.4,294.978698213898,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"latitude\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"longitude\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    ID[\"EPSG\",4267]]"
+    "text": "Working with sf Package\n\nReading and Getting the CRS\n\nlibrary(sf)\npathshp &lt;- system.file(\"shape/nc.shp\", package = \"sf\")\nmap &lt;- st_read(pathshp, quiet = TRUE)\n# Get CRS\nst_crs(map)\n\nCoordinate Reference System:\n  User input: NAD27 \n  wkt:\nGEOGCRS[\"NAD27\",\n    DATUM[\"North American Datum 1927\",\n        ELLIPSOID[\"Clarke 1866\",6378206.4,294.978698213898,\n            LENGTHUNIT[\"metre\",1]]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"latitude\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"longitude\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    ID[\"EPSG\",4267]]"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#transforming-the-crs",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#transforming-the-crs",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Transforming the CRS",
-    "text": "Transforming the CRS\n\nCode# Transform CRS\nmap2 &lt;- st_transform(map, crs = \"EPSG:4326\")\n\n# Get CRS of transformed data\nst_crs(map2)\n\nCoordinate Reference System:\n  User input: EPSG:4326 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]"
+    "text": "Transforming the CRS\n\n# Transform CRS\nmap2 &lt;- st_transform(map, crs = \"EPSG:4326\")\n\n# Get CRS of transformed data\nst_crs(map2)\n\nCoordinate Reference System:\n  User input: EPSG:4326 \n  wkt:\nGEOGCRS[\"WGS 84\",\n    ENSEMBLE[\"World Geodetic System 1984 ensemble\",\n        MEMBER[\"World Geodetic System 1984 (Transit)\"],\n        MEMBER[\"World Geodetic System 1984 (G730)\"],\n        MEMBER[\"World Geodetic System 1984 (G873)\"],\n        MEMBER[\"World Geodetic System 1984 (G1150)\"],\n        MEMBER[\"World Geodetic System 1984 (G1674)\"],\n        MEMBER[\"World Geodetic System 1984 (G1762)\"],\n        MEMBER[\"World Geodetic System 1984 (G2139)\"],\n        ELLIPSOID[\"WGS 84\",6378137,298.257223563,\n            LENGTHUNIT[\"metre\",1]],\n        ENSEMBLEACCURACY[2.0]],\n    PRIMEM[\"Greenwich\",0,\n        ANGLEUNIT[\"degree\",0.0174532925199433]],\n    CS[ellipsoidal,2],\n        AXIS[\"geodetic latitude (Lat)\",north,\n            ORDER[1],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n        AXIS[\"geodetic longitude (Lon)\",east,\n            ORDER[2],\n            ANGLEUNIT[\"degree\",0.0174532925199433]],\n    USAGE[\n        SCOPE[\"Horizontal component of 3D system.\"],\n        AREA[\"World.\"],\n        BBOX[-90,-180,90,180]],\n    ID[\"EPSG\",4326]]"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#working-with-terra-package",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#working-with-terra-package",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Working with terra Package",
-    "text": "Working with terra Package\nReading and Getting the CRS of a Raster\n\nCodelibrary(terra)\npathraster &lt;- system.file(\"ex/elev.tif\", package = \"terra\")\nr &lt;- rast(pathraster)\n# Get CRS\ncrs(r)\n\n[1] \"GEOGCRS[\\\"WGS 84\\\",\\n    ENSEMBLE[\\\"World Geodetic System 1984 ensemble\\\",\\n        MEMBER[\\\"World Geodetic System 1984 (Transit)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G730)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G873)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G1150)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G1674)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G1762)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G2139)\\\"],\\n        ELLIPSOID[\\\"WGS 84\\\",6378137,298.257223563,\\n            LENGTHUNIT[\\\"metre\\\",1]],\\n        ENSEMBLEACCURACY[2.0]],\\n    PRIMEM[\\\"Greenwich\\\",0,\\n        ANGLEUNIT[\\\"degree\\\",0.0174532925199433]],\\n    CS[ellipsoidal,2],\\n        AXIS[\\\"geodetic latitude (Lat)\\\",north,\\n            ORDER[1],\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433]],\\n        AXIS[\\\"geodetic longitude (Lon)\\\",east,\\n            ORDER[2],\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433]],\\n    USAGE[\\n        SCOPE[\\\"Horizontal component of 3D system.\\\"],\\n        AREA[\\\"World.\\\"],\\n        BBOX[-90,-180,90,180]],\\n    ID[\\\"EPSG\\\",4326]]\""
+    "text": "Working with terra Package\n\nReading and Getting the CRS of a Raster\n\nlibrary(terra)\npathraster &lt;- system.file(\"ex/elev.tif\", package = \"terra\")\nr &lt;- rast(pathraster)\n# Get CRS\ncrs(r)\n\n[1] \"GEOGCRS[\\\"WGS 84\\\",\\n    ENSEMBLE[\\\"World Geodetic System 1984 ensemble\\\",\\n        MEMBER[\\\"World Geodetic System 1984 (Transit)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G730)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G873)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G1150)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G1674)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G1762)\\\"],\\n        MEMBER[\\\"World Geodetic System 1984 (G2139)\\\"],\\n        ELLIPSOID[\\\"WGS 84\\\",6378137,298.257223563,\\n            LENGTHUNIT[\\\"metre\\\",1]],\\n        ENSEMBLEACCURACY[2.0]],\\n    PRIMEM[\\\"Greenwich\\\",0,\\n        ANGLEUNIT[\\\"degree\\\",0.0174532925199433]],\\n    CS[ellipsoidal,2],\\n        AXIS[\\\"geodetic latitude (Lat)\\\",north,\\n            ORDER[1],\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433]],\\n        AXIS[\\\"geodetic longitude (Lon)\\\",east,\\n            ORDER[2],\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433]],\\n    USAGE[\\n        SCOPE[\\\"Horizontal component of 3D system.\\\"],\\n        AREA[\\\"World.\\\"],\\n        BBOX[-90,-180,90,180]],\\n    ID[\\\"EPSG\\\",4326]]\""
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#transforming-the-crs-of-a-raster",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#transforming-the-crs-of-a-raster",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Transforming the CRS of a Raster",
-    "text": "Transforming the CRS of a Raster\n\nCode# Transform CRS\nr2 &lt;- terra::project(r, \"EPSG:2169\")\n# Get CRS of transformed data\ncrs(r2)\n\n[1] \"PROJCRS[\\\"LUREF / Luxembourg TM\\\",\\n    BASEGEOGCRS[\\\"LUREF\\\",\\n        DATUM[\\\"Luxembourg Reference Frame\\\",\\n            ELLIPSOID[\\\"International 1924\\\",6378388,297,\\n                LENGTHUNIT[\\\"metre\\\",1]]],\\n        PRIMEM[\\\"Greenwich\\\",0,\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433]],\\n        ID[\\\"EPSG\\\",4181]],\\n    CONVERSION[\\\"Luxembourg TM\\\",\\n        METHOD[\\\"Transverse Mercator\\\",\\n            ID[\\\"EPSG\\\",9807]],\\n        PARAMETER[\\\"Latitude of natural origin\\\",49.8333333333333,\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433],\\n            ID[\\\"EPSG\\\",8801]],\\n        PARAMETER[\\\"Longitude of natural origin\\\",6.16666666666667,\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433],\\n            ID[\\\"EPSG\\\",8802]],\\n        PARAMETER[\\\"Scale factor at natural origin\\\",1,\\n            SCALEUNIT[\\\"unity\\\",1],\\n            ID[\\\"EPSG\\\",8805]],\\n        PARAMETER[\\\"False easting\\\",80000,\\n            LENGTHUNIT[\\\"metre\\\",1],\\n            ID[\\\"EPSG\\\",8806]],\\n        PARAMETER[\\\"False northing\\\",100000,\\n            LENGTHUNIT[\\\"metre\\\",1],\\n            ID[\\\"EPSG\\\",8807]]],\\n    CS[Cartesian,2],\\n        AXIS[\\\"northing (X)\\\",north,\\n            ORDER[1],\\n            LENGTHUNIT[\\\"metre\\\",1]],\\n        AXIS[\\\"easting (Y)\\\",east,\\n            ORDER[2],\\n            LENGTHUNIT[\\\"metre\\\",1]],\\n    USAGE[\\n        SCOPE[\\\"Engineering survey, topographic mapping.\\\"],\\n        AREA[\\\"Luxembourg.\\\"],\\n        BBOX[49.44,5.73,50.19,6.53]],\\n    ID[\\\"EPSG\\\",2169]]\""
+    "text": "Transforming the CRS of a Raster\n\n# Transform CRS\nr2 &lt;- terra::project(r, \"EPSG:2169\")\n# Get CRS of transformed data\ncrs(r2)\n\n[1] \"PROJCRS[\\\"LUREF / Luxembourg TM\\\",\\n    BASEGEOGCRS[\\\"LUREF\\\",\\n        DATUM[\\\"Luxembourg Reference Frame\\\",\\n            ELLIPSOID[\\\"International 1924\\\",6378388,297,\\n                LENGTHUNIT[\\\"metre\\\",1]]],\\n        PRIMEM[\\\"Greenwich\\\",0,\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433]],\\n        ID[\\\"EPSG\\\",4181]],\\n    CONVERSION[\\\"Luxembourg TM\\\",\\n        METHOD[\\\"Transverse Mercator\\\",\\n            ID[\\\"EPSG\\\",9807]],\\n        PARAMETER[\\\"Latitude of natural origin\\\",49.8333333333333,\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433],\\n            ID[\\\"EPSG\\\",8801]],\\n        PARAMETER[\\\"Longitude of natural origin\\\",6.16666666666667,\\n            ANGLEUNIT[\\\"degree\\\",0.0174532925199433],\\n            ID[\\\"EPSG\\\",8802]],\\n        PARAMETER[\\\"Scale factor at natural origin\\\",1,\\n            SCALEUNIT[\\\"unity\\\",1],\\n            ID[\\\"EPSG\\\",8805]],\\n        PARAMETER[\\\"False easting\\\",80000,\\n            LENGTHUNIT[\\\"metre\\\",1],\\n            ID[\\\"EPSG\\\",8806]],\\n        PARAMETER[\\\"False northing\\\",100000,\\n            LENGTHUNIT[\\\"metre\\\",1],\\n            ID[\\\"EPSG\\\",8807]]],\\n    CS[Cartesian,2],\\n        AXIS[\\\"northing (X)\\\",north,\\n            ORDER[1],\\n            LENGTHUNIT[\\\"metre\\\",1]],\\n        AXIS[\\\"easting (Y)\\\",east,\\n            ORDER[2],\\n            LENGTHUNIT[\\\"metre\\\",1]],\\n    USAGE[\\n        SCOPE[\\\"Engineering survey, topographic mapping.\\\"],\\n        AREA[\\\"Luxembourg.\\\"],\\n        BBOX[49.44,5.73,50.19,6.53]],\\n    ID[\\\"EPSG\\\",2169]]\""
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#the-terra-package-for-raster-and-vector-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#the-terra-package-for-raster-and-vector-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "The terra Package for Raster and Vector Data",
     "text": "The terra Package for Raster and Vector Data\nThe terra package (Hijmans 2022) provides functions to create, read, manipulate, and write raster and vector data. Raster data represents spatially continuous phenomena through a grid of equally sized cells, while vector data includes points, lines, and polygons with associated attributes. This chapter demonstrates how to handle raster and vector data using terra."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#raster-data-1",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#raster-data-1",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Raster Data",
-    "text": "Raster Data\nCreating and Reading Raster Data\nThe rast() function can create and read raster data. The writeRaster() function allows writing raster data. Here, we read elevation data for Luxembourg from a file provided by terra.\n\nCodelibrary(terra) \npathraster &lt;- system.file(\"ex/elev.tif\", package = \"terra\") \nr &lt;- rast(pathraster)\nplot(r)"
+    "text": "Raster Data\n\nCreating and Reading Raster Data\nThe rast() function can create and read raster data. The writeRaster() function allows writing raster data. Here, we read elevation data for Luxembourg from a file provided by terra.\n\nlibrary(terra) \npathraster &lt;- system.file(\"ex/elev.tif\", package = \"terra\") \nr &lt;- rast(pathraster)\nplot(r)\n\n\n\n\n\n\n\n\n\nWe can also create a SpatRaster object by specifying dimensions and extents.\n\n\nRaster Operations\nSeveral functions provide information about raster size and dimensions.\n\nnrow(r) # number of rows\n\n[1] 90\n\nncol(r) # number of columns\n\n[1] 95\n\ndim(r) # dimensions\n\n[1] 90 95  1\n\nncell(r) # number of cells\n\n[1] 8550\n\n\nThe values() function sets and accesses raster values.\n\nvalues(r) &lt;- 1:ncell(r)\n\nCreating multilayer rasters and subsetting layers is straightforward.\n\nr2 &lt;- r * r\ns &lt;- c(r, r2)\nplot(s[[2]]) # layer 2\n\n\n\n\n\n\n\n\n\nGeneric operations on rasters include:\n\nplot(min(s))\n\n\n\n\n\n\n\nplot(r + r + 10)\n\n\n\n\n\n\n\nplot(round(r))\n\n\n\n\n\n\n\nplot(r == 1)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#vector-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#vector-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Vector Data",
-    "text": "Vector Data\nThe SpatVector class handles vector data with attributes. The vect() function reads shapefiles, and writeVector() writes SpatVector objects. Here, we obtain a map of Luxembourg’s divisions.\n\nCodepathshp &lt;- system.file(\"ex/lux.shp\", package = \"terra\")\nv &lt;- vect(pathshp)"
+    "text": "Vector Data\nThe SpatVector class handles vector data with attributes. The vect() function reads shapefiles, and writeVector() writes SpatVector objects. Here, we obtain a map of Luxembourg’s divisions.\n\npathshp &lt;- system.file(\"ex/lux.shp\", package = \"terra\")\nv &lt;- vect(pathshp)\n\n\nCreating a SpatVector with point locations and attributes:\n\nlong &lt;- c(-0.118092, 2.349014, -3.703339, 12.496366)\nlat &lt;- c(51.509865, 48.864716, 40.416729, 41.902782)\nlonglat &lt;- cbind(long, lat)\n\ncrspoints &lt;- \"+proj=longlat +datum=WGS84\"\nd &lt;- data.frame(place = c(\"London\", \"Paris\", \"Madrid\", \"Rome\"), value = c(200, 300, 400, 500))\npts &lt;- vect(longlat, atts = d, crs = crspoints)\nplot(pts)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#cropping-masking-and-aggregating-raster-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#cropping-masking-and-aggregating-raster-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Cropping, Masking, and Aggregating Raster Data",
-    "text": "Cropping, Masking, and Aggregating Raster Data\nThe terra package provides functions to crop, mask, and aggregate raster data. Here, we demonstrate these operations with temperature data for Spain.\nDownloading Data\n\nCodelibrary(terra)\nr &lt;- geodata::worldclim_country(country = \"Spain\", var = \"tavg\", res = 10, path = tempdir())\nplot(r)"
+    "text": "Cropping, Masking, and Aggregating Raster Data\nThe terra package provides functions to crop, mask, and aggregate raster data. Here, we demonstrate these operations with temperature data for Spain.\n\nDownloading Data\n\nlibrary(terra)\nr &lt;- geodata::worldclim_country(country = \"Spain\", var = \"tavg\", res = 10, path = tempdir())\nplot(r)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#averaging-temperature-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#averaging-temperature-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Averaging Temperature Data",
-    "text": "Averaging Temperature Data\n\nCoder &lt;- mean(r)\nplot(r)"
+    "text": "Averaging Temperature Data\n\nr &lt;- mean(r)\nplot(r)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#cropping-and-masking-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#cropping-and-masking-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Cropping and Masking Data",
-    "text": "Cropping and Masking Data\n\nCodelibrary(ggplot2)\nlibrary(terra)\nmap &lt;- rnaturalearth::ne_states(\"Spain\", returnclass = \"sf\")\nmap &lt;- map[-which(map$region == \"Canary Is.\"), ] # delete region\nggplot(map) + geom_sf()"
+    "text": "Cropping and Masking Data\n\nlibrary(ggplot2)\nlibrary(terra)\nmap &lt;- rnaturalearth::ne_states(\"Spain\", returnclass = \"sf\")\nmap &lt;- map[-which(map$region == \"Canary Is.\"), ] # delete region\nggplot(map) + geom_sf()"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#aggregating-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#aggregating-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Aggregating Data",
-    "text": "Aggregating Data\n\nCoder &lt;- terra::aggregate(r, fact = 20, fun = \"mean\", na.rm = TRUE)\nplot(r)"
+    "text": "Aggregating Data\n\nr &lt;- terra::aggregate(r, fact = 20, fun = \"mean\", na.rm = TRUE)\nplot(r)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#extracting-raster-values-at-points",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#extracting-raster-values-at-points",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Extracting Raster Values at Points",
-    "text": "Extracting Raster Values at Points\nThe extract() function retrieves raster values at specified points.\nExample\n\nCodelibrary(terra)\nr &lt;- rast(system.file(\"ex/elev.tif\", package = \"terra\"))\nv &lt;- vect(system.file(\"ex/lux.shp\", package = \"terra\"))\n\npoints &lt;- crds(centroids(v))\n\nplot(r)\nplot(v, add = TRUE)\npoints(points)"
+    "text": "Extracting Raster Values at Points\nThe extract() function retrieves raster values at specified points.\n\nExample\n\nlibrary(terra)\nr &lt;- rast(system.file(\"ex/elev.tif\", package = \"terra\"))\nv &lt;- vect(system.file(\"ex/lux.shp\", package = \"terra\"))\n\npoints &lt;- crds(centroids(v))\n\nplot(r)\nplot(v, add = TRUE)\npoints(points)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#extracting-values",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#extracting-values",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Extracting Values",
-    "text": "Extracting Values\n\nCodepoints &lt;- as.data.frame(points)\nvaluesatpoints &lt;- extract(r, points)\ncbind(points, valuesatpoints)\n\n          x        y ID elevation\n1  6.009082 50.07064  1       444\n2  6.127425 49.86614  2       295\n3  5.886502 49.80014  3       382\n4  6.165081 49.92886  4       404\n5  5.914545 49.93892  5       414\n6  6.378449 49.78511  6       320\n7  6.311601 49.54569  7       193\n8  6.346395 49.68742  8       228\n9  5.963503 49.64159  9       313\n10 6.023816 49.52331 10       282\n11 6.167624 49.61815 11       328\n12 6.113598 49.75744 12       221"
+    "text": "Extracting Values\n\npoints &lt;- as.data.frame(points)\nvaluesatpoints &lt;- extract(r, points)\ncbind(points, valuesatpoints)\n\n          x        y ID elevation\n1  6.009082 50.07064  1       444\n2  6.127425 49.86614  2       295\n3  5.886502 49.80014  3       382\n4  6.165081 49.92886  4       404\n5  5.914545 49.93892  5       414\n6  6.378449 49.78511  6       320\n7  6.311601 49.54569  7       193\n8  6.346395 49.68742  8       228\n9  5.963503 49.64159  9       313\n10 6.023816 49.52331 10       282\n11 6.167624 49.61815 11       328\n12 6.113598 49.75744 12       221"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#extracting-and-averaging-raster-values",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#extracting-and-averaging-raster-values",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Extracting and Averaging Raster Values",
-    "text": "Extracting and Averaging Raster Values\nExtracting raster values within polygons and computing area-weighted averages.\nExtracting Values Within Polygons\n\nCode# Extracted raster cells within each polygon\nhead(extract(r, v, na.rm = TRUE))\n\n  ID elevation\n1  1       547\n2  1       485\n3  1       497\n4  1       515\n5  1       515\n6  1       515\n\nCode# Extracted raster cells and percentage of area\n# covered within each polygon\nhead(extract(r, v, na.rm = TRUE, weights = TRUE))\n\n  ID elevation     weight\n1  1        NA 0.04545454\n2  1        NA 0.10909091\n3  1       529 0.24545454\n4  1       542 0.46363635\n5  1       547 0.68181816\n6  1       535 0.11818181"
+    "text": "Extracting and Averaging Raster Values\nExtracting raster values within polygons and computing area-weighted averages.\n\nExtracting Values Within Polygons\n\n# Extracted raster cells within each polygon\nhead(extract(r, v, na.rm = TRUE))\n\n  ID elevation\n1  1       547\n2  1       485\n3  1       497\n4  1       515\n5  1       515\n6  1       515\n\n# Extracted raster cells and percentage of area\n# covered within each polygon\nhead(extract(r, v, na.rm = TRUE, weights = TRUE))\n\n  ID elevation     weight\n1  1        NA 0.04545454\n2  1        NA 0.10909091\n3  1       529 0.24545454\n4  1       542 0.46363635\n5  1       547 0.68181816\n6  1       535 0.11818181"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#averaging-values",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#averaging-values",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Averaging Values",
-    "text": "Averaging Values\n\nCode# Average raster values by polygon\nv$avg &lt;- extract(r, v, mean, na.rm = TRUE)$elevation\n\n# Area-weighted average raster values by polygon (weights = TRUE)\nv$weightedavg &lt;- extract(r, v, mean, na.rm = TRUE, weights = TRUE)$elevation\n\nlibrary(ggplot2)\nlibrary(tidyterra)\n\n# Plot average raster values within polygons\nggplot(data = v) + geom_spatvector(aes(fill = avg)) + scale_fill_terrain_c()\n\n\n\n\n\n\nCode# Plot area-weighted average raster values within polygons\nggplot(data = v) + geom_spatvector(aes(fill = weightedavg)) + scale_fill_terrain_c()"
+    "text": "Averaging Values\n\n# Average raster values by polygon\nv$avg &lt;- extract(r, v, mean, na.rm = TRUE)$elevation\n\n# Area-weighted average raster values by polygon (weights = TRUE)\nv$weightedavg &lt;- extract(r, v, mean, na.rm = TRUE, weights = TRUE)$elevation\n\nlibrary(ggplot2)\nlibrary(tidyterra)\n\nWarning: package 'tidyterra' was built under R version 4.4.1\n\n\n\nAttaching package: 'tidyterra'\n\n\nThe following object is masked from 'package:stats':\n\n    filter\n\n# Plot average raster values within polygons\nggplot(data = v) + geom_spatvector(aes(fill = avg)) + scale_fill_terrain_c()\n\n\n\n\n\n\n\n# Plot area-weighted average raster values within polygons\nggplot(data = v) + geom_spatvector(aes(fill = weightedavg)) + scale_fill_terrain_c()"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#introduction-to-mapping-in-r",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#introduction-to-mapping-in-r",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Introduction to Mapping in R",
-    "text": "Introduction to Mapping in R\nImportance of Maps\n\nMaps are essential tools for visualizing spatial data.\nThey help to reveal patterns and trends that are not immediately apparent in tabular data.\nUseful in various fields such as geography, urban planning, epidemiology, and environmental science.\n\nPackages Covered\n\n\nggplot2: A powerful package for creating static maps based on the grammar of graphics.\n\nleaflet: A package for creating interactive maps using the Leaflet JavaScript library.\n\nmapview: A package for quick and easy interactive map visualization.\n\ntmap: A versatile package that can create both static and interactive maps.\n\nflowmapblue: A package for visualizing mobility flows with interactive maps."
+    "text": "Introduction to Mapping in R\n\nImportance of Maps\n\nMaps are essential tools for visualizing spatial data.\nThey help to reveal patterns and trends that are not immediately apparent in tabular data.\nUseful in various fields such as geography, urban planning, epidemiology, and environmental science.\n\n\n\nPackages Covered\n\nggplot2: A powerful package for creating static maps based on the grammar of graphics.\nleaflet: A package for creating interactive maps using the Leaflet JavaScript library.\nmapview: A package for quick and easy interactive map visualization.\ntmap: A versatile package that can create both static and interactive maps.\nflowmapblue: A package for visualizing mobility flows with interactive maps."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#preparing-areal-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#preparing-areal-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Preparing Areal Data",
-    "text": "Preparing Areal Data\nData Source\n\nThe data used is from a study on sudden infant deaths in North Carolina, USA, for the years 1974 and 1979.\n\nLoading Data\n\nUse the sf package to load shapefile data.\n\n\nCodelibrary(sf)\nnameshp &lt;- system.file(\"shape/nc.shp\", package = \"sf\")\nd &lt;- st_read(nameshp, quiet = TRUE)\nd$vble &lt;- d$SID74\nd$vble2 &lt;- d$SID79"
+    "text": "Preparing Areal Data\n\nData Source\n\nThe data used is from a study on sudden infant deaths in North Carolina, USA, for the years 1974 and 1979.\n\n\n\nLoading Data\n\nUse the sf package to load shapefile data.\n\n\nlibrary(sf)\nnameshp &lt;- system.file(\"shape/nc.shp\", package = \"sf\")\nd &lt;- st_read(nameshp, quiet = TRUE)\nd$vble &lt;- d$SID74\nd$vble2 &lt;- d$SID79"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#static-maps-with-ggplot2",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#static-maps-with-ggplot2",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Static Maps with ggplot2",
-    "text": "Static Maps with ggplot2\nGrammar of Graphics\n\nggplot2 is based on the “grammar of graphics”, which provides a structured way to describe and build graphs.\nYou define aesthetics (like colors and shapes) and layers (like points, lines, and polygons).\n\nCreating a Map\n\nFirst, load the required libraries.\nUse geom_sf() to plot the spatial data.\nCustomize the map with color scales and themes.\n\n\nCodelibrary(ggplot2)\nlibrary(viridis)\nggplot(d) + geom_sf(aes(fill = vble)) +\n  scale_fill_viridis() + theme_bw()"
+    "text": "Static Maps with ggplot2\n\nGrammar of Graphics\n\nggplot2 is based on the “grammar of graphics”, which provides a structured way to describe and build graphs.\nYou define aesthetics (like colors and shapes) and layers (like points, lines, and polygons).\n\n\n\nCreating a Map\n\nFirst, load the required libraries.\nUse geom_sf() to plot the spatial data.\nCustomize the map with color scales and themes.\n\n\nlibrary(ggplot2)\nlibrary(viridis)\n\nLoading required package: viridisLite\n\nggplot(d) + geom_sf(aes(fill = vble)) +\n  scale_fill_viridis() + theme_bw()\n\n\n\n\n\n\n\n\n\n\n\nSaving Plots\n\nSave your plots to a file using ggsave().\nInteractive Maps with leaflet\nCreating a Leaflet Map\n\nLeaflet maps are interactive and require transforming the coordinate reference system (CRS) to EPSG:4326.\n\n\n\nd &lt;- st_transform(d, 4326)\n\n\n\nDefine Color Palette and Create Map\n\nDefine a color palette using colorNumeric().\nCreate the map and add polygons with addPolygons().\nAdd a legend with addLegend().\n\nlibrary(leaflet)\n\nWarning: package 'leaflet' was built under R version 4.4.1\n\npal &lt;- colorNumeric(palette = \"YlOrRd\", domain = d$vble)\nleaflet(d) %&gt;% addTiles() %&gt;%\n  addPolygons(color = \"white\", fillColor = ~ pal(vble),\n              fillOpacity = 0.8) %&gt;%\n  addLegend(pal = pal, values = ~vble, opacity = 0.8)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#quick-maps-with-mapview",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#quick-maps-with-mapview",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Quick Maps with mapview",
-    "text": "Quick Maps with mapview\nCreating a Map\n\nUse mapview() for quick and simple interactive maps.\n\n\nCodelibrary(mapview)\nmapview(d, zcol = \"vble\")\n\n\n\n\n\nCustomizing Maps\n\nCustomize the map by changing the background, color palette, and legend title.\n\n\nCodelibrary(RColorBrewer)\npalette &lt;- colorRampPalette(brewer.pal(9, \"YlOrRd\"))\n\nmapview(d, zcol = \"vble\", map.types = \"CartoDB.DarkMatter\",\n        col.regions = colorRampPalette(brewer.pal(9, \"YlOrRd\"))(), \n        layer.name = \"SDI\")"
+    "text": "Quick Maps with mapview\n\nCreating a Map\n\nUse mapview() for quick and simple interactive maps.\n\n\nlibrary(mapview)\nmapview(d, zcol = \"vble\")\n\n\n\n\n\n\n\nCustomizing Maps\n\nCustomize the map by changing the background, color palette, and legend title.\n\n\nlibrary(RColorBrewer)\npalette &lt;- colorRampPalette(brewer.pal(9, \"YlOrRd\"))\n\nmapview(d, zcol = \"vble\", map.types = \"CartoDB.DarkMatter\",\n        col.regions = colorRampPalette(brewer.pal(9, \"YlOrRd\"))(), \n        layer.name = \"SDI\")"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#side-by-side-and-synchronized-maps",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#side-by-side-and-synchronized-maps",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Side-by-Side and Synchronized Maps",
-    "text": "Side-by-Side and Synchronized Maps\nSide-by-Side Maps\n\nDisplay multiple maps side-by-side for comparison.\n\n\nCodelibrary(leaflet.extras2)\n#m1 | m2"
+    "text": "Side-by-Side and Synchronized Maps\n\nSide-by-Side Maps\n\nDisplay multiple maps side-by-side for comparison.\n\n\nlibrary(leaflet.extras2)\n#m1 | m2\n\n\n\n\nSynchronized Maps\n\nSync multiple maps to pan and zoom together using leafsync.\n\n\nm &lt;- leafsync::sync(m1, m2)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#static-and-interactive-maps-with-tmap",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#static-and-interactive-maps-with-tmap",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Static and Interactive Maps with tmap",
-    "text": "Static and Interactive Maps with tmap\nStatic Map\n\nCreate static maps with tmap using tm_shape() and tm_polygons().\n\n\nCodelibrary(tmap)\ntmap_mode(\"plot\")\ntm_shape(d) + tm_polygons(\"vble\")"
+    "text": "Static and Interactive Maps with tmap\n\nStatic Map\n\nCreate static maps with tmap using tm_shape() and tm_polygons().\n\n\nlibrary(tmap)\n\nWarning: package 'tmap' was built under R version 4.4.1\n\n\nBreaking News: tmap 3.x is retiring. Please test v4, e.g. with\nremotes::install_github('r-tmap/tmap')\n\ntmap_mode(\"plot\")\n\ntmap mode set to plotting\n\ntm_shape(d) + tm_polygons(\"vble\")\n\n\n\n\n\n\n\n\n\n\n\nInteractive Map\n\nSwitch to interactive mode with tmap_mode(\"view\") and create maps.\n\n\ntmap_mode(\"view\")\n\ntmap mode set to interactive viewing\n\ntm_shape(d) + tm_polygons(\"vble\")"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#mapping-point-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#mapping-point-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Mapping Point Data",
-    "text": "Mapping Point Data\nCreating Point Data Map with ggplot2\n\nPlot point data with ggplot2, using geom_sf() to define aesthetics for color and size.\n\n\nCodeggplot(d) + geom_sf(aes(col = vble, size = size)) +\n  scale_color_viridis()"
+    "text": "Mapping Point Data\n\nCreating Point Data Map with ggplot2\n\nPlot point data with ggplot2, using geom_sf() to define aesthetics for color and size.\n\n\nggplot(d) + geom_sf(aes(col = vble, size = size)) +\n  scale_color_viridis()"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#mapping-raster-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#mapping-raster-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Mapping Raster Data",
-    "text": "Mapping Raster Data\nCreating Raster Data Map with ggplot2\n\nPlot raster data by converting it to a data frame and using geom_raster().\n\n\nCodeggplot(d) + geom_sf() +\n  geom_raster(data = as.data.frame(r, xy = TRUE),\n    aes(x = x, y = y, fill = elevation))"
+    "text": "Mapping Raster Data\n\nCreating Raster Data Map with ggplot2\n\nPlot raster data by converting it to a data frame and using geom_raster().\n\n\nggplot(d) + geom_sf() +\n  geom_raster(data = as.data.frame(r, xy = TRUE),\n    aes(x = x, y = y, fill = elevation))"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#mapping-mobility-flows-with-flowmapblue",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#mapping-mobility-flows-with-flowmapblue",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Mapping Mobility Flows with flowmapblue",
-    "text": "Mapping Mobility Flows with flowmapblue\nCreating Interactive Flow Map\n\nCreate interactive flow maps with flowmapblue.\nDefine locations and flows data frames.\nGenerate the map with clustering, dark mode, and animation options.\n\n\nCodelibrary(flowmapblue)\nlocations &lt;- data.frame(\n  id = c(1, 2, 3),\n  name = c(\"New York\", \"London\", \"Rio de Janeiro\"),\n  lat = c(40.713543, 51.507425, -22.906241),\n  lon = c(-74.011219, -0.127738, -43.180244))\nflows &lt;- data.frame(\n  origin = c(1, 2, 3, 2, 1, 3),\n  dest = c(2, 1, 1, 3, 3 , 2),\n  count = c(42, 51, 50, 40, 22, 42))\nflowmapblue(locations, flows, mapboxAccessToken,\n            clustering = TRUE, darkMode = TRUE, animation = FALSE)"
+    "text": "Mapping Mobility Flows with flowmapblue\n\nCreating Interactive Flow Map\n\nCreate interactive flow maps with flowmapblue.\nDefine locations and flows data frames.\nGenerate the map with clustering, dark mode, and animation options.\n\n\nlibrary(flowmapblue)\nlocations &lt;- data.frame(\n  id = c(1, 2, 3),\n  name = c(\"New York\", \"London\", \"Rio de Janeiro\"),\n  lat = c(40.713543, 51.507425, -22.906241),\n  lon = c(-74.011219, -0.127738, -43.180244))\nflows &lt;- data.frame(\n  origin = c(1, 2, 3, 2, 1, 3),\n  dest = c(2, 1, 1, 3, 3 , 2),\n  count = c(42, 51, 50, 40, 22, 42))\nflowmapblue(locations, flows, mapboxAccessToken,\n            clustering = TRUE, darkMode = TRUE, animation = FALSE)"
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#r-packages-to-download-open-spatial-data",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#r-packages-to-download-open-spatial-data",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "R Packages to Download Open Spatial Data",
     "text": "R Packages to Download Open Spatial Data\nSpatial data are used in a wide range of disciplines including environment, health, agriculture, economy, and society (Moraga and Baker 2022). Several R packages have been recently developed as clients for various databases that can be used for easy access to spatial data including administrative boundaries, climatic, and OpenStreetMap data. Here, we give short reproducible examples on how to download and visualize spatial data that can be useful in different settings. More extended examples and details about the capabilities of each of the packages can be seen at the packages’ websites and the rspatialdata website which provides a collection of tutorials on R packages to download and visualize spatial data using R."
   },
   {
     "objectID": "static/slides/Spatial-Data-Slide/Spatial.html#administrative-boundaries-of-countries",
     "href": "static/slides/Spatial-Data-Slide/Spatial.html#administrative-boundaries-of-countries",
-    "title": "",
+    "title": "Spatial data analaysis Training",
     "section": "Administrative Boundaries of Countries",
-    "text": "Administrative Boundaries of Countries\nOverview\n\nAdministrative boundaries data can be obtained from multiple packages:\n\n\nrnaturalearth: Global administrative boundaries.\n\ntidycensus and tigris: USA-specific data.\n\nmapSpain: Spain-specific data.\n\ngeobr: Brazil-specific data.\n\ngiscoR: Eurostat GISCO data."
+    "text": "Administrative Boundaries of Countries\n\nOverview\n\nAdministrative boundaries data can be obtained from multiple packages:\n\nrnaturalearth: Global administrative boundaries.\ntidycensus and tigris: USA-specific data.\nmapSpain: Spain-specific data.\ngeobr: Brazil-specific data.\ngiscoR: Eurostat GISCO data."
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#housekeeping",
+    "href": "static/slides/NEAIR/NEAIR.html#housekeeping",
+    "title": "Streamlining with R",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\n\n\nIntro 👋\nWorkshop materials ⬇️\nBreak 🕘\nBy the end of today ✔️\nToday’s plan 📋"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#todays-plan",
+    "href": "static/slides/NEAIR/NEAIR.html#todays-plan",
+    "title": "Streamlining with R",
+    "section": "Today’s plan",
+    "text": "Today’s plan\n\n\n\nWhat is R? How can it ease the burden of repeated reporting?\nBasic functions for manipulating data\nUsing R effectively\nMore data manipulation\nVisualizing data\nA peek at advanced topics"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#what-is-r-1",
+    "href": "static/slides/NEAIR/NEAIR.html#what-is-r-1",
+    "title": "Streamlining with R",
+    "section": "What is R?",
+    "text": "What is R?\n\n\n1 2 3 4 5 6\n\n\n   \n\nR is an open-source (free!) scripting language for working with data"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#the-benefits-of-r",
+    "href": "static/slides/NEAIR/NEAIR.html#the-benefits-of-r",
+    "title": "Streamlining with R",
+    "section": "The benefits of R",
+    "text": "The benefits of R\n\n\n1 2 3 4 5 6\n\n\n \nMy personal Excel nightmare\n\n\nThe magic of R is that it’s reproducible (by someone else or by yourself in six months)\n\n\n\nKeeps data separate from code (data preparation steps)"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#getting-r",
+    "href": "static/slides/NEAIR/NEAIR.html#getting-r",
+    "title": "Streamlining with R",
+    "section": "Getting R",
+    "text": "Getting R\n\n\n1 2 3 4 5 6\n\n\n  \nYou need the R language  \n\nAnd also the software"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#navigating-rstudio",
+    "href": "static/slides/NEAIR/NEAIR.html#navigating-rstudio",
+    "title": "Streamlining with R",
+    "section": "Navigating RStudio",
+    "text": "Navigating RStudio\n\n\n1 2 3 4 5 6\n\n\n\n\n\n\n\n\n\nproject files are here\n\n\n\n\n\nimported data shows up here\n\n\n\n\n\n\ncode can go here"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#navigating-rstudio-1",
+    "href": "static/slides/NEAIR/NEAIR.html#navigating-rstudio-1",
+    "title": "Streamlining with R",
+    "section": "Navigating RStudio",
+    "text": "Navigating RStudio\n\n\n1 2 3 4 5 6\n\n\n\n\n\n\n\n\n\nproject files are here\n\n\n\n\nimported data shows up here\n\n\n\n\ncode can alsogo here"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#using-r",
+    "href": "static/slides/NEAIR/NEAIR.html#using-r",
+    "title": "Streamlining with R",
+    "section": "Using R",
+    "text": "Using R\n\n\n1 2 3 4 5 6\n\n\n\n\n  You use R via packages\n\n …which contain functions\n\n …which are just verbs"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#todays-data",
+    "href": "static/slides/NEAIR/NEAIR.html#todays-data",
+    "title": "Streamlining with R",
+    "section": "Today’s data",
+    "text": "Today’s data\n\n\n1 2 3 4 5 6\n\n\n\nfaculty\n\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\n\n\n\n\n2021-22\n1005\nLecturer\nChemistry\n\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n\n2021-22\n1079\nLecturer\nMusic\n\n\n\n2021-22\n1086\nAssistant Professor\nMusic\n\n\n\n2021-22\n1095\nAdjunct Instructor\nSociology"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#todays-data-1",
+    "href": "static/slides/NEAIR/NEAIR.html#todays-data-1",
+    "title": "Streamlining with R",
+    "section": "Today’s data",
+    "text": "Today’s data\n\n\n1 2 3 4 5 6\n\n\n\ncourses\n\n\n\n\n\n\n\n\nsemester\ncourse_id\nfaculty_id\ndept\nenrollment\nlevel\n\n\n\n\n20212202\n10605\n1772\nPhysics\n7\nUG\n\n\n20212202\n10605\n1772\nPhysics\n32\nGR\n\n\n20212202\n11426\n1820\nPolitical Science\n8\nUG\n\n\n20212202\n12048\n1914\nEnglish\n24\nUG\n\n\n20212202\n13269\n1095\nSociology\n48\nUG\n\n\n20212202\n13517\n1086\nMusic\n17\nUG"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#useful-operators",
+    "href": "static/slides/NEAIR/NEAIR.html#useful-operators",
+    "title": "Streamlining with R",
+    "section": "Useful operators",
+    "text": "Useful operators\n\n\n1 2 3 4 5 6\n\n\n \n\n\n\n&lt;-\n\n\n\n“save as”\n\n\n\nopt + -\n\n\n\n\n\n\n\n%&gt;%\n\n\n\n“and then”\n\n\n\nCmd + shift + m"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#common-functions",
+    "href": "static/slides/NEAIR/NEAIR.html#common-functions",
+    "title": "Streamlining with R",
+    "section": "Common functions",
+    "text": "Common functions\n\n\n1 2 3 4 5 6\n\n\n\n\nfilter keeps or discards rows (aka observations)\nselect keeps or discards columns (aka variables)\narrange sorts data set by certain variable(s)\ncount tallies data set by certain variable(s)\nmutate creates new variables\ngroup_by/summarize aggregates data (pivot tables!)\nstr_* functions work easily with text"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#syntax-of-a-function",
+    "href": "static/slides/NEAIR/NEAIR.html#syntax-of-a-function",
+    "title": "Streamlining with R",
+    "section": "Syntax of a function",
+    "text": "Syntax of a function\n\n\n1 2 3 4 5 6\n\n\n\n\nfunction(data, argument(s))\n\n\nis the same as\n\ndata %&gt;%\n    function(argument(s))"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#filter",
+    "href": "static/slides/NEAIR/NEAIR.html#filter",
+    "title": "Streamlining with R",
+    "section": "Filter",
+    "text": "Filter\n\n\n1 2 3 4 5 6\n\n\n\nfilter keeps or discards rows (aka observations)\nthe == operator tests for equality\n\n\n\n\nfaculty %&gt;% \n  filter(dept1 == \"Sociology\")\n\n\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\n\n\n\n\n2021-22\n1095\nAdjunct Instructor\nSociology\n\n\n\n2021-22\n1118\nAssistant Professor\nSociology\n\n\n\n2021-22\n1161\nAssistant Professor\nSociology\n\n\n\n2021-22\n1191\nProfessor\nSociology\n\n\n\n2021-22\n1216\nAssociate Professor\nSociology\nAmerican Studies\n\n\n2021-22\n1273\nAssistant Professor\nSociology"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#filter-1",
+    "href": "static/slides/NEAIR/NEAIR.html#filter-1",
+    "title": "Streamlining with R",
+    "section": "Filter",
+    "text": "Filter\n\n\n1 2 3 4 5 6\n\n\n\nthe | operator signifies “or”\n\n\n\n\nfaculty %&gt;% \n  filter(dept1 == \"Sociology\" | \n           dept1 == \"Physics\")\n\n\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\n\n\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n\n2021-22\n1095\nAdjunct Instructor\nSociology\n\n\n\n2021-22\n1118\nAssistant Professor\nSociology\n\n\n\n2021-22\n1161\nAssistant Professor\nSociology\n\n\n\n2021-22\n1191\nProfessor\nSociology"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#filter-2",
+    "href": "static/slides/NEAIR/NEAIR.html#filter-2",
+    "title": "Streamlining with R",
+    "section": "Filter",
+    "text": "Filter\n\n\n1 2 3 4 5 6\n\n\n\nthe %in% operator allows for multiple options in a list\n\n\n\n\nfaculty %&gt;% \n  filter(dept1 %in% c(\"Sociology\",\n                      \"Physics\",\n                      \"Music\"))\n\n\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\n\n\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n\n2021-22\n1079\nLecturer\nMusic\n\n\n\n2021-22\n1086\nAssistant Professor\nMusic\n\n\n\n2021-22\n1095\nAdjunct Instructor\nSociology\n\n\n\n2021-22\n1118\nAssistant Professor\nSociology"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#filter-3",
+    "href": "static/slides/NEAIR/NEAIR.html#filter-3",
+    "title": "Streamlining with R",
+    "section": "Filter",
+    "text": "Filter\n\n\n1 2 3 4 5 6\n\n\n\nthe & operator combines conditions\n\n\n\n\nfaculty %&gt;% \n  filter(dept1 %in% c(\"Sociology\",\n                      \"Physics\",\n                      \"Music\") &\n         rank == \"Professor\")\n\n\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\n\n\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n\n2021-22\n1191\nProfessor\nSociology\n\n\n\n2021-22\n1201\nProfessor\nPhysics\n\n\n\n2021-22\n1209\nProfessor\nMusic\n\n\n\n2021-22\n1421\nProfessor\nPhysics\nEngineering"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#select",
+    "href": "static/slides/NEAIR/NEAIR.html#select",
+    "title": "Streamlining with R",
+    "section": "Select",
+    "text": "Select\n\n\n1 2 3 4 5 6\n\n\n\nselect keeps or discards columns (aka variables)\n\n\n\n\nfaculty %&gt;% \n  select(id, dept1, rank)\n\n\n\n\n\n\n\n\n\nid\ndept1\nrank\n\n\n\n\n1005\nChemistry\nLecturer\n\n\n1022\nPhysics\nProfessor\n\n\n1059\nPhysics\nProfessor\n\n\n1079\nMusic\nLecturer\n\n\n1086\nMusic\nAssistant Professor\n\n\n1095\nSociology\nAdjunct Instructor"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#select-1",
+    "href": "static/slides/NEAIR/NEAIR.html#select-1",
+    "title": "Streamlining with R",
+    "section": "Select",
+    "text": "Select\n\n\n1 2 3 4 5 6\n\n\n\ncan drop columns with -column\n\n\n\n\nfaculty %&gt;% \n  select(-dept2)\n\n\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\n\n\n\n\n2021-22\n1005\nLecturer\nChemistry\n\n\n2021-22\n1022\nProfessor\nPhysics\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n2021-22\n1079\nLecturer\nMusic\n\n\n2021-22\n1086\nAssistant Professor\nMusic\n\n\n2021-22\n1095\nAdjunct Instructor\nSociology"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#select-2",
+    "href": "static/slides/NEAIR/NEAIR.html#select-2",
+    "title": "Streamlining with R",
+    "section": "Select",
+    "text": "Select\n\n\n1 2 3 4 5 6\n\n\n\nthe pipe %&gt;% chains multiple functions together\n\n\n\n\nfaculty %&gt;% \n  select(id, dept1, rank) %&gt;% \n  filter(rank == \"Professor\")\n\n\n\n\n\n\n\n\n\nid\ndept1\nrank\n\n\n\n\n1022\nPhysics\nProfessor\n\n\n1059\nPhysics\nProfessor\n\n\n1191\nSociology\nProfessor\n\n\n1201\nPhysics\nProfessor\n\n\n1209\nMusic\nProfessor\n\n\n1407\nEnglish\nProfessor"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#arrange",
+    "href": "static/slides/NEAIR/NEAIR.html#arrange",
+    "title": "Streamlining with R",
+    "section": "Arrange",
+    "text": "Arrange\n\n\n1 2 3 4 5 6\n\n\n\narrange sorts data set by certain variable(s)\nuse desc() to get descending order\n\n\n\n\ncourses %&gt;% \n  arrange(desc(enrollment))\n\n\n\n\n\n\n\n\n\nsemester\ncourse_id\nfaculty_id\ndept\nenrollment\nlevel\n\n\n\n\n20212201\n10511\n1005\nChemistry\n50\nUG\n\n\n20212201\n15934\n1421\nPhysics\n50\nUG\n\n\n20192002\n13850\n1105\nChemistry\n50\nUG\n\n\n20181901\n17773\n1942\nMusic\n50\nUG\n\n\n20212202\n13269\n1095\nSociology\n48\nUG\n\n\n20202101\n16202\n1816\nPolitical Science\n48\nUG"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#arrange-1",
+    "href": "static/slides/NEAIR/NEAIR.html#arrange-1",
+    "title": "Streamlining with R",
+    "section": "Arrange",
+    "text": "Arrange\n\n\n1 2 3 4 5 6\n\n\n\ncan sort by multiple variables\n\n\n\n\ncourses %&gt;% \n  arrange(dept, desc(enrollment))\n\n\n\n\n\n\n\n\n\nsemester\ncourse_id\nfaculty_id\ndept\nenrollment\nlevel\n\n\n\n\n20212201\n10511\n1005\nChemistry\n50\nUG\n\n\n20192002\n13850\n1105\nChemistry\n50\nUG\n\n\n20202102\n13850\n1258\nChemistry\n39\nUG\n\n\n20202102\n16606\n1393\nChemistry\n38\nUG\n\n\n20202101\n16540\n1784\nChemistry\n38\nUG\n\n\n20181901\n10511\n1829\nChemistry\n36\nUG"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#count",
+    "href": "static/slides/NEAIR/NEAIR.html#count",
+    "title": "Streamlining with R",
+    "section": "Count",
+    "text": "Count\n\n\n1 2 3 4 5 6\n\n\n\ncount tallies data set by certain variable(s) (very useful for familiarizing yourself with data)\n\n\n\n\ncourses %&gt;% \n  count(dept)\n\n\n\n\n\n\n\n\n\ndept\nn\n\n\n\n\nChemistry\n16\n\n\nEnglish\n18\n\n\nMusic\n17\n\n\nPhysics\n19\n\n\nPolitical Science\n17\n\n\nSociology\n17"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#count-1",
+    "href": "static/slides/NEAIR/NEAIR.html#count-1",
+    "title": "Streamlining with R",
+    "section": "Count",
+    "text": "Count\n\n\n1 2 3 4 5 6\n\n\n\ncan use sort = TRUE to order results\n\n\n\n\ncourses %&gt;% \n  count(dept, level, sort = TRUE)\n\n\n\n\n\n\n\n\n\ndept\nlevel\nn\n\n\n\n\nChemistry\nUG\n16\n\n\nEnglish\nUG\n16\n\n\nMusic\nUG\n16\n\n\nPhysics\nUG\n16\n\n\nPolitical Science\nUG\n16\n\n\nSociology\nUG\n16\n\n\nPhysics\nGR\n3\n\n\nEnglish\nGR\n2\n\n\nMusic\nGR\n1\n\n\nPolitical Science\nGR\n1\n\n\nSociology\nGR\n1"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#mutate",
+    "href": "static/slides/NEAIR/NEAIR.html#mutate",
+    "title": "Streamlining with R",
+    "section": "Mutate",
+    "text": "Mutate\n\n\n1 2 3 4 5 6\n\n\n\nmutate creates new variables (with a single =)\n\n\n\n\nfaculty %&gt;% \n  mutate(new = \"hello!\")\n\n\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\nnew\n\n\n\n\n2021-22\n1005\nLecturer\nChemistry\n\nhello!\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\nhello!\n\n\n2021-22\n1059\nProfessor\nPhysics\n\nhello!\n\n\n2021-22\n1079\nLecturer\nMusic\n\nhello!\n\n\n2021-22\n1086\nAssistant Professor\nMusic\n\nhello!\n\n\n2021-22\n1095\nAdjunct Instructor\nSociology\n\nhello!"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#mutate-1",
+    "href": "static/slides/NEAIR/NEAIR.html#mutate-1",
+    "title": "Streamlining with R",
+    "section": "Mutate",
+    "text": "Mutate\n\n\n1 2 3 4 5 6\n\n\n\nmuch more useful with a conditional such as ifelse(), which has three arguments:\ncondition, value if true, value if false\n\n\n\n\nfaculty %&gt;% \n  mutate(prof = ifelse(rank == \"Professor\",\n                       1, 0)) %&gt;% \n  select(rank, prof)\n\n\n\n\n\n\n\n\n\nrank\nprof\n\n\n\n\nLecturer\n0\n\n\nProfessor\n1\n\n\nProfessor\n1\n\n\nLecturer\n0\n\n\nAssistant Professor\n0\n\n\nAdjunct Instructor\n0"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#mutate-2",
+    "href": "static/slides/NEAIR/NEAIR.html#mutate-2",
+    "title": "Streamlining with R",
+    "section": "Mutate",
+    "text": "Mutate\n\n\n1 2 3 4 5 6\n\n\n\nthe ! operator means not\nis.na() identifies null values\n\n\n\n\nfaculty %&gt;% \n  mutate(joint = ifelse(!is.na(dept2),\n                        \"joint\", NA)) %&gt;% \n  select(dept1, dept2, joint)\n\n\n\n\n\n\n\n\n\ndept1\ndept2\njoint\n\n\n\n\nChemistry\n\n\n\n\nPhysics\nEngineering\njoint\n\n\nPhysics\n\n\n\n\nMusic\n\n\n\n\nMusic\n\n\n\n\nSociology"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#mutate-3",
+    "href": "static/slides/NEAIR/NEAIR.html#mutate-3",
+    "title": "Streamlining with R",
+    "section": "Mutate",
+    "text": "Mutate\n\n\n1 2 3 4 5 6\n\n\n\nwith multiple conditions, case_when() is much easier!\n\nfaculty %&gt;% \n  mutate(division = case_when(dept1 %in% c(\"Sociology\",\"Political Science\") ~\n                                \"Social Sciences\",\n                              dept1 %in% c(\"Music\",\"English\") ~\n                                \"Humanities\",\n                              dept1 %in% c(\"Chemistry\",\"Physics\") ~\n                                \"Sciences\")) %&gt;% \n  select(dept1, division)\n\n\n\n\n\n\n\n\ndept1\ndivision\n\n\n\n\nChemistry\nSciences\n\n\nPhysics\nSciences\n\n\nPhysics\nSciences\n\n\nMusic\nHumanities\n\n\nMusic\nHumanities\n\n\nSociology\nSocial Sciences"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#group-by-summarize",
+    "href": "static/slides/NEAIR/NEAIR.html#group-by-summarize",
+    "title": "Streamlining with R",
+    "section": "Group by / summarize",
+    "text": "Group by / summarize\n\n\n1 2 3 4 5 6\n\n\n\ngroup_by/summarize aggregates data (pivot tables!)\ngroup_by() identifies the grouping variable(s) and summarize() specifies the aggregation\n\n\n\n\ncourses %&gt;% \n  group_by(dept, semester) %&gt;% \n  summarize(enr = sum(enrollment))\n\n\n\n\n\n\n\n\n\ndept\nsemester\nenr\n\n\n\n\nChemistry\n20181901\n59\n\n\nChemistry\n20181902\n44\n\n\nChemistry\n20192001\n47\n\n\nChemistry\n20192002\n68\n\n\nChemistry\n20202101\n69\n\n\nChemistry\n20202102\n77"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#group-by-summarize-1",
+    "href": "static/slides/NEAIR/NEAIR.html#group-by-summarize-1",
+    "title": "Streamlining with R",
+    "section": "Group by / summarize",
+    "text": "Group by / summarize\n\n\n1 2 3 4 5 6\n\n\n\nuseful arguments within summarize:\nmean, median, sd, min, max, n\n\n\n\n\ncourses %&gt;% \n  group_by(dept, semester) %&gt;% \n  summarize(enr = sum(enrollment),\n            count = n_distinct(course_id))\n\n\n\n\n\n\n\n\n\ndept\nsemester\nenr\ncourses\n\n\n\n\nChemistry\n20181901\n59\n2\n\n\nChemistry\n20181902\n44\n2\n\n\nChemistry\n20192001\n47\n2\n\n\nChemistry\n20192002\n68\n2\n\n\nChemistry\n20202101\n69\n2\n\n\nChemistry\n20202102\n77\n2"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#working-in-rstudio",
+    "href": "static/slides/NEAIR/NEAIR.html#working-in-rstudio",
+    "title": "Streamlining with R",
+    "section": "Working in RStudio",
+    "text": "Working in RStudio\n\n\n1 2 3 4 5 6\n\n\n\n\n\n\n\n\n\nproject files are here\n\n\n\n\nimported data shows up here\n\n\n\n\ncode can alsogo here"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#working-in-rstudio-1",
+    "href": "static/slides/NEAIR/NEAIR.html#working-in-rstudio-1",
+    "title": "Streamlining with R",
+    "section": "Working in RStudio",
+    "text": "Working in RStudio\n\n\n1 2 3 4 5 6\n\n\n\n\nTyping in the console\n\nthink of it like a post-it: useful for quick notes but disposable\nactions are saved but code is not\none chunk of code is run at a time (Return)\n\n\n\nTyping in a code file\n\nscript files have a .R extension\ncode is saved and sections of any size can be run (Cmd + Return)\ndo ~95% of your typing in a code file instead of the console!"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#working-with-packages",
+    "href": "static/slides/NEAIR/NEAIR.html#working-with-packages",
+    "title": "Streamlining with R",
+    "section": "Working with packages",
+    "text": "Working with packages\n\n\n1 2 3 4 5 6\n\n\npackages need to be installed on each computer you use\n\n# only need to do this once (per computer)\ninstall.packages(\"tidyverse\")\n\n\n\npackages need to be loaded/attached with library() at the beginning of every session\n\n# always put the necessary packages at the top of a code file\nlibrary(tidyverse)\n\n\n\n\ncan access help files by typing ??tidyverse or ??mutate in the console"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#organizing-with-projects",
+    "href": "static/slides/NEAIR/NEAIR.html#organizing-with-projects",
+    "title": "Streamlining with R",
+    "section": "Organizing with projects",
+    "text": "Organizing with projects\n\n\n1 2 3 4 5 6\n\n\n\nhighly recommend using projects to stay organized\n\nkeeps code files and data files together, allowing for easier file path navigation and better reproducible work habits\n\n\nFile -&gt; New Project\n\nmore guidance: here and here"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#organizing-with-projects-1",
+    "href": "static/slides/NEAIR/NEAIR.html#organizing-with-projects-1",
+    "title": "Streamlining with R",
+    "section": "Organizing with projects",
+    "text": "Organizing with projects\n\n\n1 2 3 4 5 6\n\n\n\n\n\n\n\n\n\nproject files are here\n\n\n\n\nimported data shows up here\n\n\n\n\ncode can alsogo here"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#accessing-workshop-materials",
+    "href": "static/slides/NEAIR/NEAIR.html#accessing-workshop-materials",
+    "title": "Streamlining with R",
+    "section": "Accessing workshop materials",
+    "text": "Accessing workshop materials\n\n\n1 2 3 4 5 6\n\n\n\n\n\n\n\n\nclick big green Code button and select “Download ZIP”, then open neair.Rproj"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#accessing-data",
+    "href": "static/slides/NEAIR/NEAIR.html#accessing-data",
+    "title": "Streamlining with R",
+    "section": "Accessing data",
+    "text": "Accessing data\n\n\n1 2 3 4 5 6\n\n\nuse read_csv() to import a csv file\n\n# the file path is this simple if you use projects!\n# ?read_csv() in the console will bring up the help file with more options\nfaculty &lt;- read_csv(\"faculty.csv\")\n\n\n\nthe readxl package is helpful for Excel files\n\n# needs to be loaded but not installed as it's part of the tidyverse\nlibrary(readxl)\nfaculty &lt;- read_excel(\"faculty.xlsx\", sheet = 2)\n\n\n\n\nview the data with View(faculty) or by clicking on the data name in the Environment pane"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#stringr-functions",
+    "href": "static/slides/NEAIR/NEAIR.html#stringr-functions",
+    "title": "Streamlining with R",
+    "section": "Stringr functions",
+    "text": "Stringr functions\n\n\n1 2 3 4 5 6\n\n\n\nfunctions from stringr (which all start with str_) are useful for working with text data\n\n\n\nfaculty %&gt;% \n  filter(str_detect(rank, \"Professor\"))\n\n\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\n\n\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n\n2021-22\n1086\nAssistant Professor\nMusic\n\n\n\n2021-22\n1118\nAssistant Professor\nSociology\n\n\n\n2021-22\n1158\nAssistant Professor\nPolitical Science\n\n\n\n2021-22\n1161\nAssistant Professor\nSociology"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#stringr-functions-1",
+    "href": "static/slides/NEAIR/NEAIR.html#stringr-functions-1",
+    "title": "Streamlining with R",
+    "section": "Stringr functions",
+    "text": "Stringr functions\n\n\n1 2 3 4 5 6\n\n\n\ncheat sheet of functions is here\n\n\n\n\ncourses %&gt;% \n  mutate(year = str_c(str_sub(semester, 1, 4), \n                      \"-\",\n                      str_sub(semester, 5, 6))) %&gt;% \n  select(semester, year) %&gt;% \n  unique()\n\n\n\n\n\n\n\n\n\nsemester\nyear\n\n\n\n\n20212202\n2021-22\n\n\n20212201\n2021-22\n\n\n20202102\n2020-21\n\n\n20202101\n2020-21\n\n\n20192002\n2019-20\n\n\n20192001\n2019-20\n\n\n20181902\n2018-19\n\n\n20181901\n2018-19"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#pivoting-data",
+    "href": "static/slides/NEAIR/NEAIR.html#pivoting-data",
+    "title": "Streamlining with R",
+    "section": "Pivoting data",
+    "text": "Pivoting data\n\n\n1 2 3 4 5 6\n\n\nexisting faculty data has one row per faculty, some with multiple departments (sometimes known as wide data)\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\n\n\n\n\n2021-22\n1005\nLecturer\nChemistry\n\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n\n2021-22\n1079\nLecturer\nMusic\n\n\n\n2021-22\n1086\nAssistant Professor\nMusic\n\n\n\n2021-22\n1095\nAdjunct Instructor\nSociology"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#pivoting-data-1",
+    "href": "static/slides/NEAIR/NEAIR.html#pivoting-data-1",
+    "title": "Streamlining with R",
+    "section": "Pivoting data",
+    "text": "Pivoting data\n\n\n1 2 3 4 5 6\n\n\nwhat if you instead want one row per faculty per department? (sometimes known as long data)\n\n\n\n\n\n\n\nyear\nid\nrank\ndept_no\ndept\n\n\n\n\n2021-22\n1005\nLecturer\ndept1\nChemistry\n\n\n2021-22\n1022\nProfessor\ndept1\nPhysics\n\n\n2021-22\n1022\nProfessor\ndept2\nEngineering\n\n\n2021-22\n1059\nProfessor\ndept1\nPhysics\n\n\n2021-22\n1079\nLecturer\ndept1\nMusic\n\n\n2021-22\n1086\nAssistant Professor\ndept1\nMusic"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#pivoting-data-2",
+    "href": "static/slides/NEAIR/NEAIR.html#pivoting-data-2",
+    "title": "Streamlining with R",
+    "section": "Pivoting data",
+    "text": "Pivoting data\n\n\n1 2 3 4 5 6\n\n\n\nthe pivot_longer function lengthens data\n\n\n\n\nfaculty %&gt;% \n  pivot_longer(dept1:dept2,\n               names_to = \"dept_no\",\n               values_to = \"dept\",\n               values_drop_na = TRUE) %&gt;% \n  select(-year, -rank)\n\n\n\n\n\n\n\n\n\nid\ndept_no\ndept\n\n\n\n\n1005\ndept1\nChemistry\n\n\n1022\ndept1\nPhysics\n\n\n1022\ndept2\nEngineering\n\n\n1059\ndept1\nPhysics\n\n\n1079\ndept1\nMusic\n\n\n1086\ndept1\nMusic"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#pivoting-data-3",
+    "href": "static/slides/NEAIR/NEAIR.html#pivoting-data-3",
+    "title": "Streamlining with R",
+    "section": "Pivoting data",
+    "text": "Pivoting data\n\n\n1 2 3 4 5 6\n\n\n\nand pivot_wider does the opposite!\n\n\n\n\n\n\nsemester\ncourse_id\nfaculty_id\ndept\nenrollment\nlevel\n\n\n\n\n20212202\n10605\n1772\nPhysics\n7\nUG\n\n\n20212202\n10605\n1772\nPhysics\n32\nGR\n\n\n\n\n\n\n\n\n\ncourses %&gt;% \n  pivot_wider(names_from = \"level\",\n              values_from = \"enrollment\")\n\n\n\n\n\n\n\nsemester\ncourse_id\nfaculty_id\ndept\nUG\nGR\n\n\n\n\n20212202\n10605\n1772\nPhysics\n7\n32\n\n\n20212202\n11426\n1820\nPolitical Science\n8\n\n\n\n20212202\n12048\n1914\nEnglish\n24\n\n\n\n20212202\n13269\n1095\nSociology\n48"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#joining-data",
+    "href": "static/slides/NEAIR/NEAIR.html#joining-data",
+    "title": "Streamlining with R",
+    "section": "Joining data",
+    "text": "Joining data\n\n\n1 2 3 4 5 6\n\n\n\nR has many useful functions for handling relational data\n\nall you need is at least one key variable that connects data sets\n\nleft_join is most common, but there are more"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#joining-data-1",
+    "href": "static/slides/NEAIR/NEAIR.html#joining-data-1",
+    "title": "Streamlining with R",
+    "section": "Joining data",
+    "text": "Joining data\n\n\n1 2 3 4 5 6\n\n\nwhat’s the average UG enrollment per year, per faculty rank?\n\n\nfaculty\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\n\n\n\n\n2021-22\n1005\nLecturer\nChemistry\n\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n\n2021-22\n1079\nLecturer\nMusic\n\n\n\n\n\n\n\n\ncourses\n\n\n\n\n\n\n\nsemester\ncourse_id\nfaculty_id\ndept\nenrollment\nlevel\n\n\n\n\n20212202\n10605\n1772\nPhysics\n7\nUG\n\n\n20212202\n10605\n1772\nPhysics\n32\nGR\n\n\n20212202\n11426\n1820\nPolitical Science\n8\nUG\n\n\n20212202\n12048\n1914\nEnglish\n24\nUG\n\n\n\n\n\n\n\n\n\nfaculty$id is the same as courses$faculty_id"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#joining-data-2",
+    "href": "static/slides/NEAIR/NEAIR.html#joining-data-2",
+    "title": "Streamlining with R",
+    "section": "Joining data",
+    "text": "Joining data\n\n\n1 2 3 4 5 6\n\n\n\nwhat’s the average UG enrollment per year, per faculty rank?\n\n\n\n\n\n\n\nsemester\ncourse_id\nfaculty_id\ndept\nenrollment\nlevel\n\n\n\n\n20212202\n10605\n1772\nPhysics\n7\nUG\n\n\n20212202\n10605\n1772\nPhysics\n32\nGR\n\n\n20212202\n11426\n1820\nPolitical Science\n8\nUG\n\n\n20212202\n12048\n1914\nEnglish\n24\nUG\n\n\n20212202\n13269\n1095\nSociology\n48\nUG\n\n\n\n\n\n\n\n\nfilter to UG courses only\ncreate our year variable again\nsummarize enrollment by year and faculty_id"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#joining-data-3",
+    "href": "static/slides/NEAIR/NEAIR.html#joining-data-3",
+    "title": "Streamlining with R",
+    "section": "Joining data",
+    "text": "Joining data\n\n\n1 2 3 4 5 6\n\n\n\nuse the &lt;- operator to create a new data frame courses_UG\n\ncourses_UG &lt;- courses %&gt;% \n  filter(level == \"UG\") %&gt;% \n  mutate(year = str_c(str_sub(semester, 1, 4), \n                      \"-\",\n                      str_sub(semester, 5, 6)))"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#joining-data-4",
+    "href": "static/slides/NEAIR/NEAIR.html#joining-data-4",
+    "title": "Streamlining with R",
+    "section": "Joining data",
+    "text": "Joining data\n\n\n1 2 3 4 5 6\n\n\n\nfilter to undergraduate courses only and mutate a new academic year variable\n\ncourses_UG &lt;- courses %&gt;% \n  filter(level == \"UG\") %&gt;% \n  mutate(year = str_c(str_sub(semester, 1, 4), \n                      \"-\",\n                      str_sub(semester, 5, 6)))"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#joining-data-5",
+    "href": "static/slides/NEAIR/NEAIR.html#joining-data-5",
+    "title": "Streamlining with R",
+    "section": "Joining data",
+    "text": "Joining data\n\n\n1 2 3 4 5 6\n\n\n\ngroup_by year and faculty member; summarize enrollment\n\ncourses_UG &lt;- courses %&gt;% \n  filter(level == \"UG\") %&gt;% \n  mutate(year = str_c(str_sub(semester, 1, 4), \n                      \"-\",\n                      str_sub(semester, 5, 6))) %&gt;% \n  group_by(year, faculty_id) %&gt;% \n  summarize(enr = sum(enrollment))\n\n\n\n\n\n\n\n\n\nyear\nfaculty_id\nenr\n\n\n\n\n2018-19\n1059\n35\n\n\n2018-19\n1086\n14\n\n\n2018-19\n1102\n37\n\n\n2018-19\n1203\n25"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#joining-data-6",
+    "href": "static/slides/NEAIR/NEAIR.html#joining-data-6",
+    "title": "Streamlining with R",
+    "section": "Joining data",
+    "text": "Joining data\n\n\n1 2 3 4 5 6\n\n\n\nwhat’s the average UG enrollment per year, per faculty rank?\n\n\n\nfaculty\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\n\n\n\n\n2021-22\n1005\nLecturer\nChemistry\n\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n\n2021-22\n1079\nLecturer\nMusic\n\n\n\n2021-22\n1086\nAssistant Professor\nMusic\n\n\n\n2021-22\n1095\nAdjunct Instructor\nSociology\n\n\n\n\n\n\n\n\n\ncourses_UG\n\n\n\n\n\n\n\nyear\nfaculty_id\nenr\n\n\n\n\n2021-22\n1005\n50\n\n\n2021-22\n1086\n17\n\n\n2021-22\n1095\n48\n\n\n2021-22\n1128\n32\n\n\n2021-22\n1147\n32\n\n\n2021-22\n1191\n7"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#joining-data-7",
+    "href": "static/slides/NEAIR/NEAIR.html#joining-data-7",
+    "title": "Streamlining with R",
+    "section": "Joining data",
+    "text": "Joining data\n\n\n1 2 3 4 5 6\n\n\n\n\nfac_enr &lt;- faculty %&gt;% \n  left_join(courses_UG, by = c(\"id\" = \"faculty_id\",\n                               \"year\" = \"year\"))\n\n\n1\n\n\n2\n\n\n3\n\n\nnew data frame\ndata frame you’re adding data to\ndata frame where the new data is coming from\n\n\n\n\n\n\n\n\nyear\nid\nrank\ndept1\ndept2\nenr\n\n\n\n\n2021-22\n1005\nLecturer\nChemistry\n\n50\n\n\n2021-22\n1022\nProfessor\nPhysics\nEngineering\n\n\n\n2021-22\n1059\nProfessor\nPhysics\n\n\n\n\n2021-22\n1079\nLecturer\nMusic\n\n\n\n\n2021-22\n1086\nAssistant Professor\nMusic\n\n17\n\n\n2021-22\n1095\nAdjunct Instructor\nSociology\n\n48"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#joining-data-8",
+    "href": "static/slides/NEAIR/NEAIR.html#joining-data-8",
+    "title": "Streamlining with R",
+    "section": "Joining data",
+    "text": "Joining data\n\n\n1 2 3 4 5 6\n\n\n\nwhat’s the average UG enrollment per year, per faculty rank?\n\nfac_enr &lt;- faculty %&gt;% \n  left_join(courses_UG, by = c(\"id\" = \"faculty_id\",\n                               \"year\" = \"year\")) %&gt;% \n  group_by(year, rank) %&gt;% \n  summarize(avg_enr = mean(enr, na.rm = TRUE))\n\n\n\n\n\n\n\n\n\nyear\nrank\navg_enr\n\n\n\n\n2021-22\nAdjunct Instructor\n34.66667\n\n\n2021-22\nAssistant Professor\n23.60000\n\n\n2021-22\nAssociate Professor\n17.25000\n\n\n2021-22\nLecturer\n31.83333\n\n\n2021-22\nProfessor\n32.16667\n\n\n2021-22\nVisiting Researcher"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#ggplot2",
+    "href": "static/slides/NEAIR/NEAIR.html#ggplot2",
+    "title": "Streamlining with R",
+    "section": "ggplot2",
+    "text": "ggplot2\n\n\n1 2 3 4 5 6\n\n\n\nggplot2 is the data visualization package that is loaded with the tidyverse\n\nthe grammar of graphics maps data to the aesthetic attributes of geometric points\n\n\nencoding data into visual cues (e.g., length, color, position, size) is how we signify changes and comparisons"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#bar-chart",
+    "href": "static/slides/NEAIR/NEAIR.html#bar-chart",
+    "title": "Streamlining with R",
+    "section": "Bar chart",
+    "text": "Bar chart\n\n\n1 2 3 4 5 6\n\n\n\nfaculty %&gt;%\n  count(rank) %&gt;%\n  ggplot(aes(x = rank, y = n)) +\n  geom_bar(stat = \"identity\")\n\n\nto combine lines into one code chunk, use + instead of %&gt;%"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#bar-chart-1",
+    "href": "static/slides/NEAIR/NEAIR.html#bar-chart-1",
+    "title": "Streamlining with R",
+    "section": "Bar chart",
+    "text": "Bar chart\n\n\n1 2 3 4 5 6\n\n\ncan create a prettier plot pretty easily\n\n\nexpand for full code\nfaculty %&gt;%\n  count(rank) %&gt;%\n  ggplot(aes(x = reorder(rank, -n), y = n)) +\n  geom_bar(stat = \"identity\", fill = \"#cc0000\") +\n  scale_y_continuous(expand = expansion(mult = c(0, 0.1))) +\n  geom_text(aes(label = n), vjust = -0.5) +\n  labs(x = NULL, y = NULL,\n       title = \"Count of faculty by rank, 2018-2021\") +\n  theme_linedraw() +\n  theme(panel.grid.major.x = element_blank(),\n        axis.ticks = element_blank())"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#line-graph",
+    "href": "static/slides/NEAIR/NEAIR.html#line-graph",
+    "title": "Streamlining with R",
+    "section": "Line graph",
+    "text": "Line graph\n\n\n1 2 3 4 5 6\n\n\n\n\nfac_enr %&gt;% \n  filter(!is.na(avg_enr)) %&gt;% \n  ggplot(aes(x = year, y = avg_enr, group = rank, color = rank)) +\n  geom_line()"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#line-graph-1",
+    "href": "static/slides/NEAIR/NEAIR.html#line-graph-1",
+    "title": "Streamlining with R",
+    "section": "Line graph",
+    "text": "Line graph\n\n\n1 2 3 4 5 6\n\n\n\n\nexpand for full code\nfac_enr %&gt;% \n  filter(!is.na(avg_enr)) %&gt;% \n  ggplot(aes(x = year, y = avg_enr, group = rank, color = rank)) +\n  geom_line() +\n  geom_point() +\n  scale_color_brewer(type = \"qual\", palette = \"Dark2\") +\n  labs(x = NULL, y = \"Average enrollment\",\n       title = \"Average undergraduate enrollment per rank over time\") +\n  theme_linedraw() +\n  theme(panel.grid.major.x = element_blank(),\n        axis.ticks = element_blank(),\n        legend.title = element_blank(),\n        legend.background = element_rect(fill = NA),\n        legend.key = element_rect(fill = NA),\n        legend.position = c(0.85, 0.82))"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#ggplot2-resources",
+    "href": "static/slides/NEAIR/NEAIR.html#ggplot2-resources",
+    "title": "Streamlining with R",
+    "section": "ggplot2 resources",
+    "text": "ggplot2 resources\n\n\n1 2 3 4 5 6\n\n\nfrom R for Data Science\n\nData Visualization: a practical introduction\n\ncreating custom themes\n\nthe ggplot2 book\n\nthe R graph gallery"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#putting-it-all-together",
+    "href": "static/slides/NEAIR/NEAIR.html#putting-it-all-together",
+    "title": "Streamlining with R",
+    "section": "Putting it all together",
+    "text": "Putting it all together\n\n\n1 2 3 4 5 6\n\n\n\nwith what we’ve done so far, your .R file could:\n\n\nimport your data files\ndocument all data cleaning and preparation steps and decisions\nproduce a PPT-ready graphic summarizing your results\n\n\n\n\nand that file would make it extremely easy for you or someone else to reproduce this analysis with new data in six months"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#r-markdown",
+    "href": "static/slides/NEAIR/NEAIR.html#r-markdown",
+    "title": "Streamlining with R",
+    "section": "R Markdown",
+    "text": "R Markdown\n\n\n1 2 3 4 5 6\n\n\n\nusing RStudio, create .Rmd documents that combine text, code, and graphics\n\n\nmany output formats: html, pdf, Word, slides\n\n\n\nexceedingly useful for parameterized reporting: can create an R-based PDF report and generate it automatically for, say, each department"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#internal-packages",
+    "href": "static/slides/NEAIR/NEAIR.html#internal-packages",
+    "title": "Streamlining with R",
+    "section": "Internal packages",
+    "text": "Internal packages\n\n\n1 2 3 4 5 6\n\n\n\nyou can also create your own packages!\n\n\nyour package can hold:\n\ncommon data sets that are used across projects\ncustom ggplot2 themes\ncommon functions and calculations (and their definitions!)\n\n\n\n\ncan be stored on a shared drive to facilitate collaboration"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#r-markdown-and-package-resources",
+    "href": "static/slides/NEAIR/NEAIR.html#r-markdown-and-package-resources",
+    "title": "Streamlining with R",
+    "section": "R Markdown and package resources",
+    "text": "R Markdown and package resources\n\n\n1 2 3 4 5 6\n\n\n\nR Markdown\nthe official R Markdown website\nR Markdown: The Definitive Guide\n\ninternal packages\na comprehensive theoretical explainer\na talk I gave earlier this year on the topic"
+  },
+  {
+    "objectID": "static/slides/NEAIR/NEAIR.html#resources",
+    "href": "static/slides/NEAIR/NEAIR.html#resources",
+    "title": "Streamlining with R",
+    "section": "Resources",
+    "text": "Resources\nR for Data Science: the ultimate guide\n\nR for Excel users: a very useful workshop\n\nSTAT 545: an online book on reproducible data analysis in R\n\nthe RStudio Education site\n\nthe Learn tidyverse site\n\n\n\ngithub.com/meghall06/neair"
+  },
+  {
+    "objectID": "pres/index.html",
+    "href": "pres/index.html",
+    "title": "Yebelay Berehan",
+    "section": "",
+    "text": "2024-02-21\n    \n    Spatial data analaysis Training\n       \n            \n                \n                \n                    R\n                \n                \n                \n                    sf\n                \n                \n                \n                    Spatial analysis\n                \n                \n            \n            \n    \n    \n        Details\n    \n    \n    \n    \n  \n\n  \n    \n       2024-01-18\n    \n    Joint Models Workshop\n       \n            \n                \n                \n                    Xaringan\n                \n                \n                \n                    Joint Model\n                \n                \n                \n                    workshop\n                \n                \n            \n            \n    \n    \n        Details\n    \n    \n    \n    \n  \n\n  \n    \n       2023-09-25\n    \n    C4ED Presentation them\n       \n            \n                \n                \n                    R\n                \n                \n                \n                    Xaringan\n                \n                \n                \n                    C4ED theme\n                \n                \n            \n            \n    \n    \n        Details\n    \n    \n    \n    \n  \n\n  \n    \n       2023-08-19\n    \n    Introduction to Rmarkdown\n       \n            \n                \n                \n                    R Markdown\n                \n                \n                \n                    xaringan\n                \n                \n            \n            \n    \n    \n        Details\n    \n    \n    \n    \n  \n\n\n\n\nNo matching items"
   }
 ]
