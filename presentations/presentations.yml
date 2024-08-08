@@ -18,30 +18,17 @@
       href: https://yebelay.github.io/Introduction-to-RMarkdown/RMarkdown-presentation.html#1
       code: https://github.com/Yebelay/Introduction-to-RMarkdown/blob/main/RMarkdown%20presentation.Rmd
       thumbnail: img/Rmarkdown.png
+    - title: Causal inference presentations 
+      href: https://yebelay.rbind.io/static/slides/causal inference from observational data using r (2).pdf
+      thumbnail: img/causal.png
     - title: Spatial presentations 
       href: https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html
       code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/Spatial-Data-Slide/Spatial.qmd
-      thumbnail: img/spa1.png
+      thumbnail: img/spa.png
     - title: Spatial presentations 
       href: https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html
       code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/Spatial-Data-Slide/Spatial.qmd
-      thumbnail: img/spa1.png
-    - title: Spatial presentations 
-      href: https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html
-      code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/Spatial-Data-Slide/Spatial.qmd
-      thumbnail: img/spa1.png
-    - title: Spatial presentations 
-      href: https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html
-      code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/Spatial-Data-Slide/Spatial.qmd
-      thumbnail: img/spa1.png
-    - title: Spatial presentations 
-      href: https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html
-      code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/Spatial-Data-Slide/Spatial.qmd
-      thumbnail: img/spa1.png
-    - title: Spatial presentations 
-      href: https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html
-      code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/Spatial-Data-Slide/Spatial.qmd
-      thumbnail: img/spa1.png
+      thumbnail: img/spa.png
    
                
                        
