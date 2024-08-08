@@ -1,0 +1,734 @@
+---
+title: |
+      <span style = 'font-size: 70%;'> <span style="color:white"> Observational Studies for Impact Evaluation using R </span>
+       
+subtitle: |
+          <span style = 'font-size: 60%;'> Stellenbosch University 
+
+author: |
+   <span style = 'font-size: 80%;'><span style="color:#B00020"> Yebelay Berehan </span> 
+   
+  
+institute: |
+           <span style = 'font-size: 50%;'> October 25, 2021</span>
+
+output:
+  xaringan::moon_reader:
+    css: [default,  xaringan-themer.css, rladies-fonts]
+    nature:
+     # highlightStyle: googlecode
+      highlightLines: true
+      #highlightLanguage: ["r"]
+      ratio: "14:9"
+      highlightSpans: true
+      highlightStyle: github
+      countIncrementalSlides: false
+      titleSlideClass: ["center","middle"]
+  includes:
+    after_body: [logo.png]
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+library(readr)
+library(pander)
+library(ggplot2)
+library(dplyr)
+library(vtree)
+#library(CGPfunctions)
+library(janitor)
+library(plotly)
+```
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(image_url = "Image/logo.png", width = "95px",height = "95px")
+```
+
+```{r xaringan-themer, include=FALSE}
+library(xaringanthemer)
+mono_light(
+  base_color =  "#151B54", ## OHSU Marquam
+  text_color = "#2F539B",
+ # "#0000A5",
+  base_font_size ="22px",
+  code_highlight_color = "#c0e8f5",
+  link_color = "#38BDDE",
+  background_color = "#FFFFFF",
+  header_font_google = google_font("Josefin Sans"),
+  #text_font_google   = google_font("Montserrat", "300", "300i","400i","700"),
+  code_font_family = "'Source Code Pro'",
+  code_font_size = "0.8em",
+  text_slide_number_color = "#FF0266",
+  code_inline_color = "#0000FF",
+  #inverse_background_color = "#272822",
+  #title_slide_background_color = inverse_background_color,
+ # code_font_size = "0.6em", 
+  footnote_color = "blue",
+  #footnote_position_bottom = "0.1em"
+  )
+```
+
+
+
+### Public Health Policies and Interventions
+
+- <span style="color: #3498db">**Public health policies, programs, or interventions**</span> are designed to change desired outcomes.
+  - <span style="color: blue">The ultimate goal is to measure the effect of the intervention.</span>
+- However, **estimating the impact of the intervention** is not an easy task.
+
+- <span style="color: #2ecc71">Ideally, we determine the **actual causal effect of treatment**</span> or **impact of the intervention** by comparing outcomes under counterfactual conditions.
+
+- The **counterfactual** condition refers to <span style="color: #f39c12">what would have occurred to the treated unit</span> in the absence of the intervention.
+  - It represents an alternative scenario for comparison.
+
+- The **comparison group** serves as the <span style="color: #9b59b6">basis for estimating the **counterfactual effect**</span>.
+   - By comparing with this group, we grasp what outcomes might have been without the intervention.
+
+---
+
+- <span style="color: #3498db">Ensuring the control and treatment groups are similar</span> in both observed and unobserved aspects is critical but challenging.
+
+- If control and treatment groups are similar, <span style="color: #e74c3c">differences in outcome after the intervention</span> can be confidently attributed to the intervention.
+
+- <span style="color: #2ecc71">Randomized evaluation of the intervention</span> is the most reliable method for measuring its impact.
+- However, <span style="color: #f39c12">random assignment is not always possible due to ethical and feasibility issues.</span>
+
+- <span style="color: #9b59b6">Quasi-experimental research designs</span> provide alternative ways to measure intervention impact when randomization is not feasible (Hsueh-Sheng Wu, 2020).
+---
+
+- A randomized experiment is an experiment with the following properties:
+
+**1. Positivity:** assignment is probabilistic: $0 < p_i < 1$
+  - No deterministic assignment.
+  - Making treatment or intervention groups as similar as possible within subgroups.
+
+**2. Unconfoundedness:** $P[A_i = 1|Y(1), Y(0)] = P[A_i = 1]$
+  - Treatment assignment does not depend on any potential outcomes (baseline characteristics and outcomes).
+  - Sometimes written as $A_i \perp\!\!\!\perp (Y(1), Y(0))$
+
+---
+Why do Experiments Help?
+
+$$E[Y_i|D_i = 1]- E[Y_i|D_i = 0]$$
+$$= E[Y_i(1)|D_i = 1]- E[Y_i(0)|D_i = 0]$$
+$$= E[Y_i(1)|D_i = 1]- E[Y_i(0)|D_i = 1] + E[Y_i(0)|D_i = 1]- E[Y_i(0)|D_i = 0]$$
+$$= \underbrace{E[Y_i(1)- Y_i(0)|D_i = 1]}_{ATT}+ \underbrace{E[Y_i(0)|D_i = 1]- E[Y_i(0)|D_i = 0]}_{Selection \, bias}$$
+- In an experiment we know that treatment is randomly assigned. Thus we can do
+the following:
+
+$$E[Y_i(1)|D_i = 1] - E[Y_i(0)|D_i = 0]$$
+$$= E[Y_i(1)|D_i = 1]- E[Y_i(0)|D_i = 1]$$
+$$= E[Y_i(1)] - E[Y_i(0)]$$
+- When all goes well, an experiment eliminates selection bias.
+---
+
+### Why we need observational studies to evaluate interventions
+
+- Randomized controlled studies are considered the `gold standard` for causal effects estimation but are at times:
+  
+  1. Unnecessary
+  2. Inappropriate - HIV as a causal agent for AIDS; smoking as a cause of lung cancer
+  3. Impossible - infrequent outcomes and rare events
+  4. Inadequate
+  
+#### What are the main challenges of causal inferencein observational study?
+
+1. `Lack of control`
+   - lack of balance - confounding bias
+   - lack of comparability - selection bias
+2. `Unmeasured confounders`
+3. `Time-varying confounders`
+
+---
+
+### Estimating causal effects from observational data
+
+- Unlike randomized experiments, in observational studies researchers cannot assign study subjects into treatment or control groups using a random mechanism, 
+   - makes it very difficult to draw a causal relationship between the treatment and the observed outcomes. 
+ 
+- Therefore, to control confounding and arrive at a causal estimate, broadly there are two approaches
+  - **Use statistical adjustment:** (rely on the assumption, no remaining unmeasured confounding) 
+  - **Use design-based methods:** (to address unmeasured confounding)
+
+---
+
+- In observational studies treatment is not independent of potential outcomes
+- Individuals receiving treatment A may not be comparable to those receiving treatment B 
+  - sicker, older, poorer, less adherent 
+  - differences in outcomes may be a reflection of these differences
+- Difference of observed average response may be a biased estimate of the causal effect
+
+**Solution:**
+
+1. Identify all confounders $W$
+2. Potential responses $(Y_0; Y_1)$ are independent of treatment exposure among subject with the same $W$ values
+3. Estimate differences within strata
+---
+
+
+### What is confounding?
+
+- Confounding is the bias caused by common causes of the treatment
+and outcome.
+   - arise when exposure and outcome share an uncontrolled common cause. 
+-	Observed confounders refer to confounders for which measures are available in the study data. 
+
+-	Residual confounding is any confounding bias that remains after conditioning on observed confounders, either due to 
+  - variables not observed in the data (unmeasured or unobserved confounding),
+  - inadequate measurement or 
+  - modelling of observed confounders.
+
+- In observational studies, the goal is to avoid confounding inherent in the data.
+- No unmeasured confounding assumes that we've measured all sources of confounding.
+
+---
+
+#### The most common methods to reduce the impact of confounding are:
+  - **Restricting** the study sample to one level of the confounding variable,
+  - **Stratifying** (analysing each gender separately) or 
+  - **Matching** (selecting the sample so that the exposed and unexposed groups have the same gender balance). 
+
+#### Other methods for confounder adjustment include:
+
+- **multivariable regression** (including confounders as covariates) and 
+- **inverse probability** (or propensity score) weighting.
+- **G-methods:** 
+  -	`G-computation` uses a statistical model (eg, a regression model) 
+     - relies on the statistical model being correctly specified. 
+  -	`Marginal structural models ` (commonly using IPWT).
+  -	`G-estimation` - predicts the counterfactual outcome at each time point.
+  
+---
+
+### Causal effects estimation in observational studies
+
+- Analyze the data as if treatment was randomized, conditional on measured covariates.
+
+<span style="color:red"> Condition 1: **exchangeability** </span>
+
+- In marginally randomized experiments, $Y^a|A$
+- In conditionally randomized experiments, $Y^a \perp\!\!\!\perp A|L$
+- In observational studies
+   - Reasons for receiving treatment are likely associated with some outcome predictors
+   - Distribution of outcome predictors vary between treated and untreated groups. 
+   - Conditional exchangeability will not hold if there exits unmeasured independent predictors U of outcome such that probability of receiving treatment A depends on U with strata L
+   - Exchangeability is not verifiable in observational studies
+   
+---
+
+<span style="color:red"> Condition 2: **positivity** </span>
+
+- There is probability greater than zero of being assigned to each of the treatment levels $Pr[A = a] > 0$ or $Pr[A = a|L = l] > 0,\forall l: Pr[L = l] \neq 0$
+
+- In observational studies, positivity is not guaranteed, however, it can be sometimes empirically verified
+
+<span style="color:red"> Condition 3: **Consistency** </span>
+
+- A defined standardized treatment exists with no variation (no multiple versions of the same treatment)
+- In observational data, we have no control over the versions of treatments - use restriction
+
+---
+
+### Causality with Unmeasured Confounding
+
+#### Unmeasured Confounding
+Consider cases of measured confounding
+```{r, out.width='10%', fig.align='center', echo=FALSE}
+knitr::include_graphics("Image/fig9.png")
+```
+
+- In this case we block the backdoor path $T \leftarrow X \rightarrow Y$ by conditioning on X.
+- What happens in the general case where X is unobserved?
+
+-	The above methods rely on an assumption of no unmeasured confounding 
+   - (ie, `conditional exchangeability`), **which is often not plausible in observational study designs**.
+   
+---
+
+-	If there exist **unmeasured confounders** that may be a common cause of both the outcome and the treatment, 
+
+   - impossible to accurately estimate the causal effect using above methods. 
+   - We will use Design methods.
+   - These designs are often called quasi-experimental designs or natural experiments:    
+      - `difference-in-difference (DiD)`, 
+      - `regression discontinuity (RD)`, and 
+      - `instrumental variables (IV)`
+ 
+#### Problem 
+- Subject to certain unprovable assumptions, 
+- By exploiting some assignment mechanism 
+
+---
+
+### Difference-in-Differences (DiD)
+
+- The DiD design is a quasi-experimental alternative to the well understood and straight forward RCT design.
+   - use data from treatment and control groups to obtain an appropriate counterfactual to estimate a causal effect.
+
+- DiD methods exploit variation in time `(before vs. after)` and across groups `(treated vs. untreated)` to recover causal effects of interest.
+
+- <span style="color:#5B1845"> Pre vs. Post comparisons </span>
+  -  `Compares:` same individuals before and after program.
+  -  **Limitation:** Does not account for potential trends in outcomes.
+- <span style="color:#5B1845">Treated vs. Untreated comparisons </span>
+  -  `Compares:` participants to those who have not experienced treatment (at least not yet).
+  -  **Limitation:** Selection - is participation driven by other factors?
+
+---
+
+- DiD combines these two approaches to **avoid their pitfalls**.
+
+- The DiD approach includes a before-after comparison for a treatment and control group. 
+
+- This is a combination of:
+  - a cross-sectional comparison (= compare a sample that was treated to an non-treated control group)
+  - a before-after comparison (= compare treatment group with itself, before and after the treatment)
+
+- The before-after difference in the treatment group gets a correction, by accounting for the before-after difference in the control group, eliminating the trend problem. 
+
+---
+
+#### DiD- Graphically
+.pull-left[
+```{r, echo=FALSE, fig.height=3.5, fig.width=5}
+# initialize plot and add control group
+plot(c(0, 1), c(6, 8), type = "p", ylim = c(5, 12), xlim = c(-0.3, 1.3),
+main = "treatment group", xlab = "Period", ylab = "Y", col = "steelblue", pch = 19, xaxt = "n", yaxt = "n")
+axis(1, at = c(0, 1), labels = c("before", "after"))
+axis(2, at = c(0, 13))
+
+# add treatment group
+points(c(0,  1), c(7, 11), col = "darkred",pch = 19)
+```
+]
+--
+.pull-right[
+```{r, echo=FALSE, fig.height=3.5, fig.width=5}
+# initialize plot and add control group
+plot(c(0, 1), c(6, 8), type = "p", ylim = c(5, 12), xlim = c(-0.3, 1.3),
+main = "treatment group", xlab = "Period", ylab = "Y", col = "steelblue", pch = 19, xaxt = "n", yaxt = "n")
+axis(1, at = c(0, 1), labels = c("before", "after"))
+axis(2, at = c(0, 13))
+
+# add treatment group
+points(c(0,  1), c(7, 11), col = "darkred",pch = 19)
+
+# add line segments
+lines(c(0, 1), c(7, 11), col = "darkred")
+lines(c(0, 1), c(6, 8), col = "steelblue")
+#lines(c(0, 1), c(7, 9), col = "darkred", lty = 2)
+#lines(c(1, 1), c(9, 11), col = "black", lty = 2, lwd = 2)
+```
+]
+--
+.pull-left[
+```{r, echo=FALSE, fig.height=3.5, fig.width=5.5}
+# initialize plot and add control group
+plot(c(0, 1), c(6, 8), type = "p", ylim = c(5, 12), xlim = c(-0.3, 1.3),
+main = "The Differences-in-Differences Estimator", xlab = "Period", ylab = "Y", col = "steelblue", pch = 19, xaxt = "n", yaxt = "n")
+axis(1, at = c(0, 1), labels = c("before", "after"))
+axis(2, at = c(0, 13))
+
+# add treatment group
+points(c(0, 1, 1), c(7, 9, 11), col = "darkred",pch = 19)
+
+# add line segments
+lines(c(0, 1), c(7, 11), col = "darkred")
+lines(c(0, 1), c(6, 8), col = "steelblue")
+lines(c(0, 1), c(7, 9), col = "darkred", lty = 2)
+lines(c(1, 1), c(9, 11), col = "black", lty = 2, lwd = 2)
+```
+]
+--
+.pull-right[
+```{r, echo=FALSE, fig.height=3.5, fig.width=5.5}
+# initialize plot and add control group
+plot(c(0, 1), c(6, 8), type = "p", ylim = c(5, 12), xlim = c(-0.3, 1.3),
+main = "The Differences-in-Differences Estimator", xlab = "Period", ylab = "Y", col = "steelblue", pch = 19, xaxt = "n", yaxt = "n")
+axis(1, at = c(0, 1), labels = c("before", "after"))
+axis(2, at = c(0, 13))
+
+# add treatment group
+points(c(0, 1, 1), c(7, 9, 11), col = "darkred",pch = 19)
+
+# add line segments
+lines(c(0, 1), c(7, 11), col = "darkred")
+lines(c(0, 1), c(6, 8), col = "steelblue")
+lines(c(0, 1), c(7, 9), col = "darkred", lty = 2)
+lines(c(1, 1), c(9, 11), col = "black", lty = 2, lwd = 2)
+# # add annotations
+ text(1, 10, expression(hat(beta)[1]^{did}), cex = 0.8, pos = 4)
+# text(0, 5.5, "mean control", cex = 0.8 , pos = 4)
+# text(0, 6.8, "mean treatment", cex = 0.8 , pos = 4)
+# text(1, 7.9, "mean control", cex = 0.8 , pos = 4)
+# text(1, 11.1, "mean treatment", cex = 0.8 , pos = 4)
+```
+]
+
+```{r, out.width='60%', fig.align='left', echo=FALSE}
+knitr::include_graphics("Image/fig_4.png")
+```
+
+- Data requirements:
+  - Panel or Repeated cross-sectional data
+    - Two groups: control and treatment groups 
+    - Two time periods: baseline, follow-up/end line (Kreif, Grieve et al.2016).
+
+---
+
+#### Derivation
+
+- We assume that the outcome is determined by $Y_{it}= c_i+d_t+\delta D_{it}+\eta_{it}$,
+where i indexes the unit of observation and t indexes time. 
+
+- $c_i$ is a variable(s) do not change by time but do change by unit. 
+
+- $d_t$ is a variable(s) do not change by unit but can change by time.
+
+- $\eta_{it}$ is an unexplained, random error.
+
+---
+
+#### Differencing
+
+1) Treated group after and before: 
+
+$E[Y_{i1}|D_i=1]-E[Y_{i0}|D_i=1]=c_i+d_1+\delta_1-(c_i+d_0+\delta_0)$
+
+2) Control group after and before: 
+
+$E[Y_{i1}|D_i= 0]- E[Y_{i0}|D_i = 0]= c_i+d_1-(c_i+d_0)= d_1-d_0$ 
+	
+- The difference of the differences (1)-(2) is $ATE = d_1-d_0+ \delta -(d_1-d_0) = \delta$.
+
+- we can extend our notation to condition for a vector of covariates $X_{it}$, 
+- So now we have: <span style="color:#B00020"> $$Y_{it}=c_i+d_t+\delta D_{it}+ X_{0it}\beta+\eta_{it}$$ </span>. 
+
+---
+
+#### Estimation
+
+- We often do a before and after comparison, even when we have more time points.
+  - So we only need four means to estimate a DiD design. 
+- A before and after comparison of outcome Y for the treated is: $E[Y_{tpost}] - E[Y_{tpre}]$. 
+
+- We want to compare that difference with the difference in the control: $E[Y_{cpost}] - E[Y_{cpre}]$. 
+- The estimate of interest is: $DiD=E[Y_{tpost}]-E[Y_{tpre}]-{E[Y_{cpost}]-E[Y_{cpre}]}$.
+
+- No regression model here yet, but we could estimate those four means    
+   - parametrically or nonparametrically or semiparametrically. 
+
+- The difference above is the same as: $DiD=E[Y_{tpost}]-E[Y_{cpost}]-{E[Y_{tpre}]-E[Y_{cpre}]}$
+
+---
+
+### Assumptions of DiD
+
+#### 1. Parallel Trend Assumption
+
+- Without treatment, the average change/trend in the outcome variable would be the same in the two groups (Mora 2015).
+
+```{r, out.width='50%', fig.align='center', echo=FALSE}
+knitr::include_graphics("Image/fig_1.png")
+```
+- To obtain an unbiased estimate of the treatment effect one needs to make **a parallel trend assumption**.
+  - i.e. Treatment group would have had the same changes as the control group in absence of the treatment (counterfactual outcome).
+  
+---
+
+#### 2. Stable unit treatment value assumption (SUTVA)
+
+- Subject's potential outcome depends only on its own treatment status, not by treatment status by the other unit.
+
+#### 3. No Spill-Over Effects assumption 
+
+- The members of the comparison group should not be affected by the intervention.
+
+#### 4. Covariate balance test
+
+On average, both `observable` and `unobservable` characteristics should not vary between both groups.
+
+---
+
+### DiD Practicalities in : 2 Period, 2 Group Design
+
+#### Supported Software
+- <span style="color: #3498db">Difference-in-Differences (DiD) analysis can be performed in major statistical software packages</span> like R, SAS, SPSS, Stata, etc.
+
+- Shortcut in User-Written Command
+   - For example, in Stata, a user-written command "diff" can simplify DiD analysis:
+```{}
+diff y, t(treated) p(time)
+```
+
+---
+
+#### Practical Example: Card & Krueger (1994) Study
+- <span style="color: #3498db">Using the dataset from Card & Krueger (1994) study</span>.
+- The study aimed to <span style="color: #e74c3c">estimate the effect on employment</span> in fast food restaurants caused by an increase in the minimum wage (about 19%) in New Jersey in 1992.
+
+- Data obtained from <span style="color: #2ecc71">February 1992 (before) and November 1992 (after)</span>.
+- They used data from <span style="color: #f39c12">similar fast food restaurants in Pennsylvania</span>, which did not experience the minimum wage change.
+
+- The key elements of this study include:
+  - Two-period DiD: <span style="color: #9b59b6">time</span>
+  - A policy change or treatment: <span style="color: #3498db">increase in minimum wage</span>
+  - A treated group: <span style="color: #e74c3c">fast food restaurants in New Jersey</span>
+
+---
+
+Proportion of each fast food chain within each state.
+```{r, message=FALSE, warning=FALSE}
+library(readr)
+practicaldata <- read_csv("data_practice.csv")
+practicaldata %>% select(chain, state) %>%  table() %>%
+  prop.table(margin = 2)  %>%  apply(MARGIN = 2,
+        FUN = scales::percent_format(accuracy = 0.1)) %>%  noquote
+```
+---
+
+- Calculate **pre test means** of certain variables of the first wave of the survey grouped by each state 
+```{r, message=FALSE, warning=FALSE}
+library(tidyr)
+practicaldata %>%
+  filter(observation == "February 1992") %>%  group_by(state) %>%
+  summarise(emptot = mean(emptot, na.rm = TRUE),
+            pct_fte  = mean(pct_fte, na.rm = TRUE),
+            wage_st = mean(wage_st, na.rm = TRUE),
+            hrsopen = mean(hrsopen, na.rm = TRUE)) %>%
+  pivot_longer(cols=-state, names_to = "variable") %>%
+  pivot_wider(names_from = state, values_from = value)
+```
+---
+
+- Calculate **post test means** of certain variables of the first wave of the survey grouped by each state 
+```{r, message=FALSE, warning=FALSE}
+practicaldata %>%
+  filter(observation == "November 1992") %>%
+  group_by(state) %>%
+  summarise(emptot = mean(emptot, na.rm = TRUE),
+            pct_fte  = mean(pct_fte, na.rm = TRUE),
+            wage_st = mean(wage_st, na.rm = TRUE),
+            hrsopen = mean(hrsopen, na.rm = TRUE)) %>%
+  pivot_longer(cols=-state, names_to = "variable") %>%
+  pivot_wider(names_from = state, values_from = value)
+```
+
+---
+
+### Calculating the treatment effect
+
+```{r, message=FALSE, warning=FALSE}
+differences <- practicaldata %>%
+  group_by(observation, state) %>%
+  summarise(emptot = mean(emptot, na.rm = TRUE))
+njfeb <- differences[1,3]# Treatment group (NJ) before treatment
+pafeb <- differences[2,3]# Control group (PA) before treatment
+njnov <- differences[3,3]# Treatment group (NJ) after treatment
+panov <- differences[4,3]# Control group (PA) after treatment
+```
+
+- The Average Treatment Effect (ATT) in this setting can be determined in two ways:
+
+calculate the difference between the difference of November and February within NJ and PA or difference between the difference of NJ and PA within November and February.
+
+```{r, message=FALSE, warning=F}
+round((njnov-njfeb)-(panov-pafeb), 3)
+```
+
+---
+
+- The DiD estimator is also obtained using regression model with an interaction between both dummy variables of time and treatment. 
+
+
+```{r, message=FALSE, warning=F, eval=FALSE}
+did_model <- lm(emptot ~ time + treated + time:treated, data = practicaldata)
+summary(did_model)
+```
+
+```{}
+Call:
+lm(formula = emptot ~ time + treated + time:treated, data = practicaldata)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-15.925  -6.102  -1.102   4.280  64.398 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    23.425      1.168  20.055   <2e-16 ***
+time           -1.865      1.652  -1.129   0.2593    
+treated        -2.823      1.297  -2.177   0.0298 *  
+*time:treated    2.483      1.842   1.348   0.1781    
+----
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1 
+````
+
+- **<span style="color: #9b59b6">The finding was quite the contrary- the $0.80 minimum wage increase in New Jersey led to a 2.483 full-time equivalent (FTE) increase in employment.</span>**
+---
+
+#### How Did Estimate Unbiased?
+
+- How can we trust the DID estimate if there is baseline imbalance or selection bias?
+
+- Is including covariate in DID regression sufficient for effect estimation?
+
+- What if groups are not comparable at baseline? Quasi-experimental studies and concerns for internal validity.
+
+- Creating a counterfactual comparison group similar to the treatment group.
+
+- Utilizing <span style="color: blue;">Propensity Score (PS)</span> matching and then estimating the treatment effect.
+
+Because there are issues like:
+  - <span style="color: green;">Baseline Imbalance:</span> Uneven distribution of covariates between treatment and control groups at the beginning.
+  - <span style="color: green;">Selection Bias:</span> Non-random assignment of subjects to treatment and control groups.
+  - <span style="color: green;">Solution:</span> Robustness checks, sensitivity analysis, and additional controls.
+
+---
+
+- Baseline Comparability: Ideally, treatment and control groups should be comparable at baseline.
+- Internal Validity Concerns: If groups are not comparable, the validity of causal inference can be compromised.
+- Addressing Concerns: <span style="color: red;">Propensity Score matching</span> can be used to create comparable groups.
+
+#### Propensity Score Matching
+
+- <span style="color: blue;">Propensity Score (PS):</span> The probability of receiving treatment given covariates.
+
+- <span style="color: blue;">PS Matching:</span> Matching treated and untreated units based on their PS, creating balanced comparison groups.
+
+- Estimation: After matching, we can estimate treatment effects within each matched group.
+
+---
+
+Estimate Propensity Scores: Use the *MatchIt package* to estimate propensity scores for each observation.
+
+```{r}
+propensity_model <- glm(treated ~ wage_st+pct_fte+hrsopen, data = practicaldata, 
+                        family = "binomial")
+practicaldata$propensity_score <- predict(propensity_model, type = "response")
+summary(practicaldata$propensity_score)
+
+```
+
+---
+
+- Perform Matching: Use the MatchIt package to perform matching based on propensity scores.
+
+```{r, warning=FALSE, message=FALSE}
+library(MatchIt)
+matched_data <- matchit(treated ~ propensity_score, data = practicaldata, 
+                        method = "nearest")
+summary(matched_data)
+```
+
+---
+
+DiD Analysis with Matched Data: Perform the DiD analysis using linear regression models on the matched dataset.
+
+```{r}
+# Extract matched data from the matchit object
+matched_data <- match.data(matched_data)
+model_matched <- lm(emptot ~ time + treated + time:treated, data = matched_data)
+# View the results
+summary(model_matched)
+
+```
+
+---
+
+### Regression Discontinuity Design
+
+- Regression discontinuity design (RDD) is a quasi-experimental method used to estimate the causal effect of an intervention by examining the impact of a threshold on an outcome variable.
+- Many programs determine eligibility through the use of continuous indices or scores:
+
+- Anti-poverty programs $\Rightarrow$ Targets households under a specific income level or poverty line
+- Education  $\Rightarrow$ Scholarship for the best students based on a standardized  test
+- Agriculture $\Rightarrow$ Fertilizer program targeted to small farms less than given number of hectares)
+   - Farmers with $\le 50$ hectares are eligible
+   - Farmers with $> 50$ hectares are ineligible
+
+---
+
+#### Regression Discontinuity Design 
+
+.pull-left[
+ - **At Baseline**
+ 
+```{r, out.width='80%', fig.align='center', echo=FALSE}
+knitr::include_graphics("Image/fig10.png")
+```
+]
+.pull-right[
+- **At Post Intervention**
+```{r, out.width='60%', fig.align='center', echo=FALSE}
+knitr::include_graphics("Image/fig11.png")
+```
+]
+
+- We need a continuous eligibility index with a defined eligibility cutoff point
+
+- The basic idea is to compare the outcomes of individuals who are just above and below a threshold that determines whether they receive an intervention or not. 
+
+- RDD is useful when it is impossible or unethical to randomly assign individuals to treatment and control groups.
+
+---
+
+- RDD can be used to establish causal inference by controlling for confounding variables that might otherwise distort the causal relationship. 
+- In particular, RDD can control for selection bias that can occur when individuals self-select or are selected for an intervention based on their characteristics.
+
+- The key steps in RDD are as follows:
+
+1. **Identify the threshold:** Determine the threshold value of a continuous variable that separates individuals into treatment and control groups.
+2. **Determine the outcome variable:** Specify the outcome variable that reflects the impact of the intervention.
+
+- Then estimate the causal effect using a regression model by comparing the outcomes of individuals just above and below the threshold.
+
+- Test the robustness of the results `by varying the bandwidth of the threshold`, controlling for additional covariates, and checking for violations of assumptions.
+
+---
+
+### Practice in R
+
+
+
+---
+
+### Instrumental Variables
+
+-	An IV is a variable that causes some variation in the exposure and is unrelated to the outcome except through the exposure.
+
+- IVs are often used to identify the causal effect of a particular exposure or treatment on an outcome of interest. 
+
+- If we have an instrument, we can deal with unmeasured confounding in the treatment-outcome relationship.
+
+- It is going to turn out that the same construction will let us deal with non-compliance in experiments.
+
+---
+#### Assumptions for using IV
+
+1. The **IV is correlated with the exposure** or treatment of interest: 
+   - The IV should be able to predict the level of the exposure or treatment. 
+
+2. The IV is **not directly related to the outcome**: 
+   - The IV should only be associated with the outcome through its effect on the exposure or treatment. 
+   
+3. The IV is **independent of the error term**: 
+   - There should be *no correlation between the IV and the error term* in the outcome equation. 
+   - If these assumptions are met, then using IVs can lead to more accurate estimates of the causal effect of interest.
+
+---
+
+#### Assumption
+
+```{r, out.width='50%', fig.align='center', echo=FALSE}
+knitr::include_graphics("Image/fig12.png")
+```
+
+- In Figure, Z is an IV to the effect of X on outcome. 
+- IV relies on three main conditions. 
+- A valid IV, Z, must (i) predict treatment status (**relevance**), (ii) only affect outcome through X (**exclusion**), and (iii) be as good as randomly assigned (**independence**). 
+- These conditions are met as there's a causal path $Z \rightarrow X$ and no open paths between Z and outcome except through X.
+
+---
+
+### Practice in R

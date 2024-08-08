@@ -1,0 +1,1052 @@
+---
+title: "Customized RMarkdown documents"
+subtitle: "Introduction to RStudio and RMarkdown"
+          
+author: "Yebelay Berehan"
+
+institute: " Debre Markos University"
+          
+date: 'May 25, 2022'
+output:
+  xaringan::moon_reader:
+    css: [default, xaringan-themer.css, metropolis]
+    nature:
+      ratio: "14:9"
+      highlightLines: true
+      highlightSpans: true
+      highlightStyle: tomorrow-night-bright
+      #fontsize: 9pt
+  includes:
+    in_header: columns.tex
+---
+```{r setup, include=FALSE, purl=FALSE}
+options(htmltools.dir.version = FALSE)
+knitr::opts_chunk$set(comment = "##")
+
+```
+
+
+```{r xaringan-logo, echo=FALSE}
+xaringanExtra::use_logo(image_url = "logo.png", exclude_class = c("inverse"),  width = "90px",height = "85px")
+```
+
+```{r xaringan-themer, include=FALSE, warning=FALSE}
+library(xaringanthemer)
+style_duo_accent(primary_color = "#035AA6", secondary_color = "#03A696")
+```
+
+
+# Outline
+
+* Introduction to R, Rstudio, and coding
+
+* R Markdown
+
+* R Markdown Outputs
+
+* Creating R Markdown documents
+
+
+---
+
+# `R Markdown`
+
+## Install the rmarkdown package in R
+
+- Install from CRAN
+
+```{r, eval=FALSE}
+ install.packages('rmarkdown')
+```
+ 
+Or install the development version, from GitHub
+
+```{r, eval=FALSE}
+if (!requireNamespace("devtools"))
+install.packages('devtools')
+devtools::install_github('rstudio/rmarkdown')
+```
+     
+---
+
+# Basics
+
+- A single R Markdown file used 
+  + to both save and execute code, 
+
+- to generate high quality reports that can be shared with an audience.
+
+- R Markdown was designed for easier reproducibility, since both the computing code and narratives are in the same document, and results are automatically generated from the source code. 
+
+- R Markdown supports dozens of static and dynamic/ interactive output formats.
+
+- Below is a minimal R Markdown document, which should be a plain-text file, with the conventional extension .Rmd :
+
+---
+
+# R Markdown Headers
+
+The header of an .Rmd file is a [YAML](http://yaml.org/) code block, and everything else is part of the main document.
+
+```{}
+---
+title: " R markdown "
+author: "Yebelay Berehan"
+date: "April 01, 2022"
+output: html_document
+---
+```
+
+- To mess with global formatting, [you can modify the header](http://rmarkdown.rstudio.com/html_document_format.html)<sup>2</sup>.
+
+.footnote[[2] Be careful though, YAML is space-sensitive; indents matter!]
+
+```{}
+output:
+  html_document:
+    theme: readable
+```
+
+
+---
+
+# con
+
+1. You can create a new Rmd file from the menu **File -> New File -> R Markdown**.
+
+2. There are three basic components of an R Markdown document: the metadata, text, and code. 
+
+3. The metadata is written between the pair of three dashes `---` .
+
+4. A code chunk starts with three backticks like ````{r}` where r indicates the language name, and ends with three backticks.
+
+5. You can write chunk options in the curly braces (e.g., set the figure height to 5 inches: ````{r, fig.height=5}` ).
+
+6. An inline R code expression starts with `r` and `ends with a backtick`.
+
+7. The usual way to compile an R Markdown document is to click the Knit button, and the corresponding keyboard shortcut is `Ctrl + Shift + K`.
+
+---
+
+# R Markdown Documents
+
+Let's try making an R Markdown file:
+
+1. Choose *File > New File > R Markdown...*
+
+1. Make sure *HTML Output* is .p2-green[selected] and click OK
+
+1. Save the file somewhere, call it `my_first_rmd.Rmd`
+
+1. Click the *Knit HTML* button
+
+1. Watch the progress in the R Markdown pane, then gaze upon your result!
+
+You may also open up the file in your computer's browser if you so desire, using the *Open in Browser* button at the top of the preview window.
+
+---
+
+# Output formats
+
+- There are two types of output formats in the rmarkdown package: documents, and presentations. 
+- Some available formats are listed below:
+
+* `beamer_presentation` 
+
+* `html_document` 
+
+* `latex_document` 
+
+* `word_document`
+
+* `pdf_document`
+
+* `powerpoint_presentation` etc.
+
+- There are multiple output formats in a dropdown menu behind the Rstudio Knit button.
+
+---
+
+- Each output format is often accompanied with several format options. 
+- All these options are documented on the R package help pages.
+- Type `?rmarkdown::html_document` to open the help page of the html_document format. 
+- The values from R to YAML, e.g., html_document(toc = TRUE, toc_depth = 2, dev = 'svg') can be written in YAML as:
+```{}
+output:
+html_document:
+toc: true
+toc_depth: 2
+dev: 'svg'
+```
+---
+
+- Character strings in YAML often do not require the quotes(e.g., dev: 'svg' and dev: svg are the same), unless they contain special characters, such as the colon : . 
+- If you are not sure if a string should be quoted or not, test it with the yaml package, e.g.,
+
+```{}
+cat(yaml::as.yaml(list(title = 'A Wonderful Day', 
+subtitle = 'hygge: a quality of coziness')))
+```
+ 
+ renders:
+ 
+* `title:` A Wonderful Day
+* `subtitle:` "hygge: a quality of coziness"
+
+
+- Note that the subtitle in the above example is quoted because of the colon.
+
+---
+
+## Markdown syntax
+
+- The text in an R Markdown document is written with the Markdown syntax. 
+
+## Inline formatting
+
+- Inline *`text`* will be italic if surrounded by underscores or asterisks,(` _text_` or `*text*`).
+
+- **`Bold`** text is produced using a pair of double asterisks ( `**text**` ). 
+
+- A pair of tildes (~) like `X~2~` renders $x_2$ . 
+
+- A pair of carets (^) like `X^2^` produce a superscript $X^2$.
+
+- To mark text as inline code , use a pair of backticks, e.g., `code` . 
+
+---
+
+# R Markdown Syntax
+
+.pull-left[
+## Output
+
+**bold/strong emphasis**
+
+*italic/normal emphasis*
+
+## Head
+
+## Subheader
+
+### Subsubheader
+
+> Block quote from famous person
+]
+
+.pull-right[
+
+## Syntax
+
+```
+- **bold/strong emphasis**
+
+- *italic/normal emphasis*
+
+- `# Header`
+
+- ## Subheader
+
+- ### Subsubheader
+```
+```
+> Block quote from famous person
+```
+]
+
+---
+
+# Formulae and Syntax
+.pull-left[
+## Output 
+1. Write LaTeX math expressions inside a pair of dollar signs,
+ e.g. $\alpha+\beta$ or 
+ 
+1. $y= \left( \frac{2}{3} \right)^2$ right up in there.
+
+1. Display style with double dollars `(\begin{equation} ... \end{equation})`:
+ $$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+]
+
+.pull-right[
+
+## Syntax
+
+```
+1. $\alpha+\beta$
+
+2. $y= \left(\frac{2}{3} \right)^2$ 
+
+3. $$\frac{1}{n}\sum_{i=1}^{n}x_i
+       =\bar{x}_n$$
+```    
+]
+
+---
+
+- Hyperlinks are created using the syntax `[text](link)`. 
+  + `[RStudio](https://www.rstudio.com)`.
+- The syntax for images is similar: just add an exclamation mark. 
+  + `![alt text or image title] (path/to/image)`.
+
+- Footnotes are put inside the square brackets after a caret ^[].
+  + ^[This is a footnote.] .
+
+- There are multiple ways to insert citations, and we recommend that you use BibTeX databases, because they work better when the output format is LaTeX/PDF. 
+- The key idea is that when you have a BibTeX database (a plain-text file with the conventional filename extension .bib ) that contains entries like:
+
+---
+
+```{}
+@Manual{R-base,title = {R: A Language and Environment for Statistical Computing},
+author = {{R Core Team}},
+organization = {R Foundation for Statistical Computing},
+address = {Vienna, Austria}, year = {2017}, url = {https://www.R-project.org/},}
+```
+
+- You may add a field named bibliography to the YAML metadata, and set its value to the path of the BibTeX file. 
+- Then in Markdown, you may use `@R-base` or `[@Rbase]` to reference the BibTeX entry. 
+
+- Pandoc will automatically generated a list of references in the end of the document.
+
+## Blockquotes are written after `>` 
+
+> "If the Statistics are boring, then you have got the wrong numbers."   AH, Tufte Writes
+
+---
+
+# Math expressions
+
+- Inline LaTeX equations can be written in a pair of dollar signs using the LaTeX syntax, e.g., 
+
+.pull-left[
+
+```
+1. $f(k) = 
+{n\choose k} p^{k} (1-p)^{n-k}$
+- Also can be written in a pair 
+of double dollar signs,
+
+2. $$f(k) = 
+{n\choose k} p^{k} (1-p)^{n-k}$$
+
+3. 
+  $\begin{array}{ccc}
+  x_{11} & x_{12} & x_{13}\\
+  x_{21} & x_{22} & x_{23}
+  \end{array}$
+  
+```
+]
+
+.pull-right[
+## Output 
+1. $f(k) = {n\choose k} p^{k} (1-p)^{n-k}$ 
+2. $$f(k) = {n\choose k} p^{k} (1-p)^{n-k}$$
+
+3. 
+$$\begin{array}{ccc}
+x_{11} & x_{12} & x_{13}\\
+x_{21} & x_{22} & x_{23}
+\end{array}$$
+]
+
+  
+---
+# Math expressions
+
+.pull-left[
+##Syntax
+
+```
+1.
+$$X = \begin{bmatrix}1 & x_{1}\\
+1 & x_{2}\\
+1 & x_{3}
+\end{bmatrix}$$
+2.
+$$\Theta = \begin{pmatrix}
+\alpha & \beta\\
+\gamma & \delta
+\end{pmatrix}$$
+3.
+$$\begin{vmatrix}
+a & b\\ c & d
+\end{vmatrix}=ad-bc$$
+```
+]
+
+.pull-right[
+
+## Output
+
+1.
+$$X = \begin{bmatrix}1 & x_{1}\\
+1 & x_{2}\\
+1 & x_{3}
+\end{bmatrix}$$
+
+2.
+$$\Theta = \begin{pmatrix}\alpha & \beta\\
+  \gamma & \delta
+\end{pmatrix}$$
+3.
+
+$$\begin{vmatrix}a & b\\
+c & d
+\end{vmatrix}=ad-bc$$
+]
+
+---
+
+# R code chunks and inline R code
+
+- You can insert an R code chunk either using the RStudio toolbar (the Insert button) or the keyboard shortcut `Ctrl + Alt + I`.
+
+- There are a lot of things you can do in a code chunk: you can produce text output, tables, or graphics. 
+
+- You have fine control over all these output via chunk options, which can be provided inside the curly braces ````{r}`.
+
+- For example, you can choose hide text output via the chunk option `results= 'hide'` , or set the figure height to 4 inches via `fig.height = 4`. 
+
+- Chunk options are separated by commas, e.g., ````{r, chunk-label, results='hide', fig.height=4}`.
+
+- There are a large number of chunk options in knitr documented at <https://yihui.name/knitr/options>. We list a subset of them below:
+
+---
+
+# Chunk Options
+
+Chunks have options that control what happens with their code, such as:
+
+* `echo=FALSE`: Keeps R code from being shown in the document
+
+* `eval=FALSE`: Shows R code in the document without running it
+
+* `include=FALSE`: Hides all output but still runs code (good for `setup` chunks where you load packages!)
+
+* `results='hide'`: Hides R's (non-plot) output from the document
+
+* `cache=TRUE`: Saves results of running that chunk so if it takes a while, you won't have to re-run it each time you re-knit the document
+
+* `fig.height=5, fig.width=5`: modify the dimensions of any plots that are generated in the chunk (units are in inches)
+
+
+Some of these can be modified using the gear-shaped *Modify Chunk Options* button in each chunk. [There are a *lot* of other options, however](https://yihui.name/knitr/options/).
+
+---
+
+- `fig.width and fig.height:` The size of R plots in inches. `fig.dim = c(6, 4) means fig.width = 6 and fig.height = 4`.
+
+- `out.width and out.height:` The output size of R plots in the output document, `out.width = '80%' means 80% of the page width`.
+
+- `fig.align:` The alignment of plots. It can be 'left' , center , or 'right' .
+
+- `fig.cap:` The figure caption.
+
+- If a certain option needs to be frequently set to a value in multiple code chunks, you can consider setting it globally in the first code chunk of your document, e.g.,
+
+```{}
+knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)
+```
+
+
+---
+
+# Figures
+
+- By default, figures produced by R code will be placed immediately after the code chunk they were generated from. For example:
+
+.pull-left[
+
+```{r, fig.dim=c(4,5), fig.cap="my first plot", fig.pos='h'}
+plot(cars, pch = 18)
+```
+]
+
+
+.pull-right[
+
+- You can provide a figure caption using fig.cap in the chunk options. 
+- If the document output format supports the option `fig_caption: true`
+  + (e.g., the output format rmarkdown::html_document ), the R plots will be placed into figure environments. 
+  + In the case of PDF output, such figures will be automatically numbered. 
+]
+
+---
+You may wish to fine-tune the positions once the content is complete using the fig.pos chunk option (e.g., fig.pos = 'h') .
+To place multiple figures side-by-side from the same code chunk, you can use the fig.hold='hold' option along with the out.width option.
+
+.pull-left[
+```{r, fig.show="hold", out.width="35%", echo=FALSE}
+par(mar = c(4, 4, .2, 0.1))
+plot(cars, pch = 19, type='b', main='This is car plot')
+plot(pressure, pch = 17)
+```
+]
+.pull-right[
+```{}
+```{r fig.show="hold", out.width="35%"}`r ''`
+par(mar = c(4, 4, .1, .1))
+plot(cars, pch = 19)
+plot(pressure, pch = 17)
+```
+```
+]
+
+- If you want to include a graphic that is not generated from R code, you may use the `knitr::include_graphics()` function, which gives you more control over the attributes of the image than the Markdown syntax of `![alt text or image title](path/to/image)`. 
+
+```{r, out.width='25%', fig.align='center', fig.cap='...', eval=FALSE}
+knitr::include_graphics('images/hex-rmarkdown.png')
+```
+
+---
+# Tables
+
+- The easiest way to include tables is by using `knitr::kable()`, which can create tables for HTML, PDF and Word outputs. Table captions can be included by passing caption to the function, 
+
+.small[
+```{r tables-mtcars}
+knitr::kable(iris[1:4, ], caption = 'My first Table')
+```
+]
+
+- For LaTeX/PDF output formats, you will need to use the LaTeX package longtable, by adding `\usepackage{longtable}` to your LaTeX preamble, and passing `longtable =TRUE to kable()` to break tables across multiple pages. 
+
+---
+
+- kableExtra package, provides functions to customize the appearance of PDF and HTML tables.
+- You may also consider the pander package. There are several other packages for producing tables, 
+
+.pull-left[
+- kableExtra 
+- formattable 
+- DT 
+- pander 
+- huxtable 
+- reactable
+- flextable 
+]
+.pull-right[
+
+- ftextra 
+- pixiedust 
+- tangram 
+- ztable 
+- condformat 
+- stargazer 
+- xtable 
+]
+
+---
+# Example
+ 
+.pull-left[
+.small[
+```{r, warning=FALSE, message=FALSE}
+library(gtsummary)
+# make dataset 
+trial2 <- trial %>% 
+  select(age, grade, response, trt) 
+# summarize the data with our package
+Table1 <- trial2 %>% 
+  tbl_summary(by = trt) %>%
+  add_n() %>%
+  add_p() %>% 
+  modify_header(label = "**Variable**") %>%
+  bold_labels() 
+```
+]]
+
+.pull-right[
+.small[
+```{r, warning=FALSE, message=FALSE, echo=FALSE}
+library(gtsummary)
+# make dataset 
+trial2 <- trial %>% 
+  select(age, grade, response, trt) 
+# summarize the data with our package
+Table1 <- trial2 %>% 
+  tbl_summary(by = trt) %>%
+  add_n() %>%
+  add_p() %>% 
+  modify_header(label = "**Variable**") %>%
+  bold_labels();  Table1
+```
+]]
+
+---
+# Documents
+ 
+**HTML document**
+
+- The very original version of Markdown was invented mainly to write HTML content more
+easily. 
+- To create an HTML document from R Markdown, you specify the html_document output format in the YAML metadata of your document:
+
+```{}
+---
+title: R markdown
+author: Yebelay B
+date: 2022-07-01
+output:
+html_document:
+toc: true
+toc_depth: 2
+---
+```
+
+- You can add a table of contents  using the toc option and specify the depth of headers that it applies to using the `toc_depth` option. 
+
+---
+
+# Section numbering 
+
+- You can add section numbering to headers using the `number_sections` option.
+
+```{}
+---
+output:
+html_document:
+toc: true
+number_sections: true
+---
+```
+
+- If the table of contents depth is not explicitly specified, it defaults to 3 (meaning that all level 1, 2, and 3 headers will be included in the table of contents).
+
+---
+
+# Appearance and style
+
+- There are several options that control the appearance of HTML documents: theme specifies include 
+  + default, cerulean, journal, flatly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, and yeti.
+  
+- highlight specifies the syntax highlighting style. 
+- Supported styles include default , tango , pygments , kate , monochrome , espresso , zenburn, haddock, and textmate. Pass null to prevent syntax highlighting.
+
+
+```{}
+---
+output:
+html_document:
+theme: united
+highlight: tango
+---
+```
+
+---
+
+# Custom CSS
+
+- You can add your own CSS to an HTML document using the css option:
+
+```{}
+---
+output:
+html_document:
+css: styles.css
+---
+```
+
+- If you want to provide all of the styles for the document from your own CSS you set the theme (and potentially highlight ) to null:
+
+```{}
+---
+output:
+html_document:
+theme: null
+highlight: null
+css: styles.css
+---
+```
+
+---
+
+# Figure options
+
+- There are a number of options that affect the output of figures within HTML documents:
+fig_width and fig_height can be used to control the default figure width and height (7x5 is used by default). 
+- `fig_retina` specifies the scaling to perform for retina displays (defaults to 2, which currently works for all widely used retina displays). Set to null to prevent retina scaling. 
+- `fig_caption` controls whether figures are rendered with captions. 
+
+```{}
+---
+title: " R markdown "
+output:
+html_document:
+fig_width: 7
+fig_height: 6
+fig_caption: true
+---
+
+```
+
+---
+
+# Data frame printing
+
+- You can enhance the default display of data frames via the `df_print` option.
+
+- The possible values of the `df_print` option for the `html_document` format.
+
+  
+- **default** :       Call the `print.data.frame` generic method
+
+- **kable**   :       Use the `knitr::kable` function
+
+- **Tibble**  :       Use the `tibble::print.tbl_df` function
+
+- **Paged**   :       Use `rmarkdown::print.paged_df` to create a pageable table
+
+---
+
+# Paged printing
+
+- When the `df_print` option is set to paged, tables are printed as HTML tables with support for pagination over rows and columns.
+
+```{}
+---
+title: "Motor Trend Car Road Tests"
+output:
+html_document:
+df_print: paged
+---
+```
+
+```{r, eval=FALSE}
+mtcars
+```
+
+---
+
+- `max.print:`          The number of rows to print.
+
+- `rows.print:`         The number of rows to display.
+
+- `cols.print:`          The number of columns to display.
+
+- `cols.min.print:`   The minimum number of columns to display.
+
+- `pages.print:`       The number of pages to display under page navigation.
+
+- `paged.print:`        When set to FALSE turns off paged tables.
+
+- `rownames.print:`    When set to FALSE turns off row names.
+
+- These options are specified in each chunk like below
+
+
+    ```{r, cols.print=3, rows.print=3}`r ''`
+     mtcars
+    ```
+---
+
+# Advanced customization
+
+### Keeping Markdown
+
+- When knitr processes an R Markdown input file, it creates a Markdown ( *.md ) file that is subsequently transformed into HTML by Pandoc. 
+- If you want to keep a copy of the Markdown file after rendering, you can do so using the keep_md option:
+
+```{}
+---
+title: "R markdown"
+output:
+html_document:
+keep_md: true
+---
+```
+
+---
+
+## Includes
+
+- You can do more advanced customization of output by including additional HTML content or by replacing the core Pandoc template entirely. 
+- To include content in the document header or before or after the document body, you use the includes option as follows:
+
+```{}
+---
+output:
+html_document:
+includes:
+in_header: header.html
+before_body: doc_prefix.html
+after_body: doc_suffix.html
+---
+```
+
+---
+
+# PDF document
+
+- T to generate PDF output, you will need to install LaTeX or install TinyTeX for Rmarkdwon users.
+
+```{r, eval=FALSE}
+install.packages("tinytex")
+tinytex::install_tinytex() # install TinyTeX
+```
+
+- To create a PDF document from R Markdown, you specify the `pdf_document` output format in the YAML metadata:
+
+```{}
+---
+title: " R markdown "
+author: Yebelay B
+date: 2022-04-01
+output: pdf_document
+---
+```
+
+- Within R Markdown documents that generate PDF output, you can use raw LaTeX, and even define LaTeX macros. 
+
+---
+
+You can add section numbering to headers using the number_sections option:
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+toc: true
+number_sections: true
+---
+```
+
+If you are familiar with LaTeX, number_sections: true means `\section{}` , and number_sections: false means `\section*{}` for sections in LaTeX (it also applies to other levels of sections such as `\chapter{}` , and `\subsection{}` ).
+
+---
+
+## Figure options
+
+- There are a number of options that affect the output of figures within PDF documents: `fig_width` and `fig_height` can be used to control the default figure width and height.
+- `fig_crop` controls whether the pdfcrop utility, if available in your system, is automatically applied to PDF figures. 
+- If your graphics device is postscript , we recommend that you disable this feature.
+- `fig_caption` controls whether figures are rendered with captions.
+
+```{}
+---
+output:
+pdf_document:
+fig_width: 7
+fig_height: 6
+fig_caption: true
+---
+```
+
+---
+
+# Data frame printing
+
+- You can enhance the default display of data frames via the df_print option. 
+- Valid values are presented
+- The possible values of the df_print option for the pdf_document format.
+
+- `default`:            Call the print.data.frame generic method
+
+- `kable`:              Use the knitr::kable() function
+
+- `tibble`:              Use the tibble::print.tbl_df() function
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+df_print: kable
+---
+```
+
+---
+
+# Syntax highlighting
+
+- The highlight option specifies the syntax highlighting style. 
+- Its usage in pdf_document is the same as html_document. 
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+highlight: tango
+---
+```
+
+**LaTeX options**
+
+- Many aspects of the LaTeX template used to create PDF documents can be customized using top-level YAML metadata.
+
+```{}
+---
+title: "Introduction to Rmarkdown"
+output: pdf_document
+fontsize: 11pt
+geometry: margin=1in
+---
+```
+
+---
+
+- Available top-level YAML metadata variables for LaTeX output.
+
+* `lang`:            Document language code
+* `fontsize`:        Font size (e.g., 10pt , 11pt , or 12pt )
+* `documentclass`:   LaTeX document class (e.g., article )
+* `classoption`:     Options for documentclass (e.g., oneside )
+* `geometry`:        Options for geometry class (e.g., margin=1in )
+* `mainfont, sansfont,monofont, mathfont`: Document fonts and works only with xelatex and lualatex.
+* `linkcolor, urlcolor,citecolor`: Color for internal, external, and citation links
+
+**LaTeX packages for citations**
+
+- To use one of these packages, just set the option citation_package to be natbib or biblatex,
+
+```{}
+---
+output:
+pdf_document:
+citation_package: natbib
+---
+```
+
+---
+
+# Advanced customization
+
+**LaTeX engine**
+
+- By default, PDF documents are rendered using pdflatex.
+- You can specify an alternate engine using the latex_engine option. Available engines are pdflatex , xelatex , and lualatex .
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+latex_engine: xelatex
+---
+```
+
+- The main reasons you may want to use xelatex or lualatex are: 
+   + (1) They support Unicode better;
+   + (2) It is easier to make use of system fonts.
+
+---
+
+**Includes**
+
+- You can do more advanced customization of PDF output by including additional LaTeX directives and/or content or by replacing the core Pandoc template entirely. 
+
+- To include content in the document header or before/after the document body, you use the includes option as follows
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+includes:
+in_header: preamble.tex
+before_body: doc-prefix.tex
+after_body: doc-suffix.tex
+---
+```
+
+---
+
+# Word document
+
+- To create a Word document from R Markdown, you specify the word_document output format in the YAML metadata of your document
+
+```{}
+---
+title: " R markdown "
+author: Yebelay B
+date: April 01, 2022
+output: word_document
+---
+```
+
+- The most notable feature of Word documents is the Word template, which is also known as the "style reference document". 
+- You can specify a document to be used as a style reference in producing a *.docx file (a Word document).
+- This will allow you to customize things such as margins and other formatting characteristics. 
+
+---
+
+- For best results, the reference document should be a modified version of a .docx file produced using rmarkdown or Pandoc. 
+- The path of such a document can be passed to the reference_docx argument of the word_document format. Pass "default" to use the default styles.
+
+```{}
+---
+title: " R markdown "
+output:
+word_document:
+reference_docx: my-styles.docx
+---
+```
+
+- For more on how to create and use a reference document, you may watch this short video: <https://vimeo.com/110804387>, or read this detailed article: <https://rmarkdown.rstudio.com/articles_docx.html>.
+
+
+---
+
+# Presentations
+
+- For documents, the basic units are often sections. 
+- For presentations, the basic units are slides. 
+- A section in the Markdown source document often indicates a new slide in the presentation formats. 
+- In this chapter, we introduce the built-in presentation formats in the rmarkdown package.
+
+## Beamer presentation
+
+- To create a Beamer presentation from R Markdown, you specify the `beamer_presentation` output format in the `YAML metadata` of your document. 
+
+- You can create a slide show broken up into sections by using the `# and ##` heading tags (you can also create a new slide without a header using a horizontal rule `( --- )`. 
+
+---
+
+```{}
+---
+title: "Introduction to R Markdown"
+author: "Yebelay Berelie"
+date: '2022-04-01'
+output: "beamer_presentation"
+---
+```
+
+```{}
+# In the morning
+## Getting up
+- Turn off alarm
+- Get out of bed
+```{r, cars, fig.cap="A scatterplot.", echo=FALSE}`''`
+plot(cars)
+```
+
+
+- Within R Markdown documents that generate PDF output, you can use raw LaTeX and even define LaTeX macros. 
+
+---
+
+# Themes
+
+- You can specify Beamer themes using the theme, colortheme, and fonttheme options. 
+
+```{}
+---
+output:
+beamer_presentation:
+theme: "AnnArbor"
+colortheme: "dolphin"
+fonttheme: "structurebold"
+---
+```
+
+- You can find a list of possible themes and color themes at <https://hartwork.org/beamer-theme-matrix/>.
+
+
+
+
+
+

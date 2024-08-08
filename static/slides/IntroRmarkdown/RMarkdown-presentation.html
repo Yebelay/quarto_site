@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Customized RMarkdown documents</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Yebelay Berehan" />
+    <meta name="date" content="2022-05-25" />
+    <script src="RMarkdown-presentation_files/header-attrs/header-attrs.js"></script>
+    <link href="RMarkdown-presentation_files/remark-css/default.css" rel="stylesheet" />
+    <link href="RMarkdown-presentation_files/remark-css/metropolis.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Customized RMarkdown documents
+]
+.subtitle[
+## Introduction to RStudio and RMarkdown
+]
+.author[
+### Yebelay Berehan
+]
+.institute[
+### Debre Markos University
+]
+.date[
+### May 25, 2022
+]
+
+---
+
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 90px;
+height: 85px;
+z-index: 0;
+background-image: url(logo.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.inverse)')
+        .forEach(function (slide) {
+          const logo = document.createElement('div')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = null
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
+
+
+
+
+# Outline
+
+* Introduction to R, Rstudio, and coding
+
+* R Markdown
+
+* R Markdown Outputs
+
+* Creating R Markdown documents
+
+
+---
+
+# `R Markdown`
+
+## Install the rmarkdown package in R
+
+- Install from CRAN
+
+
+``` r
+ install.packages('rmarkdown')
+```
+ 
+Or install the development version, from GitHub
+
+
+``` r
+if (!requireNamespace("devtools"))
+install.packages('devtools')
+devtools::install_github('rstudio/rmarkdown')
+```
+     
+---
+
+# Basics
+
+- A single R Markdown file used 
+  + to both save and execute code, 
+
+- to generate high quality reports that can be shared with an audience.
+
+- R Markdown was designed for easier reproducibility, since both the computing code and narratives are in the same document, and results are automatically generated from the source code. 
+
+- R Markdown supports dozens of static and dynamic/ interactive output formats.
+
+- Below is a minimal R Markdown document, which should be a plain-text file, with the conventional extension .Rmd :
+
+---
+
+# R Markdown Headers
+
+The header of an .Rmd file is a [YAML](http://yaml.org/) code block, and everything else is part of the main document.
+
+```{}
+---
+title: " R markdown "
+author: "Yebelay Berehan"
+date: "April 01, 2022"
+output: html_document
+---
+```
+
+- To mess with global formatting, [you can modify the header](http://rmarkdown.rstudio.com/html_document_format.html)&lt;sup&gt;2&lt;/sup&gt;.
+
+.footnote[[2] Be careful though, YAML is space-sensitive; indents matter!]
+
+```{}
+output:
+  html_document:
+    theme: readable
+```
+
+
+---
+
+# con
+
+1. You can create a new Rmd file from the menu **File -&gt; New File -&gt; R Markdown**.
+
+2. There are three basic components of an R Markdown document: the metadata, text, and code. 
+
+3. The metadata is written between the pair of three dashes `---` .
+
+4. A code chunk starts with three backticks like ````{r}` where r indicates the language name, and ends with three backticks.
+
+5. You can write chunk options in the curly braces (e.g., set the figure height to 5 inches: ````{r, fig.height=5}` ).
+
+6. An inline R code expression starts with `r` and `ends with a backtick`.
+
+7. The usual way to compile an R Markdown document is to click the Knit button, and the corresponding keyboard shortcut is `Ctrl + Shift + K`.
+
+---
+
+# R Markdown Documents
+
+Let's try making an R Markdown file:
+
+1. Choose *File &gt; New File &gt; R Markdown...*
+
+1. Make sure *HTML Output* is .p2-green[selected] and click OK
+
+1. Save the file somewhere, call it `my_first_rmd.Rmd`
+
+1. Click the *Knit HTML* button
+
+1. Watch the progress in the R Markdown pane, then gaze upon your result!
+
+You may also open up the file in your computer's browser if you so desire, using the *Open in Browser* button at the top of the preview window.
+
+---
+
+# Output formats
+
+- There are two types of output formats in the rmarkdown package: documents, and presentations. 
+- Some available formats are listed below:
+
+* `beamer_presentation` 
+
+* `html_document` 
+
+* `latex_document` 
+
+* `word_document`
+
+* `pdf_document`
+
+* `powerpoint_presentation` etc.
+
+- There are multiple output formats in a dropdown menu behind the Rstudio Knit button.
+
+---
+
+- Each output format is often accompanied with several format options. 
+- All these options are documented on the R package help pages.
+- Type `?rmarkdown::html_document` to open the help page of the html_document format. 
+- The values from R to YAML, e.g., html_document(toc = TRUE, toc_depth = 2, dev = 'svg') can be written in YAML as:
+```{}
+output:
+html_document:
+toc: true
+toc_depth: 2
+dev: 'svg'
+```
+---
+
+- Character strings in YAML often do not require the quotes(e.g., dev: 'svg' and dev: svg are the same), unless they contain special characters, such as the colon : . 
+- If you are not sure if a string should be quoted or not, test it with the yaml package, e.g.,
+
+```{}
+cat(yaml::as.yaml(list(title = 'A Wonderful Day', 
+subtitle = 'hygge: a quality of coziness')))
+```
+ 
+ renders:
+ 
+* `title:` A Wonderful Day
+* `subtitle:` "hygge: a quality of coziness"
+
+
+- Note that the subtitle in the above example is quoted because of the colon.
+
+---
+
+## Markdown syntax
+
+- The text in an R Markdown document is written with the Markdown syntax. 
+
+## Inline formatting
+
+- Inline *`text`* will be italic if surrounded by underscores or asterisks,(` _text_` or `*text*`).
+
+- **`Bold`** text is produced using a pair of double asterisks ( `**text**` ). 
+
+- A pair of tildes (~) like `X~2~` renders `\(x_2\)` . 
+
+- A pair of carets (^) like `X^2^` produce a superscript `\(X^2\)`.
+
+- To mark text as inline code , use a pair of backticks, e.g., `code` . 
+
+---
+
+# R Markdown Syntax
+
+.pull-left[
+## Output
+
+**bold/strong emphasis**
+
+*italic/normal emphasis*
+
+## Head
+
+## Subheader
+
+### Subsubheader
+
+&gt; Block quote from famous person
+]
+
+.pull-right[
+
+## Syntax
+
+```
+- **bold/strong emphasis**
+
+- *italic/normal emphasis*
+
+- `# Header`
+
+- ## Subheader
+
+- ### Subsubheader
+```
+```
+&gt; Block quote from famous person
+```
+]
+
+---
+
+# Formulae and Syntax
+.pull-left[
+## Output 
+1. Write LaTeX math expressions inside a pair of dollar signs,
+ e.g. `\(\alpha+\beta\)` or 
+ 
+1. `\(y= \left( \frac{2}{3} \right)^2\)` right up in there.
+
+1. Display style with double dollars `(\begin{equation} ... \end{equation})`:
+ `$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$`
+]
+
+.pull-right[
+
+## Syntax
+
+```
+1. `\(\alpha+\beta\)`
+
+2. `\(y= \left(\frac{2}{3} \right)^2\)` 
+
+3. $$\frac{1}{n}\sum_{i=1}^{n}x_i
+       =\bar{x}_n$$`
+```    
+]
+
+---
+
+- Hyperlinks are created using the syntax `[text](link)`. 
+  + `[RStudio](https://www.rstudio.com)`.
+- The syntax for images is similar: just add an exclamation mark. 
+  + `![alt text or image title] (path/to/image)`.
+
+- Footnotes are put inside the square brackets after a caret ^[].
+  + ^[This is a footnote.] .
+
+- There are multiple ways to insert citations, and we recommend that you use BibTeX databases, because they work better when the output format is LaTeX/PDF. 
+- The key idea is that when you have a BibTeX database (a plain-text file with the conventional filename extension .bib ) that contains entries like:
+
+---
+
+```{}
+@Manual{R-base,title = {R: A Language and Environment for Statistical Computing},
+author = {{R Core Team}},
+organization = {R Foundation for Statistical Computing},
+address = {Vienna, Austria}, year = {2017}, url = {https://www.R-project.org/},}
+```
+
+- You may add a field named bibliography to the YAML metadata, and set its value to the path of the BibTeX file. 
+- Then in Markdown, you may use `@R-base` or `[@Rbase]` to reference the BibTeX entry. 
+
+- Pandoc will automatically generated a list of references in the end of the document.
+
+## Blockquotes are written after `&gt;` 
+
+&gt; "If the Statistics are boring, then you have got the wrong numbers."   AH, Tufte Writes
+
+---
+
+# Math expressions
+
+- Inline LaTeX equations can be written in a pair of dollar signs using the LaTeX syntax, e.g., 
+
+.pull-left[
+
+```
+1. $f(k) = 
+{n\choose k} p^{k} (1-p)^{n-k}$
+- Also can be written in a pair 
+of double dollar signs,
+
+2. $$f(k) = 
+{n\choose k} p^{k} (1-p)^{n-k}$$`
+
+3. 
+  $\begin{array}{ccc}
+  x_{11} &amp; x_{12} &amp; x_{13}\\
+  x_{21} &amp; x_{22} &amp; x_{23}
+  \end{array}$
+  
+```
+]
+
+.pull-right[
+## Output 
+1. `\(f(k) = {n\choose k} p^{k} (1-p)^{n-k}\)` 
+2. `$$f(k) = {n\choose k} p^{k} (1-p)^{n-k}$$`
+
+3. 
+`$$\begin{array}{ccc}
+x_{11} &amp; x_{12} &amp; x_{13}\\
+x_{21} &amp; x_{22} &amp; x_{23}
+\end{array}$$`
+]
+
+  
+---
+# Math expressions
+
+.pull-left[
+##Syntax
+
+```
+1.
+`$$X = \begin{bmatrix}1 &amp; x_{1}\\
+1 &amp; x_{2}\\
+1 &amp; x_{3}
+\end{bmatrix}$$`
+2.
+`$$\Theta = \begin{pmatrix}
+\alpha &amp; \beta\\
+\gamma &amp; \delta
+\end{pmatrix}$$`
+3.
+`$$\begin{vmatrix}
+a &amp; b\\ c &amp; d
+\end{vmatrix}=ad-bc$$`
+```
+]
+
+.pull-right[
+
+## Output
+
+1.
+`$$X = \begin{bmatrix}1 &amp; x_{1}\\
+1 &amp; x_{2}\\
+1 &amp; x_{3}
+\end{bmatrix}$$`
+
+2.
+`$$\Theta = \begin{pmatrix}\alpha &amp; \beta\\
+  \gamma &amp; \delta
+\end{pmatrix}$$`
+3.
+
+`$$\begin{vmatrix}a &amp; b\\
+c &amp; d
+\end{vmatrix}=ad-bc$$`
+]
+
+---
+
+# R code chunks and inline R code
+
+- You can insert an R code chunk either using the RStudio toolbar (the Insert button) or the keyboard shortcut `Ctrl + Alt + I`.
+
+- There are a lot of things you can do in a code chunk: you can produce text output, tables, or graphics. 
+
+- You have fine control over all these output via chunk options, which can be provided inside the curly braces ````{r}`.
+
+- For example, you can choose hide text output via the chunk option `results= 'hide'` , or set the figure height to 4 inches via `fig.height = 4`. 
+
+- Chunk options are separated by commas, e.g., ````{r, chunk-label, results='hide', fig.height=4}`.
+
+- There are a large number of chunk options in knitr documented at &lt;https://yihui.name/knitr/options&gt;. We list a subset of them below:
+
+---
+
+# Chunk Options
+
+Chunks have options that control what happens with their code, such as:
+
+* `echo=FALSE`: Keeps R code from being shown in the document
+
+* `eval=FALSE`: Shows R code in the document without running it
+
+* `include=FALSE`: Hides all output but still runs code (good for `setup` chunks where you load packages!)
+
+* `results='hide'`: Hides R's (non-plot) output from the document
+
+* `cache=TRUE`: Saves results of running that chunk so if it takes a while, you won't have to re-run it each time you re-knit the document
+
+* `fig.height=5, fig.width=5`: modify the dimensions of any plots that are generated in the chunk (units are in inches)
+
+
+Some of these can be modified using the gear-shaped *Modify Chunk Options* button in each chunk. [There are a *lot* of other options, however](https://yihui.name/knitr/options/).
+
+---
+
+- `fig.width and fig.height:` The size of R plots in inches. `fig.dim = c(6, 4) means fig.width = 6 and fig.height = 4`.
+
+- `out.width and out.height:` The output size of R plots in the output document, `out.width = '80%' means 80% of the page width`.
+
+- `fig.align:` The alignment of plots. It can be 'left' , center , or 'right' .
+
+- `fig.cap:` The figure caption.
+
+- If a certain option needs to be frequently set to a value in multiple code chunks, you can consider setting it globally in the first code chunk of your document, e.g.,
+
+```{}
+knitr::opts_chunk$set(fig.width = 8, collapse = TRUE)
+```
+
+
+---
+
+# Figures
+
+- By default, figures produced by R code will be placed immediately after the code chunk they were generated from. For example:
+
+.pull-left[
+
+
+``` r
+plot(cars, pch = 18)
+```
+
+![my first plot](RMarkdown-presentation_files/figure-html/unnamed-chunk-3-1.png)
+]
+
+
+.pull-right[
+
+- You can provide a figure caption using fig.cap in the chunk options. 
+- If the document output format supports the option `fig_caption: true`
+  + (e.g., the output format rmarkdown::html_document ), the R plots will be placed into figure environments. 
+  + In the case of PDF output, such figures will be automatically numbered. 
+]
+
+---
+You may wish to fine-tune the positions once the content is complete using the fig.pos chunk option (e.g., fig.pos = 'h') .
+To place multiple figures side-by-side from the same code chunk, you can use the fig.hold='hold' option along with the out.width option.
+
+.pull-left[
+&lt;img src="RMarkdown-presentation_files/figure-html/unnamed-chunk-4-1.png" width="35%" /&gt;&lt;img src="RMarkdown-presentation_files/figure-html/unnamed-chunk-4-2.png" width="35%" /&gt;
+]
+.pull-right[
+```{}
+```{r fig.show="hold", out.width="35%"}
+par(mar = c(4, 4, .1, .1))
+plot(cars, pch = 19)
+plot(pressure, pch = 17)
+```
+```
+]
+
+- If you want to include a graphic that is not generated from R code, you may use the `knitr::include_graphics()` function, which gives you more control over the attributes of the image than the Markdown syntax of `![alt text or image title](path/to/image)`. 
+
+
+``` r
+knitr::include_graphics('images/hex-rmarkdown.png')
+```
+
+---
+# Tables
+
+- The easiest way to include tables is by using `knitr::kable()`, which can create tables for HTML, PDF and Word outputs. Table captions can be included by passing caption to the function, 
+
+.small[
+
+``` r
+knitr::kable(iris[1:4, ], caption = 'My first Table')
+```
+
+
+
+Table: My first Table
+
+| Sepal.Length| Sepal.Width| Petal.Length| Petal.Width|Species |
+|------------:|-----------:|------------:|-----------:|:-------|
+|          5.1|         3.5|          1.4|         0.2|setosa  |
+|          4.9|         3.0|          1.4|         0.2|setosa  |
+|          4.7|         3.2|          1.3|         0.2|setosa  |
+|          4.6|         3.1|          1.5|         0.2|setosa  |
+]
+
+- For LaTeX/PDF output formats, you will need to use the LaTeX package longtable, by adding `\usepackage{longtable}` to your LaTeX preamble, and passing `longtable =TRUE to kable()` to break tables across multiple pages. 
+
+---
+
+- kableExtra package, provides functions to customize the appearance of PDF and HTML tables.
+- You may also consider the pander package. There are several other packages for producing tables, 
+
+.pull-left[
+- kableExtra 
+- formattable 
+- DT 
+- pander 
+- huxtable 
+- reactable
+- flextable 
+]
+.pull-right[
+
+- ftextra 
+- pixiedust 
+- tangram 
+- ztable 
+- condformat 
+- stargazer 
+- xtable 
+]
+
+---
+# Example
+ 
+.pull-left[
+.small[
+
+``` r
+library(gtsummary)
+# make dataset 
+trial2 &lt;- trial %&gt;% 
+  select(age, grade, response, trt) 
+# summarize the data with our package
+Table1 &lt;- trial2 %&gt;% 
+  tbl_summary(by = trt) %&gt;%
+  add_n() %&gt;%
+  add_p() %&gt;% 
+  modify_header(label = "**Variable**") %&gt;%
+  bold_labels() 
+```
+]]
+
+.pull-right[
+.small[
+<div id="sgfdgejkah" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sgfdgejkah table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#sgfdgejkah thead, #sgfdgejkah tbody, #sgfdgejkah tfoot, #sgfdgejkah tr, #sgfdgejkah td, #sgfdgejkah th {
+  border-style: none;
+}
+
+#sgfdgejkah p {
+  margin: 0;
+  padding: 0;
+}
+
+#sgfdgejkah .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#sgfdgejkah .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#sgfdgejkah .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#sgfdgejkah .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#sgfdgejkah .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#sgfdgejkah .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#sgfdgejkah .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#sgfdgejkah .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#sgfdgejkah .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#sgfdgejkah .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#sgfdgejkah .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#sgfdgejkah .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#sgfdgejkah .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#sgfdgejkah .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#sgfdgejkah .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfdgejkah .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#sgfdgejkah .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#sgfdgejkah .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#sgfdgejkah .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfdgejkah .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#sgfdgejkah .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfdgejkah .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#sgfdgejkah .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfdgejkah .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#sgfdgejkah .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#sgfdgejkah .gt_left {
+  text-align: left;
+}
+
+#sgfdgejkah .gt_center {
+  text-align: center;
+}
+
+#sgfdgejkah .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#sgfdgejkah .gt_font_normal {
+  font-weight: normal;
+}
+
+#sgfdgejkah .gt_font_bold {
+  font-weight: bold;
+}
+
+#sgfdgejkah .gt_font_italic {
+  font-style: italic;
+}
+
+#sgfdgejkah .gt_super {
+  font-size: 65%;
+}
+
+#sgfdgejkah .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#sgfdgejkah .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#sgfdgejkah .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#sgfdgejkah .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#sgfdgejkah .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#sgfdgejkah .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#sgfdgejkah .gt_indent_5 {
+  text-indent: 25px;
+}
+</style>
+<table class="gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+  <thead>
+    <tr class="gt_col_headings">
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;Variable&lt;/strong&gt;"><strong>Variable</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;N&lt;/strong&gt;"><strong>N</strong></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;Drug A&lt;/strong&gt;, N = 98&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;"><strong>Drug A</strong>, N = 98<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;Drug B&lt;/strong&gt;, N = 102&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;1&lt;/sup&gt;&lt;/span&gt;"><strong>Drug B</strong>, N = 102<span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="&lt;strong&gt;p-value&lt;/strong&gt;&lt;span class=&quot;gt_footnote_marks&quot; style=&quot;white-space:nowrap;font-style:italic;font-weight:normal;&quot;&gt;&lt;sup&gt;2&lt;/sup&gt;&lt;/span&gt;"><strong>p-value</strong><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span></th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td headers="label" class="gt_row gt_left" style="font-weight: bold;">Age</td>
+<td headers="n" class="gt_row gt_center">189</td>
+<td headers="stat_1" class="gt_row gt_center">46 (37, 59)</td>
+<td headers="stat_2" class="gt_row gt_center">48 (39, 56)</td>
+<td headers="p.value" class="gt_row gt_center">0.7</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Unknown</td>
+<td headers="n" class="gt_row gt_center"><br /></td>
+<td headers="stat_1" class="gt_row gt_center">7</td>
+<td headers="stat_2" class="gt_row gt_center">4</td>
+<td headers="p.value" class="gt_row gt_center"><br /></td></tr>
+    <tr><td headers="label" class="gt_row gt_left" style="font-weight: bold;">Grade</td>
+<td headers="n" class="gt_row gt_center">200</td>
+<td headers="stat_1" class="gt_row gt_center"><br /></td>
+<td headers="stat_2" class="gt_row gt_center"><br /></td>
+<td headers="p.value" class="gt_row gt_center">0.9</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    I</td>
+<td headers="n" class="gt_row gt_center"><br /></td>
+<td headers="stat_1" class="gt_row gt_center">35 (36%)</td>
+<td headers="stat_2" class="gt_row gt_center">33 (32%)</td>
+<td headers="p.value" class="gt_row gt_center"><br /></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    II</td>
+<td headers="n" class="gt_row gt_center"><br /></td>
+<td headers="stat_1" class="gt_row gt_center">32 (33%)</td>
+<td headers="stat_2" class="gt_row gt_center">36 (35%)</td>
+<td headers="p.value" class="gt_row gt_center"><br /></td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    III</td>
+<td headers="n" class="gt_row gt_center"><br /></td>
+<td headers="stat_1" class="gt_row gt_center">31 (32%)</td>
+<td headers="stat_2" class="gt_row gt_center">33 (32%)</td>
+<td headers="p.value" class="gt_row gt_center"><br /></td></tr>
+    <tr><td headers="label" class="gt_row gt_left" style="font-weight: bold;">Tumor Response</td>
+<td headers="n" class="gt_row gt_center">193</td>
+<td headers="stat_1" class="gt_row gt_center">28 (29%)</td>
+<td headers="stat_2" class="gt_row gt_center">33 (34%)</td>
+<td headers="p.value" class="gt_row gt_center">0.5</td></tr>
+    <tr><td headers="label" class="gt_row gt_left">    Unknown</td>
+<td headers="n" class="gt_row gt_center"><br /></td>
+<td headers="stat_1" class="gt_row gt_center">3</td>
+<td headers="stat_2" class="gt_row gt_center">4</td>
+<td headers="p.value" class="gt_row gt_center"><br /></td></tr>
+  </tbody>
+  
+  <tfoot class="gt_footnotes">
+    <tr>
+      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>1</sup></span> Median (IQR); n (%)</td>
+    </tr>
+    <tr>
+      <td class="gt_footnote" colspan="5"><span class="gt_footnote_marks" style="white-space:nowrap;font-style:italic;font-weight:normal;"><sup>2</sup></span> Wilcoxon rank sum test; Pearson’s Chi-squared test</td>
+    </tr>
+  </tfoot>
+</table>
+</div>
+]]
+
+---
+# Documents
+ 
+**HTML document**
+
+- The very original version of Markdown was invented mainly to write HTML content more
+easily. 
+- To create an HTML document from R Markdown, you specify the html_document output format in the YAML metadata of your document:
+
+```{}
+---
+title: R markdown
+author: Yebelay B
+date: 2022-07-01
+output:
+html_document:
+toc: true
+toc_depth: 2
+---
+```
+
+- You can add a table of contents  using the toc option and specify the depth of headers that it applies to using the `toc_depth` option. 
+
+---
+
+# Section numbering 
+
+- You can add section numbering to headers using the `number_sections` option.
+
+```{}
+---
+output:
+html_document:
+toc: true
+number_sections: true
+---
+```
+
+- If the table of contents depth is not explicitly specified, it defaults to 3 (meaning that all level 1, 2, and 3 headers will be included in the table of contents).
+
+---
+
+# Appearance and style
+
+- There are several options that control the appearance of HTML documents: theme specifies include 
+  + default, cerulean, journal, flatly, readable, spacelab, united, cosmo, lumen, paper, sandstone, simplex, and yeti.
+  
+- highlight specifies the syntax highlighting style. 
+- Supported styles include default , tango , pygments , kate , monochrome , espresso , zenburn, haddock, and textmate. Pass null to prevent syntax highlighting.
+
+
+```{}
+---
+output:
+html_document:
+theme: united
+highlight: tango
+---
+```
+
+---
+
+# Custom CSS
+
+- You can add your own CSS to an HTML document using the css option:
+
+```{}
+---
+output:
+html_document:
+css: styles.css
+---
+```
+
+- If you want to provide all of the styles for the document from your own CSS you set the theme (and potentially highlight ) to null:
+
+```{}
+---
+output:
+html_document:
+theme: null
+highlight: null
+css: styles.css
+---
+```
+
+---
+
+# Figure options
+
+- There are a number of options that affect the output of figures within HTML documents:
+fig_width and fig_height can be used to control the default figure width and height (7x5 is used by default). 
+- `fig_retina` specifies the scaling to perform for retina displays (defaults to 2, which currently works for all widely used retina displays). Set to null to prevent retina scaling. 
+- `fig_caption` controls whether figures are rendered with captions. 
+
+```{}
+---
+title: " R markdown "
+output:
+html_document:
+fig_width: 7
+fig_height: 6
+fig_caption: true
+---
+
+```
+
+---
+
+# Data frame printing
+
+- You can enhance the default display of data frames via the `df_print` option.
+
+- The possible values of the `df_print` option for the `html_document` format.
+
+  
+- **default** :       Call the `print.data.frame` generic method
+
+- **kable**   :       Use the `knitr::kable` function
+
+- **Tibble**  :       Use the `tibble::print.tbl_df` function
+
+- **Paged**   :       Use `rmarkdown::print.paged_df` to create a pageable table
+
+---
+
+# Paged printing
+
+- When the `df_print` option is set to paged, tables are printed as HTML tables with support for pagination over rows and columns.
+
+```{}
+---
+title: "Motor Trend Car Road Tests"
+output:
+html_document:
+df_print: paged
+---
+```
+
+
+``` r
+mtcars
+```
+
+---
+
+- `max.print:`          The number of rows to print.
+
+- `rows.print:`         The number of rows to display.
+
+- `cols.print:`          The number of columns to display.
+
+- `cols.min.print:`   The minimum number of columns to display.
+
+- `pages.print:`       The number of pages to display under page navigation.
+
+- `paged.print:`        When set to FALSE turns off paged tables.
+
+- `rownames.print:`    When set to FALSE turns off row names.
+
+- These options are specified in each chunk like below
+
+
+    ```{r, cols.print=3, rows.print=3}
+     mtcars
+    ```
+---
+
+# Advanced customization
+
+### Keeping Markdown
+
+- When knitr processes an R Markdown input file, it creates a Markdown ( *.md ) file that is subsequently transformed into HTML by Pandoc. 
+- If you want to keep a copy of the Markdown file after rendering, you can do so using the keep_md option:
+
+```{}
+---
+title: "R markdown"
+output:
+html_document:
+keep_md: true
+---
+```
+
+---
+
+## Includes
+
+- You can do more advanced customization of output by including additional HTML content or by replacing the core Pandoc template entirely. 
+- To include content in the document header or before or after the document body, you use the includes option as follows:
+
+```{}
+---
+output:
+html_document:
+includes:
+in_header: header.html
+before_body: doc_prefix.html
+after_body: doc_suffix.html
+---
+```
+
+---
+
+# PDF document
+
+- T to generate PDF output, you will need to install LaTeX or install TinyTeX for Rmarkdwon users.
+
+
+``` r
+install.packages("tinytex")
+tinytex::install_tinytex() # install TinyTeX
+```
+
+- To create a PDF document from R Markdown, you specify the `pdf_document` output format in the YAML metadata:
+
+```{}
+---
+title: " R markdown "
+author: Yebelay B
+date: 2022-04-01
+output: pdf_document
+---
+```
+
+- Within R Markdown documents that generate PDF output, you can use raw LaTeX, and even define LaTeX macros. 
+
+---
+
+You can add section numbering to headers using the number_sections option:
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+toc: true
+number_sections: true
+---
+```
+
+If you are familiar with LaTeX, number_sections: true means `\section{}` , and number_sections: false means `\section*{}` for sections in LaTeX (it also applies to other levels of sections such as `\chapter{}` , and `\subsection{}` ).
+
+---
+
+## Figure options
+
+- There are a number of options that affect the output of figures within PDF documents: `fig_width` and `fig_height` can be used to control the default figure width and height.
+- `fig_crop` controls whether the pdfcrop utility, if available in your system, is automatically applied to PDF figures. 
+- If your graphics device is postscript , we recommend that you disable this feature.
+- `fig_caption` controls whether figures are rendered with captions.
+
+```{}
+---
+output:
+pdf_document:
+fig_width: 7
+fig_height: 6
+fig_caption: true
+---
+```
+
+---
+
+# Data frame printing
+
+- You can enhance the default display of data frames via the df_print option. 
+- Valid values are presented
+- The possible values of the df_print option for the pdf_document format.
+
+- `default`:            Call the print.data.frame generic method
+
+- `kable`:              Use the knitr::kable() function
+
+- `tibble`:              Use the tibble::print.tbl_df() function
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+df_print: kable
+---
+```
+
+---
+
+# Syntax highlighting
+
+- The highlight option specifies the syntax highlighting style. 
+- Its usage in pdf_document is the same as html_document. 
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+highlight: tango
+---
+```
+
+**LaTeX options**
+
+- Many aspects of the LaTeX template used to create PDF documents can be customized using top-level YAML metadata.
+
+```{}
+---
+title: "Introduction to Rmarkdown"
+output: pdf_document
+fontsize: 11pt
+geometry: margin=1in
+---
+```
+
+---
+
+- Available top-level YAML metadata variables for LaTeX output.
+
+* `lang`:            Document language code
+* `fontsize`:        Font size (e.g., 10pt , 11pt , or 12pt )
+* `documentclass`:   LaTeX document class (e.g., article )
+* `classoption`:     Options for documentclass (e.g., oneside )
+* `geometry`:        Options for geometry class (e.g., margin=1in )
+* `mainfont, sansfont,monofont, mathfont`: Document fonts and works only with xelatex and lualatex.
+* `linkcolor, urlcolor,citecolor`: Color for internal, external, and citation links
+
+**LaTeX packages for citations**
+
+- To use one of these packages, just set the option citation_package to be natbib or biblatex,
+
+```{}
+---
+output:
+pdf_document:
+citation_package: natbib
+---
+```
+
+---
+
+# Advanced customization
+
+**LaTeX engine**
+
+- By default, PDF documents are rendered using pdflatex.
+- You can specify an alternate engine using the latex_engine option. Available engines are pdflatex , xelatex , and lualatex .
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+latex_engine: xelatex
+---
+```
+
+- The main reasons you may want to use xelatex or lualatex are: 
+   + (1) They support Unicode better;
+   + (2) It is easier to make use of system fonts.
+
+---
+
+**Includes**
+
+- You can do more advanced customization of PDF output by including additional LaTeX directives and/or content or by replacing the core Pandoc template entirely. 
+
+- To include content in the document header or before/after the document body, you use the includes option as follows
+
+```{}
+---
+title: " R markdown "
+output:
+pdf_document:
+includes:
+in_header: preamble.tex
+before_body: doc-prefix.tex
+after_body: doc-suffix.tex
+---
+```
+
+---
+
+# Word document
+
+- To create a Word document from R Markdown, you specify the word_document output format in the YAML metadata of your document
+
+```{}
+---
+title: " R markdown "
+author: Yebelay B
+date: April 01, 2022
+output: word_document
+---
+```
+
+- The most notable feature of Word documents is the Word template, which is also known as the "style reference document". 
+- You can specify a document to be used as a style reference in producing a *.docx file (a Word document).
+- This will allow you to customize things such as margins and other formatting characteristics. 
+
+---
+
+- For best results, the reference document should be a modified version of a .docx file produced using rmarkdown or Pandoc. 
+- The path of such a document can be passed to the reference_docx argument of the word_document format. Pass "default" to use the default styles.
+
+```{}
+---
+title: " R markdown "
+output:
+word_document:
+reference_docx: my-styles.docx
+---
+```
+
+- For more on how to create and use a reference document, you may watch this short video: &lt;https://vimeo.com/110804387&gt;, or read this detailed article: &lt;https://rmarkdown.rstudio.com/articles_docx.html&gt;.
+
+
+---
+
+# Presentations
+
+- For documents, the basic units are often sections. 
+- For presentations, the basic units are slides. 
+- A section in the Markdown source document often indicates a new slide in the presentation formats. 
+- In this chapter, we introduce the built-in presentation formats in the rmarkdown package.
+
+## Beamer presentation
+
+- To create a Beamer presentation from R Markdown, you specify the `beamer_presentation` output format in the `YAML metadata` of your document. 
+
+- You can create a slide show broken up into sections by using the `# and ##` heading tags (you can also create a new slide without a header using a horizontal rule `( --- )`. 
+
+---
+
+```{}
+---
+title: "Introduction to R Markdown"
+author: "Yebelay Berelie"
+date: '2022-04-01'
+output: "beamer_presentation"
+---
+```
+
+```{}
+# In the morning
+## Getting up
+- Turn off alarm
+- Get out of bed
+```{r, cars, fig.cap="A scatterplot.", echo=FALSE}`''`
+plot(cars)
+```
+
+
+- Within R Markdown documents that generate PDF output, you can use raw LaTeX and even define LaTeX macros. 
+
+---
+
+# Themes
+
+- You can specify Beamer themes using the theme, colortheme, and fonttheme options. 
+
+```{}
+---
+output:
+beamer_presentation:
+theme: "AnnArbor"
+colortheme: "dolphin"
+fonttheme: "structurebold"
+---
+```
+
+- You can find a list of possible themes and color themes at &lt;https://hartwork.org/beamer-theme-matrix/&gt;.
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"ratio": "14:9",
+"highlightLines": true,
+"highlightSpans": true,
+"highlightStyle": "tomorrow-night-bright"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
