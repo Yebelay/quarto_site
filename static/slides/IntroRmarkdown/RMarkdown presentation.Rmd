@@ -1,7 +1,6 @@
 ---
-title: "Customized RMarkdown documents"
-subtitle: "Introduction to RStudio and RMarkdown"
-          
+title: "Introduction to RMarkdown"
+
 author: "Yebelay Berehan"
 
 institute: " Debre Markos University"
