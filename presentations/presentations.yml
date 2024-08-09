@@ -22,9 +22,9 @@
       href: https://yebelay.rbind.io/static/slides/causal inference from observational data using r (2).pdf
       thumbnail: img/causal.png
     - title: Spatial presentations 
-      href: https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html
-      code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/Spatial-Data-Slide/Spatial.qmd
-      thumbnail: img/spa.png
+      href: https://yebelay.rbind.io/static/slides/longitudinal data analysis.pdf
+      code: https://github.com/Yebelay/Longitudinal-data-analysis/blob/main/Ldata-Analysis.Rmd
+      thumbnail: img/lda.png
     - title: Spatial presentations 
       href: https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html
       code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/Spatial-Data-Slide/Spatial.qmd
