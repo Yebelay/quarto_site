@@ -1,5 +1,5 @@
 ---
-pagetitle: "Gallery"
+pagetitle: "Presentations"
 format:
   html:
     toc: false

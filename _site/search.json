@@ -1951,5 +1951,222 @@
     "title": "",
     "section": "Exporting Data",
     "text": "Exporting Data\nR to Stata: Use the libraries haven or readstata13\n\nCodewrite.dta(data,file=\"XXX.dta\")# Other options\nsave.dta13(data, file=\"XXX.dta\") # Other options\n\n\nR to Excel: Note the package readxl does not work here\n\nCodelibrary(xlsReadWrite)\nwrite.xls(data,\"data.xls\")# Other options\n\n\nR to csv: Use readr package\n\nCodewrite_csv(data, \"data.csv\", na = \"\")\n\n\nR to a text file:\n\nCodewrite.table(data, \"data.txt\", sep=\"\\t\")\n\n\n\n\n\n\n?"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html",
+    "href": "static/slides/Rintro/img/Day 1.html",
+    "title": "Introduction to R",
+    "section": "",
+    "text": "Take few minutes to introduce ourselves.\n\nPlease share …\n\nYour name\nYour experience in R\nWhat you expect at end of the training\n\n\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#introductions",
+    "href": "static/slides/Rintro/img/Day 1.html#introductions",
+    "title": "Introduction to R",
+    "section": "",
+    "text": "Take few minutes to introduce ourselves.\n\nPlease share …\n\nYour name\nYour experience in R\nWhat you expect at end of the training\n\n\n\n\n\n−+\n02:00"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#section",
+    "href": "static/slides/Rintro/img/Day 1.html#section",
+    "title": "Introduction to R",
+    "section": "",
+    "text": "Outlines\nPart 1: Introduction/Overview of R and R Studio\n\nWorking with R: Objects and Workspace\n\nR Objects & Project Management\nGood Coding Practice\n\n\nPart 2: Data management using tidyverse package\nPart 3: Data visualization\nPart 4: Statistical Analysis\n\n\nSetting up and utilizing R & RStudio\nNavigating R & Rmarkdown scripts and RStudio projects\nImporting and inspecting data sets in R\nManipulating data through filtering, summarizing, transforming, and joining\nVisualizing data using the renowned ggplot2 package"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#why-r",
+    "href": "static/slides/Rintro/img/Day 1.html#why-r",
+    "title": "Introduction to R",
+    "section": "Why R?",
+    "text": "Why R?\n\nYour callout content goes here.\n\n\nIt is free, versatile, fast, and modern.\nIt has a large and friendly community of users that help answer questions and develop new R tools.\nWith more than 20394 add-on packages available, R offers more functions for data analysis than any other statistical software.\nR makes it easy to construct reproducible analyses and workflows that allow you to easily repeat the same analysis more than once.\nIt is flexible enough to be used to create interactive web pages (eg. my draft website) and automated reports.\nSimply currently the best tool there is for data analysis."
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#what-are-advantages-or-disadvantages-of-r",
+    "href": "static/slides/Rintro/img/Day 1.html#what-are-advantages-or-disadvantages-of-r",
+    "title": "Introduction to R",
+    "section": "What are Advantages or Disadvantages of R",
+    "text": "What are Advantages or Disadvantages of R\n\n\nAdvantages\n\nAvailability and compatibility\nState of the art graphics capabilities\nCan import files from other (statistical) programs\nNew version every x months\nInteractive development environments (IDEs) available\nLarge users community\nreproducible research\n\n\nDrawbacks of R\n\nExpert friendly\nLearn by example\nNot very (easily) interactive\nCommand based\nDocumentation sometimes cryptic\n(Too) large amount of resources\nConstantly evolving\nMemory intensive and slow at times"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#rstudio",
+    "href": "static/slides/Rintro/img/Day 1.html#rstudio",
+    "title": "Introduction to R",
+    "section": "2. RStudio",
+    "text": "2. RStudio\n\nWhat is RStudio? Why use it?\n\nBest Integrated Development Environment (IDE) for R.\nPowerful and makes using R easier\nRStudio can:\n\nOrganize your code, output, and plots.\nAuto-complete code and highlight syntax.\nHelp view data and objects.\nEnable easy integration of R code into documents.\n\nUser-friendly interfaces"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#set-up-on-windows",
+    "href": "static/slides/Rintro/img/Day 1.html#set-up-on-windows",
+    "title": "Introduction to R",
+    "section": "Set up on Windows",
+    "text": "Set up on Windows\nDownload and install R\n\nFollow the steps below to download and install R:\n\n\nGo to cran.rstudio.com to access the R installation page. Then click the download link for Windows:\n\nChoose the “base” sub-directory.\n\n\n\n\nThen click on the download link at the top of the page to download the latest version of R:\n\n\n\n\n\nNote that the screenshot above may not show the latest version.\nAfter the download is finished, click on the downloaded file, then follow the instructions on the installation pop-up window. During installation, you should not have to change any of the defaults; just keep clicking “Next” until the installation is done.\nWell done! You should now have R on your computer. But you likely won’t ever need to interact with R directly. Instead you’ll use the RStudio IDE to work with R. Follow the instructions in the next section to get RStudio.\n\n\n\nDownload, install & run RStudio\nTo download RStudio, go to rstudio.com/products/rstudio/download/#download and download the Windows version.\n\n\nThen click on the downloaded file and follow the installation instructions.\nNow Click to to open the app from the start menu:"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#rstudio-overview",
+    "href": "static/slides/Rintro/img/Day 1.html#rstudio-overview",
+    "title": "Introduction to R",
+    "section": "RStudio Overview",
+    "text": "RStudio Overview"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#getting-started",
+    "href": "static/slides/Rintro/img/Day 1.html#getting-started",
+    "title": "Introduction to R",
+    "section": "Getting Started",
+    "text": "Getting Started\n\nRStudio will open with 4 sections (called panes):\n\n\n1. Source editor pane**\n\nYou will write your R code/script here and it will be run in the console.\n\nTo create a new R script you can either go to File -&gt; New -&gt; R Script, or click on the icon with the + sign and select R Script, or simply press Ctrl+Shift+N.\nMake sure to save the script.\n\n\n\n\n\n2. Console pane\n\nInteractively run R commands\n\n\n\n3. Environment/history pane**\n\nEnvironment: view objects in the global environment\nHistory: search and view command history\n\n\n\n\n4. Files/Plots/Packages/Help pane**\n\nFiles: navigate directories and\nPlots: view generated plots.\nPackages: manage packages (install or update)\nHelp: View help documentations for any package/function"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#customization",
+    "href": "static/slides/Rintro/img/Day 1.html#customization",
+    "title": "Introduction to R",
+    "section": "Customization",
+    "text": "Customization\n\nPanes\n\nThe size and position of the panes can be customized.\nOn the top right of each pane, there are buttons to adjust the pane size.\nAlso, place your mouse pointer/cursor on the borderline between panes and when the pointer changes its shape, click and drag to adjust the pane size.\nFor more options, go to View &gt; Panes on the menu bar.\nAlternatively, try Tools &gt; Global Options &gt; Pane Layout.\n\n\n\nAppearances\n\nThe overall appearance can be customized as well.\nGo to Tools &gt; Global Options&gt; Appearance on the menu bar to change themes, fonts, and more."
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#the-rstudio-panes",
+    "href": "static/slides/Rintro/img/Day 1.html#the-rstudio-panes",
+    "title": "Introduction to R",
+    "section": "The RStudio panes",
+    "text": "The RStudio panes\nBy default, RStudio is arranged into four window panes.\nIf you only see three panes, open a new script with File &gt; New File &gt; R Script . This should reveal one more pane.\n\nBefore we go any further, we will rearrange these panes to improve the usability of the interface.\n\n\nThen under Pane Layout, adjust the pane arrangement. The arrangement we recommend is shown below.\n\n\n\nAt the top left pane is the Source tab, and at the top right pane, you should have the Console tab.\nThen at the bottom left pane, no tab options should checked—this section should be left empty, with the drop-down saying just “TabSet”.\nFinally, at the bottom right pane, you should check the following tabs: Environment, History, Files, Plots, Packages, Help and Viewer.\n\n\nFirst, open a new script under the File menu if one is not yet open: File &gt; New File &gt; R Script. In the script, type the following:\n\nprint(\"excited for R!\")\n\n\nTo run code, place your cursor anywhere in the code, then hit Control + Enter on Windows.\nThis should send the code to the Console and run it.\n\n\nYou can also run multiple lines at once.\n\nprint(\"excited for R!\")\nprint(\"and RStudio!\")\n\n\nNow drag your cursor to highlight both lines and press Control + Enter.\nTo run the entire script, you can use Control + A to select all code, then press `Control + Enter.\n\n\n\nTo open the script in a new window, click on the third icon in the toolbar directly above the script.\n\n\n\nTo put the window back, click on the same button on the now-external window.\nNext, save the script. Hit Control + S to bring up the Save dialog box.\n\n\n\nConsole\n\nThe console, at the bottom left, is where code is executed. You can type code directly here, but it will not be saved.\nType a random piece of code (maybe a calculation like 3 + 3) and press ‘Enter’.\n\n\n\nIf you place your cursor on the last line of the console, and you press the up arrow, you can go back to the last code that was run. Keep pressing it to cycle to the previous lines.\nTo run any of these previous lines, press Enter.\n\n\n\n\nEnvironment\n\n\nAt the top right of the RStudio Window, you should see the Environment tab.\nThe Environment tab shows datasets and other objects that are loaded into R’s working memory, or “workspace”.\nTo explore this tab, let’s import a dataset into your environment from R.\nType the code below into your script and run it:\n\n\ndata &lt;- iris\n\nYou have now imported the dataset and stored it in an object named data. (You could have named the object anything you want.)\n\nNow that the dataset is stored by R, you should be able to see it in the Environment pane.\nIf you click on the blue drop-down icon beside the object’s name in the Environment tab to reveal a summary.\n\n\n\nTry clicking directly on the data dataset from the Environment tab. This opens it in a ‘View’ tab.\n\n\n\nThe broom icon, at the top of the Environment pane is used to clear your workspace.\n\n\n\nYou can also remove an object from the workspace with the rm() function.\nType and run the following in a new line on your R script.\n\n\nrm(data)\n\nNotice that the data object no longer shows up in your environment after having run that code.\n\n\n\nHistory\n\nNext, the History tab shows previous commands you have run.\n\n\n\nYou can click a line to highlight it, then send it to the console or to your script with the “To Console” and “To Source” icons at the top of this tab.\nTo select multiple lines, use the “Shift-click” method: click the first item you want to select, then hold down the “Shift” key and click the last item you want to select.\nFinally, notice that there is a search bar at the top right of the History pane where you can search for past commands that you have run.\n\n\n\n\nFiles\n\nNext, the Files tab. This shows the files and folders in the folder you are working in.\n\n\n\nThe tab allows you to interact with your computer’s file system.\nTry playing with some of the buttons here, to see what they do. You should try at least the following:\n\nMake a new folder\nDelete that folder\nMake a new R Script\nRename that script\n\n\n\n\n\nPlots\n\nNext, the Plots tab. This is where figures that are generated by R will show up.\nTry creating a simple plot with the following code:\n\n\nplot(women)\n\n\n\nThat code creates a plot of the two variables in the women dataset.\nYou should see this figure in the Plots tab.\nNow, test out the buttons at the top of this tab to explore what they do.\nIn particular, try to export a plot to your computer.\n\n\n\n\nPackages\n\nNext, let’s look at the Packages tab.\n\n\n\nPackages are collections of R code that extend the functionality of R.\nit is important to know that to use a package, you need to install then load it.\nPackages need to be installed only once, but must be loaded in each new R session.\nAll the package names you see (in blue font) are packages that are installed on your system. And packages with a checkmark are packages which are loaded in the current session."
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#installing-and-loading-packages",
+    "href": "static/slides/Rintro/img/Day 1.html#installing-and-loading-packages",
+    "title": "Introduction to R",
+    "section": "Installing and Loading Packages",
+    "text": "Installing and Loading Packages\n\nPackages are collections of R functions, data, and compiled code in a well-defined format.\nThere are three categories of packages.\n\n1. Base Packages: Providing the basic functionality, maintained by the R Core Development group. Currently, there are 14 packages, these are\n\nrownames(installed.packages(priority=\"base\"))\n\n [1] \"base\"      \"compiler\"  \"datasets\"  \"graphics\"  \"grDevices\" \"grid\"     \n [7] \"methods\"   \"parallel\"  \"splines\"   \"stats\"     \"stats4\"    \"tcltk\"    \n[13] \"tools\"     \"utils\"    \n\n\n2. Recommended Packages: also a default package, mainly including additional more complex statistical procedures. These are 15 packages\n\nrownames(installed.packages(priority=\"recommended\"))\n\n [1] \"boot\"       \"class\"      \"cluster\"    \"codetools\"  \"foreign\"   \n [6] \"KernSmooth\" \"lattice\"    \"MASS\"       \"Matrix\"     \"mgcv\"      \n[11] \"nlme\"       \"nnet\"       \"rpart\"      \"spatial\"    \"survival\"  \n\n\n\n3. Contributed packages: Due to the open nature of R, anyone can contribute new packages at any time.\n\nCurrently, the CRAN package repository features 20394 available packages.\n\n\nnrow(available.packages())\n\n\nInstalling Packages\n\nOption 1: Menu\n\n\n\n\n\n\n\n\nOption 2: Packages Window\n\n\n\n\n\n\n\nOption 3: Code\n\n\ninstall.packages(\"readxl\") \n\n\n\nLoading Packages\n\nlibrary()   # see all packages installed\nsearch()    # see packages currently loaded"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#updating-r-and-rstudio",
+    "href": "static/slides/Rintro/img/Day 1.html#updating-r-and-rstudio",
+    "title": "Introduction to R",
+    "section": "Updating R and RStudio",
+    "text": "Updating R and RStudio\n\nUpdating R\n\nGo to CRAN and download new version\nMore efficient: install installr package, load it, and run updateR()\n\nUpdates R and Optionally updates all packages\nMay be better to do this in basic Rgui\n\nVersion should update automatically in RStudio\n\nCheck/change R version under Tools&gt;Global Options&gt;R version\n\nThen update the R packages with the code:\n\n\nupdate.packages(ask = FALSE, checkBuilt = TRUE)\n\n\nTo updating RStudio: Go to RStudio and download new version\nClick on Help&gt;Check for Updates, follow menu prompts\n\n\n\n\nViewer\nNotice that the histogram above shows up in a Viewer tab. This tab allows you to preview HTML files and interactive objects.\n\n\nHelp\nLastly, the Help tab shows the documentation for different R objects. Try typing out and running each line below to see what this documentation looks like.\n\n?hchart\n?women\n?read.csv\n\n\n\nHelp files are not always very easy to understand for beginners, but with time they will become more useful."
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#rstudio-options",
+    "href": "static/slides/Rintro/img/Day 1.html#rstudio-options",
+    "title": "Introduction to R",
+    "section": "RStudio options",
+    "text": "RStudio options\n\nRStudio has a number of useful options for changing it’s look and functionality. Let’s try these.\nYou may not understand all the changes made for now. That’s fine.\nIn the RStudio menu at the top of the screen, select Tools &gt; Global Options to bring up RStudio’s options.\nNow, under Appearance, choose your ideal theme. (We like the “Crimson Editor” and “Tomorrow Night” themes.)\n\nUnder Code &gt; Display, check “Highlight R function calls”.\nWhat this does is give your R functions a unique color, improving readability.\nAlso under Code &gt; Display, check “Rainbow parentheses”.\nWhat this does is make your “nested parentheses” easier to read by giving each pair a unique color.\n\n\n\nFinally under General &gt; Basic, uncheck the box that says “Restore .RData into workspace at startup”.\nYou don’t want to restore any data to your workspace (or environment) when you start RStudio.\nStarting with a clean workspace each time is less likely to lead to errors.\nThis also means that you never want to “save your workspace to .RData on exit”, so set this to Never."
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#command-palette",
+    "href": "static/slides/Rintro/img/Day 1.html#command-palette",
+    "title": "Introduction to R",
+    "section": "Command palette",
+    "text": "Command palette\n\nThe Rstudio command palette gives instant, searchable access to many of the RStudio menu options and settings that we have seen so far.\nThe palette can be invoked with the keyboard shortcut Ctrl + Shift + P.\nIt’s also available on the Tools menu (Tools -&gt; Show Command Palette).\n\n\nTry using it to:\n\nCreate a new script (Search “new script” and click on the relevant option)\nRename a script (Search “rename” and click on the relevant option)"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#wrapping-up",
+    "href": "static/slides/Rintro/img/Day 1.html#wrapping-up",
+    "title": "Introduction to R",
+    "section": "Wrapping up",
+    "text": "Wrapping up\n\nOf course, you have only scratched the surface of RStudio functionality and you can find more on the cheatsheet below:"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#working-with-r-objects",
+    "href": "static/slides/Rintro/img/Day 1.html#working-with-r-objects",
+    "title": "Introduction to R",
+    "section": "3. Working with R Objects",
+    "text": "3. Working with R Objects\nOrganize with an RStudio project\n\nIt is a good habit to immediately create a project for handling the analysis of new data and keep everything together.\nThe workspace is a working environment where R will store and remember user-defined objects: vectors, matrices, data frames, lists, variables, etc.\nTo Create an R project, go to\nFile &gt; New Project and then choose: New Directory&gt; Name for the directory &gt; Click on Create Project\nFor more complex projects it may be useful to create sub-directories to contain data, scripts, and other documents separately.\nYou can also type the below function into the Console, but we won’t do that in this session.\n\nprodigenr::setup_project(\"C:/Users/yebel/Desktop/LearningR\")\n\n\nObjects in R\n\nR is an object-oriented programming platform.\nMeaning the entities that R creates and manipulates are known as objects.\nDuring an R session, objects are created and stored by name.\n\n\nobjects() # lists all objects\nls() # lists all objects alternatively\nrm(x) #removes an object  \n\n\nObjects can be created in the form of\n\nvariable &lt;- value or variable = value or variable -&gt; value.\nVariable names can be letters, numbers, and the dot or underline characters but not dot followed by numbers .4youis illegal).\n\n\n\n\nthe symbol &lt;- (Alt + -) that could be read as assign or place into or read in etc.\n\n\n# need to placed in quotes as diabetic is string.\nA &lt;-\"Diabetic\"#&lt;&lt; \n\n\nThe standard data objects in R are: scalars, vectors, factors, matrices and arrays, lists, and data frames.\nData types assigned to each objects are: logical, numeric, integer, character, complex.\n\n\n\nVector\n\nA set of scalars arranged in a one-dimensional array.\nData values are all the same mode(data type), but can hold any mode.\n\ne.g:(-2, 3.4, 3), (TRUE, FALSE, TRUE), (“blue”, “gray”, “red”)\n\nVectors can be created using the following functions:\nc() function to combine individual values\n\nx &lt;- c(10.4, 5.6, 3.1, 6.4, 21.7)\n\nseq() to create more complex sequences\n\nseq(from=1, to=10, by=2) or seq(1,10 )\n\nrep() to create replicates of values: rep(1:4, times=2, each=2)"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#some-useful-functions-in-vector",
+    "href": "static/slides/Rintro/img/Day 1.html#some-useful-functions-in-vector",
+    "title": "Introduction to R",
+    "section": "Some useful functions in vector",
+    "text": "Some useful functions in vector\n\nclass(x): returns class/type of vector x\nlength(x): returns the total number of elements\nx[length(x)]: returns last value of vector x\nrev(x): returns reversed vector\nsort(x): returns sorted vector\nunique(x): returns vector without multiple elements\nrange(x): Range of x\nquantile(x): Quantiles of x for the given probabilities\nwhich.max(x): index of maximum\nwhich.min(x): index of minimum"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#factors",
+    "href": "static/slides/Rintro/img/Day 1.html#factors",
+    "title": "Introduction to R",
+    "section": "Factors",
+    "text": "Factors\n\nA factor is used to store predefined categorical data\nCan be ordered and unordered\n\ne.g. :(“yes”, “no”, “no”, “yes”, “yes”), (“male”, “female”, “female”, “male”)\n\nFactors can be created using factor()\n\n\nsize &lt;- factor(c(\"small\", \"large\", \"small\", \"medium\"))\n\n\nThe levels of a factor can be displayed using levels()."
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#matrix",
+    "href": "static/slides/Rintro/img/Day 1.html#matrix",
+    "title": "Introduction to R",
+    "section": "Matrix",
+    "text": "Matrix\n\nMatrix is a rectangular array arranged in rows and columns.\nThe individual items in a matrix are called its elements or entries.\nMatrices can be created by:\n\n\nmatrix()\nconverting a vector into a matrix\nbinding together vectors\n\n\nMatrices can be created using the functions:\n\nmatrix() creates a matrix by specifying rows and columns\ndim() sets dimensions to a vector\ncbind combines columns\nrbind combines rows\n\n\n\ne.g.\n\nm1&lt;-matrix(data = 1:6, nrow = 3, ncol = 2)\nm2&lt;-cbind(1:3,5:7,10:12)\nx=1:6\ndim(x) &lt;- c(2, 3)\n\n\nNote: dim() can also be used to retrieve dimensions of an object!\n\nAssign names to rows and columns of a matrix\n\nrownames(m1) &lt;- c(\"A\", \"B\", \"C\") \ncolnames(m1)&lt;- c(\"a\",\"b\")"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#data-frames",
+    "href": "static/slides/Rintro/img/Day 1.html#data-frames",
+    "title": "Introduction to R",
+    "section": "Data frames",
+    "text": "Data frames\n\na data set in R is stored a data frame.\nTwo-dimensional, arranged in rows and columns created using the function: data.frame()\ne.g.\n\n\ndf &lt;- data.frame(ID = 1:3, Sex = c(\"F\", \"F\", \"M\"), Age = c(17, 18,18))\n\n\nWe can enter data directly by access the editor using either the edit() or fix()\n\n\n new.data&lt;-data.frame()  # creates an \"empty\" data frame\n new.data&lt;-edit(new.data) # request the changes or  `fix(new.data)`\n\n\nWe’ll use the data set called iris data to do this exploration.\n\n\nlibrary(readr)\ndata &lt;- read_csv(\"iris.csv\")\n#View(data)"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#some-functions-for-inspecting-the-data",
+    "href": "static/slides/Rintro/img/Day 1.html#some-functions-for-inspecting-the-data",
+    "title": "Introduction to R",
+    "section": "Some functions for inspecting the data",
+    "text": "Some functions for inspecting the data\n\nUse head() and tail() to view the first (and last) five rows\nUse View() to view an entire data.table object\nUse str() to view the structure of data.table object\nUse tables() to show all loaded data.table objects\nUse colnames() or names() to look variable names\nUse colSums(is.na()) to sum missing data\nUse subset() to subset data.\nUse attributes() to look attributes of the dataframe\nUse dim() or ncol() and nrow() to see dimensions of the dataframe\nUse summary() to see basic statistics for each variables"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#subsetting",
+    "href": "static/slides/Rintro/img/Day 1.html#subsetting",
+    "title": "Introduction to R",
+    "section": "Subsetting",
+    "text": "Subsetting\n\niris[] # the whole data frame \niris[1, 1] # 1st element in 1st column \niris[1, 6] # 1st element in the 6th column \niris[, 1] # first column in the data frame \niris[1] # first column in the data frame \niris[1:3, 3] \niris[3, ] # the 3rd row \niris[1:6, ] # the 1st to 6th rows\niris[c(1,4), ] # rows 1 and 4 only \niris[c(1,4), c(1,3) ] \niris[, -1] # the whole except first column\niris$Variable1 # Also extracts the first column\niris[,c(\"col3\", \"col4\")]# extract by name of column"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#reading-and-writing-data",
+    "href": "static/slides/Rintro/img/Day 1.html#reading-and-writing-data",
+    "title": "Introduction to R",
+    "section": "4. Reading and Writing data",
+    "text": "4. Reading and Writing data\n\nImporting data is rather easy in R but that may also depend on the nature of the data to be imported and from what format.\nMost data are in tabular form such as a spreadsheet or a comma-separated file (.csv).\nBase R has a series of read functions to import tabular data from plain text files with columns delimited by: space, tab, and comma, with or without a header containing the column names.\nWith an added package it is also possible to import directly from a Microsoft Excel spreadsheet format or other foreign formats from various sources."
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#importing-from-local-files",
+    "href": "static/slides/Rintro/img/Day 1.html#importing-from-local-files",
+    "title": "Introduction to R",
+    "section": "Importing from local files",
+    "text": "Importing from local files\n\nIn base R the standard commands to read text files are based on the read.table()function.\nThe following table lists the collection of the base R read functions.\nFor more details use the help command help(read.table) that will display help for all.\n\n\nDetails of dataset readings\n\n\nFunction name\nAssumes header\nSeparator\nDecimal\nFile type\n\n\n\n\nread.table()\nNo\n” ”\n.\n.text\n\n\nread.csv()\nYes\n“,”\n.\n.csv\n\n\nread.csv2()\nYes\n“;”\n,\n.csv\n\n\nread.delim()\nYes\n“tab”\n.\n.text\n\n\nread.delim2()\nYes\n“tab”\n,\n.text"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#reading-raw-data-from-other-sources",
+    "href": "static/slides/Rintro/img/Day 1.html#reading-raw-data-from-other-sources",
+    "title": "Introduction to R",
+    "section": "Reading raw data from other sources",
+    "text": "Reading raw data from other sources\n\nImport data\n\nThere are many ways to get data into R and out of R.\nImport text file data using read.table() and comma separated files using read.csv() functions.\n\n\n# syntax: \nread.table(\"file name with full path\", arguments)#&lt;&lt;\n\n\n# Examples:# Creates a data frame named myData\n  mydata&lt;- read.table(file = \"datafile.txt\",sep=\" \", header=TRUE)\n  mydata&lt;- read.csv(file = \"datafile.csv\")\n\n\nFile names are specified in the same way as file.choose() function can be used to select the file interactively. i.e.\n\n\nmydata &lt;-read.csv(file.choose(),sep=\",\",header=T)\n\n\nUseful arguments - Check these arguments carefully when you load your data\n\nmyData&lt;-read.csv(file=\"datafile.csv\",header= TRUE, sep=\",\", strip.white =TRUE,\n                 na.strings= \" \")\n\n\nYou can reduce possible errors when loading a data file\nThe header = TRUE argument tells R that the first row of your file contains the variable names\nThe sep =  \",\" argument tells R that fields are separated by comma\nThe strip.white = TRUE argument removes white space before or after factors that has been mistakenly inserted during data entry.\nThe na.strings = \" \" argument replaces empty cells by NA (missing data in R)"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#read-data",
+    "href": "static/slides/Rintro/img/Day 1.html#read-data",
+    "title": "Introduction to R",
+    "section": "Read data",
+    "text": "Read data\nStata to R: Different packages for stata version &gt;=13 vs. &lt;13\n\nlibrary(foreign) # Versions before stata 13\ndata &lt;-  read.dta(file=\"XXX.dta\") # Other options\n\n\nlibrary(readstata13) # Versions from stata 13\ndata &lt;-  read.dta13(file=\"XXX.dta\") # Other options\n\nExcel to R: There are several packages\n\nlibrary(readxl)\ndata &lt;-  read_xlsx(path=\"XXX.xlsx\", sheet = 1, col_names = TRUE)\n\n\nlibrary(readr)\ndata &lt;- read_csv(\"path=XXX.csv\")"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#read-data-1",
+    "href": "static/slides/Rintro/img/Day 1.html#read-data-1",
+    "title": "Introduction to R",
+    "section": "Read data",
+    "text": "Read data\nCSV to R: There are several packages\n\nlibrary(readr)\ndata &lt;- read_csv(file=\"XXX.csv\")\n\nText file to R: Available in R base, used for text and csv files\n\ndata &lt;- read.table(file=\"XXX.txt\",header=TRUE, sep=\"\")\n\n\ndata &lt;- read.table(file=\"XXX.csv\",header=TRUE, sep=\",\")"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#data-import-wizard",
+    "href": "static/slides/Rintro/img/Day 1.html#data-import-wizard",
+    "title": "Introduction to R",
+    "section": "Data import wizard",
+    "text": "Data import wizard\nThe data import wizard is a quick and easy way to import your data\n\nIt’s actually way better to follow the reproducible steps – and hardly any more effort – below…\n\nInside the data wizard, you can copy the code int he code-preview window, then paste the code into the code chunk of your quarto document or r script.\n\n\n# library(readr)\n#brodhead_center &lt;- read_csv(\"data/brodhead_center.csv\")\n# view(brodheadCenter)\n\n\n\n\n\n\n\n\nComposing the data import code…\n\n\n\nWriting the import data function can be tricky. Try the import wizard pictured above. THEN, paste the code from the Code Preview section into your script.\n\n\n\nEasily write import data function"
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#excel-spss-sas-etc.",
+    "href": "static/slides/Rintro/img/Day 1.html#excel-spss-sas-etc.",
+    "title": "Introduction to R",
+    "section": "Excel, SPSS, SAS, etc.",
+    "text": "Excel, SPSS, SAS, etc.\nThe data import wizard will help you find the proper package for importing your data. For example, use…\n\nlibrary(readxl) for Excel data\nlibrary(haven) for SPSS, SAS, Stata\nlirary(readr) for CSV or other delimeters\n\nJust start with File &gt; Import Dataset to get started composing that code, then paste your code into a script."
+  },
+  {
+    "objectID": "static/slides/Rintro/img/Day 1.html#exporting-data",
+    "href": "static/slides/Rintro/img/Day 1.html#exporting-data",
+    "title": "Introduction to R",
+    "section": "Exporting Data",
+    "text": "Exporting Data\nR to Stata: Use the libraries haven or readstata13\n\nwrite.dta(data,file=\"XXX.dta\")# Other options\nsave.dta13(data, file=\"XXX.dta\") # Other options\n\nR to Excel: Note the package readxl does not work here\n\nlibrary(xlsReadWrite)\nwrite.xls(data,\"data.xls\")# Other options\n\nR to csv: Use readr package\n\nwrite_csv(data, \"data.csv\", na = \"\")\n\nR to a text file:\n\nwrite.table(data, \"data.txt\", sep=\"\\t\")"
   }
 ]
