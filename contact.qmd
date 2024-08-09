@@ -1,7 +1,4 @@
 ---
-title: Contact
-author: "Yebelay Berehan"
-date: "2024-07-31"
 output:
   html_document:
     toc: true

@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../../../Icon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+<meta name="author" content="Yebelay Berehan">
+<title>Yebelay Berehan - Introduction to R</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+<style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+<link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
+<link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+<style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+<link href="../../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+<script src="../../../site_libs/countdown-0.4.0/countdown.js"></script>
+<meta property="og:title" content="Yebelay Berehan - Introduction to R">
+<meta property="og:site_name" content="Yebelay Berehan">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-color="#001E4E" data-background-image="fullimge.jpg" data-background-opacity="2.5" data-background-size="stretch" class="quarto-title-block center"><h1 class="title"></h1>
+<p><span style="color:white">Introduction to R</span></p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<span style="color:gray">Yebelay Berehan</span> 
+</div>
+        <p class="quarto-title-affiliation">
+            </p>
+<p><span style="color:white">Debre Markos University + C4ED</span><br><br><br><br><span style="color:red">2024-08-09</span></p>
+          
+    </div>
+</div>
+
+</section><section id="introductions" class="slide level2"><h2>Introductions</h2>
+<p>Take few minutes to introduce ourselves.</p>
+<div class="poll">
+<p>Please share …</p>
+<ol type="1">
+<li>Your name</li>
+<li>Your experience in R</li>
+<li>What you expect at end of the training</li>
+</ol>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_e50b251e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls">
+<button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
+</div>
+<code class="countdown-time"><span class="countdown-digits minutes">02</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
+</section><section id="section" class="slide level2" data-background-color="#006D6B"><h2></h2>
+<h3 id="sec-outlines"><span style="color:red">Outlines</span></h3>
+<p>Part 1: <strong>Introduction/Overview of R and R Studio</strong></p>
+<ul>
+<li>
+<p>Working with R: Objects and Workspace</p>
+<ol type="I">
+<li><p>R Objects &amp; Project Management</p></li>
+<li><p>Good Coding Practice</p></li>
+</ol>
+</li>
+</ul>
+<p>Part 2: <strong>Data management using tidyverse package</strong></p>
+<p>Part 3: <strong>Data visualization</strong></p>
+<p>Part 4: <strong>Statistical Analysis</strong></p>
+</section><section class="slide level2"><ul>
+<li><p>Setting up and utilizing R &amp; RStudio</p></li>
+<li><p>Navigating R &amp; Rmarkdown scripts and RStudio projects</p></li>
+<li><p>Importing and inspecting data sets in R</p></li>
+<li><p>Manipulating data through filtering, summarizing, transforming, and joining</p></li>
+<li><p>Visualizing data using the renowned ggplot2 package</p></li>
+</ul></section><section id="why-r" class="slide level2"><h2>Why R?</h2>
+<div id="my-callout-block" class="bg-primary text-white p-3 m-3 rounded-2">
+<p>Your callout content goes here.</p>
+</div>
+<ul>
+<li><p>It is free, versatile, fast, and modern.</p></li>
+<li><p>It has a large and friendly community of users that help answer questions and develop new R tools.</p></li>
+<li><p>With <strong>more than 20394 add-on packages</strong> available, R offers more functions for data analysis than any other statistical software.</p></li>
+<li><p>R makes it easy to construct <strong>reproducible analyses</strong> and workflows that allow you to easily repeat the same analysis more than once.</p></li>
+<li><p>It is flexible enough to be used to create <strong>interactive web pages</strong> (eg. <a href="https://yebelay.netlify.app/">my draft website</a>) and <strong>automated reports</strong>.</p></li>
+<li><p>Simply currently the <strong>best tool there is for data analysis</strong>.</p></li>
+</ul></section><section id="what-are-advantages-or-disadvantages-of-r" class="slide level2"><h2>What are Advantages or Disadvantages of R</h2>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><strong>Advantages</strong></p>
+<ul>
+<li>Availability and compatibility</li>
+<li>State of the art graphics capabilities</li>
+<li>Can import files from other (statistical) programs</li>
+<li>New version every x months</li>
+<li>Interactive development environments (IDEs) available</li>
+<li>Large users community</li>
+<li>reproducible research</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<p><strong>Drawbacks of R</strong></p>
+<ul>
+<li>Expert friendly</li>
+<li>Learn by example</li>
+<li>Not very (easily) interactive</li>
+<li>Command based</li>
+<li>Documentation sometimes cryptic</li>
+<li>(Too) large amount of resources</li>
+<li>Constantly evolving</li>
+<li>Memory intensive and slow at times</li>
+</ul>
+</div>
+</div>
+</section><section id="rstudio" class="slide level2"><h2>2. RStudio</h2>
+<h3 id="what-is-rstudio-why-use-it">What is RStudio? Why use it?</h3>
+<ul>
+<li><p>Best Integrated Development Environment (IDE) for R.</p></li>
+<li><p><span style="color:darkred">Powerful and makes using R easier</span></p></li>
+<li>
+<p>RStudio can:</p>
+<ul>
+<li><p><span style="color:blue">Organize your code, output, and plots.</span></p></li>
+<li><p><span style="color:blue">Auto-complete code and highlight syntax.</span></p></li>
+<li><p><span style="color:blue">Help view data and objects.</span></p></li>
+<li><p><span style="color:blue">Enable easy integration of R code into documents.</span></p></li>
+</ul>
+</li>
+<li><p>User-friendly interfaces</p></li>
+</ul></section><section id="set-up-on-windows" class="slide level2"><h2>Set up on Windows</h2>
+<p><strong>Download and install R</strong></p>
+<ul>
+<li>Follow the steps below to download and install R:</li>
+</ul>
+<ol type="1">
+<li>
+<p>Go to <a href="https://cran.rstudio.com/" target="_blank">cran.rstudio.com</a> to access the R installation page. Then click the download link for Windows:</p>
+<p><img data-src="img/cran_select_windows.png"></p>
+</li>
+<li>
+<p>Choose the “base” sub-directory.</p>
+<p><img data-src="img/install_r_windows_base.png"></p>
+</li>
+</ol></section><section class="slide level2"><ol start="3" type="1">
+<li>
+<p>Then click on the download link at the top of the page to download the latest version of R:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/rinstaller_for_window.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<p>Note that the screenshot above may not show the latest version.</p>
+</li>
+<li>
+<p>After the download is finished, click on the downloaded file, then follow the instructions on the installation pop-up window. During installation, you should not have to change any of the defaults; just keep clicking “Next” until the installation is done.</p>
+<p>Well done! You should now have R on your computer. But you likely won’t ever need to interact with R directly. Instead you’ll use the RStudio IDE to work with R. Follow the instructions in the next section to get RStudio.</p>
+</li>
+</ol></section><section class="slide level2"><h3 id="download-install-run-rstudio">Download, install &amp; run RStudio</h3>
+<p>To download RStudio, go to <a href="https://www.rstudio.com/products/rstudio/download/#download">rstudio.com/products/rstudio/download/#download</a> and download the Windows version.</p>
+<p><img data-src="img/install_rstudio_button_windows.png"></p>
+<ul>
+<li><p>Then click on the downloaded file and follow the installation instructions.</p></li>
+<li><p>Now Click to to open the app from the <strong>start menu</strong>:</p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="img/open_rstudio_windows.png"></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="img/first_open.png"></p>
+</div>
+</div>
+</section><section id="rstudio-overview" class="slide level2"><h2>RStudio Overview</h2>
+
+<img data-src="img/RStudio1.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="getting-started" class="slide level2"><h2>Getting Started</h2>
+<ul>
+<li>RStudio will open with 4 sections (called panes):</li>
+</ul>
+<h4 id="source-editor-pane">1. Source editor pane**</h4>
+<ul>
+<li>You will write your R code/script here and it will be run in the console.<br>
+</li>
+<li>To create a new R script you can either go to <code>File -&gt; New -&gt; R Script</code>, or click on the icon with the <code>+</code> sign and select <code>R Script</code>, or simply press <code>Ctrl+Shift+N</code>.</li>
+<li>Make sure to save the script.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<h4 id="console-pane">2. Console pane</h4>
+<ul>
+<li>Interactively run R commands</li>
+</ul>
+<h4 id="environmenthistory-pane">3. Environment/history pane**</h4>
+<ul>
+<li>
+<span style="color:orange">Environment:</span> view objects in the global environment</li>
+<li>
+<span style="color:orange">History:</span> search and view command history</li>
+</ul>
+</div><div class="column" style="width:50%;">
+<h4 id="filesplotspackageshelp-pane">4. Files/Plots/Packages/Help pane**</h4>
+<ul>
+<li>
+<span style="color:orange">Files:</span> navigate directories and</li>
+<li>
+<span style="color:orange">Plots:</span> view generated plots.</li>
+<li>
+<span style="color:orange">Packages:</span> manage packages (install or update)</li>
+<li>
+<span style="color:orange">Help:</span> View help documentations for any package/function</li>
+</ul>
+</div>
+</div>
+</section><section id="customization" class="slide level2"><h2>Customization</h2>
+<h4 id="panes">Panes</h4>
+<ul>
+<li><p>The size and position of the panes can be customized.</p></li>
+<li><p>On the top right of each pane, there are buttons to adjust the pane size.</p></li>
+<li><p>Also, place your mouse pointer/cursor on the borderline between panes and when the pointer changes its shape, click and drag to adjust the pane size.</p></li>
+<li><p>For more options, go to <span style="color:green"><strong>View &gt; Panes</strong></span> on the menu bar.</p></li>
+<li><p>Alternatively, try <span style="color:green"><strong>Tools &gt; Global Options &gt; Pane Layout</strong></span>.</p></li>
+</ul>
+<h4 id="appearances">Appearances</h4>
+<ul>
+<li><p>The overall appearance can be customized as well.</p></li>
+<li><p>Go to <strong>Tools &gt; Global Options&gt; Appearance</strong> on the menu bar to change themes, fonts, and more.</p></li>
+</ul></section><section class="slide level2"></section><section id="the-rstudio-panes" class="slide level2"><h2>The RStudio panes</h2>
+<p>By default, RStudio is arranged into four window panes.</p>
+<p>If you only see three panes, open a new script with <code>File &gt; New File &gt; R Script</code> . This should reveal one more pane.</p>
+<p><img data-src="images/new_r_script.jpg" width="451" height="71"></p>
+<p>Before we go any further, we will rearrange these panes to improve the usability of the interface.</p>
+</section><section class="slide level2"><ul>
+<li>Then under <code>Pane Layout</code>, adjust the pane arrangement. The arrangement we recommend is shown below.</li>
+</ul>
+
+<img data-src="images/rstudio_pane_layout.png" class="r-stretch"><ul>
+<li><p>At the top left pane is the Source tab, and at the top right pane, you should have the Console tab.</p></li>
+<li><p>Then at the bottom left pane, no tab options should checked—this section should be left empty, with the drop-down saying just “TabSet”.</p></li>
+<li><p>Finally, at the bottom right pane, you should check the following tabs: Environment, History, Files, Plots, Packages, Help and Viewer.</p></li>
+</ul></section><section class="slide level2"><p>First, <strong>open a new script</strong> under the File menu if one is not yet open: <code>File &gt; New File &gt; R Script</code>. In the script, type the following:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">print</span>(<span class="st">"excited for R!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li><p>To <strong>run code</strong>, place your cursor anywhere in the code, then hit <code>Control</code> + <code>Enter</code> on Windows.</p></li>
+<li><p>This should send the code to the Console and run it.</p></li>
+</ul></section><section class="slide level2"><p>You can also <strong>run multiple lines at once</strong>.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">print</span>(<span class="st">"excited for R!"</span>)</span>
+<span id="cb2-2"><a></a><span class="fu">print</span>(<span class="st">"and RStudio!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li><p>Now drag your cursor to highlight both lines and press <code>Control</code> + <code>Enter</code>.</p></li>
+<li><p>To <strong>run the entire script</strong>, you can use <code>Control</code> + <code>A</code> to select all code, then press `<code>Control</code> + <code>Enter</code>.</p></li>
+</ul></section><section class="slide level2"><ul>
+<li>To <strong>open the script in a new window</strong>, click on the third icon in the toolbar directly above the script.</li>
+</ul>
+
+<img data-src="images/rstudio_pop_out_icon.png" width="329" class="r-stretch"><ul>
+<li><p>To put the window back, click on the same button on the now-external window.</p></li>
+<li><p>Next, <strong>save the script.</strong> Hit <code>Control</code> + <code>S</code> to bring up the Save dialog box.</p></li>
+</ul></section><section class="slide level2"><h3 id="console">Console</h3>
+<ul>
+<li><p>The <em>console</em>, at the bottom left, is where <strong>code is executed</strong>. You can type code directly here, but it will not be saved.</p></li>
+<li><p>Type a random piece of code (maybe a calculation like <code>3 + 3</code>) and press ‘Enter’.</p></li>
+</ul>
+
+<img data-src="images/rstudio_console.png" width="594" class="r-stretch"><ul>
+<li><p>If you place your cursor on the last line of the console, and you press the <strong>up arrow</strong>, you can go back to the last code that was run. Keep pressing it to cycle to the previous lines.</p></li>
+<li><p>To run any of these previous lines, press <em>Enter</em>.</p></li>
+</ul></section><section class="slide level2"><h3 id="environment">Environment</h3>
+<p><img data-src="images/environment_tab.png" width="527"></p>
+<ul>
+<li><p>At the top right of the RStudio Window, you should see the <strong>Environment</strong> tab.</p></li>
+<li><p>The Environment tab shows datasets and other objects that are loaded into R’s working memory, or “workspace”.</p></li>
+<li><p>To explore this tab, let’s import a dataset into your environment from R.</p></li>
+<li><p>Type the code below into your script and run it:</p></li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>data <span class="ot">&lt;-</span> iris</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>You have now imported the dataset and stored it in an <em>object</em> named <code>data</code>. (You could have named the object anything you want.)</p>
+<ul>
+<li>Now that the dataset is stored by R, you should be able to see it in the Environment pane.</li>
+<li>If you click on the blue drop-down icon beside the object’s name in the Environment tab to reveal a summary.</li>
+</ul>
+<p><img data-src="images/rstudio_explore_object_dropdown.png" width="351"></p>
+<ul>
+<li>Try clicking directly on the <code>data</code> dataset from the Environment tab. This opens it in a ‘View’ tab.</li>
+</ul></section><section class="slide level2"><ul>
+<li>The broom icon, at the top of the Environment pane is used to clear your workspace.</li>
+</ul>
+
+<img data-src="images/broom_icon.png" class="r-stretch"><ul>
+<li>You can also <strong>remove an object from the workspace</strong> with the <code><a href="https://rdrr.io/r/base/rm.html">rm()</a></code> function.</li>
+<li>Type and run the following in a new line on your R script.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">rm</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Notice that the <code>data</code> object no longer shows up in your environment after having run that code.</p>
+</section><section class="slide level2"><h3 id="history">History</h3>
+<ul>
+<li>Next, the <strong>History</strong> tab shows previous commands you have run.</li>
+</ul>
+
+<img data-src="images/history_tab.png" width="470" class="r-stretch"><ul>
+<li><p>You can click a line to highlight it, then send it to the console or to your script with the “To Console” and “To Source” icons at the top of this tab.</p></li>
+<li><p>To select multiple lines, use the “Shift-click” method: click the first item you want to select, then hold down the “Shift” key and click the last item you want to select.</p></li>
+<li><p>Finally, notice that there is a search bar at the top right of the History pane where you can search for past commands that you have run.</p></li>
+</ul></section><section class="slide level2"><h3 id="files">Files</h3>
+<ul>
+<li>Next, the <strong>Files</strong> tab. This shows the files and folders in the folder you are working in.</li>
+</ul>
+
+<img data-src="images/rstudio_files.png" class="r-stretch"><ul>
+<li><p>The tab allows you to interact with your computer’s file system.</p></li>
+<li>
+<p>Try playing with some of the buttons here, to see what they do. You should try at least the following:</p>
+<ul>
+<li><p>Make a new folder</p></li>
+<li><p>Delete that folder</p></li>
+<li><p>Make a new R Script</p></li>
+<li><p>Rename that script</p></li>
+</ul>
+</li>
+</ul></section><section class="slide level2"><h3 id="plots">Plots</h3>
+<ul>
+<li>Next, the <strong>Plots</strong> tab. This is where figures that are generated by R will show up.</li>
+<li>Try creating a simple plot with the following code:</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">plot</span>(women)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/rstudio_plots.png" class="r-stretch"><ul>
+<li><p>That code creates a plot of the two variables in the <code>women</code> dataset.</p></li>
+<li><p>You should see this figure in the Plots tab.</p></li>
+<li><p>Now, test out the buttons at the top of this tab to explore what they do.</p></li>
+<li><p>In particular, try to export a plot to your computer.</p></li>
+</ul></section><section class="slide level2"><h3 id="packages">Packages</h3>
+<ul>
+<li>Next, let’s look at the <strong>Packages</strong> tab.</li>
+</ul>
+
+<img data-src="images/packages_tab.png" width="419" class="r-stretch"><ul>
+<li><p>Packages are collections of R code that extend the functionality of R.</p></li>
+<li><p>it is important to know that to use a package, you need to <em>install</em> then <em>load</em> it.</p></li>
+<li><p>Packages need to be installed only once, but must be loaded in each new R session.</p></li>
+<li><p>All the package names you see (in blue font) are packages that are installed on your system. And packages with a checkmark are packages which are <em>loaded</em> in the current session.</p></li>
+</ul></section><section id="installing-and-loading-packages" class="slide level2"><h2>Installing and Loading Packages</h2>
+<ul>
+<li>Packages are collections of R functions, data, and compiled code in a well-defined format.</li>
+<li>There are three categories of packages.</li>
+</ul>
+<p><span style="color:blue"><strong>1. Base Packages:</strong></span> Providing the basic functionality, maintained by the R Core Development group. Currently, there are 14 packages, these are</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">rownames</span>(<span class="fu">installed.packages</span>(<span class="at">priority=</span><span class="st">"base"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code> [1] "base"      "compiler"  "datasets"  "graphics"  "grDevices" "grid"     
+ [7] "methods"   "parallel"  "splines"   "stats"     "stats4"    "tcltk"    
+[13] "tools"     "utils"    </code></pre>
+</div>
+</div>
+<p><span style="color:blue"><strong>2. Recommended Packages:</strong></span> also a default package, mainly including additional more complex statistical procedures. These are 15 packages</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">rownames</span>(<span class="fu">installed.packages</span>(<span class="at">priority=</span><span class="st">"recommended"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details><div class="cell-output cell-output-stdout">
+<pre><code> [1] "boot"       "class"      "cluster"    "codetools"  "foreign"   
+ [6] "KernSmooth" "lattice"    "MASS"       "Matrix"     "mgcv"      
+[11] "nlme"       "nnet"       "rpart"      "spatial"    "survival"  </code></pre>
+</div>
+</div>
+</section><section class="slide level2"><p><span style="color:blue"><strong>3. Contributed packages:</strong></span> Due to the open nature of R, anyone can contribute new packages at any time.</p>
+<ul>
+<li>Currently, the CRAN package repository features <span style="color:red">20394 available packages</span>.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">nrow</span>(<span class="fu">available.packages</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<h3 id="installing-packages">Installing Packages</h3>
+<ul>
+<li>
+<strong>Option 1:</strong> <span style="color:orange">Menu</span>
+</li>
+</ul>
+
+<img data-src="img/option1.png" class="quarto-figure quarto-figure-center r-stretch"></section><section class="slide level2"><ul>
+<li>
+<strong>Option 2:</strong> <span style="color:orange">Packages Window</span>
+</li>
+</ul>
+
+<img data-src="img/option2.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li>
+<strong>Option 3:</strong> <span style="color:orange">Code</span>
+</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">install.packages</span>(<span class="st">"readxl"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<h3 id="loading-packages">Loading Packages</h3>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">library</span>()   <span class="co"># see all packages installed</span></span>
+<span id="cb12-2"><a></a><span class="fu">search</span>()    <span class="co"># see packages currently loaded</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="updating-r-and-rstudio" class="slide level2"><h2>Updating R and RStudio</h2>
+<h4 id="updating-r">Updating R</h4>
+<ul>
+<li><p>Go to CRAN and download new version</p></li>
+<li>
+<p><strong>More efficient:</strong> install <code>installr</code> package, load it, and run <code>updateR()</code></p>
+<ul>
+<li>Updates R and Optionally updates all packages</li>
+<li><span style="color:darkviolet"><strong>May be better to do this in <code>basic Rgui</code></strong></span></li>
+</ul>
+</li>
+<li>
+<p>Version should update automatically in RStudio</p>
+<ul>
+<li>Check/change R version under <span style="color:green"><strong>Tools&gt;Global Options&gt;R version</strong></span>
+</li>
+</ul>
+</li>
+<li><p>Then update the R packages with the code:</p></li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">update.packages</span>(<span class="at">ask =</span> <span class="cn">FALSE</span>, <span class="at">checkBuilt =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li><p>To updating RStudio: Go to RStudio and download new version</p></li>
+<li><p>Click on <span style="color:green">Help&gt;Check for Updates</span>, follow menu prompts</p></li>
+</ul></section><section class="slide level2"><h3 id="viewer">Viewer</h3>
+<p>Notice that the histogram above shows up in a <strong>Viewer</strong> tab. This tab allows you to preview HTML files and interactive objects.</p>
+<h3 id="help">Help</h3>
+<p>Lastly, the <strong>Help</strong> tab shows the documentation for different R objects. Try typing out and running each line below to see what this documentation looks like.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>?hchart</span>
+<span id="cb14-2"><a></a>?women</span>
+<span id="cb14-3"><a></a>?read.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/example_help_page.png" width="451" class="r-stretch"><ul>
+<li>Help files are not always very easy to understand for beginners, but with time they will become more useful.</li>
+</ul></section><section id="rstudio-options" class="slide level2"><h2>RStudio options</h2>
+<ul>
+<li><p>RStudio has a number of useful options for changing it’s look and functionality. Let’s try these.</p></li>
+<li><p>You may not understand all the changes made for now. That’s fine.</p></li>
+<li><p>In the RStudio menu at the top of the screen, select <code>Tools &gt; Global Options</code> to bring up RStudio’s options.</p></li>
+<li>
+<p>Now, under <code>Appearance</code>, choose your ideal theme. (We like the “Crimson Editor” and “Tomorrow Night” themes.)</p>
+<h2 id="section-1"><img data-src="images/rstudio_themes.png" width="530"></h2>
+</li>
+<li><p>Under <code>Code &gt; Display</code>, check “Highlight R function calls”.</p></li>
+<li><p>What this does is give your R <em>functions</em> a unique color, improving readability.</p></li>
+<li><p>Also under <code>Code &gt; Display</code>, check “Rainbow parentheses”.</p></li>
+<li>
+<p>What this does is make your “nested parentheses” easier to read by giving each pair a unique color.</p>
+<p><img data-src="images/options_highlight_function_rainbow_parentheses.jpg" width="446"></p>
+<p><img data-src="images/highlight_r_function_calls.jpg" width="460" height="66"></p>
+<h2 id="section-2"><img data-src="images/rainbow_parentheses.jpg" width="361"></h2>
+</li>
+<li><p>Finally under <code>General &gt; Basic</code>, <strong>uncheck</strong> the box that says <strong>“Restore .RData into workspace at startup”</strong>.</p></li>
+<li><p>You don’t want to restore any data to your workspace (or <em>environment)</em> when you start RStudio.</p></li>
+<li><p>Starting with a clean workspace each time is less likely to lead to errors.</p></li>
+<li><p>This also means that you never want to <strong>“save your workspace to .RData on exit”</strong>, so set this to <strong>Never</strong>.</p></li>
+</ul></section><section id="command-palette" class="slide level2"><h2>Command palette</h2>
+<ul>
+<li><p>The Rstudio command palette gives instant, searchable access to many of the RStudio menu options and settings that we have seen so far.</p></li>
+<li><p>The palette can be invoked with the keyboard shortcut <code>Ctrl</code> + <code>Shift</code> + <code>P</code>.</p></li>
+<li><p>It’s also available on the <em>Tools</em> menu (<em>Tools</em> -&gt; <em>Show Command Palette</em>).</p></li>
+</ul>
+
+<img data-src="images/command_palette.jpg" width="527" class="r-stretch"><p>Try using it to:</p>
+<ul>
+<li><p>Create a new script (Search “new script” and click on the relevant option)</p></li>
+<li><p>Rename a script (Search “rename” and click on the relevant option)</p></li>
+</ul></section><section id="wrapping-up" class="slide level2"><h2>Wrapping up</h2>
+<ul>
+<li>Of course, you have only scratched the surface of RStudio functionality and you can find more on the cheatsheet below:</li>
+</ul>
+
+<img data-src="images/rstudio_cheatsheet.png" class="r-stretch"></section><section id="working-with-r-objects" class="slide level2"><h2>3. Working with R Objects</h2>
+<p><strong>Organize with an RStudio project</strong></p>
+<ul>
+<li><p>It is a good habit to immediately create a project for handling the analysis of new data and keep everything together.</p></li>
+<li><p>The workspace is a working environment where R will store and remember user-defined objects: <strong>vectors, matrices, data frames, lists, variables,</strong> etc.</p></li>
+<li><p>To Create an R project, go to</p></li>
+<li><p><strong>File &gt; New Project and then choose: New Directory&gt; Name for the directory &gt; Click on Create Project</strong></p></li>
+<li><p>For more complex projects it may be useful to create sub-directories to contain data, scripts, and other documents separately.</p></li>
+<li><p>You can also type the below function into the Console, but we won’t do that in this session.</p></li>
+</ul>
+<pre><code>prodigenr::setup_project("C:/Users/yebel/Desktop/LearningR")</code></pre>
+</section><section class="slide level2"><h3 id="objects-in-r">Objects in R</h3>
+<ul>
+<li>R is an object-oriented programming platform.</li>
+<li>Meaning the entities that R creates and manipulates are known as <code>objects</code>.</li>
+<li>During an R session, objects are created and stored by name.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="fu">objects</span>() <span class="co"># lists all objects</span></span>
+<span id="cb16-2"><a></a><span class="fu">ls</span>() <span class="co"># lists all objects alternatively</span></span>
+<span id="cb16-3"><a></a><span class="fu">rm</span>(x) <span class="co">#removes an object  </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>Objects can be created in the form of
+<ul>
+<li>
+<code>variable &lt;- value</code> or <code>variable = value</code> or <code>variable -&gt; value</code>.</li>
+<li>Variable names can be letters, numbers, and the dot or underline characters but not dot followed by numbers <code>.4you</code>is illegal).</li>
+</ul>
+</li>
+</ul></section><section class="slide level2"><ul>
+<li>the symbol <code>&lt;-</code> (<code>Alt + -</code>) that could be read as <code>assign</code> or <code>place into</code> or <code>read in</code> etc.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># need to placed in quotes as diabetic is string.</span></span>
+<span id="cb17-2"><a></a>A <span class="ot">&lt;-</span><span class="st">"Diabetic"</span><span class="co">#&lt;&lt; </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>The standard data objects in R are: <strong>scalars, vectors, factors, matrices and arrays, lists, and data frames</strong>.</li>
+<li>Data types assigned to each objects are: <strong>logical, numeric, integer, character, complex.</strong>
+</li>
+</ul>
+<h3 id="vector">Vector</h3>
+<ul>
+<li>A set of scalars arranged in a one-dimensional array.</li>
+<li>Data values are all the same mode(data type), but can hold any mode.
+<ul>
+<li>e.g:(-2, 3.4, 3), (TRUE, FALSE, TRUE), (“blue”, “gray”, “red”)</li>
+</ul>
+</li>
+<li>Vectors can be created using the following functions:</li>
+<li>
+<code><a href="https://rdrr.io/r/base/c.html">c()</a></code> function to combine individual values
+<ul>
+<li><code>x &lt;- c(10.4, 5.6, 3.1, 6.4, 21.7)</code></li>
+</ul>
+</li>
+<li>
+<code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> to create more complex sequences
+<ul>
+<li><code>seq(from=1, to=10, by=2) or seq(1,10 )</code></li>
+</ul>
+</li>
+<li>
+<code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> to create replicates of values: <code>rep(1:4, times=2, each=2)</code>
+</li>
+</ul></section><section id="some-useful-functions-in-vector" class="slide level2"><h2>Some useful functions in vector</h2>
+<ul>
+<li><p><code>class(x):</code> returns class/type of vector x</p></li>
+<li><p><code>length(x):</code> returns the total number of elements</p></li>
+<li><p><code>x[length(x)]:</code> returns last value of vector x</p></li>
+<li><p><code>rev(x):</code> returns reversed vector</p></li>
+<li><p><code>sort(x):</code> returns sorted vector</p></li>
+<li><p><code>unique(x):</code> returns vector without multiple elements</p></li>
+<li><p><code>range(x):</code> Range of x</p></li>
+<li><p><code>quantile(x):</code> Quantiles of x for the given probabilities</p></li>
+<li><p><code>which.max(x):</code> index of maximum</p></li>
+<li><p><code>which.min(x):</code> index of minimum</p></li>
+</ul></section><section id="factors" class="slide level2"><h2>Factors</h2>
+<ul>
+<li><p>A factor is used to store predefined categorical data</p></li>
+<li>
+<p>Can be ordered and unordered</p>
+<ul>
+<li>e.g.&nbsp;:(“yes”, “no”, “no”, “yes”, “yes”), (“male”, “female”, “female”, “male”)</li>
+</ul>
+</li>
+<li><p>Factors can be created using <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code></p></li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>size <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"small"</span>, <span class="st">"large"</span>, <span class="st">"small"</span>, <span class="st">"medium"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>The levels of a factor can be displayed using <code><a href="https://rdrr.io/r/base/levels.html">levels()</a></code>.</li>
+</ul></section><section id="matrix" class="slide level2"><h2>Matrix</h2>
+<ul>
+<li><p>Matrix is a rectangular array arranged in rows and columns.</p></li>
+<li><p>The individual items in a matrix are called its elements or entries.</p></li>
+<li><p>Matrices can be created by:</p></li>
+</ul>
+<ol type="1">
+<li><code><a href="https://rdrr.io/r/base/matrix.html">matrix()</a></code></li>
+<li>converting a vector into a matrix</li>
+<li>binding together vectors</li>
+</ol>
+<ul>
+<li>Matrices can be created using the functions:
+<ul>
+<li>
+<code><a href="https://rdrr.io/r/base/matrix.html">matrix()</a></code> creates a matrix by specifying rows and columns</li>
+<li>
+<code><a href="https://rdrr.io/r/base/dim.html">dim()</a></code> sets dimensions to a vector</li>
+<li>
+<code>cbind</code> combines columns</li>
+<li>
+<code>rbind</code> combines rows</li>
+</ul>
+</li>
+</ul></section><section class="slide level2"><p>e.g.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>m1<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb19-2"><a></a>m2<span class="ot">&lt;-</span><span class="fu">cbind</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">5</span><span class="sc">:</span><span class="dv">7</span>,<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>)</span>
+<span id="cb19-3"><a></a>x<span class="ot">=</span><span class="dv">1</span><span class="sc">:</span><span class="dv">6</span></span>
+<span id="cb19-4"><a></a><span class="fu">dim</span>(x) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>Note: <code><a href="https://rdrr.io/r/base/dim.html">dim()</a></code> can also be used to retrieve dimensions of an object!</li>
+</ul>
+<p><strong>Assign names to rows and columns of a matrix</strong></p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">rownames</span>(m1) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"B"</span>, <span class="st">"C"</span>) </span>
+<span id="cb20-2"><a></a><span class="fu">colnames</span>(m1)<span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"a"</span>,<span class="st">"b"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="data-frames" class="slide level2"><h2>Data frames</h2>
+<ul>
+<li><p>a data set in R is stored a data frame.</p></li>
+<li><p>Two-dimensional, arranged in rows and columns created using the function: <code><a href="https://rdrr.io/r/base/data.frame.html">data.frame()</a></code></p></li>
+<li><p>e.g.</p></li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">ID =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">Sex =</span> <span class="fu">c</span>(<span class="st">"F"</span>, <span class="st">"F"</span>, <span class="st">"M"</span>), <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">17</span>, <span class="dv">18</span>,<span class="dv">18</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>We can enter data directly by access the editor using either the <code><a href="https://rdrr.io/r/utils/edit.html">edit()</a></code> or <code><a href="https://rdrr.io/r/utils/fix.html">fix()</a></code>
+</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a> new.data<span class="ot">&lt;-</span><span class="fu">data.frame</span>()  <span class="co"># creates an "empty" data frame</span></span>
+<span id="cb22-2"><a></a> new.data<span class="ot">&lt;-</span><span class="fu">edit</span>(new.data) <span class="co"># request the changes or  `fix(new.data)`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>We’ll use the data set called <strong>iris data</strong> to do this exploration.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb23-2"><a></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"iris.csv"</span>)</span>
+<span id="cb23-3"><a></a><span class="co">#View(data)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="some-functions-for-inspecting-the-data" class="slide level2"><h2>Some functions for inspecting the data</h2>
+<ul>
+<li><p>Use <code><a href="https://rdrr.io/r/utils/head.html">head()</a></code> and <code><a href="https://rdrr.io/r/utils/head.html">tail()</a></code> to view the <strong>first (and last) five rows</strong></p></li>
+<li><p>Use <code><a href="https://rdrr.io/r/utils/View.html">View()</a></code> to <strong>view an entire</strong> <code>data.table</code> object</p></li>
+<li><p>Use <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> to view the <strong>structure</strong> of <code>data.table</code> object</p></li>
+<li><p>Use <code>tables()</code> to <strong>show all loaded <code>data.table</code> objects</strong></p></li>
+<li><p>Use <code><a href="https://rdrr.io/r/base/colnames.html">colnames()</a></code> or <code><a href="https://rdrr.io/r/base/names.html">names()</a></code> to look variable names</p></li>
+<li><p>Use <code>colSums(is.na())</code> to sum missing data</p></li>
+<li><p>Use <code><a href="https://rdrr.io/r/base/subset.html">subset()</a></code> to subset data.</p></li>
+<li><p>Use <code><a href="https://rdrr.io/r/base/attributes.html">attributes()</a></code> to look attributes of the dataframe</p></li>
+<li><p>Use <code><a href="https://rdrr.io/r/base/dim.html">dim()</a></code> or <code><a href="https://rdrr.io/r/base/nrow.html">ncol()</a></code> and <code><a href="https://rdrr.io/r/base/nrow.html">nrow()</a></code> to see dimensions of the dataframe</p></li>
+<li><p>Use <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> to see basic statistics for each variables</p></li>
+</ul></section><section id="subsetting" class="slide level2"><h2>Subsetting</h2>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>iris[] <span class="co"># the whole data frame </span></span>
+<span id="cb24-2"><a></a>iris[<span class="dv">1</span>, <span class="dv">1</span>] <span class="co"># 1st element in 1st column </span></span>
+<span id="cb24-3"><a></a>iris[<span class="dv">1</span>, <span class="dv">6</span>] <span class="co"># 1st element in the 6th column </span></span>
+<span id="cb24-4"><a></a>iris[, <span class="dv">1</span>] <span class="co"># first column in the data frame </span></span>
+<span id="cb24-5"><a></a>iris[<span class="dv">1</span>] <span class="co"># first column in the data frame </span></span>
+<span id="cb24-6"><a></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="dv">3</span>] </span>
+<span id="cb24-7"><a></a>iris[<span class="dv">3</span>, ] <span class="co"># the 3rd row </span></span>
+<span id="cb24-8"><a></a>iris[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, ] <span class="co"># the 1st to 6th rows</span></span>
+<span id="cb24-9"><a></a>iris[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), ] <span class="co"># rows 1 and 4 only </span></span>
+<span id="cb24-10"><a></a>iris[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">4</span>), <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>) ] </span>
+<span id="cb24-11"><a></a>iris[, <span class="sc">-</span><span class="dv">1</span>] <span class="co"># the whole except first column</span></span>
+<span id="cb24-12"><a></a>iris<span class="sc">$</span>Variable1 <span class="co"># Also extracts the first column</span></span>
+<span id="cb24-13"><a></a>iris[,<span class="fu">c</span>(<span class="st">"col3"</span>, <span class="st">"col4"</span>)]<span class="co"># extract by name of column</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="reading-and-writing-data" class="slide level2"><h2>4. Reading and Writing data</h2>
+<ul>
+<li><p>Importing data is rather easy in R but that may also depend on the nature of the data to be imported and from what format.</p></li>
+<li><p>Most data are in tabular form such as a spreadsheet or a comma-separated file (.csv).</p></li>
+<li><p>Base R has a series of read functions to import tabular data from plain text files with columns delimited by: <span style="color:cyan">space, tab, and comma, with or without a header containing the column names</span>.</p></li>
+<li><p>With an added package it is also possible to import directly from a <span style="color:cyan">Microsoft Excel spreadsheet format or other foreign formats from various sources</span>.</p></li>
+</ul></section><section id="importing-from-local-files" class="slide level2"><h2>Importing from local files</h2>
+<ul>
+<li><p>In base R the standard commands to read text files are based on the <code><a href="https://rdrr.io/r/utils/read.table.html">read.table()</a></code>function.</p></li>
+<li><p>The following table lists the collection of the base R <strong>read</strong> functions.</p></li>
+<li><p>For more details use the help command <strong>help(read.table)</strong> that will display help for all.</p></li>
+</ul>
+<table>
+<caption>Details of dataset readings</caption>
+<thead><tr class="header">
+<th>Function name</th>
+<th>Assumes header</th>
+<th>Separator</th>
+<th>Decimal</th>
+<th>File type</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td>read.table()</td>
+<td>No</td>
+<td>” ”</td>
+<td>.</td>
+<td>.text</td>
+</tr>
+<tr class="even">
+<td>read.csv()</td>
+<td>Yes</td>
+<td>“,”</td>
+<td>.</td>
+<td>.csv</td>
+</tr>
+<tr class="odd">
+<td>read.csv2()</td>
+<td>Yes</td>
+<td>“;”</td>
+<td>,</td>
+<td>.csv</td>
+</tr>
+<tr class="even">
+<td>read.delim()</td>
+<td>Yes</td>
+<td>“tab”</td>
+<td>.</td>
+<td>.text</td>
+</tr>
+<tr class="odd">
+<td>read.delim2()</td>
+<td>Yes</td>
+<td>“tab”</td>
+<td>,</td>
+<td>.text</td>
+</tr>
+</tbody>
+</table></section><section id="reading-raw-data-from-other-sources" class="slide level2"><h2>Reading raw data from other sources</h2>
+<h4 id="import-data">Import data</h4>
+<ul>
+<li>There are many ways to get data into R and out of R.</li>
+<li>Import text file data using <code><a href="https://rdrr.io/r/utils/read.table.html">read.table()</a></code> and comma separated files using <code><a href="https://rdrr.io/r/utils/read.table.html">read.csv()</a></code> functions.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="co"># syntax: </span></span>
+<span id="cb25-2"><a></a><span class="fu">read.table</span>(<span class="st">"file name with full path"</span>, arguments)<span class="co">#&lt;&lt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># Examples:# Creates a data frame named myData</span></span>
+<span id="cb26-2"><a></a>  mydata<span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file =</span> <span class="st">"datafile.txt"</span>,<span class="at">sep=</span><span class="st">" "</span>, <span class="at">header=</span><span class="cn">TRUE</span>)</span>
+<span id="cb26-3"><a></a>  mydata<span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"datafile.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>File names are specified in the same way as <code><a href="https://rdrr.io/r/base/file.choose.html">file.choose()</a></code> function can be used to select the file interactively. i.e.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>mydata <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="fu">file.choose</span>(),<span class="at">sep=</span><span class="st">","</span>,<span class="at">header=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2"><p><strong>Useful arguments</strong> - Check these arguments carefully when you load your data</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>myData<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"datafile.csv"</span>,<span class="at">header=</span> <span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">","</span>, <span class="at">strip.white =</span><span class="cn">TRUE</span>,</span>
+<span id="cb28-2"><a></a>                 <span class="at">na.strings=</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>You can reduce possible errors when loading a data file</li>
+<li>The <code>header = TRUE</code> argument tells R that the first row of your file contains the variable names</li>
+<li>The <code>sep =  ","</code> argument tells R that fields are separated by comma</li>
+<li>The <code>strip.white = TRUE</code> argument removes white space before or after factors that has been mistakenly inserted during data entry.</li>
+<li>The <code>na.strings = " "</code> argument replaces empty cells by NA (missing data in R)</li>
+</ul></section><section id="read-data" class="slide level2"><h2>Read data</h2>
+<p><strong>Stata to R:</strong> Different packages for stata version <code>&gt;=13 vs. &lt;13</code></p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="fu">library</span>(foreign) <span class="co"># Versions before stata 13</span></span>
+<span id="cb29-2"><a></a>data <span class="ot">&lt;-</span>  <span class="fu">read.dta</span>(<span class="at">file=</span><span class="st">"XXX.dta"</span>) <span class="co"># Other options</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="fu">library</span>(readstata13) <span class="co"># Versions from stata 13</span></span>
+<span id="cb30-2"><a></a>data <span class="ot">&lt;-</span>  <span class="fu">read.dta13</span>(<span class="at">file=</span><span class="st">"XXX.dta"</span>) <span class="co"># Other options</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Excel to R:</strong> There are several packages</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="fu">library</span>(readxl)</span>
+<span id="cb31-2"><a></a>data <span class="ot">&lt;-</span>  <span class="fu">read_xlsx</span>(<span class="at">path=</span><span class="st">"XXX.xlsx"</span>, <span class="at">sheet =</span> <span class="dv">1</span>, <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb32-2"><a></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"path=XXX.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="read-data-1" class="slide level2"><h2>Read data</h2>
+<p><strong>CSV to R:</strong> There are several packages</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb33-2"><a></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file=</span><span class="st">"XXX.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>Text file to R:</strong> Available in R base, used for text and csv files</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a>data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">"XXX.txt"</span>,<span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a>data <span class="ot">&lt;-</span> <span class="fu">read.table</span>(<span class="at">file=</span><span class="st">"XXX.csv"</span>,<span class="at">header=</span><span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">","</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="data-import-wizard" class="slide level2"><h2>Data import wizard</h2>
+<p>The data import wizard is a quick and easy way to import your data</p>
+
+<img data-src="images/data_import.jpg" class="r-stretch"><p>It’s actually way <strong>better</strong> to follow the <strong>reproducible steps</strong> – and hardly any more effort – below…</p>
+<ul>
+<li>Inside the data wizard, you can copy the code int he code-preview window, then paste the code into the code chunk of your quarto document or r script.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="co"># library(readr)</span></span>
+<span id="cb36-2"><a></a><span class="co">#brodhead_center &lt;- read_csv("data/brodhead_center.csv")</span></span>
+<span id="cb36-3"><a></a><span class="co"># view(brodheadCenter)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2"><div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Composing the data import code…</strong></p>
+</div>
+<div class="callout-content">
+<p>Writing the import data function can be tricky. Try the import wizard pictured above. THEN, paste the code from the <strong>Code Preview</strong> section into your script.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><a href="images/data_import_code.jpg"><img data-src="images/data_import_code.jpg" alt="Easily write import data function" width="800"></a></p>
+<figcaption>Easily write import data function</figcaption></figure>
+</div>
+</div>
+</div>
+</div>
+</section><section id="excel-spss-sas-etc." class="slide level2"><h2>Excel, SPSS, SAS, etc.</h2>
+<p>The data import wizard will help you find the proper package for importing your data. For example, use…</p>
+<ul>
+<li>
+<code><a href="https://readxl.tidyverse.org">library(readxl)</a></code> for Excel data</li>
+<li>
+<code><a href="https://haven.tidyverse.org">library(haven)</a></code> for SPSS, SAS, Stata</li>
+<li>
+<code>lirary(readr)</code> for CSV or other delimeters</li>
+</ul>
+<p>Just start with <code>File &gt; Import Dataset</code> to get started composing that code, then paste your code into a script.</p>
+</section><section id="exporting-data" class="slide level2"><h2>Exporting Data</h2>
+<p><strong>R to Stata:</strong> Use the libraries haven or <code>readstata13</code></p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="fu">write.dta</span>(data,<span class="at">file=</span><span class="st">"XXX.dta"</span>)<span class="co"># Other options</span></span>
+<span id="cb37-2"><a></a><span class="fu">save.dta13</span>(data, <span class="at">file=</span><span class="st">"XXX.dta"</span>) <span class="co"># Other options</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>R to Excel:</strong> Note the package readxl does not work here</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="fu">library</span>(xlsReadWrite)</span>
+<span id="cb38-2"><a></a><span class="fu">write.xls</span>(data,<span class="st">"data.xls"</span>)<span class="co"># Other options</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>R to csv:</strong> Use readr package</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="fu">write_csv</span>(data, <span class="st">"data.csv"</span>, <span class="at">na =</span> <span class="st">""</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong>R to a text file:</strong></p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a><span class="fu">write.table</span>(data, <span class="st">"data.txt"</span>, <span class="at">sep=</span><span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<div class="quarto-auto-generated-content">
+<p><img src="logo-title-slide.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://github.com/Yebelay">?</a>&nbsp;&nbsp;&nbsp;</p>
+</div>
+</div>
+</section>
+</div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../../../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script><script src="../../../site_libs/revealjs/plugin/multiplex/socket.io.js"></script><script src="../../../site_libs/revealjs/plugin/multiplex/multiplex.js"></script><script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../../../site_libs/revealjs/plugin/search/search.js"></script><script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../../../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true,"boardmarkerWidth":3},
+'multiplex': {"secret":"17226200143644148644","id":"7c6008937dc356e0","url":"https://reveal-multiplex.glitch.me/"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+
+
+</body></html>
