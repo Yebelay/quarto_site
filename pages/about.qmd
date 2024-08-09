@@ -1,38 +1,44 @@
 ---
 title: "About Me"
+editor: 
+  markdown: 
+    wrap: 72
 ---
-  
 
-I have dual master’s degrees in Biostatistics from Stellenbosch University and Statistics from Addis Ababa University, coupled with 11+ years of experience in project leading, data management, analysis, and teaching. These experiences equipped me with a deep understanding of complex data, its management, analysis and use with application of different statistical methods. I have interest in causal inference, longitudinal data analysis and survival data analysis. I have a piece of statistical software training experiences (R, SAS, SPSS).
+I have **dual master’s degrees** in [Biostatistics from Stellenbosch
+University]{style="color:blue;"} and [Statistics from Addis Ababa University]{style="color:blue;"}, coupled with **11+
+years of experience** in *project leading, data management, analysis, and
+teaching*. These experiences equipped me with a deep understanding of
+complex data, its management, analysis and use with application of
+different statistical methods. I have interest in causal inference,
+longitudinal data analysis and survival data analysis. I have a piece of
+statistical software training experiences (R, SAS, SPSS).
 
-
-![](images/img.jpeg){width=49%} 
-
+![](images/yeb1.jpg){fig-align="center" width="46%"}
 
 <br/>
 
 ## Education
 
-- **Stellenbosch University, South Africa| CapeTown**
-    
-     - MSc in Biostatistics|January 2020 - April 2022
-      
-- **Addis Ababa University, Ethiopia| Addis Ababa, Ethiopia**
-    
-     - MSc in Statistics(Biostatistics)| Sptember 2015 - July 2017
+-   **Stellenbosch University, South Africa\| CapeTown**
 
-- **Wollo University, Ethiopia| Dessie, Ethiopia**
-    
-     - BSc in Statistics | September 2009 - July 2012
+    -   MSc in Biostatistics\|January 2020 - April 2022
+
+-   **Addis Ababa University, Ethiopia\| Addis Ababa, Ethiopia**
+
+    -   MSc in Statistics(Biostatistics)\| Sptember 2015 - July 2017
+
+-   **Wollo University, Ethiopia\| Dessie, Ethiopia**
+
+    -   BSc in Statistics \| September 2009 - July 2012
 
 ## Experience
 
 -   **Survey Manager** at: [Center for Evaluation and Development
-    (C4ED)](https://c4ed.org/) from  '2023-05-01' to present
+    (C4ED)](https://c4ed.org/) from '2023-05-01' to present
 
 -   **Senior Research Officer** at: [Frontieri consulting
-    Plc](https://frontieri.com/) from
-    '2022-07-04' to '2023-04-30'
+    Plc](https://frontieri.com/) from '2022-07-04' to '2023-04-30'
 
 -   **Biostatistics Experience and Technical Assistance (BETA)
     internship/consulting** at: [CDC
@@ -44,15 +50,16 @@ I have dual master’s degrees in Biostatistics from Stellenbosch University and
 
 ## Skills
 
-- ![](https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg){width=32px} **Statistical Software**: R | STATA | SAS | SPSS
- 
-- **Data Collection Apps**: Kobo toolbox | SurveyCTO | REDCap
-  
-- **Project Management**: Project Management | Surveys | Budget
+-   ![](https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg){width="32px"}
+    **Statistical Software**: R \| STATA \| SAS \| SPSS
 
-- **Impact Evaluation**: Causal Inference | Impact Evaluation
-  
-- **Dashboard**: Power BI | R Markdown (flexdashboard) | Shiny App
-  
-- **Study Design**: Study Design | Sampling Technique | Statistical Modelling
-  
+-   **Data Collection Apps**: Kobo toolbox \| SurveyCTO \| REDCap
+
+-   **Project Management**: Project Management \| Surveys \| Budget
+
+-   **Impact Evaluation**: Causal Inference \| Impact Evaluation
+
+-   **Dashboard**: Power BI \| R Markdown (flexdashboard) \| Shiny App
+
+-   **Study Design**: Study Design \| Sampling Technique \| Statistical
+    Modelling

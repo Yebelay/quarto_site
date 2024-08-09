@@ -1,7 +1,7 @@
 ---
 title: "Yebelay Berehan"
 about: 
-  image: pages/images/avatar1.jpg
+  image: pages/images/Yebe1.jpg
   template: jolla
 ---
 
