@@ -8,7 +8,7 @@ website:
   navbar:
     left:
       - href: pages/about.qmd
-        #icon: person-circle
+        icon: person-circle
       - puplications.qmd
       - href: presentations/index.qmd
         text: Presentations
