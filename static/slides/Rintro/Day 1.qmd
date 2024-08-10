@@ -1,8 +1,8 @@
 ---
 title: |
-       <span style="color:white">Introduction to R</span>
+       <span style="color:white"> <span style = 'font-size: 170%;'>Introduction to R and RStudio</span>
 author: 
-  - <span style='color:gray'>Yebelay Berehan</span>
+  - <span style='color:red'>Yebelay Berehan</span>
 
 institute: |
        <span style="color:white">Debre Markos University + C4ED</span><br><br><br><br>
@@ -16,8 +16,8 @@ title-slide-attributes:
 format: 
   revealjs:
     slide-number: true
-    logo: logo-title-slide.png
-    footer: "[?](https://github.com/Yebelay)&nbsp;&nbsp;&nbsp;"
+    #logo: logo-title-slide.png
+    #footer: "[?](https://github.com/Yebelay)&nbsp;&nbsp;&nbsp;"
     theme: custom.scss
     code-link: true
     code-fold: show
@@ -49,9 +49,9 @@ Please share ...
 countdown::countdown(2)
 ```
 
-##  {background-color="#006D6B"}
+## [Outlines]{style="color:red"} {#sec-outlines}
 
-### [Outlines]{style="color:red"} {#sec-outlines}
+::: {.absolute top="20%"}
 
 Part 1: **Introduction/Overview of R and R Studio**
 
@@ -67,7 +67,11 @@ Part 3: **Data visualization**
 
 Part 4: **Statistical Analysis**
 
-------------------------------------------------------------------------
+:::
+
+
+
+## Getting started
 
 -   Setting up and utilizing R & RStudio
 
@@ -79,13 +83,7 @@ Part 4: **Statistical Analysis**
 
 -   Visualizing data using the renowned ggplot2 package
 
-------------------------------------------------------------------------
-
 ## Why R?
-
-::: {#my-callout-block .bg-primary .text-white .p-3 .m-3 .rounded-2}
-Your callout content goes here.
-:::
 
 -   It is free, versatile, fast, and modern.
 
@@ -95,11 +93,9 @@ Your callout content goes here.
 
 -   R makes it easy to construct **reproducible analyses** and workflows that allow you to easily repeat the same analysis more than once.
 
--   It is flexible enough to be used to create **interactive web pages** (eg. [my draft website](https://yebelay.netlify.app/)) and **automated reports**.
+-   It is flexible enough to be used to create **interactive web pages** (eg. [my draft website](https://yebelay.rbind.io)) and **automated reports**.
 
 -   Simply currently the **best tool there is for data analysis**.
-
-------------------------------------------------------------------------
 
 ## What are Advantages or Disadvantages of R
 
@@ -130,65 +126,53 @@ Your callout content goes here.
 :::
 :::
 
-------------------------------------------------------------------------
-
 ## 2. RStudio
 
 ### What is RStudio? Why use it?
 
 -   Best Integrated Development Environment (IDE) for R.
-
 -   [Powerful and makes using R easier]{style="color:darkred"}
-
 -   RStudio can:
 
     -   [Organize your code, output, and plots.]{style="color:blue"}
-
     -   [Auto-complete code and highlight syntax.]{style="color:blue"}
-
     -   [Help view data and objects.]{style="color:blue"}
-
     -   [Enable easy integration of R code into documents.]{style="color:blue"}
 
 -   User-friendly interfaces
 
-------------------------------------------------------------------------
-
 ## Set up on Windows
-
-**Download and install R**
 
 -   Follow the steps below to download and install R:
 
 1.  Go to [cran.rstudio.com](https://cran.rstudio.com/){target="_blank"} to access the R installation page. Then click the download link for Windows:
 
-    ![](img/cran_select_windows.png)
+![](img/cran_select_windows.png){fig-align="center"}
 
 2.  Choose the "base" sub-directory.
 
-    ![](img/install_r_windows_base.png)
+![](img/install_r_windows_base.png){fig-align="center"}
 
-------------------------------------------------------------------------
+## Set up on Windows
 
 3.  Then click on the download link at the top of the page to download the latest version of R:
 
-    ![](img/rinstaller_for_window.png){fig-align="center"}
+![](img/rinstaller_for_window.png){fig-align="center"}
 
-    Note that the screenshot above may not show the latest version.
+Note that the screenshot above may not show the latest version.
 
-4.  After the download is finished, click on the downloaded file, then follow the instructions on the installation pop-up window. During installation, you should not have to change any of the defaults; just keep clicking "Next" until the installation is done.
+4.  After the download is finished, click on the downloaded file, then follow the instructions on the installation pop-up window. 
+- During installation, you should not have to change any of the defaults; just keep clicking "Next" until the installation is done.
 
-    Well done! You should now have R on your computer. But you likely won't ever need to interact with R directly. Instead you'll use the RStudio IDE to work with R. Follow the instructions in the next section to get RStudio.
+## Download, install & run RStudio
 
-------------------------------------------------------------------------
+To download RStudio, go to [posit.co/download/rstudio-desktop](https://posit.co/download/rstudio-desktop/) and download the Windows version.
 
-### Download, install & run RStudio
-
-To download RStudio, go to [rstudio.com/products/rstudio/download/#download](https://www.rstudio.com/products/rstudio/download/#download) and download the Windows version.
-
-![](img/install_rstudio_button_windows.png)
+![](img/install_rstudio_button_windows.png){width="451" height="250" fig-align="center"}
 
 -   Then click on the downloaded file and follow the installation instructions.
+
+## Download, install & run RStudio
 
 -   Now Click to to open the app from the **start menu**:
 
@@ -202,19 +186,16 @@ To download RStudio, go to [rstudio.com/products/rstudio/download/#download](htt
 :::
 :::
 
-------------------------------------------------------------------------
-
 ## RStudio Overview
 
-![](img/RStudio1.png){fig-align="center"}
+![](img/RStudio1.png){height="550" fig-align="center"}
 
-------------------------------------------------------------------------
 
 ## Getting Started
 
 -   RStudio will open with 4 sections (called panes):
 
-#### 1. Source editor pane\*\*
+#### 1. Source editor pane
 
 -   You will write your R code/script here and it will be run in the console.\
 -   To create a new R script you can either go to `File -> New -> R Script`, or click on the icon with the `+` sign and select `R Script`, or simply press `Ctrl+Shift+N`.
@@ -226,14 +207,14 @@ To download RStudio, go to [rstudio.com/products/rstudio/download/#download](htt
 
 -   Interactively run R commands
 
-#### 3. Environment/history pane\*\*
+#### 3. Environment/history pane
 
 -   [Environment:]{style="color:orange"} view objects in the global environment
 -   [History:]{style="color:orange"} search and view command history
 :::
 
 ::: {.column width="50%"}
-#### 4. Files/Plots/Packages/Help pane\*\*
+#### 4. Files/Plots/Packages/Help pane
 
 -   [Files:]{style="color:orange"} navigate directories and
 -   [Plots:]{style="color:orange"} view generated plots.
@@ -241,8 +222,6 @@ To download RStudio, go to [rstudio.com/products/rstudio/download/#download](htt
 -   [Help:]{style="color:orange"} View help documentations for any package/function
 :::
 :::
-
-------------------------------------------------------------------------
 
 ## Customization
 
@@ -264,25 +243,19 @@ To download RStudio, go to [rstudio.com/products/rstudio/download/#download](htt
 
 -   Go to **Tools \> Global Options\> Appearance** on the menu bar to change themes, fonts, and more.
 
-------------------------------------------------------------------------
-
-------------------------------------------------------------------------
-
 ## The RStudio panes
 
 By default, RStudio is arranged into four window panes.
 
 If you only see three panes, open a new script with `File > New File > R Script` . This should reveal one more pane.
 
-![](images/new_r_script.jpg){width="451" height="71"}
+![](images/new_r_script.jpg){width="451" height="91" fig-align="center"}
 
 Before we go any further, we will rearrange these panes to improve the usability of the interface.
 
-------------------------------------------------------------------------
-
 -   Then under `Pane Layout`, adjust the pane arrangement. The arrangement we recommend is shown below.
 
-![](images/rstudio_pane_layout.png)
+## The RStudio panes
 
 -   At the top left pane is the Source tab, and at the top right pane, you should have the Console tab.
 
@@ -290,7 +263,10 @@ Before we go any further, we will rearrange these panes to improve the usability
 
 -   Finally, at the bottom right pane, you should check the following tabs: Environment, History, Files, Plots, Packages, Help and Viewer.
 
-------------------------------------------------------------------------
+![](images/rstudio_pane_layout.png){width="851" height="310" fig-align="center"}
+
+
+## The RStudio panes
 
 First, **open a new script** under the File menu if one is not yet open: `File > New File > R Script`. In the script, type the following:
 
@@ -301,8 +277,6 @@ print("excited for R!")
 -   To **run code**, place your cursor anywhere in the code, then hit `Control` + `Enter` on Windows.
 
 -   This should send the code to the Console and run it.
-
-------------------------------------------------------------------------
 
 You can also **run multiple lines at once**.
 
@@ -315,35 +289,31 @@ print("and RStudio!")
 
 -   To **run the entire script**, you can use `Control` + `A` to select all code, then press \``Control` + `Enter`.
 
-------------------------------------------------------------------------
+## The RStudio panes
 
 -   To **open the script in a new window**, click on the third icon in the toolbar directly above the script.
 
-![](images/rstudio_pop_out_icon.png){width="329"}
+![](images/rstudio_pop_out_icon.png){width="329" fig-align="center"}
 
 -   To put the window back, click on the same button on the now-external window.
 
 -   Next, **save the script.** Hit `Control` + `S` to bring up the Save dialog box.
 
-------------------------------------------------------------------------
-
-### Console
+## Console
 
 -   The *console*, at the bottom left, is where **code is executed**. You can type code directly here, but it will not be saved.
 
 -   Type a random piece of code (maybe a calculation like `3 + 3`) and press 'Enter'.
 
-![](images/rstudio_console.png){width="594"}
+![](images/rstudio_console.png){width="594" fig-align="center"}
 
 -   If you place your cursor on the last line of the console, and you press the **up arrow**, you can go back to the last code that was run. Keep pressing it to cycle to the previous lines.
 
 -   To run any of these previous lines, press *Enter*.
 
-------------------------------------------------------------------------
+## Environment
 
-### Environment
-
-![](images/environment_tab.png){width="527"}
+![](images/environment_tab.png){width="527" fig-align="center"}
 
 -   At the top right of the RStudio Window, you should see the **Environment** tab.
 
@@ -359,18 +329,20 @@ data <- iris
 
 You have now imported the dataset and stored it in an *object* named `data`. (You could have named the object anything you want.)
 
+## Environment
+
 -   Now that the dataset is stored by R, you should be able to see it in the Environment pane.
 -   If you click on the blue drop-down icon beside the object's name in the Environment tab to reveal a summary.
 
-![](images/rstudio_explore_object_dropdown.png){width="351"}
+![](images/rstudio_explore_object_dropdown.png){width="351" fig-align="center"}
 
 -   Try clicking directly on the `data` dataset from the Environment tab. This opens it in a 'View' tab.
 
-------------------------------------------------------------------------
+## Environment
 
 -   The broom icon, at the top of the Environment pane is used to clear your workspace.
 
-![](images/broom_icon.png)
+![](images/broom_icon.png){fig-align="center"}
 
 -   You can also **remove an object from the workspace** with the `rm()` function.
 -   Type and run the following in a new line on your R script.
@@ -381,13 +353,11 @@ rm(data)
 
 Notice that the `data` object no longer shows up in your environment after having run that code.
 
-------------------------------------------------------------------------
-
-### History
+## History
 
 -   Next, the **History** tab shows previous commands you have run.
 
-![](images/history_tab.png){width="470"}
+![](images/history_tab.png){width="470" fig-align="center"}
 
 -   You can click a line to highlight it, then send it to the console or to your script with the "To Console" and "To Source" icons at the top of this tab.
 
@@ -395,13 +365,11 @@ Notice that the `data` object no longer shows up in your environment after havin
 
 -   Finally, notice that there is a search bar at the top right of the History pane where you can search for past commands that you have run.
 
-------------------------------------------------------------------------
-
-### Files
+## Files
 
 -   Next, the **Files** tab. This shows the files and folders in the folder you are working in.
 
-![](images/rstudio_files.png)
+![](images/rstudio_files.png){fig-align="center"}
 
 -   The tab allows you to interact with your computer's file system.
 
@@ -415,9 +383,7 @@ Notice that the `data` object no longer shows up in your environment after havin
 
     -   Rename that script
 
-------------------------------------------------------------------------
-
-### Plots
+## Plots
 
 -   Next, the **Plots** tab. This is where figures that are generated by R will show up.
 -   Try creating a simple plot with the following code:
@@ -426,7 +392,7 @@ Notice that the `data` object no longer shows up in your environment after havin
 plot(women)
 ```
 
-![](images/rstudio_plots.png)
+![](images/rstudio_plots.png){fig-align="center"}
 
 -   That code creates a plot of the two variables in the `women` dataset.
 
@@ -436,23 +402,16 @@ plot(women)
 
 -   In particular, try to export a plot to your computer.
 
-------------------------------------------------------------------------
-
-### Packages
+## Packages
 
 -   Next, let's look at the **Packages** tab.
 
-![](images/packages_tab.png){width="419"}
+![](images/packages_tab.png){width="419" height="250" fig-align="center"}
 
 -   Packages are collections of R code that extend the functionality of R.
-
 -   it is important to know that to use a package, you need to *install* then *load* it.
-
 -   Packages need to be installed only once, but must be loaded in each new R session.
-
 -   All the package names you see (in blue font) are packages that are installed on your system. And packages with a checkmark are packages which are *loaded* in the current session.
-
-------------------------------------------------------------------------
 
 ## Installing and Loading Packages
 
@@ -471,7 +430,7 @@ rownames(installed.packages(priority="base"))
 rownames(installed.packages(priority="recommended"))
 ```
 
-------------------------------------------------------------------------
+## 
 
 [**3. Contributed packages:**]{style="color:blue"} Due to the open nature of R, anyone can contribute new packages at any time.
 
@@ -487,7 +446,7 @@ nrow(available.packages())
 
 ![](img/option1.png){fig-align="center"}
 
-------------------------------------------------------------------------
+## 
 
 -   **Option 2:** [Packages Window]{style="color:orange"}
 
@@ -543,17 +502,22 @@ Notice that the histogram above shows up in a **Viewer** tab. This tab allows yo
 
 Lastly, the **Help** tab shows the documentation for different R objects. Try typing out and running each line below to see what this documentation looks like.
 
+::: columns
+::: {.column width="50%"}
 ```{r eval = F}
 ?hchart
 ?women
 ?read.csv
 ```
+:::
+:::{.column width="50%"}
 
-![](images/example_help_page.png){width="451"}
+![](images/example_help_page.png){width="451" fig-align="center"}
+
+:::
+:::
 
 -   Help files are not always very easy to understand for beginners, but with time they will become more useful.
-
-------------------------------------------------------------------------
 
 ## RStudio options
 
@@ -565,7 +529,9 @@ Lastly, the **Help** tab shows the documentation for different R objects. Try ty
 
 -   Now, under `Appearance`, choose your ideal theme. (We like the "Crimson Editor" and "Tomorrow Night" themes.)
 
-    ## ![](images/rstudio_themes.png){width="530"}
+![](images/rstudio_themes.png){width="530" fig-align="center"}
+
+## RStudio options
 
 -   Under `Code > Display`, check "Highlight R function calls".
 
@@ -575,11 +541,18 @@ Lastly, the **Help** tab shows the documentation for different R objects. Try ty
 
 -   What this does is make your "nested parentheses" easier to read by giving each pair a unique color.
 
-    ![](images/options_highlight_function_rainbow_parentheses.jpg){width="446"}
+::: columns
+::: {.column width="50%"}
+![](images/options_highlight_function_rainbow_parentheses.jpg){width="446" height="350" fig-align="center"}
+::: 
+::: {.column width="50%"}
+![](images/highlight_r_function_calls.jpg){width="560" height="166" fig-align="center"}
+:::
+::: 
 
-    ![](images/highlight_r_function_calls.jpg){width="460" height="66"}
+## RStudio options
 
-    ## ![](images/rainbow_parentheses.jpg){width="361"}
+![](images/rainbow_parentheses.jpg){width="361" fig-align="center"}
 
 -   Finally under `General > Basic`, **uncheck** the box that says **"Restore .RData into workspace at startup"**.
 
@@ -589,8 +562,6 @@ Lastly, the **Help** tab shows the documentation for different R objects. Try ty
 
 -   This also means that you never want to **"save your workspace to .RData on exit"**, so set this to **Never**.
 
-------------------------------------------------------------------------
-
 ## Command palette
 
 -   The Rstudio command palette gives instant, searchable access to many of the RStudio menu options and settings that we have seen so far.
@@ -599,7 +570,7 @@ Lastly, the **Help** tab shows the documentation for different R objects. Try ty
 
 -   It's also available on the *Tools* menu (*Tools* -\> *Show Command Palette*).
 
-![](images/command_palette.jpg){width="527"}
+![](images/command_palette.jpg){width="527" fig-align="center"}
 
 Try using it to:
 
@@ -607,15 +578,12 @@ Try using it to:
 
 -   Rename a script (Search "rename" and click on the relevant option)
 
-------------------------------------------------------------------------
 
 ## Wrapping up
 
 -   Of course, you have only scratched the surface of RStudio functionality and you can find more on the cheatsheet below:
 
-![](images/rstudio_cheatsheet.png)
-
-------------------------------------------------------------------------
+![](images/rstudio_cheatsheet.png){width="1250" height="550" fig-align="center"}
 
 ## 3. Working with R Objects
 
@@ -637,9 +605,7 @@ Try using it to:
 prodigenr::setup_project("C:/Users/yebel/Desktop/LearningR")
 ```
 
-------------------------------------------------------------------------
-
-### Objects in R
+## Objects in R
 
 -   R is an object-oriented programming platform.
 -   Meaning the entities that R creates and manipulates are known as `objects`.
@@ -655,7 +621,7 @@ rm(x) #removes an object
     -   `variable <- value` or `variable = value` or `variable -> value`.
     -   Variable names can be letters, numbers, and the dot or underline characters but not dot followed by numbers `.4you`is illegal).
 
-------------------------------------------------------------------------
+## Objects in R
 
 -   the symbol `<-` (`Alt + -`) that could be read as `assign` or `place into` or `read in` etc.
 
@@ -667,52 +633,37 @@ A <-"Diabetic"#<<
 -   The standard data objects in R are: **scalars, vectors, factors, matrices and arrays, lists, and data frames**.
 -   Data types assigned to each objects are: **logical, numeric, integer, character, complex.**
 
-### Vector
+## Vector
 
 -   A set of scalars arranged in a one-dimensional array.
 -   Data values are all the same mode(data type), but can hold any mode.
     -   e.g:(-2, 3.4, 3), (TRUE, FALSE, TRUE), ("blue", "gray", "red")
 -   Vectors can be created using the following functions:
+
 -   `c()` function to combine individual values
     -   `x <- c(10.4, 5.6, 3.1, 6.4, 21.7)`
 -   `seq()` to create more complex sequences
     -   `seq(from=1, to=10, by=2) or seq(1,10 )`
 -   `rep()` to create replicates of values: `rep(1:4, times=2, each=2)`
 
-------------------------------------------------------------------------
-
 ## Some useful functions in vector
 
 -   `class(x):` returns class/type of vector x
-
 -   `length(x):` returns the total number of elements
-
 -   `x[length(x)]:` returns last value of vector x
-
 -   `rev(x):` returns reversed vector
-
 -   `sort(x):` returns sorted vector
-
 -   `unique(x):` returns vector without multiple elements
-
 -   `range(x):` Range of x
-
 -   `quantile(x):` Quantiles of x for the given probabilities
-
 -   `which.max(x):` index of maximum
-
 -   `which.min(x):` index of minimum
-
-------------------------------------------------------------------------
 
 ## Factors
 
 -   A factor is used to store predefined categorical data
-
 -   Can be ordered and unordered
-
     -   e.g. :("yes", "no", "no", "yes", "yes"), ("male", "female", "female", "male")
-
 -   Factors can be created using `factor()`
 
 ```{r}
@@ -721,14 +672,10 @@ size <- factor(c("small", "large", "small", "medium"))
 
 -   The levels of a factor can be displayed using `levels()`.
 
-------------------------------------------------------------------------
-
 ## Matrix
 
 -   Matrix is a rectangular array arranged in rows and columns.
-
 -   The individual items in a matrix are called its elements or entries.
-
 -   Matrices can be created by:
 
 1.  `matrix()`
@@ -741,7 +688,7 @@ size <- factor(c("small", "large", "small", "medium"))
     -   `cbind` combines columns
     -   `rbind` combines rows
 
-------------------------------------------------------------------------
+## Matrix
 
 e.g.
 
@@ -760,8 +707,6 @@ dim(x) <- c(2, 3)
 rownames(m1) <- c("A", "B", "C") 
 colnames(m1)<- c("a","b")
 ```
-
-------------------------------------------------------------------------
 
 ## Data frames
 
@@ -791,8 +736,6 @@ data <- read_csv("iris.csv")
 #View(data)
 ```
 
-------------------------------------------------------------------------
-
 ## Some functions for inspecting the data
 
 -   Use `head()` and `tail()` to view the **first (and last) five rows**
@@ -815,8 +758,6 @@ data <- read_csv("iris.csv")
 
 -   Use `summary()` to see basic statistics for each variables
 
-------------------------------------------------------------------------
-
 ## Subsetting
 
 ```{r, eval=FALSE}
@@ -835,8 +776,6 @@ iris$Variable1 # Also extracts the first column
 iris[,c("col3", "col4")]# extract by name of column
 ```
 
-------------------------------------------------------------------------
-
 ## 4. Reading and Writing data
 
 -   Importing data is rather easy in R but that may also depend on the nature of the data to be imported and from what format.
@@ -846,8 +785,6 @@ iris[,c("col3", "col4")]# extract by name of column
 -   Base R has a series of read functions to import tabular data from plain text files with columns delimited by: [space, tab, and comma, with or without a header containing the column names]{style="color:cyan"}.
 
 -   With an added package it is also possible to import directly from a [Microsoft Excel spreadsheet format or other foreign formats from various sources]{style="color:cyan"}.
-
-------------------------------------------------------------------------
 
 ## Importing from local files
 
@@ -866,8 +803,6 @@ iris[,c("col3", "col4")]# extract by name of column
 | read.delim2() | Yes            | "tab"     | ,       | .text     |
 
 : Details of dataset readings
-
-------------------------------------------------------------------------
 
 ## Reading raw data from other sources
 
@@ -893,7 +828,7 @@ read.table("file name with full path", arguments)#<<
 mydata <-read.csv(file.choose(),sep=",",header=T)
 ```
 
-------------------------------------------------------------------------
+## Reading raw data from other sources
 
 **Useful arguments** - Check these arguments carefully when you load your data
 
@@ -907,8 +842,6 @@ myData<-read.csv(file="datafile.csv",header= TRUE, sep=",", strip.white =TRUE,
 -   The `sep =  ","` argument tells R that fields are separated by comma
 -   The `strip.white = TRUE` argument removes white space before or after factors that has been mistakenly inserted during data entry.
 -   The `na.strings = " "` argument replaces empty cells by NA (missing data in R)
-
-------------------------------------------------------------------------
 
 ## Read data
 
@@ -936,8 +869,6 @@ library(readr)
 data <- read_csv("path=XXX.csv")
 ```
 
-------------------------------------------------------------------------
-
 ## Read data
 
 **CSV to R:** There are several packages
@@ -957,13 +888,11 @@ data <- read.table(file="XXX.txt",header=TRUE, sep="")
 data <- read.table(file="XXX.csv",header=TRUE, sep=",")
 ```
 
-------------------------------------------------------------------------
-
 ## Data import wizard
 
 The data import wizard is a quick and easy way to import your data
 
-![](images/data_import.jpg)
+![](images/data_import.jpg){fig-align="center"}
 
 It's actually way **better** to follow the **reproducible steps** -- and hardly any more effort -- below...
 
@@ -1000,7 +929,6 @@ The data import wizard will help you find the proper package for importing your 
 
 Just start with `File > Import Dataset` to get started composing that code, then paste your code into a script.
 
-------------------------------------------------------------------------
 
 ## Exporting Data
 

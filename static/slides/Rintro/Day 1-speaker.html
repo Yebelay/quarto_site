@@ -12,7 +12,7 @@
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.549">
 <meta name="author" content="Yebelay Berehan">
-<title>Yebelay Berehan - Introduction to R</title>
+<title>Yebelay Berehan -  Introduction to R and RStudio Yebelay Berehan -  Introduction to R and RStudio Yebelay Berehan -  Introduction to R and RStudio Yebelay Berehan Welcome to my website Welcome to my website</title>
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -390,7 +390,7 @@
   </style>
 <link href="../../../site_libs/countdown-0.4.0/countdown.css" rel="stylesheet">
 <script src="../../../site_libs/countdown-0.4.0/countdown.js"></script>
-<meta property="og:title" content="Yebelay Berehan - Introduction to R">
+<meta property="og:title" content="Yebelay Berehan -  Introduction to R and RStudio Yebelay Berehan Welcome to my website Welcome to my website">
 <meta property="og:site_name" content="Yebelay Berehan">
 </head>
 <body class="quarto-light">
@@ -398,16 +398,16 @@
     <div class="slides">
 
 <section id="title-slide" data-background-color="#001E4E" data-background-image="fullimge.jpg" data-background-opacity="2.5" data-background-size="stretch" class="quarto-title-block center"><h1 class="title"></h1>
-<p><span style="color:white">Introduction to R</span></p>
+<p><span style="color:white"> <span style="font-size: 170%;">Introduction to R and RStudio</span></span></p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-<span style="color:gray">Yebelay Berehan</span> 
+<span style="color:red">Yebelay Berehan</span> 
 </div>
         <p class="quarto-title-affiliation">
             </p>
-<p><span style="color:white">Debre Markos University + C4ED</span><br><br><br><br><span style="color:red">2024-08-09</span></p>
+<p><span style="color:white">Debre Markos University + C4ED</span><br><br><br><br><span style="color:red">2024-08-10</span></p>
           
     </div>
 </div>
@@ -424,7 +424,7 @@
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div class="countdown" id="timer_e50b251e" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown" id="timer_fcb2088f" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
 <div class="countdown-controls">
 <button class="countdown-bump-down">−</button><button class="countdown-bump-up">&amp;plus;</button>
 </div>
@@ -432,8 +432,8 @@
 </div>
 </div>
 </div>
-</section><section id="section" class="slide level2" data-background-color="#006D6B"><h2></h2>
-<h3 id="sec-outlines"><span style="color:red">Outlines</span></h3>
+</section><section id="sec-outlines" class="slide level2"><h2><span style="color:red">Outlines</span></h2>
+<div class="absolute" style="top: 20%; ">
 <p>Part 1: <strong>Introduction/Overview of R and R Studio</strong></p>
 <ul>
 <li>
@@ -447,22 +447,21 @@
 <p>Part 2: <strong>Data management using tidyverse package</strong></p>
 <p>Part 3: <strong>Data visualization</strong></p>
 <p>Part 4: <strong>Statistical Analysis</strong></p>
-</section><section class="slide level2"><ul>
+</div>
+</section><section id="getting-started" class="slide level2"><h2>Getting started</h2>
+<ul>
 <li><p>Setting up and utilizing R &amp; RStudio</p></li>
 <li><p>Navigating R &amp; Rmarkdown scripts and RStudio projects</p></li>
 <li><p>Importing and inspecting data sets in R</p></li>
 <li><p>Manipulating data through filtering, summarizing, transforming, and joining</p></li>
 <li><p>Visualizing data using the renowned ggplot2 package</p></li>
 </ul></section><section id="why-r" class="slide level2"><h2>Why R?</h2>
-<div id="my-callout-block" class="bg-primary text-white p-3 m-3 rounded-2">
-<p>Your callout content goes here.</p>
-</div>
 <ul>
 <li><p>It is free, versatile, fast, and modern.</p></li>
 <li><p>It has a large and friendly community of users that help answer questions and develop new R tools.</p></li>
 <li><p>With <strong>more than 20394 add-on packages</strong> available, R offers more functions for data analysis than any other statistical software.</p></li>
 <li><p>R makes it easy to construct <strong>reproducible analyses</strong> and workflows that allow you to easily repeat the same analysis more than once.</p></li>
-<li><p>It is flexible enough to be used to create <strong>interactive web pages</strong> (eg. <a href="https://yebelay.netlify.app/">my draft website</a>) and <strong>automated reports</strong>.</p></li>
+<li><p>It is flexible enough to be used to create <strong>interactive web pages</strong> (eg. <a href="https://yebelay.rbind.io">my draft website</a>) and <strong>automated reports</strong>.</p></li>
 <li><p>Simply currently the <strong>best tool there is for data analysis</strong>.</p></li>
 </ul></section><section id="what-are-advantages-or-disadvantages-of-r" class="slide level2"><h2>What are Advantages or Disadvantages of R</h2>
 <div class="columns">
@@ -499,46 +498,53 @@
 <li>
 <p>RStudio can:</p>
 <ul>
-<li><p><span style="color:blue">Organize your code, output, and plots.</span></p></li>
-<li><p><span style="color:blue">Auto-complete code and highlight syntax.</span></p></li>
-<li><p><span style="color:blue">Help view data and objects.</span></p></li>
-<li><p><span style="color:blue">Enable easy integration of R code into documents.</span></p></li>
+<li><span style="color:blue">Organize your code, output, and plots.</span></li>
+<li><span style="color:blue">Auto-complete code and highlight syntax.</span></li>
+<li><span style="color:blue">Help view data and objects.</span></li>
+<li><span style="color:blue">Enable easy integration of R code into documents.</span></li>
 </ul>
 </li>
 <li><p>User-friendly interfaces</p></li>
 </ul></section><section id="set-up-on-windows" class="slide level2"><h2>Set up on Windows</h2>
-<p><strong>Download and install R</strong></p>
 <ul>
 <li>Follow the steps below to download and install R:</li>
 </ul>
 <ol type="1">
-<li>
-<p>Go to <a href="https://cran.rstudio.com/" target="_blank">cran.rstudio.com</a> to access the R installation page. Then click the download link for Windows:</p>
-<p><img data-src="img/cran_select_windows.png"></p>
-</li>
-<li>
-<p>Choose the “base” sub-directory.</p>
-<p><img data-src="img/install_r_windows_base.png"></p>
-</li>
-</ol></section><section class="slide level2"><ol start="3" type="1">
-<li>
-<p>Then click on the download link at the top of the page to download the latest version of R:</p>
+<li>Go to <a href="https://cran.rstudio.com/" target="_blank">cran.rstudio.com</a> to access the R installation page. Then click the download link for Windows:</li>
+</ol>
 <div class="quarto-figure quarto-figure-center">
-<figure><p><img data-src="img/rinstaller_for_window.png" class="quarto-figure quarto-figure-center"></p>
+<figure><p><img data-src="img/cran_select_windows.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-<p>Note that the screenshot above may not show the latest version.</p>
-</li>
-<li>
-<p>After the download is finished, click on the downloaded file, then follow the instructions on the installation pop-up window. During installation, you should not have to change any of the defaults; just keep clicking “Next” until the installation is done.</p>
-<p>Well done! You should now have R on your computer. But you likely won’t ever need to interact with R directly. Instead you’ll use the RStudio IDE to work with R. Follow the instructions in the next section to get RStudio.</p>
-</li>
-</ol></section><section class="slide level2"><h3 id="download-install-run-rstudio">Download, install &amp; run RStudio</h3>
-<p>To download RStudio, go to <a href="https://www.rstudio.com/products/rstudio/download/#download">rstudio.com/products/rstudio/download/#download</a> and download the Windows version.</p>
-<p><img data-src="img/install_rstudio_button_windows.png"></p>
+<ol start="2" type="1">
+<li>Choose the “base” sub-directory.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/install_r_windows_base.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</section><section id="set-up-on-windows-1" class="slide level2"><h2>Set up on Windows</h2>
+<ol start="3" type="1">
+<li>Then click on the download link at the top of the page to download the latest version of R:</li>
+</ol>
+
+<img data-src="img/rinstaller_for_window.png" class="quarto-figure quarto-figure-center r-stretch"><p>Note that the screenshot above may not show the latest version.</p>
+<ol start="4" type="1">
+<li>After the download is finished, click on the downloaded file, then follow the instructions on the installation pop-up window.</li>
+</ol>
 <ul>
-<li><p>Then click on the downloaded file and follow the installation instructions.</p></li>
-<li><p>Now Click to to open the app from the <strong>start menu</strong>:</p></li>
+<li>During installation, you should not have to change any of the defaults; just keep clicking “Next” until the installation is done.</li>
+</ul></section><section id="download-install-run-rstudio" class="slide level2"><h2>Download, install &amp; run RStudio</h2>
+<p>To download RStudio, go to <a href="https://posit.co/download/rstudio-desktop/">posit.co/download/rstudio-desktop</a> and download the Windows version.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/install_rstudio_button_windows.png" class="quarto-figure quarto-figure-center" width="451" height="250"></p>
+</figure>
+</div>
+<ul>
+<li>Then click on the downloaded file and follow the installation instructions.</li>
+</ul></section><section id="download-install-run-rstudio-1" class="slide level2"><h2>Download, install &amp; run RStudio</h2>
+<ul>
+<li>Now Click to to open the app from the <strong>start menu</strong>:</li>
 </ul>
 <div class="columns">
 <div class="column" style="width:50%;">
@@ -548,12 +554,15 @@
 </div>
 </div>
 </section><section id="rstudio-overview" class="slide level2"><h2>RStudio Overview</h2>
-
-<img data-src="img/RStudio1.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="getting-started" class="slide level2"><h2>Getting Started</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="img/RStudio1.png" class="quarto-figure quarto-figure-center" height="550"></p>
+</figure>
+</div>
+</section><section id="getting-started-1" class="slide level2"><h2>Getting Started</h2>
 <ul>
 <li>RStudio will open with 4 sections (called panes):</li>
 </ul>
-<h4 id="source-editor-pane">1. Source editor pane**</h4>
+<h4 id="source-editor-pane">1. Source editor pane</h4>
 <ul>
 <li>You will write your R code/script here and it will be run in the console.<br>
 </li>
@@ -566,7 +575,7 @@
 <ul>
 <li>Interactively run R commands</li>
 </ul>
-<h4 id="environmenthistory-pane">3. Environment/history pane**</h4>
+<h4 id="environmenthistory-pane">3. Environment/history pane</h4>
 <ul>
 <li>
 <span style="color:orange">Environment:</span> view objects in the global environment</li>
@@ -574,7 +583,7 @@
 <span style="color:orange">History:</span> search and view command history</li>
 </ul>
 </div><div class="column" style="width:50%;">
-<h4 id="filesplotspackageshelp-pane">4. Files/Plots/Packages/Help pane**</h4>
+<h4 id="filesplotspackageshelp-pane">4. Files/Plots/Packages/Help pane</h4>
 <ul>
 <li>
 <span style="color:orange">Files:</span> navigate directories and</li>
@@ -600,20 +609,28 @@
 <ul>
 <li><p>The overall appearance can be customized as well.</p></li>
 <li><p>Go to <strong>Tools &gt; Global Options&gt; Appearance</strong> on the menu bar to change themes, fonts, and more.</p></li>
-</ul></section><section class="slide level2"></section><section id="the-rstudio-panes" class="slide level2"><h2>The RStudio panes</h2>
+</ul></section><section id="the-rstudio-panes" class="slide level2"><h2>The RStudio panes</h2>
 <p>By default, RStudio is arranged into four window panes.</p>
 <p>If you only see three panes, open a new script with <code>File &gt; New File &gt; R Script</code> . This should reveal one more pane.</p>
-<p><img data-src="images/new_r_script.jpg" width="451" height="71"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/new_r_script.jpg" class="quarto-figure quarto-figure-center" width="451" height="91"></p>
+</figure>
+</div>
 <p>Before we go any further, we will rearrange these panes to improve the usability of the interface.</p>
-</section><section class="slide level2"><ul>
+<ul>
 <li>Then under <code>Pane Layout</code>, adjust the pane arrangement. The arrangement we recommend is shown below.</li>
-</ul>
-
-<img data-src="images/rstudio_pane_layout.png" class="r-stretch"><ul>
+</ul></section><section id="the-rstudio-panes-1" class="slide level2"><h2>The RStudio panes</h2>
+<ul>
 <li><p>At the top left pane is the Source tab, and at the top right pane, you should have the Console tab.</p></li>
 <li><p>Then at the bottom left pane, no tab options should checked—this section should be left empty, with the drop-down saying just “TabSet”.</p></li>
 <li><p>Finally, at the bottom right pane, you should check the following tabs: Environment, History, Files, Plots, Packages, Help and Viewer.</p></li>
-</ul></section><section class="slide level2"><p>First, <strong>open a new script</strong> under the File menu if one is not yet open: <code>File &gt; New File &gt; R Script</code>. In the script, type the following:</p>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/rstudio_pane_layout.png" class="quarto-figure quarto-figure-center" width="851" height="310"></p>
+</figure>
+</div>
+</section><section id="the-rstudio-panes-2" class="slide level2"><h2>The RStudio panes</h2>
+<p>First, <strong>open a new script</strong> under the File menu if one is not yet open: <code>File &gt; New File &gt; R Script</code>. In the script, type the following:</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">print</span>(<span class="st">"excited for R!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -621,7 +638,8 @@
 <ul>
 <li><p>To <strong>run code</strong>, place your cursor anywhere in the code, then hit <code>Control</code> + <code>Enter</code> on Windows.</p></li>
 <li><p>This should send the code to the Console and run it.</p></li>
-</ul></section><section class="slide level2"><p>You can also <strong>run multiple lines at once</strong>.</p>
+</ul>
+<p>You can also <strong>run multiple lines at once</strong>.</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">print</span>(<span class="st">"excited for R!"</span>)</span>
 <span id="cb2-2"><a></a><span class="fu">print</span>(<span class="st">"and RStudio!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -630,25 +648,26 @@
 <ul>
 <li><p>Now drag your cursor to highlight both lines and press <code>Control</code> + <code>Enter</code>.</p></li>
 <li><p>To <strong>run the entire script</strong>, you can use <code>Control</code> + <code>A</code> to select all code, then press `<code>Control</code> + <code>Enter</code>.</p></li>
-</ul></section><section class="slide level2"><ul>
+</ul></section><section id="the-rstudio-panes-3" class="slide level2"><h2>The RStudio panes</h2>
+<ul>
 <li>To <strong>open the script in a new window</strong>, click on the third icon in the toolbar directly above the script.</li>
 </ul>
 
-<img data-src="images/rstudio_pop_out_icon.png" width="329" class="r-stretch"><ul>
+<img data-src="images/rstudio_pop_out_icon.png" class="quarto-figure quarto-figure-center r-stretch" width="329"><ul>
 <li><p>To put the window back, click on the same button on the now-external window.</p></li>
 <li><p>Next, <strong>save the script.</strong> Hit <code>Control</code> + <code>S</code> to bring up the Save dialog box.</p></li>
-</ul></section><section class="slide level2"><h3 id="console">Console</h3>
+</ul></section><section id="console" class="slide level2"><h2>Console</h2>
 <ul>
 <li><p>The <em>console</em>, at the bottom left, is where <strong>code is executed</strong>. You can type code directly here, but it will not be saved.</p></li>
 <li><p>Type a random piece of code (maybe a calculation like <code>3 + 3</code>) and press ‘Enter’.</p></li>
 </ul>
 
-<img data-src="images/rstudio_console.png" width="594" class="r-stretch"><ul>
+<img data-src="images/rstudio_console.png" class="quarto-figure quarto-figure-center r-stretch" width="594"><ul>
 <li><p>If you place your cursor on the last line of the console, and you press the <strong>up arrow</strong>, you can go back to the last code that was run. Keep pressing it to cycle to the previous lines.</p></li>
 <li><p>To run any of these previous lines, press <em>Enter</em>.</p></li>
-</ul></section><section class="slide level2"><h3 id="environment">Environment</h3>
-<p><img data-src="images/environment_tab.png" width="527"></p>
-<ul>
+</ul></section><section id="environment" class="slide level2"><h2>Environment</h2>
+
+<img data-src="images/environment_tab.png" class="quarto-figure quarto-figure-center r-stretch" width="527"><ul>
 <li><p>At the top right of the RStudio Window, you should see the <strong>Environment</strong> tab.</p></li>
 <li><p>The Environment tab shows datasets and other objects that are loaded into R’s working memory, or “workspace”.</p></li>
 <li><p>To explore this tab, let’s import a dataset into your environment from R.</p></li>
@@ -659,18 +678,20 @@
 </details>
 </div>
 <p>You have now imported the dataset and stored it in an <em>object</em> named <code>data</code>. (You could have named the object anything you want.)</p>
+</section><section id="environment-1" class="slide level2"><h2>Environment</h2>
 <ul>
 <li>Now that the dataset is stored by R, you should be able to see it in the Environment pane.</li>
 <li>If you click on the blue drop-down icon beside the object’s name in the Environment tab to reveal a summary.</li>
 </ul>
-<p><img data-src="images/rstudio_explore_object_dropdown.png" width="351"></p>
-<ul>
+
+<img data-src="images/rstudio_explore_object_dropdown.png" class="quarto-figure quarto-figure-center r-stretch" width="351"><ul>
 <li>Try clicking directly on the <code>data</code> dataset from the Environment tab. This opens it in a ‘View’ tab.</li>
-</ul></section><section class="slide level2"><ul>
+</ul></section><section id="environment-2" class="slide level2"><h2>Environment</h2>
+<ul>
 <li>The broom icon, at the top of the Environment pane is used to clear your workspace.</li>
 </ul>
 
-<img data-src="images/broom_icon.png" class="r-stretch"><ul>
+<img data-src="images/broom_icon.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
 <li>You can also <strong>remove an object from the workspace</strong> with the <code><a href="https://rdrr.io/r/base/rm.html">rm()</a></code> function.</li>
 <li>Type and run the following in a new line on your R script.</li>
 </ul>
@@ -679,21 +700,21 @@
 </details>
 </div>
 <p>Notice that the <code>data</code> object no longer shows up in your environment after having run that code.</p>
-</section><section class="slide level2"><h3 id="history">History</h3>
+</section><section id="history" class="slide level2"><h2>History</h2>
 <ul>
 <li>Next, the <strong>History</strong> tab shows previous commands you have run.</li>
 </ul>
 
-<img data-src="images/history_tab.png" width="470" class="r-stretch"><ul>
+<img data-src="images/history_tab.png" class="quarto-figure quarto-figure-center r-stretch" width="470"><ul>
 <li><p>You can click a line to highlight it, then send it to the console or to your script with the “To Console” and “To Source” icons at the top of this tab.</p></li>
 <li><p>To select multiple lines, use the “Shift-click” method: click the first item you want to select, then hold down the “Shift” key and click the last item you want to select.</p></li>
 <li><p>Finally, notice that there is a search bar at the top right of the History pane where you can search for past commands that you have run.</p></li>
-</ul></section><section class="slide level2"><h3 id="files">Files</h3>
+</ul></section><section id="files" class="slide level2"><h2>Files</h2>
 <ul>
 <li>Next, the <strong>Files</strong> tab. This shows the files and folders in the folder you are working in.</li>
 </ul>
 
-<img data-src="images/rstudio_files.png" class="r-stretch"><ul>
+<img data-src="images/rstudio_files.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
 <li><p>The tab allows you to interact with your computer’s file system.</p></li>
 <li>
 <p>Try playing with some of the buttons here, to see what they do. You should try at least the following:</p>
@@ -704,7 +725,7 @@
 <li><p>Rename that script</p></li>
 </ul>
 </li>
-</ul></section><section class="slide level2"><h3 id="plots">Plots</h3>
+</ul></section><section id="plots" class="slide level2"><h2>Plots</h2>
 <ul>
 <li>Next, the <strong>Plots</strong> tab. This is where figures that are generated by R will show up.</li>
 <li>Try creating a simple plot with the following code:</li>
@@ -714,21 +735,24 @@
 </details>
 </div>
 
-<img data-src="images/rstudio_plots.png" class="r-stretch"><ul>
+<img data-src="images/rstudio_plots.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
 <li><p>That code creates a plot of the two variables in the <code>women</code> dataset.</p></li>
 <li><p>You should see this figure in the Plots tab.</p></li>
 <li><p>Now, test out the buttons at the top of this tab to explore what they do.</p></li>
 <li><p>In particular, try to export a plot to your computer.</p></li>
-</ul></section><section class="slide level2"><h3 id="packages">Packages</h3>
+</ul></section><section id="packages" class="slide level2"><h2>Packages</h2>
 <ul>
 <li>Next, let’s look at the <strong>Packages</strong> tab.</li>
 </ul>
-
-<img data-src="images/packages_tab.png" width="419" class="r-stretch"><ul>
-<li><p>Packages are collections of R code that extend the functionality of R.</p></li>
-<li><p>it is important to know that to use a package, you need to <em>install</em> then <em>load</em> it.</p></li>
-<li><p>Packages need to be installed only once, but must be loaded in each new R session.</p></li>
-<li><p>All the package names you see (in blue font) are packages that are installed on your system. And packages with a checkmark are packages which are <em>loaded</em> in the current session.</p></li>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/packages_tab.png" class="quarto-figure quarto-figure-center" width="419" height="250"></p>
+</figure>
+</div>
+<ul>
+<li>Packages are collections of R code that extend the functionality of R.</li>
+<li>it is important to know that to use a package, you need to <em>install</em> then <em>load</em> it.</li>
+<li>Packages need to be installed only once, but must be loaded in each new R session.</li>
+<li>All the package names you see (in blue font) are packages that are installed on your system. And packages with a checkmark are packages which are <em>loaded</em> in the current session.</li>
 </ul></section><section id="installing-and-loading-packages" class="slide level2"><h2>Installing and Loading Packages</h2>
 <ul>
 <li>Packages are collections of R functions, data, and compiled code in a well-defined format.</li>
@@ -752,7 +776,8 @@
 [11] "nlme"       "nnet"       "rpart"      "spatial"    "survival"  </code></pre>
 </div>
 </div>
-</section><section class="slide level2"><p><span style="color:blue"><strong>3. Contributed packages:</strong></span> Due to the open nature of R, anyone can contribute new packages at any time.</p>
+</section><section id="section" class="slide level2"><h2></h2>
+<p><span style="color:blue"><strong>3. Contributed packages:</strong></span> Due to the open nature of R, anyone can contribute new packages at any time.</p>
 <ul>
 <li>Currently, the CRAN package repository features <span style="color:red">20394 available packages</span>.</li>
 </ul>
@@ -767,7 +792,8 @@
 </li>
 </ul>
 
-<img data-src="img/option1.png" class="quarto-figure quarto-figure-center r-stretch"></section><section class="slide level2"><ul>
+<img data-src="img/option1.png" class="quarto-figure quarto-figure-center r-stretch"></section><section id="section-1" class="slide level2"><h2></h2>
+<ul>
 <li>
 <strong>Option 2:</strong> <span style="color:orange">Packages Window</span>
 </li>
@@ -819,33 +845,54 @@
 <p>Notice that the histogram above shows up in a <strong>Viewer</strong> tab. This tab allows you to preview HTML files and interactive objects.</p>
 <h3 id="help">Help</h3>
 <p>Lastly, the <strong>Help</strong> tab shows the documentation for different R objects. Try typing out and running each line below to see what this documentation looks like.</p>
+<div class="columns">
+<div class="column" style="width:50%;">
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>?hchart</span>
 <span id="cb14-2"><a></a>?women</span>
 <span id="cb14-3"><a></a>?read.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-
-<img data-src="images/example_help_page.png" width="451" class="r-stretch"><ul>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/example_help_page.png" class="quarto-figure quarto-figure-center" width="451"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
 <li>Help files are not always very easy to understand for beginners, but with time they will become more useful.</li>
 </ul></section><section id="rstudio-options" class="slide level2"><h2>RStudio options</h2>
 <ul>
 <li><p>RStudio has a number of useful options for changing it’s look and functionality. Let’s try these.</p></li>
 <li><p>You may not understand all the changes made for now. That’s fine.</p></li>
 <li><p>In the RStudio menu at the top of the screen, select <code>Tools &gt; Global Options</code> to bring up RStudio’s options.</p></li>
-<li>
-<p>Now, under <code>Appearance</code>, choose your ideal theme. (We like the “Crimson Editor” and “Tomorrow Night” themes.)</p>
-<h2 id="section-1"><img data-src="images/rstudio_themes.png" width="530"></h2>
-</li>
+<li><p>Now, under <code>Appearance</code>, choose your ideal theme. (We like the “Crimson Editor” and “Tomorrow Night” themes.)</p></li>
+</ul>
+
+<img data-src="images/rstudio_themes.png" class="quarto-figure quarto-figure-center r-stretch" width="530"></section><section id="rstudio-options-1" class="slide level2"><h2>RStudio options</h2>
+<ul>
 <li><p>Under <code>Code &gt; Display</code>, check “Highlight R function calls”.</p></li>
 <li><p>What this does is give your R <em>functions</em> a unique color, improving readability.</p></li>
 <li><p>Also under <code>Code &gt; Display</code>, check “Rainbow parentheses”.</p></li>
-<li>
-<p>What this does is make your “nested parentheses” easier to read by giving each pair a unique color.</p>
-<p><img data-src="images/options_highlight_function_rainbow_parentheses.jpg" width="446"></p>
-<p><img data-src="images/highlight_r_function_calls.jpg" width="460" height="66"></p>
-<h2 id="section-2"><img data-src="images/rainbow_parentheses.jpg" width="361"></h2>
-</li>
+<li><p>What this does is make your “nested parentheses” easier to read by giving each pair a unique color.</p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/options_highlight_function_rainbow_parentheses.jpg" class="quarto-figure quarto-figure-center" width="446" height="350"></p>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/highlight_r_function_calls.jpg" class="quarto-figure quarto-figure-center" width="560" height="166"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section id="rstudio-options-2" class="slide level2"><h2>RStudio options</h2>
+
+<img data-src="images/rainbow_parentheses.jpg" class="quarto-figure quarto-figure-center r-stretch" width="361"><ul>
 <li><p>Finally under <code>General &gt; Basic</code>, <strong>uncheck</strong> the box that says <strong>“Restore .RData into workspace at startup”</strong>.</p></li>
 <li><p>You don’t want to restore any data to your workspace (or <em>environment)</em> when you start RStudio.</p></li>
 <li><p>Starting with a clean workspace each time is less likely to lead to errors.</p></li>
@@ -857,7 +904,7 @@
 <li><p>It’s also available on the <em>Tools</em> menu (<em>Tools</em> -&gt; <em>Show Command Palette</em>).</p></li>
 </ul>
 
-<img data-src="images/command_palette.jpg" width="527" class="r-stretch"><p>Try using it to:</p>
+<img data-src="images/command_palette.jpg" class="quarto-figure quarto-figure-center r-stretch" width="527"><p>Try using it to:</p>
 <ul>
 <li><p>Create a new script (Search “new script” and click on the relevant option)</p></li>
 <li><p>Rename a script (Search “rename” and click on the relevant option)</p></li>
@@ -865,8 +912,11 @@
 <ul>
 <li>Of course, you have only scratched the surface of RStudio functionality and you can find more on the cheatsheet below:</li>
 </ul>
-
-<img data-src="images/rstudio_cheatsheet.png" class="r-stretch"></section><section id="working-with-r-objects" class="slide level2"><h2>3. Working with R Objects</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/rstudio_cheatsheet.png" class="quarto-figure quarto-figure-center" width="1250" height="550"></p>
+</figure>
+</div>
+</section><section id="working-with-r-objects" class="slide level2"><h2>3. Working with R Objects</h2>
 <p><strong>Organize with an RStudio project</strong></p>
 <ul>
 <li><p>It is a good habit to immediately create a project for handling the analysis of new data and keep everything together.</p></li>
@@ -877,7 +927,7 @@
 <li><p>You can also type the below function into the Console, but we won’t do that in this session.</p></li>
 </ul>
 <pre><code>prodigenr::setup_project("C:/Users/yebel/Desktop/LearningR")</code></pre>
-</section><section class="slide level2"><h3 id="objects-in-r">Objects in R</h3>
+</section><section id="objects-in-r" class="slide level2"><h2>Objects in R</h2>
 <ul>
 <li>R is an object-oriented programming platform.</li>
 <li>Meaning the entities that R creates and manipulates are known as <code>objects</code>.</li>
@@ -897,7 +947,8 @@
 <li>Variable names can be letters, numbers, and the dot or underline characters but not dot followed by numbers <code>.4you</code>is illegal).</li>
 </ul>
 </li>
-</ul></section><section class="slide level2"><ul>
+</ul></section><section id="objects-in-r-1" class="slide level2"><h2>Objects in R</h2>
+<ul>
 <li>the symbol <code>&lt;-</code> (<code>Alt + -</code>) that could be read as <code>assign</code> or <code>place into</code> or <code>read in</code> etc.</li>
 </ul>
 <div class="cell">
@@ -909,53 +960,61 @@
 <li>The standard data objects in R are: <strong>scalars, vectors, factors, matrices and arrays, lists, and data frames</strong>.</li>
 <li>Data types assigned to each objects are: <strong>logical, numeric, integer, character, complex.</strong>
 </li>
-</ul>
-<h3 id="vector">Vector</h3>
+</ul></section><section id="vector" class="slide level2"><h2>Vector</h2>
 <ul>
-<li>A set of scalars arranged in a one-dimensional array.</li>
-<li>Data values are all the same mode(data type), but can hold any mode.
+<li><p>A set of scalars arranged in a one-dimensional array.</p></li>
+<li>
+<p>Data values are all the same mode(data type), but can hold any mode.</p>
 <ul>
 <li>e.g:(-2, 3.4, 3), (TRUE, FALSE, TRUE), (“blue”, “gray”, “red”)</li>
 </ul>
 </li>
-<li>Vectors can be created using the following functions:</li>
+<li><p>Vectors can be created using the following functions:</p></li>
 <li>
-<code><a href="https://rdrr.io/r/base/c.html">c()</a></code> function to combine individual values
+<p><code><a href="https://rdrr.io/r/base/c.html">c()</a></code> function to combine individual values</p>
 <ul>
 <li><code>x &lt;- c(10.4, 5.6, 3.1, 6.4, 21.7)</code></li>
 </ul>
 </li>
 <li>
-<code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> to create more complex sequences
+<p><code><a href="https://rdrr.io/r/base/seq.html">seq()</a></code> to create more complex sequences</p>
 <ul>
 <li><code>seq(from=1, to=10, by=2) or seq(1,10 )</code></li>
 </ul>
 </li>
-<li>
-<code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> to create replicates of values: <code>rep(1:4, times=2, each=2)</code>
-</li>
+<li><p><code><a href="https://rdrr.io/r/base/rep.html">rep()</a></code> to create replicates of values: <code>rep(1:4, times=2, each=2)</code></p></li>
 </ul></section><section id="some-useful-functions-in-vector" class="slide level2"><h2>Some useful functions in vector</h2>
 <ul>
-<li><p><code>class(x):</code> returns class/type of vector x</p></li>
-<li><p><code>length(x):</code> returns the total number of elements</p></li>
-<li><p><code>x[length(x)]:</code> returns last value of vector x</p></li>
-<li><p><code>rev(x):</code> returns reversed vector</p></li>
-<li><p><code>sort(x):</code> returns sorted vector</p></li>
-<li><p><code>unique(x):</code> returns vector without multiple elements</p></li>
-<li><p><code>range(x):</code> Range of x</p></li>
-<li><p><code>quantile(x):</code> Quantiles of x for the given probabilities</p></li>
-<li><p><code>which.max(x):</code> index of maximum</p></li>
-<li><p><code>which.min(x):</code> index of minimum</p></li>
+<li>
+<code>class(x):</code> returns class/type of vector x</li>
+<li>
+<code>length(x):</code> returns the total number of elements</li>
+<li>
+<code>x[length(x)]:</code> returns last value of vector x</li>
+<li>
+<code>rev(x):</code> returns reversed vector</li>
+<li>
+<code>sort(x):</code> returns sorted vector</li>
+<li>
+<code>unique(x):</code> returns vector without multiple elements</li>
+<li>
+<code>range(x):</code> Range of x</li>
+<li>
+<code>quantile(x):</code> Quantiles of x for the given probabilities</li>
+<li>
+<code>which.max(x):</code> index of maximum</li>
+<li>
+<code>which.min(x):</code> index of minimum</li>
 </ul></section><section id="factors" class="slide level2"><h2>Factors</h2>
 <ul>
-<li><p>A factor is used to store predefined categorical data</p></li>
-<li>
-<p>Can be ordered and unordered</p>
+<li>A factor is used to store predefined categorical data</li>
+<li>Can be ordered and unordered
 <ul>
 <li>e.g.&nbsp;:(“yes”, “no”, “no”, “yes”, “yes”), (“male”, “female”, “female”, “male”)</li>
 </ul>
 </li>
-<li><p>Factors can be created using <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code></p></li>
+<li>Factors can be created using <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code>
+</li>
 </ul>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>size <span class="ot">&lt;-</span> <span class="fu">factor</span>(<span class="fu">c</span>(<span class="st">"small"</span>, <span class="st">"large"</span>, <span class="st">"small"</span>, <span class="st">"medium"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -965,9 +1024,9 @@
 <li>The levels of a factor can be displayed using <code><a href="https://rdrr.io/r/base/levels.html">levels()</a></code>.</li>
 </ul></section><section id="matrix" class="slide level2"><h2>Matrix</h2>
 <ul>
-<li><p>Matrix is a rectangular array arranged in rows and columns.</p></li>
-<li><p>The individual items in a matrix are called its elements or entries.</p></li>
-<li><p>Matrices can be created by:</p></li>
+<li>Matrix is a rectangular array arranged in rows and columns.</li>
+<li>The individual items in a matrix are called its elements or entries.</li>
+<li>Matrices can be created by:</li>
 </ul>
 <ol type="1">
 <li><code><a href="https://rdrr.io/r/base/matrix.html">matrix()</a></code></li>
@@ -987,7 +1046,8 @@
 <code>rbind</code> combines rows</li>
 </ul>
 </li>
-</ul></section><section class="slide level2"><p>e.g.</p>
+</ul></section><section id="matrix-1" class="slide level2"><h2>Matrix</h2>
+<p>e.g.</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>m1<span class="ot">&lt;-</span><span class="fu">matrix</span>(<span class="at">data =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>, <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">ncol =</span> <span class="dv">2</span>)</span>
 <span id="cb19-2"><a></a>m2<span class="ot">&lt;-</span><span class="fu">cbind</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">5</span><span class="sc">:</span><span class="dv">7</span>,<span class="dv">10</span><span class="sc">:</span><span class="dv">12</span>)</span>
@@ -1143,7 +1203,8 @@
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a>mydata <span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="fu">file.choose</span>(),<span class="at">sep=</span><span class="st">","</span>,<span class="at">header=</span>T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-</section><section class="slide level2"><p><strong>Useful arguments</strong> - Check these arguments carefully when you load your data</p>
+</section><section id="reading-raw-data-from-other-sources-1" class="slide level2"><h2>Reading raw data from other sources</h2>
+<p><strong>Useful arguments</strong> - Check these arguments carefully when you load your data</p>
 <div class="cell">
 <details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a>myData<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="at">file=</span><span class="st">"datafile.csv"</span>,<span class="at">header=</span> <span class="cn">TRUE</span>, <span class="at">sep=</span><span class="st">","</span>, <span class="at">strip.white =</span><span class="cn">TRUE</span>,</span>
 <span id="cb28-2"><a></a>                 <span class="at">na.strings=</span> <span class="st">" "</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1197,7 +1258,7 @@
 </section><section id="data-import-wizard" class="slide level2"><h2>Data import wizard</h2>
 <p>The data import wizard is a quick and easy way to import your data</p>
 
-<img data-src="images/data_import.jpg" class="r-stretch"><p>It’s actually way <strong>better</strong> to follow the <strong>reproducible steps</strong> – and hardly any more effort – below…</p>
+<img data-src="images/data_import.jpg" class="quarto-figure quarto-figure-center r-stretch"><p>It’s actually way <strong>better</strong> to follow the <strong>reproducible steps</strong> – and hardly any more effort – below…</p>
 <ul>
 <li>Inside the data wizard, you can copy the code int he code-preview window, then paste the code into the code chunk of your quarto document or r script.</li>
 </ul>
@@ -1260,9 +1321,8 @@
 </div>
 
 <div class="quarto-auto-generated-content">
-<p><img src="logo-title-slide.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p><a href="https://github.com/Yebelay">?</a>&nbsp;&nbsp;&nbsp;</p>
+
 </div>
 </div>
 </section>

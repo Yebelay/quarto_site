@@ -13,11 +13,23 @@ $secondary-color: #39729E;
 $link-color: 	#000080;
 $presentation-heading-color: $primary-color;
 $code-color: #820bbb;
-$code-block-font-size: 0.95em;
+$code-block-font-size: 0.85em;
 $presentation-h2-font-size: 1.4em !default;
 $presentation-font-size-root: 26px !default;
+$navy_blue: #000080;
+$golden: #FFD700;
 
 /*-- scss:rules --*/
+
+body {
+  font-family: $font-family-sans-serif;
+}
+
+code {
+  font-family: $font-family-monospace;
+  color: $code-color;
+  font-size: 0.85em;
+}
 
 
 strong,
@@ -117,8 +129,17 @@ details>summary {
 
 /* Custom background color for callout-tip */
 .callout-tip {
-  background-color: #f0f8ff; /* Set your desired background color */
-  border-left: solid 5px $primary-color; /* Optional: Add a border for better visibility */
-  padding: 10px; /* Optional: Add padding for better readability */
-  margin: 10px 0; /* Optional: Add margin to separate it from other content */
+  background-color: #f0f8ff; 
+  border-left: solid 5px $primary-color; 
+  padding: 10px; 
+  margin: 10px 0; 
 }
+
+.reveal h2 {
+  background-color: #006D6B;
+  padding: 10px 0px 10px 20px;
+  height: 55px;
+  color: white;
+  border-radius: 0px;
+}
+
