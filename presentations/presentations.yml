@@ -6,6 +6,11 @@
       href: https://yebelay.rbind.io/static/slides/rintro/day 1.html
       code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/rintro/day 1.qmd
       thumbnail: img/intr.png
+
+    - title: Data visualization 
+      href: https://yebelay.rbind.io/static/slides/rplot/graph.html
+      code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/rplot/graph.qmd
+      thumbnail: img/viz.png
       
     - title: Spatial presentations 
       href: https://yebelay.rbind.io/static/slides/spatial-data-slide/spatial.html
