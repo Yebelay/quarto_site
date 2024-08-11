@@ -81,7 +81,7 @@
     "href": "pages/about.html",
     "title": "About Me",
     "section": "",
-    "text": "I have dual master’s degrees in Biostatistics from Stellenbosch University and Statistics from Addis Ababa University, coupled with 11+ years of experience in project leading, data management, analysis, and teaching. These experiences equipped me with a deep understanding of complex data, its management, analysis and use with application of different statistical methods. I have interest in causal inference, longitudinal data analysis and survival data analysis. I have a piece of statistical software training experiences (R, SAS, SPSS)."
+    "text": "I have dual master’s degrees in Biostatistics from Stellenbosch University and Statistics from Addis Ababa University, coupled with 11+ years of experience in project leading, data management, analysis, and teaching.\nThese experiences equipped me with a deep understanding of complex data, its management, analysis and use with application of different statistical methods.\nI have a piece of statistical software training experiences (R, SAS, SPSS)."
   },
   {
     "objectID": "pages/presentations.html",
@@ -3393,5 +3393,26 @@
     "title": "",
     "section": "Refer more one",
     "text": "Refer more one\nThe Ultimate Guide to Get Started With ggplot2: Albert Rapp\nVisualization"
+  },
+  {
+    "objectID": "pages/about.html#intersts",
+    "href": "pages/about.html#intersts",
+    "title": "About Me",
+    "section": "Intersts",
+    "text": "Intersts\nI am quite interested in\n\n\n\nCausal inference,\nLongitudinal data analysis,\nSurvival analysis,\nJoint Model\n\n\n\nSpatial data analysis,\nMissing data management,\nDesign of clinical trials."
+  },
+  {
+    "objectID": "pages/about.html#about-me",
+    "href": "pages/about.html#about-me",
+    "title": "About Me",
+    "section": "",
+    "text": "I have dual master’s degrees in Biostatistics from Stellenbosch University and Statistics from Addis Ababa University, coupled with 11+ years of experience in project leading, data management, analysis, and teaching. These experiences equipped me with a deep understanding of complex data, its management, analysis and use with application of different statistical methods. I have a piece of statistical software training experiences (R, SAS, SPSS)."
+  },
+  {
+    "objectID": "pages/about.html#section",
+    "href": "pages/about.html#section",
+    "title": "About Me",
+    "section": "",
+    "text": "I have dual master’s degrees in Biostatistics from Stellenbosch University and Statistics from Addis Ababa University, coupled with 11+ years of experience in project leading, data management, analysis, and teaching. These experiences equipped me with a deep understanding of complex data, its management, analysis and use with application of different statistical methods. I have a piece of statistical software training experiences (R, SAS, SPSS)."
   }
 ]

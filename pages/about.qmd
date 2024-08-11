@@ -5,20 +5,20 @@ editor:
     wrap: 72
 ---
 
-I have **dual master’s degrees** in [Biostatistics from Stellenbosch
-University]{style="color:blue;"} and [Statistics from Addis Ababa University]{style="color:blue;"}, coupled with **11+
-years of experience** in *project leading, data management, analysis, and
-teaching*. These experiences equipped me with a deep understanding of
-complex data, its management, analysis and use with application of
-different statistical methods. I have interest in causal inference,
-longitudinal data analysis and survival data analysis. I have a piece of
-statistical software training experiences (R, SAS, SPSS).
 
-![](images/yeb1.jpg){fig-align="center" width="46%"}
+- I have **dual master’s degrees** in [Biostatistics from Stellenbosch
+University]{style="color:blue;"} and [Statistics from Addis Ababa University]{style="color:blue;"}, coupled with **11+ years of experience** in *project leading, data management, analysis, and
+teaching*. 
+- These experiences equipped me with a deep understanding of
+complex data, its management, analysis and use with application of
+different statistical methods. 
+- I have a piece of statistical software training experiences (R, SAS, SPSS).
+
+![](images/yeb1.jpg){fig-align="center" width="60%" height="325"}
 
 <br/>
 
-## Education
+## [Education]{style="color:red;"}
 
 -   **Stellenbosch University, South Africa\| CapeTown**
 
@@ -32,7 +32,7 @@ statistical software training experiences (R, SAS, SPSS).
 
     -   BSc in Statistics \| September 2009 - July 2012
 
-## Experience
+## [Experience]{style="color:red;"}
 
 -   **Survey Manager** at: [Center for Evaluation and Development
     (C4ED)](https://c4ed.org/) from '2023-05-01' to present
@@ -48,18 +48,21 @@ statistical software training experiences (R, SAS, SPSS).
 -   **Lecturer** at: "[Debre Markos University](http://www.dmu.edu.et/)"
     from '2013-01-01' date_end: ''
 
-## Skills
+## [Intersts]{style="color:red;"}
 
--   ![](https://upload.wikimedia.org/wikipedia/commons/1/1b/R_logo.svg){width="32px"}
-    **Statistical Software**: R \| STATA \| SAS \| SPSS
+I am quite interested in 
 
--   **Data Collection Apps**: Kobo toolbox \| SurveyCTO \| REDCap
+::: columns
+::: {.column width="50%"}
+- [Causal inference]{style="color:blue;"}, 
+- [Longitudinal data analysis]{style="color:blue;"}, 
+- [Survival analysis]{style="color:blue;"}, 
+- [Joint Model]{style="color:blue;"}
 
--   **Project Management**: Project Management \| Surveys \| Budget
-
--   **Impact Evaluation**: Causal Inference \| Impact Evaluation
-
--   **Dashboard**: Power BI \| R Markdown (flexdashboard) \| Shiny App
-
--   **Study Design**: Study Design \| Sampling Technique \| Statistical
-    Modelling
+::: 
+::: {.column width="50%"}
+- [Spatial data analysis]{style="color:blue;"}, 
+- [Missing data management]{style="color:blue;"}, 
+- [Design of clinical trials]{style="color:blue;"}.  
+:::
+:::
