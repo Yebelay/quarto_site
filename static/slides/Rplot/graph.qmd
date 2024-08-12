@@ -2,11 +2,11 @@
 title: |
        <span style="color:white"><span style = 'font-size: 270%;'>Data Visualization</span>
 author: 
-  - <span style='color:darkgreen'>Yebelay Berehan</span>
+  - <span style='color:#fefcff'>Yebelay Berehan</span>
 
 institute: |
-       <span style="color:white">Debre Markos University + C4ED</span><br><br><br><br>
-       <span style="color:cyan">`r Sys.Date()`</span>
+       <span style="color:white">Center for Evaluation and Development (C4ED)</span><br><br><br><br>
+       <span style="color:darkblue">`r Sys.Date()`</span>
 
 title-slide-attributes:
   data-background-image: img/back.jpg
