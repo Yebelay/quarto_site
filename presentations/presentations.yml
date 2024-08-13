@@ -6,11 +6,10 @@
       href: https://yebelay.rbind.io/static/slides/rintro/day 1.html
       code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/rintro/day 1.qmd
       thumbnail: img/intr1.jpg
-
-    - title: Advanced data managment using R 
+    - title: Advanced data managment in R 
       href: https://yebelay.rbind.io/static/slides/datamanagment/datamanagment.html
       code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/datamanagment/datamanagment.qmd
-      thumbnail: datama.jpg
+      thumbnail: img/datama.jpg
       
     - title: Data visualization 
       href: https://yebelay.rbind.io/static/slides/rplot/graph.html
