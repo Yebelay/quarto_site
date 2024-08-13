@@ -1,0 +1,2608 @@
+---
+title: |
+       <span style="color:white"><span style = 'font-size: 270%;'>**Advanced Data Managment**</span>
+author: 
+  - <span style='color:black'>Yebelay Berehan</span>
+
+institute: |
+       <span style="color:green">Center for Evaluation and Development (C4ED)</span><br><br><br><br>
+       <span style="color:darkblue">`r Sys.Date()`</span>
+
+title-slide-attributes:
+  data-background-image: cover1.jpg
+  data-background-size: stretch
+  data-background-opacity: "2.5"
+  #data-background-color: "#001E4E"
+format: 
+  revealjs:
+    slide-number: true
+    #logo: logo-title-slide.png
+    #footer: "[?](https://github.com/Yebelay)&nbsp;&nbsp;&nbsp;"
+    theme: custom.scss
+    code-link: true
+    code-fold: show
+    code-tools: true
+    highlight-style: github
+  #  preview-links: auto
+    chalkboard: 
+      boardmarker-width: 3
+    multiplex: true
+from: markdown+emoji
+execute:
+  echo: true
+---
+
+
+## Data Manipulation and Claning using `dplyr()` package
+
+### What is Tidyverse?
+
+-   The `tidyverse` library is a collection of several R packages that are designed to work together to make data manipulation and visualization tasks easier.
+
+-   a suite of packages that implement tidy methods for data importing, cleaning, and wrangling.
+
+-   Contains a series of packages useful for data analysis that work together well.
+
+-   All packages included in `tidyverse` are automatically installed when installing the `tidyverse` package:
+
+```{r, eval=FALSE}
+`install.packages("tidyverse")`
+```
+
+```{r, eval=FALSE}
+tidyverse_packages() 
+```
+
+-   Then to work functions under tidyverse package we must always load the package into the workplace.
+
+```{r, eval=FALSE}
+library(tidyverse) 
+```
+
+-   Some packages under tidyverse are considered `core packages` and others called `friend packages`.
+
+------------------------------------------------------------------------
+
+::: callout-tip
+## install.packages("tidyverse")
+
+::: columns
+::: {.column width="50%"}
+**Core tidyverse**
+
+-   `tibble`, for tibbles, a modern re-imagining of data frames
+-   `readr`, for data import
+-   `tidyr`, for data tidying
+-   `ggplot2`, for data visualization
+-   `dplyr`, for data manipulation
+-   `stringr`, for strings
+-   `forcats`, for factors
+-   `purrr`, for functional programming
+:::
+
+::: {.column width="50%"}
+**Friends for data import (beyond readr)**
+
+-   `readxl`, for xls and xlsx files
+-   `haven`, for SPSS, SAS, and Stata files
+-   `jsonlite`, for JSON
+-   `xml2`, for XML
+-   `httr`, for web APIs
+-   `rvest`, for web scraping
+-   `DBI`, for databases
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+**Friends for data wrangling** 
+
+- `lubridate` and `hms`, for date/times
+:::
+
+::: {.column width="50%"}
+**Friends for modeling**
+
+-   `modelr` and `broom` for model/tidy data
+:::
+:::
+
+-   
+:::
+
+------------------------------------------------------------------------
+
+::: callout-tip
+## readr()
+
+| Function       | Function Reads             |
+|----------------|----------------------------|
+| `read_csv()`   | Comma separated values     |
+| `read_csv2()`  | Semi-colon separate values |
+| `read_delim()` | General delimited files    |
+| `read_fwf()`   | Fixed width files          |
+| `read_log()`   | Apache log files           |
+| `read_table()` | Space separated files      |
+| `read_tsv()`   | Tab delimited values       |
+:::
+
+::: callout-tip
+## Tibbles
+
+-   `data.frames` are the basic form of rectangular data in R (columns of variables, rows of observations)
+-   `read_csv()` reads the data into a tibble, a modern version of the data frame.
+-   a tibble is a data frame
+:::
+
+------------------------------------------------------------------------
+
+## `haven()`
+
+-   `haven` is not a core member of the tidyverse, so you need to load it.
+
+::: columns
+::: {.column width="50%"}
+### Import data using `haven()`
+
+-   `read_sas()`: SAS
+-   `read_spss()`: SPSS
+-   `read_sav()`: SPSS
+-   `read_por()`: SPSS
+-   `read_stata()`: Stata
+-   `read_dta()`: Stata
+:::
+
+::: {.column width="50%"}
+### Export data
+
+-   `write_csv()`: Comma separated values
+-   `write_excel_csv()`: CSV to open in Excel
+-   `write_delim()`: General delimited files
+-   `write_sas()`: SAS .sas7bdat files
+-   `write_sav()`: SPSS .sav files
+-   `write_stata()`: Stata .dta files
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Intro to `dplyr` package
+
+-   The [**`dplyr`**]{style="color:red"} provides a "grammar" (the verbs) for data manipulation and for operating on data frames in a tidy way.
+
+-   The key operator and the essential verbs are:
+
+1.  [%\>%]{style="color:red"}: the "pipe" operator used to connect multiple verb actions together into a pipeline.
+
+2.  [select()]{style="color:red"}: return a subset of the columns of a data frame.
+
+3.  [mutate()]{style="color:red"}: add new variables/columns or transform existing variables.
+
+4.  [filter()]{style="color:red"}: extract a subset of rows from a data frame based on logical conditions.
+
+5.  [arrange()]{style="color:red"}: reorder rows of a data frame according to single or multiple variables.
+
+6.  [summarise() / summarize()]{style="color:red"}: reduce each group to a single row by calculating aggregate measures.
+
+-   We can have a look at the data and its structure by using the [`glimpse()`]{style="color:red"} function from the `dplyr` package.
+
+------------------------------------------------------------------------
+
+## a) Manipulating variables:
+
+`select()`: To extract variables
+
+-   Our first verb on the list is `select` which allows to keep or drop variables from your dataframe. Choosing your variables is the first step in cleaning your data.
+
+![](img/final_dplyr_select.png){width="497"}
+
+-   `select()` is especially useful because it is quite flexible in its use to create new tables.
+
+------------------------------------------------------------------------
+
+## The COVID-19 dataset
+
+-   Lets us use a COVID-19 which is serological survey conducted in Yaounde, Cameroon in late 2020.
+
+-   The survey estimated how many people had been infected with COVID-19 in the region, by testing for IgG and IgM antibodies.
+
+-   The full dataset can be obtained from [Zenodo](https://zenodo.org/record/5218965){target="_blank"}, and the paper can be viewed [here](https://www.nature.com/articles/s41467-021-25946-0){target="_blank"}.
+
+-   There are some demographic, socio-economic and COVID-related variables.
+
+-   The results of the IgG and IgM antibody tests are in the columns `igg_result` and `igm_result`.
+
+```{r, message =F}
+library(readr); library(dplyr)
+yaounde <- yaounde_data <- read_csv("C:/quarto_site/static/slides/Datamanagment/data/yaounde_data.csv")
+```
+
+------------------------------------------------------------------------
+
+-   `dplyr::select()` lets us pick which columns (variables) to keep or drop.
+
+We can select a column **by name**:
+
+```{r, eval=FALSE}
+yaounde %>% select(age) |> head()
+```
+
+------------------------------------------------------------------------
+
+Or we can select a column **by position**:
+
+```{r, eval=FALSE}
+yaounde %>% select(3) |> head()
+```
+
+To select **multiple variables**, we separate them with commas:
+
+```{r, eval=FALSE}
+yaounde %>% select(age, sex, igg_result) |> head()
+```
+
+-   Select the 16th and 22nd columns in the `yaounde` data frame.
+
+------------------------------------------------------------------------
+
+-   For the next part of the tutorial, let's create a smaller subset of the data, called `yao`.
+
+```{r, eval=FALSE}
+yao <-  yaounde %>% select(age, sex, highest_education, occupation,
+                     is_smoker, is_pregnant, igg_result, igm_result)
+head(yao, 4)
+```
+
+------------------------------------------------------------------------
+
+### Selecting column ranges with `:`
+
+The `:` operator selects a **range of consecutive variables**:
+
+```{r, eval=FALSE}
+yao %>% select(age:occupation) |> head()
+```
+
+We can also specify a range with column numbers:
+
+```{r, eval=FALSE}
+yao %>% select(1:4) |> head()
+```
+
+------------------------------------------------------------------------
+
+### Excluding columns with `!`
+
+The **exclamation point** negates a selection:
+
+```{r, eval=FALSE}
+yao %>% select(!age) |> head()
+```
+
+To drop a range of consecutive columns, we use, for example,`!age:occupation`:
+
+```{r, eval=FALSE}
+yao %>% select(!age:occupation) |> head()
+```
+
+To drop several non-consecutive columns, place them inside `!c()`:
+
+```{r, eval=FALSE}
+yao %>% select(!c(age, sex, igg_result)) |> head()
+```
+
+------------------------------------------------------------------------
+
+## Helper functions for `select()`
+
+`dplyr` has a number of helper functions to make selecting easier by using patterns from the column names. Let's take a look at some of these.
+
+### `starts_with()` and `ends_with()`
+
+These two helpers work exactly as their names suggest!
+
+```{r, eval=FALSE}
+yao %>% select(starts_with("is_")) # Columns that start with "is"
+yao %>% select(ends_with("_result")) # Columns that end with "result"
+```
+
+------------------------------------------------------------------------
+
+### `contains()`
+
+`contains()` helps select columns that contain a certain string:
+
+```{r, eval=FALSE}
+yaounde %>% select(contains("drug")) # Columns that contain the string "drug"
+```
+
+------------------------------------------------------------------------
+
+### `everything()`
+
+Another helper function, `everything()`, matches all variables that have not yet been selected.
+
+```{r, eval=FALSE}
+## First, `is_pregnant`, then every other column.
+yao %>% select(is_pregnant, everything())
+```
+
+It is often useful for establishing the order of columns.
+
+Say we wanted to bring the `is_pregnant` column to the start of the `yao` data frame, we could type out all the column names manually:
+
+```{r, eval=FALSE}
+yao %>% select(is_pregnant, age, sex, highest_education, occupation, 
+               is_smoker, igg_result, igm_result)
+```
+
+------------------------------------------------------------------------
+
+-   But this would be painful for larger data frames, such as our original `yaounde` data frame. In such a case, we can use `everything()`:
+
+```{r, eval=FALSE}
+## Bring `is_pregnant` to the front of the data frame
+yaounde %>% select(is_pregnant, everything())
+```
+
+-   This helper can be combined with many others.
+
+```{r, eval=FALSE}
+## Bring columns that end with "result" to the front of the data frame
+yaounde %>% select(ends_with("result"), everything())
+```
+
+------------------------------------------------------------------------
+
+## Change column names with `rename()`
+
+![](img/dplyr_rename.png){width="547"}
+
+[`dplyr::rename()`](https://dplyr.tidyverse.org/reference/rename.html) is used to change column names:
+
+```{r, eval=FALSE}
+## Rename `age` and `sex` to `patient_age` and `patient_sex`
+yaounde %>% 
+  rename(patient_age = age, patient_sex = sex)
+```
+
+------------------------------------------------------------------------
+
+## Rename within `select()`
+
+You can also rename columns while selecting them:
+
+```{r, eval=FALSE}
+## Select `age` and `sex`, and rename them to `patient_age` and `patient_sex`
+yaounde %>% 
+  select(patient_age = age, patient_sex = sex)
+```
+
+## Rename within `select()`
+
+-   Delete columns you don’t need with `-` (remember, if you delete multiple columns use `select(-c())` so that `-` is applied to all of them).
+
+```{r, eval=FALSE}
+airquality %>%
+  select(-c(2:3, 5)) %>% # Delete columns with `-`
+  glimpse()
+```
+
+-   Define the chosen columns in a vector beforehand and then recall it with `!!`.
+
+```{r, eval=FALSE}
+air_cols <- c("Wind", "Tem", "Day")
+airquality %>%
+  select(!!air_cols) %>% # Call a vector of column names with `!!`
+  glimpse()
+```
+
+------------------------------------------------------------------------
+
+-   You can also select columns based on their data type using `select_if()`.
+-   The common data types to be called are: `is.character`, `is.double`, `is.factor`, `is.integer`, `is.logical`, `is.numeric`.
+
+```{r, eval=FALSE}
+airquality %>%
+  select_if(is.numeric) %>%
+  glimpse()  # numeric data types only selected (here: integer or double)
+```
+
+-   You can also mix various ways to call columns within `select()`:
+
+```{r, eval=FALSE}
+airquality %>% select(Day,  # put Day first
+                   Ozone:Wind,  # add columns between `Ozone` and `Wind`
+                   Solar.Radiation = Solar.R,  # rename `Solar.R` to lowercase
+                   starts_with("M"),  # add columns starting with "M"
+                   everything())%>%  # add all the other columns
+  glimpse() 
+```
+
+------------------------------------------------------------------------
+
+::: callout-tip
+## Summary for `Select()` function
+
+-   There are five ways to select variables in `select(data, ...)`:
+
+1.  **By position:** `iris %>% select(1, 2, 4)` or`iris %>% select(1:2)`.
+2.  **By name:** `iris %>% select(Sepal.Length, Sepal.Width, Petal.Length)`, or `iris %>% select(Sepal.Length:Petal.Length)`.
+3.  **By function of name:** `iris %>% select(starts_with("s"))`, or `iris %>% select(ends_with("s"))`. You can also use helpers contains() and matches() for more flexibly matching.
+4.  **By type:** `iris %>% select(where(is.numeric))`,or `iris %>% select(where(is.factor))`.
+5.  **By any combination of the above using the Boolean operators !, &, and \|:**
+    -   `iris %>% select(!where(is.factor)):` selects all non-factor variables.
+    -   `iris %>% select(where(is.numeric) & starts_with("S")):` selects all numeric variables that starts with 'S'.
+    -   `iris %>% select(starts_with("P") | ends_with("h")):` selects all variables that starts with 'P' or ends with 'h'.
+:::
+
+------------------------------------------------------------------------
+
+## `rename()` : To rename variables
+
+-   If we want to change lowercase variables to uppercase, we can use `rename()`, or `rename_with()`.
+
+```{r, eval=FALSE}
+airquality %>%
+  rename(day = Day,
+         month = Month,
+         wind = Wind) %>%  # renames only chosen columns
+  glimpse()
+```
+
+-   If we just want column names to be changed with a function, we can use `rename_with` which is useful in this case since we can rename them with `tolower`.
+
+```{r, eval=FALSE}
+airquality %>%
+  rename_with(tolower) %>%
+  glimpse()
+# If you didn't want all of them renamed, you could specify columns with `.cols =`
+```
+
+------------------------------------------------------------------------
+
+-   We could have achieved the same as above by selecting all columns and applying `tolower`.
+
+```{r, eval=FALSE}
+airquality1 <- airquality %>%  # let's save this one!
+  select_all(tolower) %>%
+  glimpse()
+```
+
+-   If we wanted only some of them renamed and kept, we could have used `select_at()` which specifies columns with `vars()`.
+
+```{r, eval=FALSE}
+# Select and rename a couple of columns only
+airquality %>%
+  select_at(vars(Ozone, Month, Day), tolower) %>%
+  glimpse()
+```
+
+------------------------------------------------------------------------
+
+-   Also the following are other important function
+
+    -   `_all()` if you want to apply the function to all columns
+    -   `_at()` if you want to apply the function to specific columns (specify them with `vars()`)
+    -   `_if()` if you want to apply the function to columns of a certain characteristic (e.g. data type)
+    -   `_with()` if you want to apply the function to columns and include another function within it
+
+-   These variants are quite flexible, and keep changing for individual functions (e.g. RStudio tells me now that `rename_with()` has superseded previously used `rename_all()`, `rename_at()`, `rename_if()`).
+
+------------------------------------------------------------------------
+
+## `filter()`
+
+-   Dropping abnormal data entries or keeping subsets of your data points is another essential aspect of data wrangling.
+
+Let's go !\
+
+![Fig: the filter() verb.](img/custom_dplyr_filter.png){width="400"}\
+
+```{r, message = F}
+
+yao <- yaounde %>% 
+  select(age, sex, weight_kg, highest_education, neighborhood, 
+         occupation, is_smoker, is_pregnant, 
+         igg_result, igm_result)
+#yao
+```
+
+------------------------------------------------------------------------
+
+-   We use `filter()` to keep rows that satisfy a set of conditions.
+-   If we want to keep just the male records, we run:
+
+```{r, eval = F}
+yao %>% filter(sex == "Male")
+```
+
+-   Note the use of the double equal sign `==` rather than the single equal sign `=`. The `==` sign tests for equality, as demonstrated below:
+
+```{r, eval = F}
+### create the object `sex_vector` with three elements
+sex_vector <- c("Male", "Female", "Female")
+### test which elements are equal to "Male"
+sex_vector == "Male"
+```
+
+-   So the code `yao %>% filter(sex == "Male")` will keep all rows where the equality test `sex == "Male"` evaluates to `TRUE`.
+
+------------------------------------------------------------------------
+
+-   It is often useful to chain `filter()` with `nrow()` to get the number of rows fulfilling a condition.
+
+```{r, eval = F}
+### how many respondents were male?
+yao %>% filter(sex == "Male") %>% 
+  nrow()
+```
+
+::: {.callout-note title="Key Point"}
+The double equal sign, `==`, tests for equality, while the single equals sign, `=`, is used for specifying values to arguments inside functions.
+:::
+
+------------------------------------------------------------------------
+
+## Relational operators
+
+-   The `==` operator introduced above is an example of a "relational" operator, as it tests the relation between two values. Here is a list of some of these operators:
+
+|              |                                     |
+|:-------------|:------------------------------------|
+| **Operator** | **is TRUE if**                      |
+| A \< B       | A is **less than** B                |
+| A \<= B      | A is **less than or equal** to B    |
+| A \> B       | A is **greater than** B             |
+| A \>= B      | A is **greater than or equal to** B |
+| A == B       | A is **equal** to B                 |
+| A != B       | A is **not equal** to B             |
+| A %in% B     | A **is an element of** B            |
+
+------------------------------------------------------------------------
+
+![Fig: AND and OR operators visualized.](img/venn_diagram_and_or.png){width="450"}
+
+
+------------------------------------------------------------------------
+
+Let's see how to use these within `filter()`:
+
+```{r, eval = F}
+yao %>% filter(sex != "Male") ## keep rows where `sex` is not "Male"
+yao %>% filter(age < 6) ## keep respondents under 6
+yao %>% filter(age >= 70) ## keep respondents aged at least 70
+
+### keep respondents whose highest education is "Primary" or "Secondary"
+yao %>% filter(highest_education %in% c("Primary", "Secondary"))
+```
+
+## Combining conditions with `&` and `|`
+
+-   We can pass multiple conditions to a single `filter()` statement separated by commas:
+
+```{r, eval = F}
+### keep respondents who are pregnant and are ex-smokers
+yao %>% filter(is_pregnant == "Yes", is_smoker == "Ex-smoker") ## only one row
+```
+
+-   When multiple conditions are separated by a comma, they are implicitly combined with an **and** (`&`).
+
+------------------------------------------------------------------------
+
+-   It is best to replace the comma with `&` to make this more explicit.
+
+```{r, eval = F}
+### same result as before, but `&` is more explicit
+yao %>% filter(is_pregnant == "Yes" & is_smoker == "Ex-smoker")
+```
+
+::: {.callout-note title="Side Note"}
+Don't confuse:
+
+-   the "," in listing several conditions in filter `filter(A,B)` i.e. filter based on condition A and (`&`) condition B
+
+-   the "," in lists `c(A,B)` which is listing different components of the list (and has nothing to do with the `&` operator)
+:::
+
+-   If we want to combine conditions with an **or**, we use the vertical bar symbol, `|`.
+
+```{r, eval = F}
+### respondents who are pregnant OR who are ex-smokers
+yao %>% filter(is_pregnant == "Yes" | is_smoker == "Ex-smoker")
+```
+
+------------------------------------------------------------------------
+
+## Negating conditions with `!`
+
+-   To negate conditions, we wrap them in `!()`.
+
+-   Below, we drop respondents who are children (less than 18 years) or who weigh less than 30kg:
+
+```{r, eval = F}
+### drop respondents < 18 years OR < 30 kg
+yao %>% filter(!(age < 18 | weight_kg < 30))
+```
+
+-   The `!` operator is also used to negate `%in%` since R does not have an operator for **NOT in**.
+
+```{r, eval = F}
+### drop respondents whose highest education is NOT "Primary" or "Secondary"
+yao %>% filter(!(highest_education %in% c("Primary", "Secondary")))
+
+```
+
+------------------------------------------------------------------------
+
+::: {.callout-note title="Key Point"}
+-   It is easier to read `filter()` statements as **keep** statements, to avoid confusion over whether we are filtering **in** or filtering **out**!
+
+-   So the code below would read: "**keep** respondents who are under 18 or who weigh less than 30kg".
+
+```{r, eval = F}
+yao %>% filter(age < 18 | weight_kg < 30)
+```
+
+-   And when we wrap conditions in `!()`, we can then read `filter()` statements as **drop** statements.
+
+So the code below would read: "**drop** respondents who are under 18 or who weigh less than 30kg".
+
+```{r, eval = F}
+yao %>% filter(!(age < 18 | weight_kg < 30))
+```
+:::
+
+------------------------------------------------------------------------
+
+## `NA` values
+
+-   The relational operators introduced so far do not work with `NA`.
+
+Let's make a data subset to illustrate this.
+
+```{r, eval = F}
+yao_mini <- yao %>% 
+  select(sex, is_pregnant) %>% 
+  slice(1,11,50,2) ## custom row order
+
+yao_mini
+```
+
+-   In `yao_mini`, the last respondent has an `NA` for the `is_pregnant` column, because he is male.
+
+-   Trying to select this row using `== NA` will not work.
+
+```{r, eval = F}
+yao_mini %>% filter(is_pregnant == NA) ## does not work
+yao_mini %>% filter(is_pregnant == "NA") ## does not work
+```
+
+-   This is because `NA` is a non-existent value. So R cannot evaluate whether it is "equal to" or "not equal to" anything.
+
+------------------------------------------------------------------------
+
+The special function `is.na()` is therefore necessary:
+
+```{r, eval = F}
+### keep rows where `is_pregnant` is NA
+yao_mini %>% filter(is.na(is_pregnant)) 
+```
+
+This function can be negated with `!`:
+
+```{r, eval = F}
+### drop rows where `is_pregnant` is NA
+yao_mini %>% filter(!is.na(is_pregnant))
+```
+
+::: {.callout-note title="Side Note"}
+For tibbles, RStudio will highlight `NA` values bright red to distinguish them from other values:
+
+![A common error with `NA`](img/tibble_with_na.png){width="300"}
+:::
+
+------------------------------------------------------------------------
+
+::: {.callout-note title="Side Note"}
+`NA` values can be identified but any other encoding such as `"NA"` or `"NaN"`, which are encoded as strings, will be imperceptible to the functions (they are strings, like any others).
+:::
+
+------------------------------------------------------------------------
+
+## How to Use Mutate function in R
+
+-   The dplyr library has the following functions that can be used to add additional variables to a data frame.
+
+-   **`mutate()`** – adds new variables while retaining old variables to a data frame.
+
+-   **`transmute()`** – adds new variables and removes old ones from a data frame.
+
+-   **`mutate_all()`** – changes every variable in a data frame simultaneously.
+
+-   **`mutate_at()`** – changes certain variables by name.
+
+-   **`mutate_if()`** – alterations all variables that satisfy a specific criterion
+
+------------------------------------------------------------------------
+
+## `mutate()`
+
+-   A data frame’s existing variables are preserved when new variables are added using the `mutate()` function.
+-   The `mutate()` basic syntax is as follows.
+
+```{r, eval=FALSE}
+data <- mutate(new_variable = existing_variable/3)
+```
+
+-   **`data`:** the fresh data frame where the fresh variables will be placed
+-   **`new_variable`:** the name of the new variable
+-   **`existing_variable`:** the current data frame variable that you want to modify in order to generate a new variable
+-   Set the new column’s root sepal width to the sepal’s square root. variable width
+
+```{r}
+library(dplyr)
+data <- head(iris)
+data %>% mutate(root_sepal_width = sqrt(Sepal.Width)) %>% head(3)
+```
+
+------------------------------------------------------------------------
+
+## `transmute()`
+
+-   A data frame’s variables are added and removed via the transmute() method.
+
+-   The code that follows demonstrates how to eliminate all of the existing variables and add two new variables to a dataset.
+
+```{r}
+data %>% transmute(root_sepal_width = sqrt(Sepal.Width), 
+                   root_petal_width = sqrt(Petal.Width))
+```
+
+------------------------------------------------------------------------
+
+## `mutate_all()`
+
+-   The `mutate_all()` function changes every variable in a data frame at once, enabling you to use the `funs()` function to apply a certain function to every variable.
+
+-   The use of `mutate_all()` to divide each column in a data frame by ten is demonstrated in the code below.
+
+-   divide 10 from each of the data frame’s variables.
+
+```{r, warning=FALSE, message=FALSE}
+data2 <- head(iris) %>% select(-Species)
+data2 %>% mutate_all(funs(./10))
+```
+
+------------------------------------------------------------------------
+
+-   Remember that you can add more variables to the data frame by supplying a new name to be prefixed to the existing variable name.
+
+```{r}
+data2 %>% mutate_all(funs(mod = ./10))
+```
+
+------------------------------------------------------------------------
+
+## `mutate_at()`
+
+-   Using names, the `mutate at()` function changes particular variables.
+
+-   The use of `mutate_at()` to divide two particular variables by 10 is demonstrated in the code below:
+
+```{r}
+data2 %>% mutate_at(c("Sepal.Length", "Sepal.Width"), funs(mod = ./10))
+```
+
+------------------------------------------------------------------------
+
+## `mutate_if()`
+
+-   All variables that match a specific condition are modified by the `mutate_if()` function.
+
+-   The `mutate_if()` function can be used to change any variables of type factor to type character, as shown in the code below.
+
+```{r}
+data <- head(iris)
+sapply(data, class)
+```
+
+-   every factor variable can be converted to a character variable.
+
+```{r}
+new_data <- data %>% mutate_if(is.factor, as.character)
+sapply(new_data, class)
+```
+
+------------------------------------------------------------------------
+
+-   The `mutate_if()` method can be used to round any numeric variables to the nearest whole number using the following example code.
+
+```{r}
+data <- head(iris)
+data
+```
+
+-   any numeric variables should be rounded to the nearest decimal place.
+
+```{r}
+data %>% mutate_if(is.numeric, round, digits = 0)
+```
+
+------------------------------------------------------------------------
+
+## Use `across()` inside `mutate()` function
+
+```{r}
+iris %>% as_tibble() %>% 
+  mutate(across(c(Sepal.Length, Sepal.Width), round)) %>% head(4) #<<
+```
+
+```{r}
+iris %>% as_tibble() %>%  
+  mutate(across(c(1, 2), round)) %>% head(4)#<<
+```
+
+------------------------------------------------------------------------
+
+## Use `across()` inside `mutate()` function
+
+```{r}
+iris %>%  as_tibble() %>% 
+  mutate(across(1:Sepal.Width, round)) %>% head(4) #<<
+```
+
+```{r}
+iris %>%   as_tibble() %>% 
+  mutate(across(where(is.double) & !c(Petal.Length, Petal.Width), round)) %>% head(4) #<<
+```
+
+------------------------------------------------------------------------
+
+## b) Manipulating cases
+
+#### `filter()`: To extract cases
+
+-   The function `filter()` is used to filter the dataset to return a subset of all rows that meet one or more specific conditions.
+
+-   `filter(dataframe, logical statement 1, logical statement 2, ...)`
+
+::: {style="text-align:center"}
+<img src="img/filter().png" height="70%" width="70%"/>
+
+<img src="img/logic.helper.png" height="80%" width="80%"/>
+:::
+
+------------------------------------------------------------------------
+
+## Filtering rows based on a numeric variable
+
+::: columns
+::: {.column width="50%"}
+```{r, eval=FALSE}
+msleep <- ggplot2::msleep
+msleep %>% 
+  select(name, sleep_total) %>% 
+  filter(sleep_total > 18) %>% head()
+```
+:::
+
+::: {.column width="50%"}
+```{r, echo=FALSE}
+msleep <- ggplot2::msleep
+msleep %>% 
+  select(name, sleep_total) %>% 
+  filter(sleep_total > 18) %>% head()
+```
+:::
+:::
+
+-   To select all animals with a total sleep time between 15 and 18 hours, use: `filter(sleep_total >= 16, sleep_total <= 18)`, but there is a slightly shorter way by using the between() function.
+
+::: columns
+::: {.column width="50%"}
+```{r, eval=FALSE}
+msleep %>% 
+  select(name, sleep_total) %>% 
+  filter(between(sleep_total, 16, 18)) 
+```
+:::
+
+::: {.column width="50%"}
+```{r, echo=FALSE}
+msleep %>% 
+  select(name, sleep_total) %>% 
+  filter(between(sleep_total, 16, 18)) 
+```
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Filtering based on exact character variable matches
+
+-   If you want to select a specific group of animals for instance you can use the `==` comparison operator:
+
+```{r}
+msleep %>% 
+  select(order, name, sleep_total) %>% 
+  filter(order == "Didelphimorphia") %>% head()
+```
+
+-   Similarly you can use the other operators:
+    -   `filter(order != "Rodentia")` will select everything except the Rodentia rows.
+
+------------------------------------------------------------------------
+
+-   If you want to select more than one animal you can use the `%in%` operator.
+
+```{r}
+msleep %>% 
+  select(order, name, sleep_total) %>% 
+  filter(order %in% c("Didelphimorphia", "Diprotodontia")) %>% head(3)
+```
+
+-   The `%in%` operator used to deselect certain groups as well, using `!%in%`.
+
+```{r}
+cols <- c("Rodentia", "Carnivora", "Primates")
+msleep %>% select(order, name, sleep_total) %>% 
+  filter(!order %in% cols) %>% head(3)
+```
+
+------------------------------------------------------------------------
+
+## Filtering based on multiple conditions
+
+-   The above examples return rows based on a single condition, but the filter option also allows AND and OR style filters:
+
+1.  `filter(condition1, condition2)` will return rows where both conditions are met.
+2.  `filter(condition1, !condition2)` will return all rows where condition one is true but condition 2 is not.
+3.  `filter(condition1 | condition2)` will return rows where condition 1 and/or condition 2 is met.
+4.  `filter(xor(condition1, condition2)` will return all rows where only one of the conditions is met, and not when both conditions are met.
+
+-   Multiple AND, OR and NOT conditions can be combined. The sample code will return all rows with a bodywt above 100 and either have a sleep_total above 15 or are not part of the Carnivora order.
+
+```{r, eval=FALSE}
+msleep %>% 
+  select(name, order, sleep_total:bodywt) %>% 
+  filter(bodywt > 100, (sleep_total > 15 | order != "Carnivora")) 
+```
+
+------------------------------------------------------------------------
+
+## Example with `xor()`
+
+::: columns
+::: {.column width="50%"}
+```{r, eval=FALSE}
+msleep %>%
+  select(name, bodywt:brainwt) %>% 
+  filter(xor(bodywt > 100, brainwt > 1))
+```
+:::
+
+::: {.column width="50%"}
+```{r, echo=FALSE}
+msleep %>%
+  select(name, bodywt:brainwt) %>% 
+  filter(xor(bodywt > 100, brainwt > 1))
+```
+:::
+:::
+
+**Example with `!`:**
+
+-   The sample code will select all rows where `brainwt` is larger than 1, but `bodywt` does not exceed 100.
+
+```{r}
+msleep %>% 
+  select(name, sleep_total, brainwt, bodywt) %>% 
+  filter(brainwt > 1, !bodywt > 100) 
+```
+
+------------------------------------------------------------------------
+
+## Filtering out empty rows
+
+-   To filter out empty rows, you negate the `is.na()` function inside a filter: The sample code will remove any rows where the conservation is NA.
+
+```{r, eval=FALSE}
+msleep %>% 
+  select(name, conservation:sleep_cycle) %>% 
+  filter(!is.na(conservation))
+```
+
+## Filtering across multiple columns
+
+-   How `dplyr` package filter across multiple columns in one go?
+
+-   `filter_all()`: will filter all columns
+
+-   `filter_if()`: filter columns based on a function.
+
+-   `filter_at()`: requires specify columns inside a `vars()` argument for which the filtering will be done.
+
+- In many cases you will need a `.` operator within the condition which refers to the values we are looking at.
+
+## `filter_all()`
+
+-   Used to wrap the condition in any_vars().
+
+    -   For example to find the string "Ca" across all columns,
+
+    ```{r, eval=FALSE}
+    msleep %>% 
+      select(name:order, sleep_total, -vore) %>% 
+      filter_all(any_vars(str_detect(., pattern = "Ca")))
+    ```
+
+-   The same can be done for numerical values: This code will retain any rows that has any value below 0.1:
+
+```{r, eval=FALSE}
+msleep %>%  
+  select(name, sleep_total:bodywt) %>% 
+  filter_all(any_vars(. < 0.1)) 
+```
+
+------------------------------------------------------------------------
+
+-   `any_vars()` statement is equivalent to OR, and
+-   `all_vars()`is an equivalent for AND.
+
+The below code will retain any rows where all values are above 1.
+
+```{r, eval=FALSE}
+msleep %>%  
+  select(name, sleep_total:bodywt, -awake) %>% 
+  filter_all(all_vars(. > 1))
+```
+
+**`filter_if()`**
+
+-   to find out all data rows where we NA in the first few columns use `filter_all(any_vars(is.na(.)))`
+
+-   Using `filter_if()` I can filter on character variables.
+
+```{r, eval=FALSE}
+msleep %>% 
+  select(name:order, sleep_total:sleep_rem) %>% 
+  filter_if(is.character, any_vars(is.na(.)))
+```
+
+------------------------------------------------------------------------
+
+## `filter_at()`
+
+-   One of the more powerful functions is `filter_at()`: it does not filter all columns, nor does it need you to specify the type of column, you can just select columns to which the change should happen via the `vars()` argument.
+
+-   Use `all_vars()` if all columns need to return TRUE, or `any_vars()` in case just one variable needs to return TRUE.
+
+-   Example: refer to columns by their name:
+
+```{r, eval=FALSE}
+msleep %>% 
+  select(name, sleep_total:sleep_rem, brainwt:bodywt) %>% 
+  filter_at(vars(sleep_total, sleep_rem), all_vars(.>5))
+```
+
+-   Example: using another select option:
+
+```{r, eval=FALSE}
+msleep %>% 
+  select(name, sleep_total:sleep_rem, brainwt:bodywt) %>% 
+  filter_at(vars(contains("sleep")), all_vars(.>5))
+```
+
+------------------------------------------------------------------------
+
+## Sort rows with `arrange`
+
+Re-order rows by a particular column, by default in ascending order
+
+Use `desc()` for descending order.
+
+`arrange(data, variable1, desc(variable2), ...)`
+
+Example: 1. Let us use the following code to create a scrambled version of the airquality dataset
+
+```{r}
+air_mess <- sample_frac(airquality, 1)
+head(air_mess)
+```
+
+------------------------------------------------------------------------
+
+## Sort rows with `arrange()`
+
+Example: 2. Now let us arrange the data frame back into chronological order, sorting by Month then Day
+
+```{r}
+air_chron <- arrange(air_mess, Month, Day)
+head(air_chron)
+```
+
+.comment\[Try : `arrange(air_mess, Day, Month)` and see the difference.\]
+
+------------------------------------------------------------------------
+
+## Pipe perator (`%>%`)
+
+-   Pipes in R look like `%>%` and strings together commands to be performed sequentially
+
+-   The pipe passes the data frame output that results from the function right before the pipe to input it as the first argument of the function right after the pipe.
+
+```{r, eval=FALSE}
+third(second(first(x)))
+```
+
+-   This nesting is not a natural way to think about a sequence of operations.
+
+-   The `%>%` operator allows you to string operations in a left-to-right fashion.
+
+```{r, eval=FALSE}
+first(x) %>%
+second %>% third
+```
+
+------------------------------------------------------------------------
+
+## Advantages of Pipe oprator
+
+-   Pipes used to reduce multiple steps, that can be hard to keep track of.
+-   **less redundant code**
+-   Easy to read and write because functions are executed in order
+    -   Difficult to read if too many functions are nested
+-   **Look at the three syntax**
+
+```{r, eval=FALSE}
+data1<-filter(sampledata, Age > 15) #<<
+data2<-select(data1, Sex, Weight1, Age) #<<
+```
+
+```{r, eval=FALSE}
+non_piped <-select(filter(mydata, Age>15), Sex, Weight1, Age) #<<
+```
+
+```{r, eval=FALSE}
+pipeddata<-mydata %>% filter(Age > 15) %>% select(Sex, Weight1, Height1, Age)#<<
+```
+
+------------------------------------------------------------------------
+
+## `group_by()` and `summarise()`
+
+-   The `dplyr` verbs become especially powerful when they are are combined using the pipe operator `%>%`.
+
+-   The following `dplyr` functions allow us to split our data frame into groups on which we can perform operations individually
+
+-   **`group_by()`:** group data frame by a factor for downstream operations (usually summarise)
+
+-   **`summarise()`:** summarise values in a data frame or in groups within the data frame with aggregation functions (e.g. `min()`, `max()`, `mean()`, etc…)
+
+------------------------------------------------------------------------
+
+## `dplyr` - Split-Apply-Combine
+
+The `group_by` function is key to the Split-Apply-Combine strategy
+
+::: {style="text-align:center"}
+<img src="img/split-apply-combine.png" height="80%" width="90%"/>
+:::
+
+------------------------------------------------------------------------
+
+## The `summarize()` function
+
+-   The `summarize()` function is used in the R program to summarize the data frame into just one value or vector.
+
+-   This summarization is done through grouping observations by using categorical values at first, using the `group_by()` function.
+
+-   The `summarize()` function offers the summary that is based on the action done on grouped or ungrouped data.
+
+------------------------------------------------------------------------
+
+## Summarize grouped data
+
+-   The operations that can be performed on grouped data are `average`, `factor`, `count`, `mean`, etc.
+
+-   Example: we are interested in the mean temperature and standard deviation within each month of the **airquality dataset**
+
+```{r}
+month_sum <- airquality %>%
+      group_by(Month) %>%
+      summarise(mean_temp = mean(Temp),
+                sd_temp = sd(Temp))
+month_sum
+```
+
+------------------------------------------------------------------------
+
+## Summarize ungrouped data
+
+-   We can also summarize ungrouped data. This can be done by using three functions.
+-   `summarize_all()`
+-   `summarize_at()`
+-   `summazrize_if()`
+
+#### 1. summarize_all()
+
+-   This function summarizes all the columns of data based on the action which is to be performed.
+
+```         
+summarize_all(action)
+```
+
+-   example The code `airquality %>% summarize_all(mean)` will show the mean of all columns.
+
+```{r}
+# Caculating mean value.
+airquality %>% summarize_all(mean, na.rm=T)
+```
+
+------------------------------------------------------------------------
+
+## 2. summarize_at()
+
+-   It performs the action on the specific column and generates the summary based on that action.
+
+```{r, eval=FALSE}
+summarize_at(vector_of_columns, action)
+
+-	`vector_of_columns`: The list of column names or character vector of column names.
+
+-	The `airquality %>% group_by(Month) %>% summarize_at(c("Wind","Temp"),mean)` will show the mean of the `'Wind'` and `'Temp'` observations in the result, grouping with `Month`.
+
+airquality %>% group_by(Month) %>%
+summarize_at(c("Wind","Temp"),mean)
+```
+
+------------------------------------------------------------------------
+
+## 3. summarize_if()
+
+-   In this function, we specify a condition and the summary will be generated if the condition is satisfied.
+
+```{r, eval=FALSE}
+summarize_if(.predicate, .action)
+
+-	In the code snippet below, we use the `predicate` function `is.numeric` and `mean` as an action.
+
+z<- head(data)
+airquality %>% group_by(Month) %>%
+summarize_if(is.numeric, mean)
+```
+
+------------------------------------------------------------------------
+
+::: {style="text-align:center"}
+<img src="img/summarise.png" height="45%" width="65%"/>
+:::
+
+------------------------------------------------------------------------
+
+## Recoding Variables
+
+-   use `recode()` inside a `mutate()` statement.
+
+Example of Recoding
+
+```{r}
+data_diet <- tibble(Diet = rep(c("A", "B", "B"), times = 4), 
+                    Gender = c("Male","m","Other","F","Female","M",
+                               "f","O","Man","f","F","O"), 
+                    Weight_start = sample(100:250, size = 12),
+                    Weight_change = sample(-10:20, size = 12))
+head(data_diet)
+```
+
+-   Say we have some data about samples in a diet study but this needs lots of recoding.
+
+```{r}
+data_diet %>%
+  count(Gender)
+```
+
+------------------------------------------------------------------------
+
+## `dplyr` can help!
+
+Using Excel to find all of the different ways `gender` has been coded, could be hectic!
+
+In `dplyr` you can use the `recode` function (need `mutate` here too!):
+
+```{r, eval = FALSE}
+# General Format - this is not code!
+{data_input} %>%
+  mutate({variable_to_fix} = recode({Variable_fixing}, {old_value} = {new_value},
+                                    {another_old_value} = {new_value}))
+```
+
+```{r, eval = FALSE}
+
+data_diet %>% 
+  mutate(Gender = recode(Gender, M = "Male", m = "Male", Man = "Male",
+                                 O = "Other", f = "Female",F = "Female")) %>%
+  count(Gender, Diet)
+```
+
+------------------------------------------------------------------------
+
+## `recode()`
+
+```{r, eval = TRUE}
+data_diet %>% 
+  mutate(Gender = recode(Gender, M = "Male", m = "Male", Man = "Male",
+                                 O = "Other",f = "Female",F = "Female")) %>%
+  count(Gender, Diet)
+```
+
+------------------------------------------------------------------------
+
+## Or you can use `case_when()`
+
+The `case_when()` function of `dplyr` can help us to do this as well.
+
+::: {style="text-align:center"}
+<img src="img/case_when.png" height="25%" width="40%"/>
+:::
+
+-   Note that automatically values not reassigned explicitly by `case_when()` will be `NA` unless otherwise specified.
+
+```{r, eval = TRUE}
+data_diet %>% 
+  mutate(Gender = case_when(Gender == "M" ~ "Male"))
+```
+
+------------------------------------------------------------------------
+
+## Use of `case_when()` without automatic `NA`
+
+::: {style="text-align:center"}
+<img src="img/case_when1.png" height="30%" width="60%"/>
+:::
+
+-   Here we use the original values of `Gender` to replace all values of `Gender` that do not meet the condition `== "M"`.
+
+```{r}
+data_diet %>% 
+  mutate(Gender = case_when(Gender == "M" ~ "Male", TRUE ~ Gender))
+```
+
+------------------------------------------------------------------------
+
+## More complicated case_when()
+
+```{r}
+data_diet %>% 
+  mutate(Gender = case_when(
+    Gender %in% c("M", "male", "Man", "m", "Male") ~ "Male",
+    Gender %in% c("F", "Female", "f", "female") ~ "Female",
+    Gender %in% c("O", "Other") ~ "Other")) %>% head()
+```
+
+------------------------------------------------------------------------
+
+## Another reason for `case_when()`
+
+`case_when` can do very sophisticated comparisons
+
+```{r}
+data_diet1 <-data_diet %>% 
+      mutate(Effect = case_when(Weight_change > 0 ~ "Increase",
+                                Weight_change == 0 ~ "Same",
+                                Weight_change < 0 ~ "Decrease"))
+head(data_diet)
+```
+
+------------------------------------------------------------------------
+
+```{r,eval=FALSE}
+data_diet %>% 
+  count(Diet, Effect)
+```
+
+```{r,eval=FALSE, echo=FALSE}
+diet_effect <-data_diet %>% 
+  count(Diet, Effect)
+```
+
+```{r, fig.height=4, fig.align='center'}
+library(ggplot2)
+data_diet1 %>% count(Diet, Effect)%>%
+  ggplot(aes(x = Effect,y = n, fill = Diet)) + 
+  geom_col(position = position_dodge()) +
+  labs(y = "Individuals", title = "Effect of diet A & B on participants")
+```
+
+------------------------------------------------------------------------
+
+## Creating new discrete column with `two levels`
+
+-   The `ifelse()` statement can be used to turn a numeric column into a discrete one.
+
+```{r}
+data_diet %>%
+  mutate(Temp_cat = ifelse(Weight_change > 0, "Increased", "decreased")) %>% head()
+```
+
+------------------------------------------------------------------------
+
+## Working with strings by `stringr` package
+
+The `stringr` package:
+
+-   Modifying or finding **part** or all of a character string
+-   We will not cover `grep` or `gsub` - base R functions
+    -   are used on forums for answers
+-   Almost all functions start with `str_*`
+
+## `str_detect()`
+
+-   `str_detect`, and `str_replace` search for matches to argument pattern within each element of a **character vector** (not data frame or tibble!).
+
+-   `str_detect` - returns `TRUE` if `pattern` is found
+
+-   `str_replace` - replaces `pattern` with `replacement`
+
+------------------------------------------------------------------------
+
+-   The `string` argument specifies what to check\
+-   The `pattern` argument specifies what to check for
+
+```{r}
+library(stringr)
+x<-c("cat", "dog", "mouse")
+str_detect(string = x, pattern = "d")
+```
+
+## `str_replace()`
+
+-   The `replacement` argument specifies what to replace the pattern with\
+
+```{r}
+x<-c("cat", "dog", "mouse")
+str_replace(string = x, pattern = "d", replacement = "D")
+```
+
+------------------------------------------------------------------------
+
+## `filter` and `stringr` functions
+
+```{r}
+head(data_diet,n = 4)
+data_diet %>% 
+  filter(str_detect(string = Gender,
+                    pattern = "M"))
+```
+
+------------------------------------------------------------------------
+
+## `case_when()` improved with `stringr`
+
+```{r}
+data_diet %>% 
+  mutate(Gender = case_when(
+    Gender %in% c("M", "male", "Man", "m", "Male") ~ "Male",
+    Gender %in% c("F", "Female", "f", "female")~ "Female",
+    Gender %in% c("O", "Other") ~ "Other")) %>% head()
+```
+
+------------------------------------------------------------------------
+
+## `case_when()` improved with `stringr`
+
+-   `^` indicates the beginning of a character string
+
+-   `$` indicates the end
+
+```{r}
+data_diet %>% 
+  mutate(Gender = case_when(
+    str_detect(string = Gender, pattern = "^m|^M") ~ "Male",
+    str_detect(string = Gender, pattern = "^f|^F") ~ "Female",
+    str_detect(string = Gender, pattern = "^o|^O") ~ "Other")) %>%
+  count(Gender)
+```
+
+------------------------------------------------------------------------
+
+## Data mergining
+
+::: columns
+::: {.column width="50%"}
+-   **The 4 mutating join verbs:**
+-   `left_join()`
+-   `right_join()`
+-   `inner_join()`
+-   `full_join()`
+:::
+
+::: {.column width="50%"}
+-   **The 2 binding join verbs:**
+
+-   `bind_rows()`
+
+-   `bind_cols()`
+:::
+:::
+
+::: columns
+::: {.column width="50%"}
+-   **The 2 filtering join verbs:**
+-   `semi_join()`
+-   `anti_join()`
+:::
+
+::: {.column width="50%"}
+-   **The 3 set operations:**
+-   `intersect()`
+-   `union()`
+-   `setdiff()`
+:::
+:::
+
+------------------------------------------------------------------------
+
+-   All the joins have this basic syntax: \*\*\*\*\_join(x, y, by = NULL, suffix = c(".x", ".y")
+
+-   `x =` the first (left) table
+
+-   `y =` the second (right) table
+
+-   `by =` what columns to match on. If you leave this blank, it will match on all columns with the same names in the two tables.
+
+-   `suffix =` if columns have the same name in the two tables, but you aren’t joining by them, they get a suffix to make them unambiguous.
+
+-   This defaults to ".x" and ".y", but you can change it to something more meaningful.
+
+------------------------------------------------------------------------
+
+-   First, we’ll create two small data tables.
+-   `subject` has id, sex and age for subjects 1-5.
+-   Age and sex are missing for subject 3.
+
+```{r, eval=FALSE}
+subject <- tibble(id = seq(1,5),
+  sex = c("m", "m", NA, "f", "f"),
+  age = c(19, 22, NA, 19, 18))
+subject
+```
+
+-   `exp` has subject id and the score from an experiment. Some subjects are missing, some completed twice, and some are not in the subject table.
+
+```{r, eval=FALSE}
+exp <- tibble(
+  id = c(2, 3, 4, 4, 5, 5, 6, 6, 7),
+  score = c(10, 18, 21, 23, 9, 11, 11, 12, 3))
+exp
+```
+
+------------------------------------------------------------------------
+
+## left_join()
+
+-   A `left_join` keeps all the data from the first (left) table and joins anything that matches from the second (right) table.
+-   If the right table has more than one match for a row in the right table, there will be more than one row in the joined table (see ids 4 and 5).
+
+::: columns
+::: {.column width="50%"}
+-   left_joint()
+
+```{r, eval=FALSE}
+left_join(subject, exp, by = "id")
+```
+
+::: {style="text-align:center"}
+<img src="img/leftjoin.png" height="80%" width="80%"/>
+:::
+:::
+
+::: {.column width="50%"}
+-   The order of the `exp` and `subject` tables is different.
+
+```{r, eval=FALSE}
+left_join(exp, subject, by = "id")
+```
+
+::: {style="text-align:center"}
+<img src="img/leftjoin1.png" height="80%" width="80%"/>
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## right_join()
+
+-   A `right_join` keeps all the data from the second (right) table and joins anything that matches from the first (left) table.
+
+```{r, eval=FALSE}
+right_join(subject, exp, by = "id")
+```
+
+::: {style="text-align:center"}
+<img src="img/rightjoin.png" height="25%" width="40%"/>
+:::
+
+-   This table has the same information as `left_join(exp, subject, by = "id")`, but the columns are in a different order (left table, then right table).
+
+------------------------------------------------------------------------
+
+## inner_join()
+
+-   An `inner_join` returns all the rows that have a match in the other table.
+
+```{r, eval=FALSE}
+inner_join(subject, exp, by = "id")
+```
+
+::: {style="text-align:center"}
+<img src="img/innerjoin.png" height="25%" width="40%"/>
+:::
+
+------------------------------------------------------------------------
+
+## full_join()
+
+-   A `full_join` lets you join up rows in two tables while keeping all of the information from both tables.
+-   If a row doesn’t have a match in the other table, the other table’s column values are set to `NA`.
+
+```{r, eval=FALSE}
+full_join(subject, exp, by = "id")
+```
+
+::: {style="text-align:center"}
+<img src="img/fulljoin.png" height="25%" width="40%"/>
+:::
+
+------------------------------------------------------------------------
+
+## semi_join()
+
+-   A `semi_join` returns all rows from the left table where there are matching values in the right table, keeping just columns from the left table.
+
+```{r, eval=FALSE}
+semi_join(subject, exp, by = "id")
+```
+
+::: {style="text-align:center"}
+<img src="img/semijoin.png" height="30%" width="50%"/>
+:::
+
+-   Unlike an inner join, a semi join will never duplicate the rows in the left table if there is more than one maching row in the right table.
+
+Order matters in a semi join.
+
+```{r, eval=FALSE}
+semi_join(exp, subject, by = "id")
+```
+
+------------------------------------------------------------------------
+
+## anti_join()
+
+-   A `anti_join()` return all rows from the left table where there are not matching values in the right table, keeping just columns from the left table.
+
+::: columns
+::: {.column width="50%"}
+-   anti_join().
+
+```{r, eval=FALSE}
+anti_join(subject, exp, by = "id")
+```
+
+::: {style="text-align:center"}
+<img src="img/antijoin.png" height="80%" width="80%"/>
+:::
+:::
+
+::: {.column width="50%"}
+-   Order matters in an anti_join().
+
+```{r, eval=FALSE}
+anti_join(exp, subject, by = "id")
+```
+
+::: {style="text-align:center"}
+<img src="img/antijoin1.png" height="80%" width="80%"/>
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## bind_rows()
+
+-   You can combine the rows of two tables with `bind_rows`.
+-   Here we’ll add subject data for subjects 6-9 and bind that to the original subject table.
+
+```{r, eval=FALSE}
+new_subjects <- tibble(
+  id = seq(6, 9),  age = c(19, 16, 20, 19),sex = c("m", "m", "f", "f"))
+```
+
+```{r, eval=FALSE}
+bind_rows(subject, new_subjects)
+```
+
+::: {style="text-align:center"}
+<img src="img/bind_rows.png" height="25%" width="40%"/>
+:::
+
+-   The columns just have to have the same names, they don’t have to be in the same order.
+
+------------------------------------------------------------------------
+
+-   Any columns that differ between the two tables will just have `NA` values for entries from the other table.
+
+-   If a row is duplicated between the two tables (like id 5 below), the row will also be duplicated in the resulting table.
+
+-   If your tables have the exact same columns, you can use `union()` (see below) to avoid duplicates.
+
+```{r, eval=FALSE}
+new_subjects1 <- tibble(
+  id = seq(5, 9), age = c(18, 19, 16, 20, 19),
+  sex = c("f", "m", "m", "f", "f"), new = c(1,2,3,4,5))
+```
+
+```{r, eval=FALSE}
+bind_rows(subject, new_subjects1)
+```
+
+------------------------------------------------------------------------
+
+## bind_cols()
+
+-   You can merge two tables with the same number of rows using bind_cols.
+
+-   This is only useful if the two tables have their rows in the exact same order.
+
+-   The only advantage over a left join is when the tables don’t have any IDs to join by and you have to rely solely on their order.
+
+```{r, eval=FALSE}
+new_info <- tibble(
+  colour = c("red", "orange", "yellow", "green", "blue"))
+```
+
+```{r, eval=FALSE}
+bind_cols(subject, new_info)
+```
+
+::: {style="text-align:center"}
+<img src="img/bind_cols.png" height="35%" width="40%"/>
+:::
+
+------------------------------------------------------------------------
+
+## intersect()
+
+-   `intersect()` returns all rows in two tables that match exactly.
+-   `union()` returns all the rows from both tables, removing duplicate rows.
+
+```{r, eval=FALSE}
+new_subjects <- tibble(
+  id = seq(4, 9), age = c(19, 18, 19, 16, 20, 19),
+  sex = c("f", "f", "m", "m", "f", "f"))
+```
+
+::: columns
+::: {.column width="50%"}
+-   **Intersect:**
+
+```{r, eval=FALSE}
+dplyr::intersect(subject, new_subjects)
+```
+
+::: {style="text-align:center"}
+<img src="img/intersect.png" height="60%" width="80%"/>
+:::
+:::
+
+::: {.column width="50%"}
+-   **Union:**
+
+```{r, eval=FALSE}
+dplyr::union(subject, new_subjects)
+```
+
+::: {style="text-align:center"}
+<img src="img/union.png" height="55%" width="60%"/>
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## setdiff()
+
+-   `setdiff` returns rows that are in the first table, but not in the second table.
+
+::: columns ::: {.column width="50%"}
+
+-   setdiff()
+
+```{r, eval=FALSE}
+setdiff(subject, new_subjects)
+```
+
+::: {style="text-align:center"}
+<img src="img/setdiff.png" height="80%" width="80%"/>
+:::
+
+::: columns
+::: {.column width="50%"}
+-   Order matters for `setdiff`.
+
+```{r, eval=FALSE}
+setdiff(new_subjects, subject)
+```
+
+::: {style="text-align:center"}
+<img src="img/setdiff1.png" height="80%" width="80%"/>
+:::
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Converting data from wide to long or long to wide
+
+#### Reshaping data using `tidyr` package
+
+-   Following are the four important functions to tidy (clean) the data:
+
+| Function         | Objective                            | Arguments                                                       |
+|:-----------------|:-------------------------------------|:----------------------------------------------------------------|
+| **`gather()`**   | Transform the data from wide to long | [(data, key, value, na.rm = FALSE)]{style="color:red"}          |
+| **`spread()`**   | Transform the data from long to wide | [(data, key, value)]{style="color:red"}                         |
+| **`separate()`** | Split one variables into two         | [(data, col, into, sep= " ", remove = TRUE)]{style="color:red"} |
+| **`unit()`**     | Unit two variables into one          | [(data, col, conc ,sep= " ", remove = TRUE)]{style="color:red"} |
+
+------------------------------------------------------------------------
+
+## `gather()`
+
+-   The objectives of the `gather()` function is to transform the data from wide to long.
+
+Syntax
+
+```{r, eval=FALSE}
+gather(data, key, value, na.rm = FALSE)
+```
+
+Arguments:
+
+-   **data:** The data frame used to reshape the dataset
+
+-   **key:** Name of the new column created
+
+-   **value:** Select the columns used to fill the key column
+
+-   **na.rm:** Remove missing values. FALSE by default
+
+------------------------------------------------------------------------
+
+Example
+
+-   Below, we can visualize the concept of reshaping wide to long.
+
+-   We want to create a single column named growth, filled by the rows of the quarter variables.
+
+```{r, warning=FALSE, message=F}
+library(tidyr)
+data <- data.frame(   # Create a dataset
+  Treatment = c("A", "B", "C"),
+  q1_2021 = c(0.03, 0.05, 0.01),
+  q2_2021 = c(0.05, 0.07, 0.02),
+  q3_2021 = c(0.04, 0.05, 0.01),
+  q4_2021 = c(0.03, 0.02, 0.04),
+  q1_2022 = c(0.06, 0.07, 0.04),
+  q2_2022 = c(0.08, 0.07, 0.08),
+  q3_2022 = c(0.10, 0.08, 0.08),
+  q4_2022 = c(0.09, 0.09, 0.10))
+data
+```
+
+------------------------------------------------------------------------
+
+## Reshape the data
+
+-   In the `gather()` function, we create two new variable quarter and growth because our original dataset has one group variable: i.e. treatment and the key-value pairs.
+
+```{r}
+long <-data %>%
+gather(quarter, growth, q1_2021:q4_2022)
+head(long, 12)
+```
+
+------------------------------------------------------------------------
+
+## spread()
+
+-   The `spread()` function does the opposite of gather.
+
+Syntax
+
+```{r, eval=FALSE}
+spread(data, key, value)
+```
+
+arguments:
+
+-   **data:** The data frame used to reshape the dataset
+
+-   **key:** Column to reshape long to wide
+
+-   **value:** Rows used to fill the new column
+
+------------------------------------------------------------------------
+
+Example
+
+-   We can reshape the long dataset back to data with `spread()`
+
+### Reshape the data
+
+```{r}
+wide <- long %>%
+  spread(quarter, growth) 
+wide
+```
+
+------------------------------------------------------------------------
+
+## separate()
+
+-   The `separate()` function splits a column into two according to a separator.
+
+-   This function is helpful in some situations where the variable is a date.
+
+-   Our analysis can require focussing on month and year and we want to separate the column into two new variables.
+
+Syntax
+
+```{r, eval=FALSE}
+separate(data, col, into, sep= "", remove = TRUE)
+```
+
+arguments:
+
+-   **data:** The data frame used to reshape the dataset
+-   **col:** The column to split
+-   **into:** The name of the new variables
+-   **sep:** Indicates the symbol used that separates the variable, i.e.: "-", "\_", "&"
+-   **remove:** Remove the old column. By default sets to TRUE.
+
+------------------------------------------------------------------------
+
+Example
+
+-   We can split the quarter from the year in the tidier dataset by applying the `separate()` function.
+
+```{r}
+separate_tidier <-long %>%
+separate(quarter, c("Qrt", "year"), sep ="_")
+head(separate_tidier, 12)
+```
+
+------------------------------------------------------------------------
+
+## unite()
+
+-   The `unite()` function concanates two columns into one.
+
+Syntax
+
+```{r, eval=FALSE}
+unit(data, col, conc ,sep= "", remove = TRUE)
+```
+
+arguments: - **data:** The data frame used to reshape the dataset - **col:** Name of the new column - **conc:** Name of the columns to concatenate - **sep:** Indicates the symbol used that unites the variable, i.e: "-", "\_", "&" - **remove:** Remove the old columns. By default, sets to TRUE ---
+
+Example
+
+-   In the above example, we separated quarter from year.
+
+-   What if we want to merge them.
+
+-   We use the following code:
+
+```{r, eval=FALSE}
+unit_tidier <- separate_tidier %>%
+  unite(Quarter, Qrt, year, sep ="_")
+head(unit_tidier)
+```
+
+------------------------------------------------------------------------
+
+## Dealing with Missing Data
+
+#### Missing data types
+
+-   One of the most important aspects of data cleaning is missing values.
+
+#### Types of "missing" data:
+
+-   `NA` - general missing data
+-   `NaN` - stands for "**N**ot **a** **N**umber", happens when you do 0/0.
+-   `Inf` and `-Inf` - Infinity, happens when you divide a positive number (or negative number) by 0.
+
+#### Finding Missing data
+
+-   `is.na` - looks for `NAN` and `NA`
+-   `is.nan`- looks for `NAN`
+-   `is.infinite` - looks for Inf or -Inf
+
+```{r}
+test<-c(0,NA, -1)
+test/0
+```
+
+------------------------------------------------------------------------
+
+```{r}
+test <-test/0
+is.na(test)
+is.nan(test)
+is.infinite(test)
+```
+
+#### Useful checking functions
+
+-   `any` will be `TRUE` if ANY are true
+    -   `any(is.na(x))` - do we have any `NA`'s in `x`?
+
+```{r isna}
+A = c(1, 2, 4, NA)
+B = c(1, 2, 3, 4)
+any(is.na(A)) # are there any NAs - YES/TRUE
+any(is.na(B)) # are there any NAs- NO/FALSE
+```
+
+------------------------------------------------------------------------
+
+## `naniar`
+
+-   Sometimes you need to look at lots of data though... the [`naniar` package](https://cran.r-project.org/web/packages/naniar/vignettes/getting-started-w-naniar.html) is a good option.
+-   The `pct_complete()` function shows the percentage that is complete for a given data object, (vector or data frame).
+
+```{r, error=FALSE}
+#install.packages("naniar")
+library(naniar)
+pct_complete(airquality)
+```
+
+```{R}
+airquality %>% select(Ozone) %>%
+pct_complete()
+```
+
+------------------------------------------------------------------------
+
+## `naniar` plots
+
+-   The `gg_miss_var()` function creates a nice plot about the number of missing values for each variable, (need a data frame).
+
+```{r, fig.height=4, warning=FALSE, fig.align='center'}
+gg_miss_var(airquality)
+```
+
+------------------------------------------------------------------------
+
+## Missing Data Issues
+
+Recall that mathematical operations with `NA` often result in `NA`s.
+
+```{r}
+sum(c(1,2,3,NA))
+mean(c(2,4,NA))
+median(c(1,2,3,NA))
+```
+
+------------------------------------------------------------------------
+
+## filter() and missing data
+
+-   Be **careful** with missing data using subsetting!
+
+-   **`filter()` removes missing values by default.** Because R can't tell for sure if an `NA` value meets the condition.
+
+-   To keep them need to add `is.na()` conditional.
+
+```{r}
+df <-tibble(Dog = c(0, NA, 2, 3, 1, 1), 
+            Cat = c(NA, 8, 6, NA, 2, NA))
+```
+
+::: columns
+::: {.column width="50%"}
+```{r}
+df 
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+df %>% filter(Dog < 3)
+```
+:::
+:::
+
+------------------------------------------------------------------------
+
+## filter() and missing data
+
+```{r}
+df %>% filter(Dog < 3 | is.na(Dog))
+```
+
+------------------------------------------------------------------------
+
+### To remove rows with `NA` values for a **variable** use `drop_na()`
+
+-   A function from the `tidyr` package. (Need a data frame to start!)
+
+-   Don't do this unless you have thought about if dropping `NA` values makes sense based on knowing what these values mean in your data.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+df %>% drop_na(Dog)
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+df %>% drop_na()
+```
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Change a value to be `NA`
+
+-   The `na_if()` function of `dplyr` can be helpful for this. Let's say we think that all 0 values should be `NA`.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+df 
+```
+:::
+
+::: {.column width="50%"}
+```{r}
+df %>% 
+  mutate(Dog = na_if(x = Dog, y = 0))
+```
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Summary
+
+-   `is.na()`,`any(is.na())`, `count()`, and functions from `naniar` like `gg_miss_var()` can help determine if we have `NA` values
+
+-   `filter()` automatically removes `NA` values - can't confirm or deny if condition is met (need `| is.na()` to keep them)
+
+-   `drop_na()` can help you remove `NA` values from a variable or an entire data frame
+
+-   `NA` values can change your calculation results
+
+-   think about what `NA` values represent - don't drop them if you shouldn't
+
+------------------------------------------------------------------------
+
+## Data leaning
+
+-   Cleaning data is one of the most essential parts in data analysis.
+
+-   Data cleaning is the process of converting messy data into reliable data that can be analyzed in R.
+
+-   Data cleaning improves data quality and your productivity in R.
+
+    -   Format ugly data frame column names in R
+
+    -   Delete all blank rows in R
+
+    -   Remove duplicate rows in R
+
+    -   Converting numeric to date format
+
+    -   Checking consistency by using `tably()` function
+
+------------------------------------------------------------------------
+
+## `clean_names()`
+
+-   This function is used to change and clean up names of columns in data frames.
+
+-   It can be used to ensure consistency.
+
+-   You can choose to change all names to **lower cases, separated by underscores**, variations on internal capital letters between words, title case or other styles.
+
+-   It can also be used to **remove parts of names and any special characters**, including replacing % symbols with the word percent.
+
+-   The most recommended variable names in R is one word, lower case, without special characters.
+
+-   `clean_names()` function will be used available in janitor R package to clean column names.
+
+------------------------------------------------------------------------
+
+```{r}
+library(janitor); library(report)
+data<-clean_names(iris)
+data %>% head()
+```
+
+## `remove_empty()` & `remove_constant()`
+
+-   Suppose if you want to remove rows and/or columns of if contain completely empty, then you can use `remove_empty()` function available in janitor R package.
+
+------------------------------------------------------------------------
+
+-   `remove_empty()` removes both empty rows and empty columns.
+
+```{r, warning=FALSE, message=FALSE}
+data3<- remove_empty(data, which = c("rows","cols"), quiet = F)
+data3 %>% head()
+```
+
+-   Lets add two constant columns to the dataset and see how we can remove all this junk with janitor.
+
+```{r}
+# add two constant columns
+data4 <- data3 %>% 
+  mutate(constant_column   = 42, constant_column_2 = "text") %>% head()
+```
+
+------------------------------------------------------------------------
+
+```{r, message=FALSE, warning=FALSE}
+library(kableExtra)
+data4 %>% 
+  remove_constant() %>% remove_empty() %>% kbl() %>%
+  kable_classic_2(full_width = F) 
+```
+
+------------------------------------------------------------------------
+
+## `get_dupes()`
+
+-   This function retrieves any `duplicates` in the dataset so that they can be examined during data clean-up operations.
+
+-   One trick is determining if a duplicate is indeed a duplicate.
+
+-   The function returns a data frame which includes a `dupe_count` column containing the number of duplicates of that value.
+
+```{r}
+data3 %>% get_dupes() 
+```
+
+------------------------------------------------------------------------
+
+-   We can also get duplicate values by col names
+
+```{r}
+data3 %>% get_dupes(sepal_length, sepal_width) %>% head()
+```
+
+-   We can also use `distinct()` function available in `dplyr R package` to remove the duplicate rows.
+
+```{r, warning=FALSE, message=FALSE}
+library(dplyr)
+data_cleaned <- data3 %>% distinct()
+data_cleaned %>% head()
+```
+
+------------------------------------------------------------------------
+
+If we want to remove duplicate rows with respect to a specific variable, we can use `distinct()` function again. For example, we remove duplicate rows with respect to petal_length.
+
+```{r}
+data_cleaned2 <- data_cleaned %>%  distinct(petal_length, .keep_all = TRUE)
+data_cleaned2 %>% head.matrix()
+```
+
+------------------------------------------------------------------------
+
+## `tabyl()`
+
+-   This function is used to produce frequency tables and contingency tables, i.e. counts of each category or combination of categories of data.
+
+-   Unlike the base R `table()` function, `tabyl()` returns a data frame which makes results easier to work with.
+
+-   The code below creates a data frame showing the number of rows of data (n) for each location in the dataset.
+
+::: columns
+::: {.column width="50%"}
+```{r}
+data_cleaned2 %>% tabyl(species)
+```
+:::
+
+-   Also returned is a percent column, showing the percentage of rows containing data for that location.
+
+::: {.column width="50%"}
+```{r}
+data_cleaned2 %>% tabyl(species)%>%
+  adorn_pct_formatting(digits = 2)
+```
+:::
+:::
+
+------------------------------------------------------------------------
+
+## Explore missing values
+
+```{r, fig.align='center', fig.height=4, fig.width=6, warning=FALSE, message=FALSE}
+# plot missing data (using raw data)
+DataExplorer::plot_missing(
+  title   = "% of Missing Data (filtered to cols w/missing data)",
+  data    = airquality,
+  ggtheme = tidyquant::theme_tq(), 
+  missing_only = F) 
+```
+
+------------------------------------------------------------------------
+
+## `convert_to_date()`
+
+-   A modern Excel always tries to automate things, and I hate it!
+
+-   For instance you write a number into a cell and it sometimes immediately converts it into date. Then you try to have a date in a cell, and it returns a number.
+
+-   Moreover, Excel also has some strange date encoding systems, which can be confused with a normal numeric columns.
+
+-   Luckily, our dirty dataset has a "date" word in the name of a column "hire_date", otherwise we wouldn't know that it is a date:
+
+```{r, eval=FALSE}
+convert_to_date(d$hire_date)
+```
+
+------------------------------------------------------------------------
+
+## `excel_numeric_to_date()`
+
+-   Ever load data from Excel and see a value like `42223` where a date should be?
+
+-   This function converts those serial numbers to class Date, with options for different Excel date encoding systems, preserving fractions of a date as time (in which case the returned value is of class POSIXlt), and specifying a time zone.
+
+```{r}
+excel_numeric_to_date(41103)
+```
+
+```{r}
+excel_numeric_to_date(41103.01) # ignores decimal places, returns Date object
+```
+
+```{r}
+excel_numeric_to_date(41103.01, include_time = TRUE) # returns POSIXlt object
+```
+
+------------------------------------------------------------------------
+
+## Convert a mix of date and datetime formats to date
+
+-   Building on `excel_numeric_to_date()`, the new functions `convert_to_date()` and `convert_to_datetime()` are more robust to a mix of inputs.
+
+-   Handy when reading many spreadsheets that should have the same column formats, but don't.
+
+For instance, here a vector with a date and an Excel datetime sees both values successfully converted to Date class:
+
+```{r}
+convert_to_date(c("2020-02-29", "40000.1"))
+```
+
+------------------------------------------------------------------------
+
+## Dates
+
+-   Before dates in a dataset are loaded into R, typically they are stored as a column of character (string) values.
+-   However, dates are inherently numeric and we lose this information when they are stored as strings.
+
+```{r, eval=FALSE}
+# string dates have no numeric value, so this errors
+"2018-03-05" + 1
+```
+
+-   In R, we want to convert our string dates to R class `Date`, which preserves the dates' numeric values and allows us to take advantage of the many date-related functions in R.
+
+-   Once converted to class Date, the numeric value for the date represents the number of days since January 1, 1970 (1970-01-01).
+
+------------------------------------------------------------------------
+
+## `as.Date()`
+
+-   Base R provides `as.Date()` to convert strings to dates, but it can be intimidating and unwieldy to use, particularly if your dates are not stored in one of 2 default formats (see `?strptime` for more about date formats).
+
+```{r, eval=FALSE}
+# as.Date only accepts a couple of formats by default
+# good
+as.Date("2015-02-14")
+# bad
+as.Date("02/14/2014")
+# specify a format to fix
+as.Date("02/14/2014", format="%m/%d/%Y")
+```
+
+-   Once our dates are class Date, we can perform date arithmetic.
+
+```{r}
+a <- as.Date("1971-01-01")
+class(a)
+# days since 1970-01-01
+as.numeric(a)
+# date arithmetic
+a - as.Date("1970/12/31")
+## Time difference of 1 days
+a + 2
+```
+
+-   We just need something easier to use to convert strings of various formats to class Date!
+
+------------------------------------------------------------------------
+
+## Package lubridate
+
+-   `tidyverse` provides the amusingly named package `lubridate` to help R users convert their string dates to R Date format more easily as well as functions to process those dates.
+
+-   The Date conversion functions in lubridate accept a wide variety of date formats, removing the need for us to remember all of those format specifications.
+
+-   Instead, just take the letters y, m, and d and place them in the order of the year, month and day, respectively, as they are stored in the date column. That ordering produces the name of the function to convert that column to `Date` (e.g.`ymd()`, `mdy()`, `dmy()`).
+
+```{r}
+library(lubridate)
+```
+
+------------------------------------------------------------------------
+
+## Using lubridate
+
+-   We'll first load a dataset with various date formats to demonstrate the flexibility of lubridate functions.
+
+```{r, message=FALSE, warning=FALSE}
+
+library(readr)
+d <- read_csv("data/dates.csv")
+d
+```
+
+------------------------------------------------------------------------
+
+-   Currently, the first 4 columns are stored as `chr`, `chr`, `date`, and `int`.
+
+-   The third column is actually read in as `Date` by `read_csv()` because of its particular formatting signals a date to `read_csv()`.
+
+-   The first pair of columns use the order month-day-year, while the second pair of columns use year-month-day.
+
+-   So, we want `mdy()` and `ymd()`.
+
+```{r}
+# no format specifications needed
+# just ordering y,m, and d
+dates <- data.frame(f1=mdy(d$fmt1), f2=mdy(d$fmt2),
+                    f3=ymd(d$fmt3), f4=ymd(d$fmt4))
+dates
+```
+
+------------------------------------------------------------------------
+
+## Date-time variables
+
+-   If your date column additionally contains time information (i.e. is date-time), you can add one or more of h, m, and s to y, m, and d to form the function name to convert the string to class `POSIXct`.
+
+-   Class `POSIXct` stores date-time variables as a number representing the number of seconds since the beginning of 1970.
+
+-   The fifth column of our `dates` dataset, `decision_time`, is a date-time variable.
+
+-   (It also contains an "Approved/Denied" string at the beginning that the `lubridate()` function will ignore!).
+
+-   Specifically, the date-time is recorded as month, day, year, hour, minute, second, so we want `mdy_hms()`:
+
+```{r}
+# month day year hour minute second
+mdy_hms(d$decision_time)
+```
+
+------------------------------------------------------------------------
+
+```{r}
+# POSIXct is a standard way of representing calendar time
+class(mdy_hms(d$decision_time))
+```
+
+-   The 'time zone' standard `UTC` (Coordinated Universal Time) is used as the default zone. Use the argument, `tz=` to assign a zone.
+-   To see a list of valid time zone specifications, run `OlsonNames()`.
+
+```{r}
+# we'll use this for our dates variable
+dates$decision_time <- mdy_hms(d$decision_time, tz="US/Pacific")
+dates$decision_time
+```
+
+------------------------------------------------------------------------
+
+## Extracting information from Date variables
+
+-   lubridate provides several functions to extract specific information from Date variables including:
+    -   `day()`: day of the month
+    -   `wday()`: weekday
+    -   `yday()`: day of the year
+    -   `month()`: month of the year
+    -   `year()`: year
+-   Some examples of extracting information from Date variables.
+
+```{r}
+# we'll use the first column of our dates dataset
+dates$f1
+# day of the month
+day(dates$f1)
+# day of the year
+yday(dates$f1)
+```
+
+------------------------------------------------------------------------
+
+-   Some more date information extraction:
+
+```{r}
+# weekday as numbers
+wday(dates$f1)
+# weekday with labels
+wday(dates$f1, label=TRUE)
+# month of the year
+month(dates$f1)
+```
+
+------------------------------------------------------------------------
+
+## Extracting information from POSIXct variables
+
+-   lubridate also has functions to extract time information from POSIXct date-time variables.
+
+    -   `hour()`
+    -   `minute()`
+    -   `second()`
+
+    ```{r}
+    with(dates,  ## with() tells R to look for variables in object "dates"
+    data.frame(time=decision_time, h=hour(decision_time),
+               m=minute(decision_time), s=second(decision_time)))
+    ```
+
+------------------------------------------------------------------------
+
+-   Two sets of functions for date-time arithmetic
+
+-   If you need to add or subtract time to your date variables, lubridate provides 2 sets of functions.
+
+-   One set gives "intuitive" results, and will ignore conventions like leap year.
+
+-   These include `seconds()`, `minutes()`, `hours()`, `days()`, `weeks()`, `years()`.
+
+-   The other set will adhere to those conventions, and are named by adding d to the names of the previous functions, `dseconds()`, `dminutes()`, `dhours()`, `ddays()`, `dweeks()`, `dyears()`.
+
+```{r}
+#2016 is a leap year
+# the intuitive result
+ymd("2015-02-14") + years(2) 
+# the exact result
+ymd("2015-02-14") + dyears(2)
+```
+
+##
+
+**Easy data cleaning with the janitor package**
+
+## **Clean column names**
+
+- add some points about 
+  - count 
+  - tably 
+  - percent  for making quick graphs
+  
+https://www.r-bloggers.com/2024/05/easy-data-cleaning-with-the-janitor-package/

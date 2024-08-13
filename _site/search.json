@@ -3414,5 +3414,705 @@
     "title": "About Me",
     "section": "",
     "text": "I have dual master’s degrees in Biostatistics from Stellenbosch University and Statistics from Addis Ababa University, coupled with 11+ years of experience in project leading, data management, analysis, and teaching. These experiences equipped me with a deep understanding of complex data, its management, analysis and use with application of different statistical methods. I have a piece of statistical software training experiences (R, SAS, SPSS)."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#data-manipulation-and-claning-using-dplyr-package",
+    "href": "static/slides/Datamanagment/datamanagment.html#data-manipulation-and-claning-using-dplyr-package",
+    "title": "",
+    "section": "Data Manipulation and Claning using dplyr() package",
+    "text": "Data Manipulation and Claning using dplyr() package\nWhat is Tidyverse?\n\nThe tidyverse library is a collection of several R packages that are designed to work together to make data manipulation and visualization tasks easier.\na suite of packages that implement tidy methods for data importing, cleaning, and wrangling.\nContains a series of packages useful for data analysis that work together well.\nAll packages included in tidyverse are automatically installed when installing the tidyverse package:\n\n\nCode`install.packages(\"tidyverse\")`\n\n\n\nCodetidyverse_packages() \n\n\n\nThen to work functions under tidyverse package we must always load the package into the workplace.\n\n\nCodelibrary(tidyverse) \n\n\n\nSome packages under tidyverse are considered core packages and others called friend packages."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#haven",
+    "href": "static/slides/Datamanagment/datamanagment.html#haven",
+    "title": "",
+    "section": "haven()",
+    "text": "haven()\n\n\nhaven is not a core member of the tidyverse, so you need to load it.\n\n\n\nImport data using haven()\n\n\n\nread_sas(): SAS\n\nread_spss(): SPSS\n\nread_sav(): SPSS\n\nread_por(): SPSS\n\nread_stata(): Stata\n\nread_dta(): Stata\n\n\nExport data\n\n\nwrite_csv(): Comma separated values\n\nwrite_excel_csv(): CSV to open in Excel\n\nwrite_delim(): General delimited files\n\nwrite_sas(): SAS .sas7bdat files\n\nwrite_sav(): SPSS .sav files\n\nwrite_stata(): Stata .dta files"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#intro-to-dplyr-package",
+    "href": "static/slides/Datamanagment/datamanagment.html#intro-to-dplyr-package",
+    "title": "",
+    "section": "Intro to dplyr package",
+    "text": "Intro to dplyr package\n\nThe dplyr provides a “grammar” (the verbs) for data manipulation and for operating on data frames in a tidy way.\nThe key operator and the essential verbs are:\n\n\n%&gt;%: the “pipe” operator used to connect multiple verb actions together into a pipeline.\nselect(): return a subset of the columns of a data frame.\nmutate(): add new variables/columns or transform existing variables.\nfilter(): extract a subset of rows from a data frame based on logical conditions.\narrange(): reorder rows of a data frame according to single or multiple variables.\nsummarise() / summarize(): reduce each group to a single row by calculating aggregate measures.\n\n\nWe can have a look at the data and its structure by using the glimpse() function from the dplyr package."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#a-manipulating-variables",
+    "href": "static/slides/Datamanagment/datamanagment.html#a-manipulating-variables",
+    "title": "",
+    "section": "a) Manipulating variables:",
+    "text": "a) Manipulating variables:\nselect(): To extract variables\n\nOur first verb on the list is select which allows to keep or drop variables from your dataframe. Choosing your variables is the first step in cleaning your data.\n\n\n\n\nselect() is especially useful because it is quite flexible in its use to create new tables."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#the-covid-19-dataset",
+    "href": "static/slides/Datamanagment/datamanagment.html#the-covid-19-dataset",
+    "title": "",
+    "section": "The COVID-19 dataset",
+    "text": "The COVID-19 dataset\n\nLets us use a COVID-19 which is serological survey conducted in Yaounde, Cameroon in late 2020.\nThe survey estimated how many people had been infected with COVID-19 in the region, by testing for IgG and IgM antibodies.\nThe full dataset can be obtained from Zenodo, and the paper can be viewed here.\nThere are some demographic, socio-economic and COVID-related variables.\nThe results of the IgG and IgM antibody tests are in the columns igg_result and igm_result.\n\n\nCodelibrary(readr); library(dplyr)\nyaounde &lt;- yaounde_data &lt;- read_csv(\"C:/quarto_site/static/slides/Datamanagment/data/yaounde_data.csv\")"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#helper-functions-for-select",
+    "href": "static/slides/Datamanagment/datamanagment.html#helper-functions-for-select",
+    "title": "",
+    "section": "Helper functions for select()\n",
+    "text": "Helper functions for select()\n\ndplyr has a number of helper functions to make selecting easier by using patterns from the column names. Let’s take a look at some of these.\n\nstarts_with() and ends_with()\n\nThese two helpers work exactly as their names suggest!\n\nCodeyao %&gt;% select(starts_with(\"is_\")) # Columns that start with \"is\"\nyao %&gt;% select(ends_with(\"_result\")) # Columns that end with \"result\""
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#change-column-names-with-rename",
+    "href": "static/slides/Datamanagment/datamanagment.html#change-column-names-with-rename",
+    "title": "",
+    "section": "Change column names with rename()\n",
+    "text": "Change column names with rename()\n\n\ndplyr::rename() is used to change column names:\n\nCode## Rename `age` and `sex` to `patient_age` and `patient_sex`\nyaounde %&gt;% \n  rename(patient_age = age, patient_sex = sex)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#rename-within-select",
+    "href": "static/slides/Datamanagment/datamanagment.html#rename-within-select",
+    "title": "",
+    "section": "Rename within select()\n",
+    "text": "Rename within select()\n\nYou can also rename columns while selecting them:\n\nCode## Select `age` and `sex`, and rename them to `patient_age` and `patient_sex`\nyaounde %&gt;% \n  select(patient_age = age, patient_sex = sex)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#rename-within-select-1",
+    "href": "static/slides/Datamanagment/datamanagment.html#rename-within-select-1",
+    "title": "",
+    "section": "Rename within select()\n",
+    "text": "Rename within select()\n\n\nDelete columns you don’t need with - (remember, if you delete multiple columns use select(-c()) so that - is applied to all of them).\n\n\nCodeairquality %&gt;%\n  select(-c(2:3, 5)) %&gt;% # Delete columns with `-`\n  glimpse()\n\n\n\nDefine the chosen columns in a vector beforehand and then recall it with !!.\n\n\nCodeair_cols &lt;- c(\"Wind\", \"Tem\", \"Day\")\nairquality %&gt;%\n  select(!!air_cols) %&gt;% # Call a vector of column names with `!!`\n  glimpse()"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#rename-to-rename-variables",
+    "href": "static/slides/Datamanagment/datamanagment.html#rename-to-rename-variables",
+    "title": "",
+    "section": "\nrename() : To rename variables",
+    "text": "rename() : To rename variables\n\nIf we want to change lowercase variables to uppercase, we can use rename(), or rename_with().\n\n\nCodeairquality %&gt;%\n  rename(day = Day,\n         month = Month,\n         wind = Wind) %&gt;%  # renames only chosen columns\n  glimpse()\n\n\n\nIf we just want column names to be changed with a function, we can use rename_with which is useful in this case since we can rename them with tolower.\n\n\nCodeairquality %&gt;%\n  rename_with(tolower) %&gt;%\n  glimpse()\n# If you didn't want all of them renamed, you could specify columns with `.cols =`"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filter",
+    "href": "static/slides/Datamanagment/datamanagment.html#filter",
+    "title": "",
+    "section": "filter()",
+    "text": "filter()\n\nDropping abnormal data entries or keeping subsets of your data points is another essential aspect of data wrangling.\n\nLet’s go !\n\n\nCodeyao &lt;- yaounde %&gt;% \n  select(age, sex, weight_kg, highest_education, neighborhood, \n         occupation, is_smoker, is_pregnant, \n         igg_result, igm_result)\n#yao"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#relational-operators",
+    "href": "static/slides/Datamanagment/datamanagment.html#relational-operators",
+    "title": "",
+    "section": "Relational operators",
+    "text": "Relational operators\n\nThe == operator introduced above is an example of a “relational” operator, as it tests the relation between two values. Here is a list of some of these operators:\n\n\n\nOperator\nis TRUE if\n\n\nA &lt; B\nA is less than B\n\n\nA &lt;= B\nA is less than or equal to B\n\n\nA &gt; B\nA is greater than B\n\n\nA &gt;= B\nA is greater than or equal to B\n\n\nA == B\nA is equal to B\n\n\nA != B\nA is not equal to B\n\n\nA %in% B\nA is an element of B"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#combining-conditions-with-and",
+    "href": "static/slides/Datamanagment/datamanagment.html#combining-conditions-with-and",
+    "title": "",
+    "section": "Combining conditions with & and |\n",
+    "text": "Combining conditions with & and |\n\n\nWe can pass multiple conditions to a single filter() statement separated by commas:\n\n\nCode### keep respondents who are pregnant and are ex-smokers\nyao %&gt;% filter(is_pregnant == \"Yes\", is_smoker == \"Ex-smoker\") ## only one row\n\n\n\nWhen multiple conditions are separated by a comma, they are implicitly combined with an and (&)."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#negating-conditions-with",
+    "href": "static/slides/Datamanagment/datamanagment.html#negating-conditions-with",
+    "title": "",
+    "section": "Negating conditions with !\n",
+    "text": "Negating conditions with !\n\n\nTo negate conditions, we wrap them in !().\nBelow, we drop respondents who are children (less than 18 years) or who weigh less than 30kg:\n\n\nCode### drop respondents &lt; 18 years OR &lt; 30 kg\nyao %&gt;% filter(!(age &lt; 18 | weight_kg &lt; 30))\n\n\n\nThe ! operator is also used to negate %in% since R does not have an operator for NOT in.\n\n\nCode### drop respondents whose highest education is NOT \"Primary\" or \"Secondary\"\nyao %&gt;% filter(!(highest_education %in% c(\"Primary\", \"Secondary\")))"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#na-values",
+    "href": "static/slides/Datamanagment/datamanagment.html#na-values",
+    "title": "",
+    "section": "\nNA values",
+    "text": "NA values\n\nThe relational operators introduced so far do not work with NA.\n\nLet’s make a data subset to illustrate this.\n\nCodeyao_mini &lt;- yao %&gt;% \n  select(sex, is_pregnant) %&gt;% \n  slice(1,11,50,2) ## custom row order\n\nyao_mini\n\n\n\nIn yao_mini, the last respondent has an NA for the is_pregnant column, because he is male.\nTrying to select this row using == NA will not work.\n\n\nCodeyao_mini %&gt;% filter(is_pregnant == NA) ## does not work\nyao_mini %&gt;% filter(is_pregnant == \"NA\") ## does not work\n\n\n\nThis is because NA is a non-existent value. So R cannot evaluate whether it is “equal to” or “not equal to” anything."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#how-to-use-mutate-function-in-r",
+    "href": "static/slides/Datamanagment/datamanagment.html#how-to-use-mutate-function-in-r",
+    "title": "",
+    "section": "How to Use Mutate function in R",
+    "text": "How to Use Mutate function in R\n\nThe dplyr library has the following functions that can be used to add additional variables to a data frame.\nmutate() – adds new variables while retaining old variables to a data frame.\ntransmute() – adds new variables and removes old ones from a data frame.\nmutate_all() – changes every variable in a data frame simultaneously.\nmutate_at() – changes certain variables by name.\nmutate_if() – alterations all variables that satisfy a specific criterion"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#mutate",
+    "href": "static/slides/Datamanagment/datamanagment.html#mutate",
+    "title": "",
+    "section": "mutate()",
+    "text": "mutate()\n\nA data frame’s existing variables are preserved when new variables are added using the mutate() function.\nThe mutate() basic syntax is as follows.\n\n\nCodedata &lt;- mutate(new_variable = existing_variable/3)\n\n\n\n\ndata: the fresh data frame where the fresh variables will be placed\n\nnew_variable: the name of the new variable\n\nexisting_variable: the current data frame variable that you want to modify in order to generate a new variable\nSet the new column’s root sepal width to the sepal’s square root. variable width\n\n\nCodelibrary(dplyr)\ndata &lt;- head(iris)\ndata %&gt;% mutate(root_sepal_width = sqrt(Sepal.Width)) %&gt;% head(3)\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species root_sepal_width\n1          5.1         3.5          1.4         0.2  setosa         1.870829\n2          4.9         3.0          1.4         0.2  setosa         1.732051\n3          4.7         3.2          1.3         0.2  setosa         1.788854"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#transmute",
+    "href": "static/slides/Datamanagment/datamanagment.html#transmute",
+    "title": "",
+    "section": "transmute()",
+    "text": "transmute()\n\nA data frame’s variables are added and removed via the transmute() method.\nThe code that follows demonstrates how to eliminate all of the existing variables and add two new variables to a dataset.\n\n\nCodedata %&gt;% transmute(root_sepal_width = sqrt(Sepal.Width), \n                   root_petal_width = sqrt(Petal.Width))\n\n  root_sepal_width root_petal_width\n1         1.870829        0.4472136\n2         1.732051        0.4472136\n3         1.788854        0.4472136\n4         1.760682        0.4472136\n5         1.897367        0.4472136\n6         1.974842        0.6324555"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#mutate_all",
+    "href": "static/slides/Datamanagment/datamanagment.html#mutate_all",
+    "title": "",
+    "section": "mutate_all()",
+    "text": "mutate_all()\n\nThe mutate_all() function changes every variable in a data frame at once, enabling you to use the funs() function to apply a certain function to every variable.\nThe use of mutate_all() to divide each column in a data frame by ten is demonstrated in the code below.\ndivide 10 from each of the data frame’s variables.\n\n\nCodedata2 &lt;- head(iris) %&gt;% select(-Species)\ndata2 %&gt;% mutate_all(funs(./10))\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width\n1         0.51        0.35         0.14        0.02\n2         0.49        0.30         0.14        0.02\n3         0.47        0.32         0.13        0.02\n4         0.46        0.31         0.15        0.02\n5         0.50        0.36         0.14        0.02\n6         0.54        0.39         0.17        0.04"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#mutate_at",
+    "href": "static/slides/Datamanagment/datamanagment.html#mutate_at",
+    "title": "",
+    "section": "mutate_at()",
+    "text": "mutate_at()\n\nUsing names, the mutate at() function changes particular variables.\nThe use of mutate_at() to divide two particular variables by 10 is demonstrated in the code below:\n\n\nCodedata2 %&gt;% mutate_at(c(\"Sepal.Length\", \"Sepal.Width\"), funs(mod = ./10))\n\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Sepal.Length_mod\n1          5.1         3.5          1.4         0.2             0.51\n2          4.9         3.0          1.4         0.2             0.49\n3          4.7         3.2          1.3         0.2             0.47\n4          4.6         3.1          1.5         0.2             0.46\n5          5.0         3.6          1.4         0.2             0.50\n6          5.4         3.9          1.7         0.4             0.54\n  Sepal.Width_mod\n1            0.35\n2            0.30\n3            0.32\n4            0.31\n5            0.36\n6            0.39"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#mutate_if",
+    "href": "static/slides/Datamanagment/datamanagment.html#mutate_if",
+    "title": "",
+    "section": "mutate_if()",
+    "text": "mutate_if()\n\nAll variables that match a specific condition are modified by the mutate_if() function.\nThe mutate_if() function can be used to change any variables of type factor to type character, as shown in the code below.\n\n\nCodedata &lt;- head(iris)\nsapply(data, class)\n\nSepal.Length  Sepal.Width Petal.Length  Petal.Width      Species \n   \"numeric\"    \"numeric\"    \"numeric\"    \"numeric\"     \"factor\" \n\n\n\nevery factor variable can be converted to a character variable.\n\n\nCodenew_data &lt;- data %&gt;% mutate_if(is.factor, as.character)\nsapply(new_data, class)\n\nSepal.Length  Sepal.Width Petal.Length  Petal.Width      Species \n   \"numeric\"    \"numeric\"    \"numeric\"    \"numeric\"  \"character\""
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#use-across-inside-mutate-function",
+    "href": "static/slides/Datamanagment/datamanagment.html#use-across-inside-mutate-function",
+    "title": "",
+    "section": "Use across() inside mutate() function",
+    "text": "Use across() inside mutate() function\n\nCodeiris %&gt;% as_tibble() %&gt;% \n  mutate(across(c(Sepal.Length, Sepal.Width), round)) %&gt;% head(4) #&lt;&lt;\n\n# A tibble: 4 × 5\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  \n1            5           4          1.4         0.2 setosa \n2            5           3          1.4         0.2 setosa \n3            5           3          1.3         0.2 setosa \n4            5           3          1.5         0.2 setosa \n\n\n\nCodeiris %&gt;% as_tibble() %&gt;%  \n  mutate(across(c(1, 2), round)) %&gt;% head(4)#&lt;&lt;\n\n# A tibble: 4 × 5\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  \n1            5           4          1.4         0.2 setosa \n2            5           3          1.4         0.2 setosa \n3            5           3          1.3         0.2 setosa \n4            5           3          1.5         0.2 setosa"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#use-across-inside-mutate-function-1",
+    "href": "static/slides/Datamanagment/datamanagment.html#use-across-inside-mutate-function-1",
+    "title": "",
+    "section": "Use across() inside mutate() function",
+    "text": "Use across() inside mutate() function\n\nCodeiris %&gt;%  as_tibble() %&gt;% \n  mutate(across(1:Sepal.Width, round)) %&gt;% head(4) #&lt;&lt;\n\n# A tibble: 4 × 5\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  \n1            5           4          1.4         0.2 setosa \n2            5           3          1.4         0.2 setosa \n3            5           3          1.3         0.2 setosa \n4            5           3          1.5         0.2 setosa \n\n\n\nCodeiris %&gt;%   as_tibble() %&gt;% \n  mutate(across(where(is.double) & !c(Petal.Length, Petal.Width), round)) %&gt;% head(4) #&lt;&lt;\n\n# A tibble: 4 × 5\n  Sepal.Length Sepal.Width Petal.Length Petal.Width Species\n         &lt;dbl&gt;       &lt;dbl&gt;        &lt;dbl&gt;       &lt;dbl&gt; &lt;fct&gt;  \n1            5           4          1.4         0.2 setosa \n2            5           3          1.4         0.2 setosa \n3            5           3          1.3         0.2 setosa \n4            5           3          1.5         0.2 setosa"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#b-manipulating-cases",
+    "href": "static/slides/Datamanagment/datamanagment.html#b-manipulating-cases",
+    "title": "",
+    "section": "b) Manipulating cases",
+    "text": "b) Manipulating cases\n\nfilter(): To extract cases\n\nThe function filter() is used to filter the dataset to return a subset of all rows that meet one or more specific conditions.\nfilter(dataframe, logical statement 1, logical statement 2, ...)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filtering-rows-based-on-a-numeric-variable",
+    "href": "static/slides/Datamanagment/datamanagment.html#filtering-rows-based-on-a-numeric-variable",
+    "title": "",
+    "section": "Filtering rows based on a numeric variable",
+    "text": "Filtering rows based on a numeric variable\n\n\n\nCodemsleep &lt;- ggplot2::msleep\nmsleep %&gt;% \n  select(name, sleep_total) %&gt;% \n  filter(sleep_total &gt; 18) %&gt;% head()\n\n\n\n\n\n# A tibble: 4 × 2\n  name                 sleep_total\n  &lt;chr&gt;                      &lt;dbl&gt;\n1 Big brown bat               19.7\n2 Thick-tailed opposum        19.4\n3 Little brown bat            19.9\n4 Giant armadillo             18.1\n\n\n\n\n\nTo select all animals with a total sleep time between 15 and 18 hours, use: filter(sleep_total &gt;= 16, sleep_total &lt;= 18), but there is a slightly shorter way by using the between() function.\n\n\n\n\nCodemsleep %&gt;% \n  select(name, sleep_total) %&gt;% \n  filter(between(sleep_total, 16, 18)) \n\n\n\n\n\n# A tibble: 4 × 2\n  name                   sleep_total\n  &lt;chr&gt;                        &lt;dbl&gt;\n1 Owl monkey                    17  \n2 Long-nosed armadillo          17.4\n3 North American Opossum        18  \n4 Arctic ground squirrel        16.6"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filtering-based-on-exact-character-variable-matches",
+    "href": "static/slides/Datamanagment/datamanagment.html#filtering-based-on-exact-character-variable-matches",
+    "title": "",
+    "section": "Filtering based on exact character variable matches",
+    "text": "Filtering based on exact character variable matches\n\nIf you want to select a specific group of animals for instance you can use the == comparison operator:\n\n\nCodemsleep %&gt;% \n  select(order, name, sleep_total) %&gt;% \n  filter(order == \"Didelphimorphia\") %&gt;% head()\n\n# A tibble: 2 × 3\n  order           name                   sleep_total\n  &lt;chr&gt;           &lt;chr&gt;                        &lt;dbl&gt;\n1 Didelphimorphia North American Opossum        18  \n2 Didelphimorphia Thick-tailed opposum          19.4\n\n\n\nSimilarly you can use the other operators:\n\n\nfilter(order != \"Rodentia\") will select everything except the Rodentia rows."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filtering-based-on-multiple-conditions",
+    "href": "static/slides/Datamanagment/datamanagment.html#filtering-based-on-multiple-conditions",
+    "title": "",
+    "section": "Filtering based on multiple conditions",
+    "text": "Filtering based on multiple conditions\n\nThe above examples return rows based on a single condition, but the filter option also allows AND and OR style filters:\n\n\n\nfilter(condition1, condition2) will return rows where both conditions are met.\n\nfilter(condition1, !condition2) will return all rows where condition one is true but condition 2 is not.\n\nfilter(condition1 | condition2) will return rows where condition 1 and/or condition 2 is met.\n\nfilter(xor(condition1, condition2) will return all rows where only one of the conditions is met, and not when both conditions are met.\n\n\nMultiple AND, OR and NOT conditions can be combined. The sample code will return all rows with a bodywt above 100 and either have a sleep_total above 15 or are not part of the Carnivora order.\n\n\nCodemsleep %&gt;% \n  select(name, order, sleep_total:bodywt) %&gt;% \n  filter(bodywt &gt; 100, (sleep_total &gt; 15 | order != \"Carnivora\"))"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#example-with-xor",
+    "href": "static/slides/Datamanagment/datamanagment.html#example-with-xor",
+    "title": "",
+    "section": "Example with xor()\n",
+    "text": "Example with xor()\n\n\n\n\nCodemsleep %&gt;%\n  select(name, bodywt:brainwt) %&gt;% \n  filter(xor(bodywt &gt; 100, brainwt &gt; 1))\n\n\n\n\n\n# A tibble: 5 × 3\n  name            bodywt brainwt\n  &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;\n1 Cow               600    0.423\n2 Horse             521    0.655\n3 Donkey            187    0.419\n4 Human              62    1.32 \n5 Brazilian tapir   208.   0.169\n\n\n\n\nExample with !:\n\nThe sample code will select all rows where brainwt is larger than 1, but bodywt does not exceed 100.\n\n\nCodemsleep %&gt;% \n  select(name, sleep_total, brainwt, bodywt) %&gt;% \n  filter(brainwt &gt; 1, !bodywt &gt; 100) \n\n# A tibble: 1 × 4\n  name  sleep_total brainwt bodywt\n  &lt;chr&gt;       &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;\n1 Human           8    1.32     62"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filtering-out-empty-rows",
+    "href": "static/slides/Datamanagment/datamanagment.html#filtering-out-empty-rows",
+    "title": "",
+    "section": "Filtering out empty rows",
+    "text": "Filtering out empty rows\n\nTo filter out empty rows, you negate the is.na() function inside a filter: The sample code will remove any rows where the conservation is NA.\n\n\nCodemsleep %&gt;% \n  select(name, conservation:sleep_cycle) %&gt;% \n  filter(!is.na(conservation))"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filtering-across-multiple-columns",
+    "href": "static/slides/Datamanagment/datamanagment.html#filtering-across-multiple-columns",
+    "title": "",
+    "section": "Filtering across multiple columns",
+    "text": "Filtering across multiple columns\n\nHow dplyr package filter across multiple columns in one go?\nfilter_all(): will filter all columns\nfilter_if(): filter columns based on a function.\nfilter_at(): requires specify columns inside a vars() argument for which the filtering will be done.\nIn many cases you will need a . operator within the condition which refers to the values we are looking at."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filter_all",
+    "href": "static/slides/Datamanagment/datamanagment.html#filter_all",
+    "title": "",
+    "section": "filter_all()",
+    "text": "filter_all()\n\n\nUsed to wrap the condition in any_vars().\n\nFor example to find the string “Ca” across all columns,\n\n\nCodemsleep %&gt;% \n  select(name:order, sleep_total, -vore) %&gt;% \n  filter_all(any_vars(str_detect(., pattern = \"Ca\")))\n\n\n\nThe same can be done for numerical values: This code will retain any rows that has any value below 0.1:\n\n\nCodemsleep %&gt;%  \n  select(name, sleep_total:bodywt) %&gt;% \n  filter_all(any_vars(. &lt; 0.1))"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filter_at",
+    "href": "static/slides/Datamanagment/datamanagment.html#filter_at",
+    "title": "",
+    "section": "filter_at()",
+    "text": "filter_at()\n\nOne of the more powerful functions is filter_at(): it does not filter all columns, nor does it need you to specify the type of column, you can just select columns to which the change should happen via the vars() argument.\nUse all_vars() if all columns need to return TRUE, or any_vars() in case just one variable needs to return TRUE.\nExample: refer to columns by their name:\n\n\nCodemsleep %&gt;% \n  select(name, sleep_total:sleep_rem, brainwt:bodywt) %&gt;% \n  filter_at(vars(sleep_total, sleep_rem), all_vars(.&gt;5))\n\n\n\nExample: using another select option:\n\n\nCodemsleep %&gt;% \n  select(name, sleep_total:sleep_rem, brainwt:bodywt) %&gt;% \n  filter_at(vars(contains(\"sleep\")), all_vars(.&gt;5))"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#sort-rows-with-arrange",
+    "href": "static/slides/Datamanagment/datamanagment.html#sort-rows-with-arrange",
+    "title": "",
+    "section": "Sort rows with arrange\n",
+    "text": "Sort rows with arrange\n\nRe-order rows by a particular column, by default in ascending order\nUse desc() for descending order.\narrange(data, variable1, desc(variable2), ...)\nExample: 1. Let us use the following code to create a scrambled version of the airquality dataset\n\nCodeair_mess &lt;- sample_frac(airquality, 1)\nhead(air_mess)\n\n  Ozone Solar.R Wind Temp Month Day\n1    30     322 11.5   68     5  19\n2    NA     220  8.6   85     6   5\n3    76     203  9.7   97     8  28\n4   122     255  4.0   89     8   7\n5    NA      91  4.6   76     6  23\n6     7      49 10.3   69     9  24"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#sort-rows-with-arrange-1",
+    "href": "static/slides/Datamanagment/datamanagment.html#sort-rows-with-arrange-1",
+    "title": "",
+    "section": "Sort rows with arrange()\n",
+    "text": "Sort rows with arrange()\n\nExample: 2. Now let us arrange the data frame back into chronological order, sorting by Month then Day\n\nCodeair_chron &lt;- arrange(air_mess, Month, Day)\nhead(air_chron)\n\n  Ozone Solar.R Wind Temp Month Day\n1    41     190  7.4   67     5   1\n2    36     118  8.0   72     5   2\n3    12     149 12.6   74     5   3\n4    18     313 11.5   62     5   4\n5    NA      NA 14.3   56     5   5\n6    28      NA 14.9   66     5   6\n\n\n.comment[Try : arrange(air_mess, Day, Month) and see the difference.]"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#pipe-perator",
+    "href": "static/slides/Datamanagment/datamanagment.html#pipe-perator",
+    "title": "",
+    "section": "Pipe perator (%>%)",
+    "text": "Pipe perator (%&gt;%)\n\nPipes in R look like %&gt;% and strings together commands to be performed sequentially\nThe pipe passes the data frame output that results from the function right before the pipe to input it as the first argument of the function right after the pipe.\n\n\nCodethird(second(first(x)))\n\n\n\nThis nesting is not a natural way to think about a sequence of operations.\nThe %&gt;% operator allows you to string operations in a left-to-right fashion.\n\n\nCodefirst(x) %&gt;%\nsecond %&gt;% third"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#advantages-of-pipe-oprator",
+    "href": "static/slides/Datamanagment/datamanagment.html#advantages-of-pipe-oprator",
+    "title": "",
+    "section": "Advantages of Pipe oprator",
+    "text": "Advantages of Pipe oprator\n\nPipes used to reduce multiple steps, that can be hard to keep track of.\nless redundant code\nEasy to read and write because functions are executed in order\n\nDifficult to read if too many functions are nested\n\n\nLook at the three syntax\n\n\nCodedata1&lt;-filter(sampledata, Age &gt; 15) #&lt;&lt;\ndata2&lt;-select(data1, Sex, Weight1, Age) #&lt;&lt;\n\n\n\nCodenon_piped &lt;-select(filter(mydata, Age&gt;15), Sex, Weight1, Age) #&lt;&lt;\n\n\n\nCodepipeddata&lt;-mydata %&gt;% filter(Age &gt; 15) %&gt;% select(Sex, Weight1, Height1, Age)#&lt;&lt;"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#group_by-and-summarise",
+    "href": "static/slides/Datamanagment/datamanagment.html#group_by-and-summarise",
+    "title": "",
+    "section": "\ngroup_by() and summarise()\n",
+    "text": "group_by() and summarise()\n\n\nThe dplyr verbs become especially powerful when they are are combined using the pipe operator %&gt;%.\nThe following dplyr functions allow us to split our data frame into groups on which we can perform operations individually\ngroup_by(): group data frame by a factor for downstream operations (usually summarise)\nsummarise(): summarise values in a data frame or in groups within the data frame with aggregation functions (e.g. min(), max(), mean(), etc…)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#dplyr---split-apply-combine",
+    "href": "static/slides/Datamanagment/datamanagment.html#dplyr---split-apply-combine",
+    "title": "",
+    "section": "\ndplyr - Split-Apply-Combine",
+    "text": "dplyr - Split-Apply-Combine\nThe group_by function is key to the Split-Apply-Combine strategy"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#the-summarize-function",
+    "href": "static/slides/Datamanagment/datamanagment.html#the-summarize-function",
+    "title": "",
+    "section": "The summarize() function",
+    "text": "The summarize() function\n\nThe summarize() function is used in the R program to summarize the data frame into just one value or vector.\nThis summarization is done through grouping observations by using categorical values at first, using the group_by() function.\nThe summarize() function offers the summary that is based on the action done on grouped or ungrouped data."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#summarize-grouped-data",
+    "href": "static/slides/Datamanagment/datamanagment.html#summarize-grouped-data",
+    "title": "",
+    "section": "Summarize grouped data",
+    "text": "Summarize grouped data\n\nThe operations that can be performed on grouped data are average, factor, count, mean, etc.\nExample: we are interested in the mean temperature and standard deviation within each month of the airquality dataset\n\n\nCodemonth_sum &lt;- airquality %&gt;%\n      group_by(Month) %&gt;%\n      summarise(mean_temp = mean(Temp),\n                sd_temp = sd(Temp))\nmonth_sum\n\n# A tibble: 5 × 3\n  Month mean_temp sd_temp\n  &lt;int&gt;     &lt;dbl&gt;   &lt;dbl&gt;\n1     5      65.5    6.85\n2     6      79.1    6.60\n3     7      83.9    4.32\n4     8      84.0    6.59\n5     9      76.9    8.36"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#summarize-ungrouped-data",
+    "href": "static/slides/Datamanagment/datamanagment.html#summarize-ungrouped-data",
+    "title": "",
+    "section": "Summarize ungrouped data",
+    "text": "Summarize ungrouped data\n\nWe can also summarize ungrouped data. This can be done by using three functions.\nsummarize_all()\nsummarize_at()\nsummazrize_if()\n\n1. summarize_all()\n\nThis function summarizes all the columns of data based on the action which is to be performed.\n\nsummarize_all(action)\n\nexample The code airquality %&gt;% summarize_all(mean) will show the mean of all columns.\n\n\nCode# Caculating mean value.\nairquality %&gt;% summarize_all(mean, na.rm=T)\n\n     Ozone  Solar.R     Wind     Temp    Month      Day\n1 42.12931 185.9315 9.957516 77.88235 6.993464 15.80392"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#summarize_at",
+    "href": "static/slides/Datamanagment/datamanagment.html#summarize_at",
+    "title": "",
+    "section": "2. summarize_at()",
+    "text": "2. summarize_at()\n\nIt performs the action on the specific column and generates the summary based on that action.\n\n\nCodesummarize_at(vector_of_columns, action)\n\n-   `vector_of_columns`: The list of column names or character vector of column names.\n\n-   The `airquality %&gt;% group_by(Month) %&gt;% summarize_at(c(\"Wind\",\"Temp\"),mean)` will show the mean of the `'Wind'` and `'Temp'` observations in the result, grouping with `Month`.\n\nairquality %&gt;% group_by(Month) %&gt;%\nsummarize_at(c(\"Wind\",\"Temp\"),mean)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#summarize_if",
+    "href": "static/slides/Datamanagment/datamanagment.html#summarize_if",
+    "title": "",
+    "section": "3. summarize_if()",
+    "text": "3. summarize_if()\n\nIn this function, we specify a condition and the summary will be generated if the condition is satisfied.\n\n\nCodesummarize_if(.predicate, .action)\n\n-   In the code snippet below, we use the `predicate` function `is.numeric` and `mean` as an action.\n\nz&lt;- head(data)\nairquality %&gt;% group_by(Month) %&gt;%\nsummarize_if(is.numeric, mean)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#recoding-variables",
+    "href": "static/slides/Datamanagment/datamanagment.html#recoding-variables",
+    "title": "",
+    "section": "Recoding Variables",
+    "text": "Recoding Variables\n\nuse recode() inside a mutate() statement.\n\nExample of Recoding\n\nCodedata_diet &lt;- tibble(Diet = rep(c(\"A\", \"B\", \"B\"), times = 4), \n                    Gender = c(\"Male\",\"m\",\"Other\",\"F\",\"Female\",\"M\",\n                               \"f\",\"O\",\"Man\",\"f\",\"F\",\"O\"), \n                    Weight_start = sample(100:250, size = 12),\n                    Weight_change = sample(-10:20, size = 12))\nhead(data_diet)\n\n# A tibble: 6 × 4\n  Diet  Gender Weight_start Weight_change\n  &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;         &lt;int&gt;\n1 A     Male            241            -2\n2 B     m               113            17\n3 B     Other           134             4\n4 A     F               188             5\n5 B     Female          161            10\n6 B     M               249            12\n\n\n\nSay we have some data about samples in a diet study but this needs lots of recoding.\n\n\nCodedata_diet %&gt;%\n  count(Gender)\n\n# A tibble: 9 × 2\n  Gender     n\n  &lt;chr&gt;  &lt;int&gt;\n1 F          2\n2 Female     1\n3 M          1\n4 Male       1\n5 Man        1\n6 O          2\n7 Other      1\n8 f          2\n9 m          1"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#dplyr-can-help",
+    "href": "static/slides/Datamanagment/datamanagment.html#dplyr-can-help",
+    "title": "",
+    "section": "\ndplyr can help!",
+    "text": "dplyr can help!\nUsing Excel to find all of the different ways gender has been coded, could be hectic!\nIn dplyr you can use the recode function (need mutate here too!):\n\nCode# General Format - this is not code!\n{data_input} %&gt;%\n  mutate({variable_to_fix} = recode({Variable_fixing}, {old_value} = {new_value},\n                                    {another_old_value} = {new_value}))\n\n\n\nCodedata_diet %&gt;% \n  mutate(Gender = recode(Gender, M = \"Male\", m = \"Male\", Man = \"Male\",\n                                 O = \"Other\", f = \"Female\",F = \"Female\")) %&gt;%\n  count(Gender, Diet)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#recode",
+    "href": "static/slides/Datamanagment/datamanagment.html#recode",
+    "title": "",
+    "section": "recode()",
+    "text": "recode()\n\nCodedata_diet %&gt;% \n  mutate(Gender = recode(Gender, M = \"Male\", m = \"Male\", Man = \"Male\",\n                                 O = \"Other\",f = \"Female\",F = \"Female\")) %&gt;%\n  count(Gender, Diet)\n\n# A tibble: 5 × 3\n  Gender Diet      n\n  &lt;chr&gt;  &lt;chr&gt; &lt;int&gt;\n1 Female A         3\n2 Female B         2\n3 Male   A         1\n4 Male   B         3\n5 Other  B         3"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#or-you-can-use-case_when",
+    "href": "static/slides/Datamanagment/datamanagment.html#or-you-can-use-case_when",
+    "title": "",
+    "section": "Or you can use case_when()\n",
+    "text": "Or you can use case_when()\n\nThe case_when() function of dplyr can help us to do this as well.\n\n\n\n\nNote that automatically values not reassigned explicitly by case_when() will be NA unless otherwise specified.\n\n\nCodedata_diet %&gt;% \n  mutate(Gender = case_when(Gender == \"M\" ~ \"Male\"))\n\n# A tibble: 12 × 4\n   Diet  Gender Weight_start Weight_change\n   &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;         &lt;int&gt;\n 1 A     &lt;NA&gt;            241            -2\n 2 B     &lt;NA&gt;            113            17\n 3 B     &lt;NA&gt;            134             4\n 4 A     &lt;NA&gt;            188             5\n 5 B     &lt;NA&gt;            161            10\n 6 B     Male            249            12\n 7 A     &lt;NA&gt;            169            -3\n 8 B     &lt;NA&gt;            222           -10\n 9 B     &lt;NA&gt;            211             8\n10 A     &lt;NA&gt;            245             9\n11 B     &lt;NA&gt;            115            -9\n12 B     &lt;NA&gt;            179            -1"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#use-of-case_when-without-automatic-na",
+    "href": "static/slides/Datamanagment/datamanagment.html#use-of-case_when-without-automatic-na",
+    "title": "",
+    "section": "Use of case_when() without automatic NA\n",
+    "text": "Use of case_when() without automatic NA\n\n\n\n\n\nHere we use the original values of Gender to replace all values of Gender that do not meet the condition == \"M\".\n\n\nCodedata_diet %&gt;% \n  mutate(Gender = case_when(Gender == \"M\" ~ \"Male\", TRUE ~ Gender))\n\n# A tibble: 12 × 4\n   Diet  Gender Weight_start Weight_change\n   &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;         &lt;int&gt;\n 1 A     Male            241            -2\n 2 B     m               113            17\n 3 B     Other           134             4\n 4 A     F               188             5\n 5 B     Female          161            10\n 6 B     Male            249            12\n 7 A     f               169            -3\n 8 B     O               222           -10\n 9 B     Man             211             8\n10 A     f               245             9\n11 B     F               115            -9\n12 B     O               179            -1"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#more-complicated-case_when",
+    "href": "static/slides/Datamanagment/datamanagment.html#more-complicated-case_when",
+    "title": "",
+    "section": "More complicated case_when()",
+    "text": "More complicated case_when()\n\nCodedata_diet %&gt;% \n  mutate(Gender = case_when(\n    Gender %in% c(\"M\", \"male\", \"Man\", \"m\", \"Male\") ~ \"Male\",\n    Gender %in% c(\"F\", \"Female\", \"f\", \"female\") ~ \"Female\",\n    Gender %in% c(\"O\", \"Other\") ~ \"Other\")) %&gt;% head()\n\n# A tibble: 6 × 4\n  Diet  Gender Weight_start Weight_change\n  &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;         &lt;int&gt;\n1 A     Male            241            -2\n2 B     Male            113            17\n3 B     Other           134             4\n4 A     Female          188             5\n5 B     Female          161            10\n6 B     Male            249            12"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#another-reason-for-case_when",
+    "href": "static/slides/Datamanagment/datamanagment.html#another-reason-for-case_when",
+    "title": "",
+    "section": "Another reason for case_when()\n",
+    "text": "Another reason for case_when()\n\ncase_when can do very sophisticated comparisons\n\nCodedata_diet1 &lt;-data_diet %&gt;% \n      mutate(Effect = case_when(Weight_change &gt; 0 ~ \"Increase\",\n                                Weight_change == 0 ~ \"Same\",\n                                Weight_change &lt; 0 ~ \"Decrease\"))\nhead(data_diet)\n\n# A tibble: 6 × 4\n  Diet  Gender Weight_start Weight_change\n  &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;         &lt;int&gt;\n1 A     Male            241            -2\n2 B     m               113            17\n3 B     Other           134             4\n4 A     F               188             5\n5 B     Female          161            10\n6 B     M               249            12"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#creating-new-discrete-column-with-two-levels",
+    "href": "static/slides/Datamanagment/datamanagment.html#creating-new-discrete-column-with-two-levels",
+    "title": "",
+    "section": "Creating new discrete column with two levels\n",
+    "text": "Creating new discrete column with two levels\n\n\nThe ifelse() statement can be used to turn a numeric column into a discrete one.\n\n\nCodedata_diet %&gt;%\n  mutate(Temp_cat = ifelse(Weight_change &gt; 0, \"Increased\", \"decreased\")) %&gt;% head()\n\n# A tibble: 6 × 5\n  Diet  Gender Weight_start Weight_change Temp_cat \n  &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;         &lt;int&gt; &lt;chr&gt;    \n1 A     Male            241            -2 decreased\n2 B     m               113            17 Increased\n3 B     Other           134             4 Increased\n4 A     F               188             5 Increased\n5 B     Female          161            10 Increased\n6 B     M               249            12 Increased"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#working-with-strings-by-stringr-package",
+    "href": "static/slides/Datamanagment/datamanagment.html#working-with-strings-by-stringr-package",
+    "title": "",
+    "section": "Working with strings by stringr package",
+    "text": "Working with strings by stringr package\nThe stringr package:\n\nModifying or finding part or all of a character string\nWe will not cover grep or gsub - base R functions\n\nare used on forums for answers\n\n\nAlmost all functions start with str_*"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#str_detect",
+    "href": "static/slides/Datamanagment/datamanagment.html#str_detect",
+    "title": "",
+    "section": "str_detect()",
+    "text": "str_detect()\n\nstr_detect, and str_replace search for matches to argument pattern within each element of a character vector (not data frame or tibble!).\nstr_detect - returns TRUE if pattern is found\nstr_replace - replaces pattern with replacement"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#str_replace",
+    "href": "static/slides/Datamanagment/datamanagment.html#str_replace",
+    "title": "",
+    "section": "str_replace()",
+    "text": "str_replace()\n\nThe replacement argument specifies what to replace the pattern with\n\n\n\nCodex&lt;-c(\"cat\", \"dog\", \"mouse\")\nstr_replace(string = x, pattern = \"d\", replacement = \"D\")\n\n[1] \"cat\"   \"Dog\"   \"mouse\""
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filter-and-stringr-functions",
+    "href": "static/slides/Datamanagment/datamanagment.html#filter-and-stringr-functions",
+    "title": "",
+    "section": "\nfilter and stringr functions",
+    "text": "filter and stringr functions\n\nCodehead(data_diet,n = 4)\n\n# A tibble: 4 × 4\n  Diet  Gender Weight_start Weight_change\n  &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;         &lt;int&gt;\n1 A     Male            241            -2\n2 B     m               113            17\n3 B     Other           134             4\n4 A     F               188             5\n\nCodedata_diet %&gt;% \n  filter(str_detect(string = Gender,\n                    pattern = \"M\"))\n\n# A tibble: 3 × 4\n  Diet  Gender Weight_start Weight_change\n  &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;         &lt;int&gt;\n1 A     Male            241            -2\n2 B     M               249            12\n3 B     Man             211             8"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#case_when-improved-with-stringr",
+    "href": "static/slides/Datamanagment/datamanagment.html#case_when-improved-with-stringr",
+    "title": "",
+    "section": "\ncase_when() improved with stringr\n",
+    "text": "case_when() improved with stringr\n\n\nCodedata_diet %&gt;% \n  mutate(Gender = case_when(\n    Gender %in% c(\"M\", \"male\", \"Man\", \"m\", \"Male\") ~ \"Male\",\n    Gender %in% c(\"F\", \"Female\", \"f\", \"female\")~ \"Female\",\n    Gender %in% c(\"O\", \"Other\") ~ \"Other\")) %&gt;% head()\n\n# A tibble: 6 × 4\n  Diet  Gender Weight_start Weight_change\n  &lt;chr&gt; &lt;chr&gt;         &lt;int&gt;         &lt;int&gt;\n1 A     Male            241            -2\n2 B     Male            113            17\n3 B     Other           134             4\n4 A     Female          188             5\n5 B     Female          161            10\n6 B     Male            249            12"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#case_when-improved-with-stringr-1",
+    "href": "static/slides/Datamanagment/datamanagment.html#case_when-improved-with-stringr-1",
+    "title": "",
+    "section": "\ncase_when() improved with stringr\n",
+    "text": "case_when() improved with stringr\n\n\n^ indicates the beginning of a character string\n$ indicates the end\n\n\nCodedata_diet %&gt;% \n  mutate(Gender = case_when(\n    str_detect(string = Gender, pattern = \"^m|^M\") ~ \"Male\",\n    str_detect(string = Gender, pattern = \"^f|^F\") ~ \"Female\",\n    str_detect(string = Gender, pattern = \"^o|^O\") ~ \"Other\")) %&gt;%\n  count(Gender)\n\n# A tibble: 3 × 2\n  Gender     n\n  &lt;chr&gt;  &lt;int&gt;\n1 Female     5\n2 Male       4\n3 Other      3"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#data-mergining",
+    "href": "static/slides/Datamanagment/datamanagment.html#data-mergining",
+    "title": "",
+    "section": "Data mergining",
+    "text": "Data mergining\n\n\n\nThe 4 mutating join verbs:\nleft_join()\nright_join()\ninner_join()\nfull_join()\n\n\n\nThe 2 binding join verbs:\nbind_rows()\nbind_cols()\n\n\n\n\n\n\nThe 2 filtering join verbs:\nsemi_join()\nanti_join()\n\n\n\nThe 3 set operations:\nintersect()\nunion()\nsetdiff()"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#left_join",
+    "href": "static/slides/Datamanagment/datamanagment.html#left_join",
+    "title": "",
+    "section": "left_join()",
+    "text": "left_join()\n\nA left_join keeps all the data from the first (left) table and joins anything that matches from the second (right) table.\nIf the right table has more than one match for a row in the right table, there will be more than one row in the joined table (see ids 4 and 5).\n\n\n\n\nleft_joint()\n\n\nCodeleft_join(subject, exp, by = \"id\")\n\n\n\n\n\n\n\nThe order of the exp and subject tables is different.\n\n\nCodeleft_join(exp, subject, by = \"id\")"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#right_join",
+    "href": "static/slides/Datamanagment/datamanagment.html#right_join",
+    "title": "",
+    "section": "right_join()",
+    "text": "right_join()\n\nA right_join keeps all the data from the second (right) table and joins anything that matches from the first (left) table.\n\n\nCoderight_join(subject, exp, by = \"id\")\n\n\n\n\n\n\nThis table has the same information as left_join(exp, subject, by = \"id\"), but the columns are in a different order (left table, then right table)."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#inner_join",
+    "href": "static/slides/Datamanagment/datamanagment.html#inner_join",
+    "title": "",
+    "section": "inner_join()",
+    "text": "inner_join()\n\nAn inner_join returns all the rows that have a match in the other table.\n\n\nCodeinner_join(subject, exp, by = \"id\")"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#full_join",
+    "href": "static/slides/Datamanagment/datamanagment.html#full_join",
+    "title": "",
+    "section": "full_join()",
+    "text": "full_join()\n\nA full_join lets you join up rows in two tables while keeping all of the information from both tables.\nIf a row doesn’t have a match in the other table, the other table’s column values are set to NA.\n\n\nCodefull_join(subject, exp, by = \"id\")"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#semi_join",
+    "href": "static/slides/Datamanagment/datamanagment.html#semi_join",
+    "title": "",
+    "section": "semi_join()",
+    "text": "semi_join()\n\nA semi_join returns all rows from the left table where there are matching values in the right table, keeping just columns from the left table.\n\n\nCodesemi_join(subject, exp, by = \"id\")\n\n\n\n\n\n\nUnlike an inner join, a semi join will never duplicate the rows in the left table if there is more than one maching row in the right table.\n\nOrder matters in a semi join.\n\nCodesemi_join(exp, subject, by = \"id\")"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#anti_join",
+    "href": "static/slides/Datamanagment/datamanagment.html#anti_join",
+    "title": "",
+    "section": "anti_join()",
+    "text": "anti_join()\n\nA anti_join() return all rows from the left table where there are not matching values in the right table, keeping just columns from the left table.\n\n\n\n\nanti_join().\n\n\nCodeanti_join(subject, exp, by = \"id\")\n\n\n\n\n\n\n\nOrder matters in an anti_join().\n\n\nCodeanti_join(exp, subject, by = \"id\")"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#bind_rows",
+    "href": "static/slides/Datamanagment/datamanagment.html#bind_rows",
+    "title": "",
+    "section": "bind_rows()",
+    "text": "bind_rows()\n\nYou can combine the rows of two tables with bind_rows.\nHere we’ll add subject data for subjects 6-9 and bind that to the original subject table.\n\n\nCodenew_subjects &lt;- tibble(\n  id = seq(6, 9),  age = c(19, 16, 20, 19),sex = c(\"m\", \"m\", \"f\", \"f\"))\n\n\n\nCodebind_rows(subject, new_subjects)\n\n\n\n\n\n\nThe columns just have to have the same names, they don’t have to be in the same order."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#bind_cols",
+    "href": "static/slides/Datamanagment/datamanagment.html#bind_cols",
+    "title": "",
+    "section": "bind_cols()",
+    "text": "bind_cols()\n\nYou can merge two tables with the same number of rows using bind_cols.\nThis is only useful if the two tables have their rows in the exact same order.\nThe only advantage over a left join is when the tables don’t have any IDs to join by and you have to rely solely on their order.\n\n\nCodenew_info &lt;- tibble(\n  colour = c(\"red\", \"orange\", \"yellow\", \"green\", \"blue\"))\n\n\n\nCodebind_cols(subject, new_info)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#intersect",
+    "href": "static/slides/Datamanagment/datamanagment.html#intersect",
+    "title": "",
+    "section": "intersect()",
+    "text": "intersect()\n\n\nintersect() returns all rows in two tables that match exactly.\n\nunion() returns all the rows from both tables, removing duplicate rows.\n\n\nCodenew_subjects &lt;- tibble(\n  id = seq(4, 9), age = c(19, 18, 19, 16, 20, 19),\n  sex = c(\"f\", \"f\", \"m\", \"m\", \"f\", \"f\"))\n\n\n\n\n\nIntersect:\n\n\nCodedplyr::intersect(subject, new_subjects)\n\n\n\n\n\n\n\nUnion:\n\n\nCodedplyr::union(subject, new_subjects)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#setdiff",
+    "href": "static/slides/Datamanagment/datamanagment.html#setdiff",
+    "title": "",
+    "section": "setdiff()",
+    "text": "setdiff()\n\n\nsetdiff returns rows that are in the first table, but not in the second table.\n\n::: columns ::: {.column width=“50%”}\n\nsetdiff()\n\n\nCodesetdiff(subject, new_subjects)\n\n\n\n\n\n\n\n\nOrder matters for setdiff.\n\n\nCodesetdiff(new_subjects, subject)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#converting-data-from-wide-to-long-or-long-to-wide",
+    "href": "static/slides/Datamanagment/datamanagment.html#converting-data-from-wide-to-long-or-long-to-wide",
+    "title": "",
+    "section": "Converting data from wide to long or long to wide",
+    "text": "Converting data from wide to long or long to wide\nReshaping data using tidyr package\n\nFollowing are the four important functions to tidy (clean) the data:\n\n\n\n\n\n\n\n\nFunction\nObjective\nArguments\n\n\n\ngather()\nTransform the data from wide to long\n(data, key, value, na.rm = FALSE)\n\n\nspread()\nTransform the data from long to wide\n(data, key, value)\n\n\nseparate()\nSplit one variables into two\n(data, col, into, sep= ” “, remove = TRUE)\n\n\nunit()\nUnit two variables into one\n(data, col, conc ,sep= ” “, remove = TRUE)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#gather",
+    "href": "static/slides/Datamanagment/datamanagment.html#gather",
+    "title": "",
+    "section": "gather()",
+    "text": "gather()\n\nThe objectives of the gather() function is to transform the data from wide to long.\n\nSyntax\n\nCodegather(data, key, value, na.rm = FALSE)\n\n\nArguments:\n\ndata: The data frame used to reshape the dataset\nkey: Name of the new column created\nvalue: Select the columns used to fill the key column\nna.rm: Remove missing values. FALSE by default"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#reshape-the-data",
+    "href": "static/slides/Datamanagment/datamanagment.html#reshape-the-data",
+    "title": "",
+    "section": "Reshape the data",
+    "text": "Reshape the data\n\nIn the gather() function, we create two new variable quarter and growth because our original dataset has one group variable: i.e. treatment and the key-value pairs.\n\n\nCodelong &lt;-data %&gt;%\ngather(quarter, growth, q1_2021:q4_2022)\nhead(long, 12)\n\n   Treatment quarter growth\n1          A q1_2021   0.03\n2          B q1_2021   0.05\n3          C q1_2021   0.01\n4          A q2_2021   0.05\n5          B q2_2021   0.07\n6          C q2_2021   0.02\n7          A q3_2021   0.04\n8          B q3_2021   0.05\n9          C q3_2021   0.01\n10         A q4_2021   0.03\n11         B q4_2021   0.02\n12         C q4_2021   0.04"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#spread",
+    "href": "static/slides/Datamanagment/datamanagment.html#spread",
+    "title": "",
+    "section": "spread()",
+    "text": "spread()\n\nThe spread() function does the opposite of gather.\n\nSyntax\n\nCodespread(data, key, value)\n\n\narguments:\n\ndata: The data frame used to reshape the dataset\nkey: Column to reshape long to wide\nvalue: Rows used to fill the new column"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#separate",
+    "href": "static/slides/Datamanagment/datamanagment.html#separate",
+    "title": "",
+    "section": "separate()",
+    "text": "separate()\n\nThe separate() function splits a column into two according to a separator.\nThis function is helpful in some situations where the variable is a date.\nOur analysis can require focussing on month and year and we want to separate the column into two new variables.\n\nSyntax\n\nCodeseparate(data, col, into, sep= \"\", remove = TRUE)\n\n\narguments:\n\n\ndata: The data frame used to reshape the dataset\n\ncol: The column to split\n\ninto: The name of the new variables\n\nsep: Indicates the symbol used that separates the variable, i.e.: “-”, “_”, “&”\n\nremove: Remove the old column. By default sets to TRUE."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#unite",
+    "href": "static/slides/Datamanagment/datamanagment.html#unite",
+    "title": "",
+    "section": "unite()",
+    "text": "unite()\n\nThe unite() function concanates two columns into one.\n\nSyntax\n\nCodeunit(data, col, conc ,sep= \"\", remove = TRUE)\n\n\narguments: - data: The data frame used to reshape the dataset - col: Name of the new column - conc: Name of the columns to concatenate - sep: Indicates the symbol used that unites the variable, i.e: “-”, “_”, “&” - remove: Remove the old columns. By default, sets to TRUE —\nExample\n\nIn the above example, we separated quarter from year.\nWhat if we want to merge them.\nWe use the following code:\n\n\nCodeunit_tidier &lt;- separate_tidier %&gt;%\n  unite(Quarter, Qrt, year, sep =\"_\")\nhead(unit_tidier)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#dealing-with-missing-data",
+    "href": "static/slides/Datamanagment/datamanagment.html#dealing-with-missing-data",
+    "title": "",
+    "section": "Dealing with Missing Data",
+    "text": "Dealing with Missing Data\nMissing data types\n\nOne of the most important aspects of data cleaning is missing values.\n\nTypes of “missing” data:\n\n\nNA - general missing data\n\nNaN - stands for “Not a Number”, happens when you do 0/0.\n\nInf and -Inf - Infinity, happens when you divide a positive number (or negative number) by 0.\n\nFinding Missing data\n\n\nis.na - looks for NAN and NA\n\n\nis.nan- looks for NAN\n\n\nis.infinite - looks for Inf or -Inf\n\n\nCodetest&lt;-c(0,NA, -1)\ntest/0\n\n[1]  NaN   NA -Inf"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#naniar",
+    "href": "static/slides/Datamanagment/datamanagment.html#naniar",
+    "title": "",
+    "section": "naniar",
+    "text": "naniar\n\nSometimes you need to look at lots of data though… the naniar package is a good option.\nThe pct_complete() function shows the percentage that is complete for a given data object, (vector or data frame).\n\n\nCode#install.packages(\"naniar\")\nlibrary(naniar)\npct_complete(airquality)\n\n[1] 95.20697\n\n\n\nCodeairquality %&gt;% select(Ozone) %&gt;%\npct_complete()\n\n[1] 75.81699"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#naniar-plots",
+    "href": "static/slides/Datamanagment/datamanagment.html#naniar-plots",
+    "title": "",
+    "section": "\nnaniar plots",
+    "text": "naniar plots\n\nThe gg_miss_var() function creates a nice plot about the number of missing values for each variable, (need a data frame).\n\n\nCodegg_miss_var(airquality)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#missing-data-issues",
+    "href": "static/slides/Datamanagment/datamanagment.html#missing-data-issues",
+    "title": "",
+    "section": "Missing Data Issues",
+    "text": "Missing Data Issues\nRecall that mathematical operations with NA often result in NAs.\n\nCodesum(c(1,2,3,NA))\n\n[1] NA\n\nCodemean(c(2,4,NA))\n\n[1] NA\n\nCodemedian(c(1,2,3,NA))\n\n[1] NA"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filter-and-missing-data",
+    "href": "static/slides/Datamanagment/datamanagment.html#filter-and-missing-data",
+    "title": "",
+    "section": "filter() and missing data",
+    "text": "filter() and missing data\n\nBe careful with missing data using subsetting!\nfilter() removes missing values by default. Because R can’t tell for sure if an NA value meets the condition.\nTo keep them need to add is.na() conditional.\n\n\nCodedf &lt;-tibble(Dog = c(0, NA, 2, 3, 1, 1), \n            Cat = c(NA, 8, 6, NA, 2, NA))\n\n\n\n\n\nCodedf \n\n# A tibble: 6 × 2\n    Dog   Cat\n  &lt;dbl&gt; &lt;dbl&gt;\n1     0    NA\n2    NA     8\n3     2     6\n4     3    NA\n5     1     2\n6     1    NA\n\n\n\n\nCodedf %&gt;% filter(Dog &lt; 3)\n\n# A tibble: 4 × 2\n    Dog   Cat\n  &lt;dbl&gt; &lt;dbl&gt;\n1     0    NA\n2     2     6\n3     1     2\n4     1    NA"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#filter-and-missing-data-1",
+    "href": "static/slides/Datamanagment/datamanagment.html#filter-and-missing-data-1",
+    "title": "",
+    "section": "filter() and missing data",
+    "text": "filter() and missing data\n\nCodedf %&gt;% filter(Dog &lt; 3 | is.na(Dog))\n\n# A tibble: 5 × 2\n    Dog   Cat\n  &lt;dbl&gt; &lt;dbl&gt;\n1     0    NA\n2    NA     8\n3     2     6\n4     1     2\n5     1    NA"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#change-a-value-to-be-na",
+    "href": "static/slides/Datamanagment/datamanagment.html#change-a-value-to-be-na",
+    "title": "",
+    "section": "Change a value to be NA\n",
+    "text": "Change a value to be NA\n\n\nThe na_if() function of dplyr can be helpful for this. Let’s say we think that all 0 values should be NA.\n\n\n\n\nCodedf \n\n# A tibble: 6 × 2\n    Dog   Cat\n  &lt;dbl&gt; &lt;dbl&gt;\n1     0    NA\n2    NA     8\n3     2     6\n4     3    NA\n5     1     2\n6     1    NA\n\n\n\n\nCodedf %&gt;% \n  mutate(Dog = na_if(x = Dog, y = 0))\n\n# A tibble: 6 × 2\n    Dog   Cat\n  &lt;dbl&gt; &lt;dbl&gt;\n1    NA    NA\n2    NA     8\n3     2     6\n4     3    NA\n5     1     2\n6     1    NA"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#summary",
+    "href": "static/slides/Datamanagment/datamanagment.html#summary",
+    "title": "",
+    "section": "Summary",
+    "text": "Summary\n\nis.na(),any(is.na()), count(), and functions from naniar like gg_miss_var() can help determine if we have NA values\nfilter() automatically removes NA values - can’t confirm or deny if condition is met (need | is.na() to keep them)\ndrop_na() can help you remove NA values from a variable or an entire data frame\nNA values can change your calculation results\nthink about what NA values represent - don’t drop them if you shouldn’t"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#data-leaning",
+    "href": "static/slides/Datamanagment/datamanagment.html#data-leaning",
+    "title": "",
+    "section": "Data leaning",
+    "text": "Data leaning\n\nCleaning data is one of the most essential parts in data analysis.\nData cleaning is the process of converting messy data into reliable data that can be analyzed in R.\n\nData cleaning improves data quality and your productivity in R.\n\nFormat ugly data frame column names in R\nDelete all blank rows in R\nRemove duplicate rows in R\nConverting numeric to date format\nChecking consistency by using tably() function"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#clean_names",
+    "href": "static/slides/Datamanagment/datamanagment.html#clean_names",
+    "title": "",
+    "section": "clean_names()",
+    "text": "clean_names()\n\nThis function is used to change and clean up names of columns in data frames.\nIt can be used to ensure consistency.\nYou can choose to change all names to lower cases, separated by underscores, variations on internal capital letters between words, title case or other styles.\nIt can also be used to remove parts of names and any special characters, including replacing % symbols with the word percent.\nThe most recommended variable names in R is one word, lower case, without special characters.\nclean_names() function will be used available in janitor R package to clean column names."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#remove_empty-remove_constant",
+    "href": "static/slides/Datamanagment/datamanagment.html#remove_empty-remove_constant",
+    "title": "",
+    "section": "\nremove_empty() & remove_constant()\n",
+    "text": "remove_empty() & remove_constant()\n\n\nSuppose if you want to remove rows and/or columns of if contain completely empty, then you can use remove_empty() function available in janitor R package."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#get_dupes",
+    "href": "static/slides/Datamanagment/datamanagment.html#get_dupes",
+    "title": "",
+    "section": "get_dupes()",
+    "text": "get_dupes()\n\nThis function retrieves any duplicates in the dataset so that they can be examined during data clean-up operations.\nOne trick is determining if a duplicate is indeed a duplicate.\nThe function returns a data frame which includes a dupe_count column containing the number of duplicates of that value.\n\n\nCodedata3 %&gt;% get_dupes() \n\n  sepal_length sepal_width petal_length petal_width   species dupe_count\n1          5.8         2.7          5.1         1.9 virginica          2\n2          5.8         2.7          5.1         1.9 virginica          2"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#tabyl",
+    "href": "static/slides/Datamanagment/datamanagment.html#tabyl",
+    "title": "",
+    "section": "tabyl()",
+    "text": "tabyl()\n\nThis function is used to produce frequency tables and contingency tables, i.e. counts of each category or combination of categories of data.\nUnlike the base R table() function, tabyl() returns a data frame which makes results easier to work with.\nThe code below creates a data frame showing the number of rows of data (n) for each location in the dataset.\n\n\n\n\nCodedata_cleaned2 %&gt;% tabyl(species)\n\n    species  n   percent\n     setosa  9 0.2093023\n versicolor 19 0.4418605\n  virginica 15 0.3488372\n\n\n\n\nAlso returned is a percent column, showing the percentage of rows containing data for that location.\n\n\n\nCodedata_cleaned2 %&gt;% tabyl(species)%&gt;%\n  adorn_pct_formatting(digits = 2)\n\n    species  n percent\n     setosa  9  20.93%\n versicolor 19  44.19%\n  virginica 15  34.88%"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#explore-missing-values",
+    "href": "static/slides/Datamanagment/datamanagment.html#explore-missing-values",
+    "title": "",
+    "section": "Explore missing values",
+    "text": "Explore missing values\n\nCode# plot missing data (using raw data)\nDataExplorer::plot_missing(\n  title   = \"% of Missing Data (filtered to cols w/missing data)\",\n  data    = airquality,\n  ggtheme = tidyquant::theme_tq(), \n  missing_only = F)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#convert_to_date",
+    "href": "static/slides/Datamanagment/datamanagment.html#convert_to_date",
+    "title": "",
+    "section": "convert_to_date()",
+    "text": "convert_to_date()\n\nA modern Excel always tries to automate things, and I hate it!\nFor instance you write a number into a cell and it sometimes immediately converts it into date. Then you try to have a date in a cell, and it returns a number.\nMoreover, Excel also has some strange date encoding systems, which can be confused with a normal numeric columns.\nLuckily, our dirty dataset has a “date” word in the name of a column “hire_date”, otherwise we wouldn’t know that it is a date:\n\n\nCodeconvert_to_date(d$hire_date)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#excel_numeric_to_date",
+    "href": "static/slides/Datamanagment/datamanagment.html#excel_numeric_to_date",
+    "title": "",
+    "section": "excel_numeric_to_date()",
+    "text": "excel_numeric_to_date()\n\nEver load data from Excel and see a value like 42223 where a date should be?\nThis function converts those serial numbers to class Date, with options for different Excel date encoding systems, preserving fractions of a date as time (in which case the returned value is of class POSIXlt), and specifying a time zone.\n\n\nCodeexcel_numeric_to_date(41103)\n\n[1] \"2012-07-13\"\n\n\n\nCodeexcel_numeric_to_date(41103.01) # ignores decimal places, returns Date object\n\n[1] \"2012-07-13\"\n\n\n\nCodeexcel_numeric_to_date(41103.01, include_time = TRUE) # returns POSIXlt object\n\n[1] \"2012-07-13 00:14:24 EAT\""
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#convert-a-mix-of-date-and-datetime-formats-to-date",
+    "href": "static/slides/Datamanagment/datamanagment.html#convert-a-mix-of-date-and-datetime-formats-to-date",
+    "title": "",
+    "section": "Convert a mix of date and datetime formats to date",
+    "text": "Convert a mix of date and datetime formats to date\n\nBuilding on excel_numeric_to_date(), the new functions convert_to_date() and convert_to_datetime() are more robust to a mix of inputs.\nHandy when reading many spreadsheets that should have the same column formats, but don’t.\n\nFor instance, here a vector with a date and an Excel datetime sees both values successfully converted to Date class:\n\nCodeconvert_to_date(c(\"2020-02-29\", \"40000.1\"))\n\n[1] \"2020-02-29\" \"2009-07-06\""
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#dates",
+    "href": "static/slides/Datamanagment/datamanagment.html#dates",
+    "title": "",
+    "section": "Dates",
+    "text": "Dates\n\nBefore dates in a dataset are loaded into R, typically they are stored as a column of character (string) values.\nHowever, dates are inherently numeric and we lose this information when they are stored as strings.\n\n\nCode# string dates have no numeric value, so this errors\n\"2018-03-05\" + 1\n\n\n\nIn R, we want to convert our string dates to R class Date, which preserves the dates’ numeric values and allows us to take advantage of the many date-related functions in R.\nOnce converted to class Date, the numeric value for the date represents the number of days since January 1, 1970 (1970-01-01)."
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#as.date",
+    "href": "static/slides/Datamanagment/datamanagment.html#as.date",
+    "title": "",
+    "section": "as.Date()",
+    "text": "as.Date()\n\nBase R provides as.Date() to convert strings to dates, but it can be intimidating and unwieldy to use, particularly if your dates are not stored in one of 2 default formats (see ?strptime for more about date formats).\n\n\nCode# as.Date only accepts a couple of formats by default\n# good\nas.Date(\"2015-02-14\")\n# bad\nas.Date(\"02/14/2014\")\n# specify a format to fix\nas.Date(\"02/14/2014\", format=\"%m/%d/%Y\")\n\n\n\nOnce our dates are class Date, we can perform date arithmetic.\n\n\nCodea &lt;- as.Date(\"1971-01-01\")\nclass(a)\n\n[1] \"Date\"\n\nCode# days since 1970-01-01\nas.numeric(a)\n\n[1] 365\n\nCode# date arithmetic\na - as.Date(\"1970/12/31\")\n\nTime difference of 1 days\n\nCode## Time difference of 1 days\na + 2\n\n[1] \"1971-01-03\"\n\n\n\nWe just need something easier to use to convert strings of various formats to class Date!"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#package-lubridate",
+    "href": "static/slides/Datamanagment/datamanagment.html#package-lubridate",
+    "title": "",
+    "section": "Package lubridate",
+    "text": "Package lubridate\n\ntidyverse provides the amusingly named package lubridate to help R users convert their string dates to R Date format more easily as well as functions to process those dates.\nThe Date conversion functions in lubridate accept a wide variety of date formats, removing the need for us to remember all of those format specifications.\nInstead, just take the letters y, m, and d and place them in the order of the year, month and day, respectively, as they are stored in the date column. That ordering produces the name of the function to convert that column to Date (e.g.ymd(), mdy(), dmy()).\n\n\nCodelibrary(lubridate)"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#using-lubridate",
+    "href": "static/slides/Datamanagment/datamanagment.html#using-lubridate",
+    "title": "",
+    "section": "Using lubridate",
+    "text": "Using lubridate\n\nWe’ll first load a dataset with various date formats to demonstrate the flexibility of lubridate functions.\n\n\nCodelibrary(readr)\nd &lt;- read_csv(\"data/dates.csv\")\nd\n\n# A tibble: 3 × 5\n  fmt1     fmt2             fmt3           fmt4 decision_time             \n  &lt;chr&gt;    &lt;chr&gt;            &lt;date&gt;        &lt;dbl&gt; &lt;chr&gt;                     \n1 01/15/89 December 8, 2015 2015-02-27 20090101 Approved 10-10-15 07:15:55\n2 02/13/92 January 22, 2012 2016-11-15 20080819 Denied 09-27-11 14:57:23  \n3 03/15/84 March 3, 2010    2017-12-25 20071011 Approved 04-24-15 02:03:03"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#date-time-variables",
+    "href": "static/slides/Datamanagment/datamanagment.html#date-time-variables",
+    "title": "",
+    "section": "Date-time variables",
+    "text": "Date-time variables\n\nIf your date column additionally contains time information (i.e. is date-time), you can add one or more of h, m, and s to y, m, and d to form the function name to convert the string to class POSIXct.\nClass POSIXct stores date-time variables as a number representing the number of seconds since the beginning of 1970.\nThe fifth column of our dates dataset, decision_time, is a date-time variable.\n(It also contains an “Approved/Denied” string at the beginning that the lubridate() function will ignore!).\nSpecifically, the date-time is recorded as month, day, year, hour, minute, second, so we want mdy_hms():\n\n\nCode# month day year hour minute second\nmdy_hms(d$decision_time)\n\n[1] \"2015-10-10 07:15:55 UTC\" \"2011-09-27 14:57:23 UTC\"\n[3] \"2015-04-24 02:03:03 UTC\""
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#extracting-information-from-date-variables",
+    "href": "static/slides/Datamanagment/datamanagment.html#extracting-information-from-date-variables",
+    "title": "",
+    "section": "Extracting information from Date variables",
+    "text": "Extracting information from Date variables\n\nlubridate provides several functions to extract specific information from Date variables including:\n\n\nday(): day of the month\n\nwday(): weekday\n\nyday(): day of the year\n\nmonth(): month of the year\n\nyear(): year\n\n\nSome examples of extracting information from Date variables.\n\n\nCode# we'll use the first column of our dates dataset\ndates$f1\n\n[1] \"1989-01-15\" \"1992-02-13\" \"1984-03-15\"\n\nCode# day of the month\nday(dates$f1)\n\n[1] 15 13 15\n\nCode# day of the year\nyday(dates$f1)\n\n[1] 15 44 75"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#extracting-information-from-posixct-variables",
+    "href": "static/slides/Datamanagment/datamanagment.html#extracting-information-from-posixct-variables",
+    "title": "",
+    "section": "Extracting information from POSIXct variables",
+    "text": "Extracting information from POSIXct variables\n\n\nlubridate also has functions to extract time information from POSIXct date-time variables.\n\nhour()\nminute()\nsecond()\n\n\nCodewith(dates,  ## with() tells R to look for variables in object \"dates\"\ndata.frame(time=decision_time, h=hour(decision_time),\n           m=minute(decision_time), s=second(decision_time)))\n\n                 time  h  m  s\n1 2015-10-10 07:15:55  7 15 55\n2 2011-09-27 14:57:23 14 57 23\n3 2015-04-24 02:03:03  2  3  3"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#section",
+    "href": "static/slides/Datamanagment/datamanagment.html#section",
+    "title": "",
+    "section": "",
+    "text": "Easy data cleaning with the janitor package"
+  },
+  {
+    "objectID": "static/slides/Datamanagment/datamanagment.html#clean-column-names",
+    "href": "static/slides/Datamanagment/datamanagment.html#clean-column-names",
+    "title": "",
+    "section": "Clean column names",
+    "text": "Clean column names\n\nadd some points about\n\ncount\ntably\npercent for making quick graphs\n\n\n\nhttps://www.r-bloggers.com/2024/05/easy-data-cleaning-with-the-janitor-package/"
   }
 ]
