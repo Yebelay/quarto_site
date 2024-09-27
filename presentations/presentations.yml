@@ -46,7 +46,7 @@
       thumbnail: img/Rmarkdown1.jpg     
     
     - title: Shinydasboard 
-      href: https://yebelay.rbind.io/static/slides/shinydashboard/Shinydashboard.html
-      code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/shinydashboard/Shinydashboard.qmd
+      href: https://yebelay.rbind.io/static/slides/shinydashboard/shinydashboard.html
+      code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/shinydashboard/shinydashboard.qmd
       thumbnail: img/dashboard.jpg
                        
