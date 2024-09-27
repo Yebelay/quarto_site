@@ -4114,5 +4114,915 @@
     "title": "",
     "section": "Clean column names",
     "text": "Clean column names\n\nadd some points about\n\ncount\ntably\npercent for making quick graphs\n\n\n\nhttps://www.r-bloggers.com/2024/05/easy-data-cleaning-with-the-janitor-package/"
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#planning-of-surveys",
+    "href": "static/slides/Sampling/Survey.html#planning-of-surveys",
+    "title": "Survey Methodology Design",
+    "section": "Planning of surveys",
+    "text": "Planning of surveys\nImportance of Survey Preparation\n\nFor a survey to yield the desired results, there is a need to pay particular attention to the preparations that precede the fieldwork.\nIn this regard, all surveys require careful and judicious preparations if they are to be successful.\nHowever, the amount of planning will vary depending on the type of survey, materials, and information required."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#survey-universe",
+    "href": "static/slides/Sampling/Survey.html#survey-universe",
+    "title": "Survey Methodology Design",
+    "section": "Survey universe",
+    "text": "Survey universe\n\nWhen planning a survey, it is necessary to define the geographical areas to be covered and the target population.\nIn defining the universe, the exact population to be sampled should be identified.\nIt should be pointed out, however, that in practice the target population is somewhat smaller than the population forming the universe."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#information-to-be-collected",
+    "href": "static/slides/Sampling/Survey.html#information-to-be-collected",
+    "title": "Survey Methodology Design",
+    "section": "Information to be collected",
+    "text": "Information to be collected\n\nFrom the list of questions requiring statistical answers, a list of items that could provide factual information bearing on issues under investigation can be produced.\nIt is always important to bear in mind that some of the required data could be available from existing sources.\nIn producing the list of items, there should be provisions made for the inclusion of supplementary items that are correlated with the main items.\nIn a survey of employment and earnings, for example, supplementary information on age, sex, and education may be gathered.\nWe may add that a tabulation plan should be produced at the time of planning the survey."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#survey-budget",
+    "href": "static/slides/Sampling/Survey.html#survey-budget",
+    "title": "Survey Methodology Design",
+    "section": "Survey budget",
+    "text": "Survey budget\n\nThe survey budget indicates the financial requirements of the survey that is to be conducted.\nThe budget is needed to support and guide the implementation of the survey and the construction of the timetable for producing the survey results.\nCost estimates must be as detailed as possible.\nIt is therefore necessary to understand all the detailed steps involved in the survey operation.\nThe budget shows the cost of personnel, equipment, and all other items of expense.\nIf there is a predetermined ceiling of funds available (which is usually the case), the overall survey budget must be within the predetermined framework.\nThe financial requests of the survey should be prepared at an early stage.\nIn general, the budget will depend largely on the survey design, the precision required, and the geographical coverage."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#importance-of-survey-preparation",
+    "href": "static/slides/Sampling/Survey.html#importance-of-survey-preparation",
+    "title": "Survey Methodology Design",
+    "section": "Importance of Survey Preparation",
+    "text": "Importance of Survey Preparation\n\nFor a survey to yield the desired results, there is a need to pay particular attention to the preparations that precede the fieldwork.\nIn this regard, all surveys require careful and judicious preparations if they are to be successful.\nHowever, the amount of planning will vary depending on the type of survey, materials, and information required."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#objectives-of-a-survey",
+    "href": "static/slides/Sampling/Survey.html#objectives-of-a-survey",
+    "title": "Survey Methodology Design",
+    "section": "Objectives of a Survey",
+    "text": "Objectives of a Survey\n\nIt is imperative that the objectives of a survey be spelled out from the start of the project.\nThere should be a clearly formulated statistical statement on the desired information, giving a clear description of the population and geographical coverage.\nIt is also necessary at this stage to stipulate how the results are going to be used. The given budget of the survey should guide the survey statistician in tailoring the objectives.\nTaking due cognizance of the budgetary constraints will facilitate the successful planning and execution of the survey.\nIt is very important that stakeholders, that is to say, various users and producers of statistics, be involved in defining the objective of the survey as well as its scope and coverage.\nThe consultations help to establish consensus or compromises on what data are needed, the form in which data are required, levels of disaggregation, dissemination strategies, and the frequency of data collection.\nIt should be noted that having clearly stated objectives is the first step in determining those survey questions for which statistical answers are required."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section",
+    "href": "static/slides/Sampling/Survey.html#section",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "2. Survey Execution:\n\nData Collection Methods: There are several methods for collecting survey data, each with advantages and limitations.\n\nThe choice of method depends on factors such as the type of data, budget, and respondent characteristics.\n\nDirect Observation: This method involves directly observing behaviors, events, or conditions.\n\nIt provides objective and accurate data, but it can be resource-intensive and time-consuming.\nDirect observation is ideal for small, detailed studies or where subjective reporting might introduce bias."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#survey-budget-1",
+    "href": "static/slides/Sampling/Survey.html#survey-budget-1",
+    "title": "Survey Methodology Design",
+    "section": "Survey budget",
+    "text": "Survey budget\n\nIt is essential that an effective cost control system be established in the organization that is conducting the survey.\nIn most large scale survey operations, there is a high risk of loss of control over monitoring the disbursement of funds once fieldwork starts.\n\nIn such circumstances, a large amount of funds tend to be channeled into areas unrelated to the major survey operations.\n\nJudicious cost control helps to monitor actual expenditures in relation to estimated costs and actual work accomplished.\nIt is imperative that management responsible for the survey ensure accountability of funds.\nThis greatly enhances the credibility of the survey organization."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#execution-of-surveys",
+    "href": "static/slides/Sampling/Survey.html#execution-of-surveys",
+    "title": "Survey Methodology Design",
+    "section": "Execution of surveys",
+    "text": "Execution of surveys\nData collection methods\n\nThere are several methods used in data collection, among them direct observation and measurement; the mail questionnaire; and telephone and personal interviews.\n\nA). Direct observation and measurement:\n\nDirect observation and measurement constitute the ideal method as they are usually more objective.\n\nNot affected with recall biases and subjectivity\nThis method is useful and practical when the sample sizes or populations are relatively small.\nBut expensive in terms of both resources and time.\n\n\nB). Mail questionnaires:\n- The method of using mail questionnaires is fairly cheap and rapid. \n- The major cost component at the data‑collection stage is postage. \n- Interviewer bias is eliminated.\n\nHowever, the non‑response is usually high as it needs all respondents are literates; Not a suitable method for complex surveys."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-1",
+    "href": "static/slides/Sampling/Survey.html#section-1",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Mail Questionnaires: This method is cost-effective and fast, especially for large, geographically dispersed populations.\n\nHowever, it generally has lower response rates and requires respondents to be literate and capable of completing the form independently.\nReminders and follow-ups can improve response rates, but item non-response and missing data may still be issues.\n\nPersonal Interviews: The most commonly used method for in-depth surveys, particularly for complex subjects or populations with low literacy rates.\n\nPersonal interviews often result in higher response rates and allow interviewers to clarify questions.\nHowever, they can introduce interviewer bias, and the process is resource-heavy, requiring trained interviewers and logistical support."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-2",
+    "href": "static/slides/Sampling/Survey.html#section-2",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Mail Questionnaires: This method is cost-effective and fast, especially for large, geographically dispersed populations.\n\nHowever, it generally has lower response rates and requires respondents to be literate and capable of completing the form independently.\nReminders and follow-ups can improve response rates, but item non-response and missing data may still be issues.\n\nPersonal Interviews: The most commonly used method for in-depth surveys, particularly for complex subjects or populations with low literacy rates.\n\nPersonal interviews often result in higher response rates and allow interviewers to clarify questions.\nHowever, they can introduce interviewer bias, and the process is resource-heavy, requiring trained interviewers and logistical support."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#questionnaire-design",
+    "href": "static/slides/Sampling/Survey.html#questionnaire-design",
+    "title": "Survey Methodology Design",
+    "section": "Questionnaire design",
+    "text": "Questionnaire design\n\nThe size and format of the questionnaire plays a central role and need very serious consideration.\nIt is advisable to design questionnaires at the time of planning for the survey.\nTo enhance accuracy in the survey data, the questionnaire should be\n\nclear\nnot wording (should be easy reading, should be clear, precise and unambiguous)\npretested\ndeveloped with special emphasis on relevance, timeliness and accuracy."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-3",
+    "href": "static/slides/Sampling/Survey.html#section-3",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Questionnaire Design:\n\nQuestionnaire Structure: A well-constructed questionnaire is the backbone of data collection.\n\nIt must be designed to collect accurate, relevant information efficiently.\nQuestions should be clearly worded, easy to understand, and ordered in a logical sequence.\nQuestions at the beginning should be simple and non-sensitive to build rapport with the respondent.\n\nTypes of Questions:\n\nOpen-ended Questions: Allow respondents to provide answers in their own words. These are useful for gathering qualitative insights, but they can be harder to analyze.\nClosed-ended Questions: Provide specific response options. These are easier to analyze but may limit the range of answers, missing nuances."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-4",
+    "href": "static/slides/Sampling/Survey.html#section-4",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Pre-Testing: Pre-testing the questionnaire is essential to identify potential problems, such as ambiguous questions or response categories.\n\nPre-testing ensures that the survey tool will perform as expected in the field, reducing errors in the data collection process.\n\n\n4. Implementation of Fieldwork:\n\nFieldwork Preparation: Successful fieldwork requires logistical planning and necessary equipment, including vehicles, survey materials, and data collection tools.\n\nEnsuring that interviewers are well-prepared with all necessary supplies, such as questionnaires, pens, and clipboards, is crucial.\n\nManagement of Survey Operations: Surveys, especially large-scale ones, are complex operations that require effective management.\n\nClear communication and lines of authority are vital.\nProgress monitoring tools, such as control forms, help keep track of the survey’s progress and ensure deadlines are met."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#implementation-of-fieldwork",
+    "href": "static/slides/Sampling/Survey.html#implementation-of-fieldwork",
+    "title": "Survey Methodology Design",
+    "section": "Implementation of fieldwork",
+    "text": "Implementation of fieldwork\n\nTo conduct a survey,\nFieldwork should be properly organized and implemented\nThe resources of the survey team should be efficiently utilized effectively\nVehicles facilitate the rapid mobility of survey teams.\nAdequate materials, like folders, clipboards, pencils, pencil sharpeners, notebooks and fuel (for vehicles), should be available in adequate supplies for use during the survey operations."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#equipment-and-materials",
+    "href": "static/slides/Sampling/Survey.html#equipment-and-materials",
+    "title": "Survey Methodology Design",
+    "section": "Equipment and materials",
+    "text": "Equipment and materials\n\nVehicles and bicycles facilitate the rapid mobility of team leaders and supervisors/interviewers.\nAdequate materials, like folders, clipboards, pencils, pencil sharpeners, notebooks and fuel (for vehicles), should be available in adequate supplies for use during the survey operations.\n\nManagement of survey operations\n\nThere must be a clear and well‑defined line of command from the survey manager to the interviewer. It should be noted that control forms for monitoring the progress of the survey have been found useful."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#publicity",
+    "href": "static/slides/Sampling/Survey.html#publicity",
+    "title": "Survey Methodology Design",
+    "section": "Publicity",
+    "text": "Publicity\n\nTo reduce the high number of non-responses due to refusals, it is important to make publicity about the survey. For example, it may be necessary to arrange meetings with local opinion leaders in selected areas.\nDuring such meetings, people would be briefed on the objectives of the survey.\nIn addition, the leaders should be requested to persuade people in their area to provide requisite information to the interviewers.\nBefore entry into the field, it is important that the relevant legal provisions for conducting the survey be published.\nThe announcement should, among other information, give the survey’s objectives and duration and the topics to be covered therein."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#followup-of-nonrespondents",
+    "href": "static/slides/Sampling/Survey.html#followup-of-nonrespondents",
+    "title": "Survey Methodology Design",
+    "section": "Follow‑up of non‑respondents",
+    "text": "Follow‑up of non‑respondents\n\nSome respondents may refuse to cooperate with the interviewers; in some cases, certain items in the questionnaire may not be attended to.\nWhen a non‑responding unit has been reported to the supervisor, he or she has to contact the sample unit and try to elicit the information, owing to his/her better qualifications and greater experience."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#reducing-nonresponse",
+    "href": "static/slides/Sampling/Survey.html#reducing-nonresponse",
+    "title": "Survey Methodology Design",
+    "section": "Reducing non‑response",
+    "text": "Reducing non‑response\n\nIt is important in designing and executing a survey to develop good survey procedures aimed at maximizing the response rate.\nThe most important procedures to reduce the number of refusals, arranging to return to conduct an interview at the convenience of the respondent.\nthe objectives and uses of the surveys should be carefully explained to reluctant respondents to help win their cooperation.\nAssurance of confidentiality can also help alleviate the fear that by respondents may have about their responses, being used for purposes other than those stipulated by the survey.\n\nRepeated callbacks at different times of the day should be made when no one is at home.\n\n\nIt is recommended that as many as four callbacks be attempted.\nIt is also important to avoid the problem of failing to locate the selected sampling units, which can be an important source of non‑response. This problem is best addressed by using the most current sampling frame."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#sampling-strategies",
+    "href": "static/slides/Sampling/Survey.html#sampling-strategies",
+    "title": "Survey Methodology Design",
+    "section": "Sampling Strategies",
+    "text": "Sampling Strategies\nIntroduction to Sampling Strategies:\n\nSurveys typically do not involve collecting data from the entire population due to practical constraints.\nInstead, sampling strategies are employed to select a representative subset of the population, allowing researchers to make inferences about the broader population.\nThe goal of sampling is to ensure that the selected sample is representative and that the findings can be generalized with known levels of precision and accuracy.\n\nProbability Sampling vs. Non-Probability Sampling:\n\nProbability Sampling: In probability sampling, every unit in the population has a known, non-zero chance of being selected.\n\nThis method is grounded in statistical theory and allows for the calculation of sampling error and the application of inferential statistics.\nIt is the preferred method when the goal is to make generalizable claims about the entire population."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-5",
+    "href": "static/slides/Sampling/Survey.html#section-5",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Selection and Training of Interviewers:\n\nSelecting Interviewers: Interviewers play a pivotal role in collecting reliable data.\nTheir selection should focus on communication skills, honesty, and the ability to follow instructions.\nA candidate’s education level and ability to understand the survey objectives should also be considered.\nGood interviewers ensure high-quality data and reduce errors due to misunderstanding or miscommunication with respondents.\nTraining: Interviewers must undergo thorough training to understand the survey objectives, questionnaire content, and data collection procedures.\n\nThis minimizes the risk of interviewer bias and ensures consistent administration of the survey across different respondents.\nTraining should include classroom sessions, role-playing, and field practice.\nOngoing supervision during fieldwork is also essential to maintain the quality of data collection."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#probability-sampling-in-stages",
+    "href": "static/slides/Sampling/Survey.html#probability-sampling-in-stages",
+    "title": "Survey Methodology Design",
+    "section": "Probability sampling in stages",
+    "text": "Probability sampling in stages\n\nprobability sampling must be used at each stage of the sample selection process in order for the requirements to be met.\nFor example, the first stage of selection generally involves choosing geographically defined units such as villages.\nThe last stage involves selecting the specific households or persons to be interviewed.\nThese two stages and any intervening ones must utilize probability methods for proper sampling."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#when-the-target-population-is-ill-defined",
+    "href": "static/slides/Sampling/Survey.html#when-the-target-population-is-ill-defined",
+    "title": "Survey Methodology Design",
+    "section": "When the target population is ill-defined",
+    "text": "When the target population is ill-defined\n\nSometimes the conditions for probability sampling are violated because of loose criteria for defining the target population that the survey is intended to cover.\nFor example, the desired target population may be all households nationwide.\nYet, when the survey is designed and/or implemented, often certain population subgroups such as nomadic households, boat people, and populations in whole areas that are inaccessible owing to the difficult terrain are intentionally excluded. In other cases, a target population intended to cover a restricted, special population such as ever-married women or young people under age 25 excludes important subgroups for various reasons. For example, a target population intended to cover youth under age 25 may exclude those who are in the military or in jail or are otherwise institutionalized.\n\n\nWhenever the actual target population covered by the survey differs from the one intended, the survey team should take care to redefine the target population more accurately. This is important not only to clarify the survey results for users but also to meet the conditions of probability sampling. In the aforementioned example of youth under age 25, the target population should be more precisely described and redefined as civilian, non-institutional youth under age 25. Otherwise, survey coverage should be expanded to include the excluded subgroups.\nThus, it is important to define the target population very carefully so as to cover only those members who will actually be given the chance of being selected for the survey. In cases where subgroups are intentionally excluded, it is of course crucial to apply probability methods to the actual population constituting the frame of the survey. Furthermore, it is incumbent upon the survey directors to clearly describe to the users, when results are released, which segments of the population have been included and which segments were excluded by the survey. Non-probability sampling methods There is no statistical theory, like that for probability sampling, to guide the use of non-probability samples. They can be assessed only through subjective evaluation. Failure to use probability techniques means, the survey estimates will be biased. Moreover, the magnitude of these biases and often their direction towards underestimation or overestimation will be unknown. The precision of sampling estimates, that is, to say their standard errors, can be estimated when probability sampling is used. This is necessary in order for the user to gauge the reliability of the survey estimates and to construct confidence intervals around the latter. In spite of their theoretical deficiencies, non-probability samples are frequently used in various settings and situations. The justification offered by practitioners is generally one based on cost, convenience or even the survey team’s apprehension that a “random” sample may not properly represent the target population."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#judgmental-sampling",
+    "href": "static/slides/Sampling/Survey.html#judgmental-sampling",
+    "title": "Survey Methodology Design",
+    "section": "Judgmental sampling",
+    "text": "Judgmental sampling\n\nJudgmental sampling is a method that relies upon “experts” to choose the sample elements.\nThe main difficulty with this type of sampling is the subjectivity of the determination of what constitutes a representative set of selected sample.\nIronically, the choice is also highly dependent on the choice of the experts themselves. ## Random walk and quota sampling\nAnother type of non probability sampling that is widely used is the so called random walk procedure undertaken at the last stage of a household survey.\nThe technique is often used even if the elements of the sample prior stages were selected through legitimate probability methods.\nThe illustration below shows a type of sampling that is a combination of random walk and quota sampling."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#convenience-samples",
+    "href": "static/slides/Sampling/Survey.html#convenience-samples",
+    "title": "Survey Methodology Design",
+    "section": "Convenience samples",
+    "text": "Convenience samples\n\nConvenience sampling is also widely used because of its simplicity of implementation.\nThough convenience sampling is not often applied in household surveys, many illustrations of its use can be provided, for example, in conducting of a survey of school youth in a purposively chosen sample of schools that are easily accessible and known to be cooperative, that is to say, convenient."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#sample-size-determination-for-household-surveys",
+    "href": "static/slides/Sampling/Survey.html#sample-size-determination-for-household-surveys",
+    "title": "Survey Methodology Design",
+    "section": "Sample size determination for household surveys",
+    "text": "Sample size determination for household surveys\n\nThe sample size is important to the entire operation and cost of a survey. In terms of:\n\nhow many households are interviewed,\nhow many geographical areas primary sampling units (PSUs) are sampled,\nhow many interviewers are hired,\nhow big the workload is for each interviewer, etc.\n\nSample size is the pivotal feature that governs the overall design of the sample."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#magnitudes-of-survey-estimates",
+    "href": "static/slides/Sampling/Survey.html#magnitudes-of-survey-estimates",
+    "title": "Survey Methodology Design",
+    "section": "Magnitudes of survey estimates",
+    "text": "Magnitudes of survey estimates\n\nIn household surveys, every estimate (indicator) to be generated from the survey requires a different sample size for reliable measurement.\nThe size of the sample depends on the size of the estimate, that is to say, its expected proportion of the total population. For example, to estimate reliably the proportion of households with access to safe water requires a different sample size than estimating the proportion of adults not currently working.\nThe expressions for calculating a sample sizes are based on a probabilistic statements, that the true population parameter be contained in an interval with a given probability (confidence level).\nThe width (or precision) of the interval depends on the population variance; on the degree of confidence and on the sample size.\nIn general, the greater the population heterogeneity or the desired confidence level, the wider the interval.\nOn the other hand, the width of the interval will decrease as the sample size increases.\nIn practice, the survey itself can have only one sample size.\nTo calculate the sample size, a choice must be made from among the many estimates to be measured in the survey. For example, if the key estimate was the unemployment rate, calculation of the sample size would be based on it.\nWhen there are many key indicators, a convention sometimes applied is to calculate the sample size needed for each and then use the one that yields the largest sample.\nGenerally, this is the indicator for which the base population is the smallest “sub-target population”, in terms of its proportion of the total population.\nThe desired precision must of course be taken into account. When the sample size is based on such an estimate, each of the other key estimates will be measured with the same or greater reliability.\nAlternatively, the sample size can be based on a comparatively small proportion of the target population instead of on the specification of a particular indicator.\nThis may likely be the best approach in a general-purpose household survey that focuses on several unrelated subjects, in which case it may be impractical or imprudent to base the sample size on an indicator that pertains to a single subject. Target population\nSample size depends also on the target population that will be covered by the survey. Like indicators, there are often several target populations in household surveys.\nA health survey, for example, may target households, to assess access to safe water and sanitation, all persons, to estimate chronic and acute conditions, women aged 14 49, for reproductive health indicators and children under age 5, for anthropometric measurements of height and weight. Calculation of the sample size must therefore take into consideration each of the target populations. However, household surveys frequently have multiple target populations, each of equal interest for the measurement objectives of the survey. It is again, viable, to focus on the smallest one in determining the sample size. For example, if children under age 5 are an important target group for the survey, the sample size should be based on that group."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#precision-and-statistical-confidence",
+    "href": "static/slides/Sampling/Survey.html#precision-and-statistical-confidence",
+    "title": "Survey Methodology Design",
+    "section": "Precision and statistical confidence",
+    "text": "Precision and statistical confidence\n\nSample size determination critically, depends on the degree of precision desired for the indicators.\nThe more precise or reliable the survey estimates must be, the bigger the sample size must be and by orders of magnitude.\nSimilarly, the sample size increases as the degree of statistical confidence desired increases to maintain a given precision.\nThe 95 percent confidence level is almost universally taken as the standard and the sample size necessary to achieve it is calculated accordingly. Taking account of the indicators, a convention in many well-conceived surveys is to use, as the precision requirement, a margin of relative error of 10 percent at the 95 percent confidence level on the key indicators to be estimated, meaning that the standard error of a key indicator should be no greater than 5 percent of the estimate itself. This is calculated as (2 * 0.05x, where x is the survey estimate). For example, if the estimated proportion of persons in the labour force is 65 percent, its standard error should be no larger than 3.25 percentage points, that is, 0.65 multiplied by 0.05. Two times 0.0325, or 0.065, is the relative margin of error at the 95 percent confidence level.\nThe sample size needed to achieve the criterion of 10 percent margin of relative error is thus one-fourth as big as one where the margin of relative error is set at 5 percent. A margin of relative error of 20 percent is generally regarded as the maximum allowable for important indicators (though we do not recommend it). This is because the confidence interval surrounding estimates with greater error tolerances is too wide for meaningful results to be achieved for most analytical or policy needs. In general, we recommend 5 to 10 percent relative errors for the main indicators, budget permitting."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#clustering-effects",
+    "href": "static/slides/Sampling/Survey.html#clustering-effects",
+    "title": "Survey Methodology Design",
+    "section": "Clustering effects",
+    "text": "Clustering effects\n\nThe degree to which a household survey sample is clustered affects the reliability or precision of the estimates and therefore the sample size.\nCluster effects in household surveys arise from the penultimate sampling units, generally referred to as the “clusters”, which may be villages or city blocks, the sample households, the size and/ or variability of the clusters and from the method of sampling households within the selected clusters.\nClustering as well as the effects of stratification can be measured numerically by the design effect, or deff, which expresses how much larger the sampling variance (square of the standard error) for the stratified cluster sample is compared to a simple random sample of the same size.\nStratification tends to decrease the sampling variance but only to a small degree. By contrast, clustering increases the variance considerably. Therefore, deff indicates primarily how much clustering there is in the survey sample.\nEfficient sample design requires that clusters be used to control costs but also that the design effect be kept as low as possible for the results to be usable and reliable.\nUnfortunately, deff is not known before a survey is undertaken and can be estimated only afterwards from the data themselves.\nIn cases where previous surveys have been conducted or where similar ones have been conducted in other countries, the deff values from those surveys might be used as proxies in the calculation formula to estimate sample size.\n\nTo keep the design effect as low as possible, the sample design should follow these general principles: Use as many clusters as is feasible; Use the smallest cluster size in terms of number of households that is feasible; Use a constant cluster size rather than a variable one; Select a systematic sample of households at the last stage, geographically dispersed, rather than a segment of geographically contiguous households. Thus, for a sample of 12,000 households, it is preferable to select 600 clusters of 20 households each rather than 400 clusters of 30 households each. The sampling design effect is much lower in the former case. Moreover, deff is reduced if the households are chosen systematically from all the households in the cluster rather than selected in contiguous geographical subsegments. When these rules of thumb are followed, the design effect is likely to be reasonably low."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#adjusting-sample-size-for-anticipated-non-response",
+    "href": "static/slides/Sampling/Survey.html#adjusting-sample-size-for-anticipated-non-response",
+    "title": "Survey Methodology Design",
+    "section": "Adjusting sample size for anticipated non-response",
+    "text": "Adjusting sample size for anticipated non-response\n\nIt is common practice in surveys to increase the sample size by an amount equal to the anticipated non-response rate. This ensures that the actual number of interviews completed in the survey will closely approximate the target sample size. The degree of non-response in surveys varies widely by survey type.\n\nSurvey budget\nIt perhaps goes without saying that the survey budget cannot be ignored when determining an appropriate sample size for a household survey. While the budget is not a parameter that figures in the mathematical calculation of sample size, it does figure prominently at a practical level.\nIt is by the statistician, who, in taking account of each of the parameters discussed in this chapter initially calculates the sample size. \nIt is often the case, however, that the size proves to be larger than what the survey budget can support. When this occurs, the survey team must either seek additional funds for the survey or modify its measurement objectives, by reducing either the precision requirements or the number of domains.\nIt is the responsibility of the sampling expert to help guide the discussion on cost versus precision. \nThe number of clusters is also a key determinant of survey costs and survey precision, must be carefully weighed by the sampler in guiding the survey team,"
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#sample-size-calculation",
+    "href": "static/slides/Sampling/Survey.html#sample-size-calculation",
+    "title": "Survey Methodology Design",
+    "section": "Sample size calculation",
+    "text": "Sample size calculation\n\nIn the present section, we provide the formula for calculating the sample size, taking into account the parameters previously discussed. Because we are focusing on household surveys, the sample size is calculated in terms of the number of households that must be selected. In general, when a proportion p is included, the estimation formula for the sample size, nh, is n_h = z^2 r(1-r)(f)(k)/(p n ̃e^2 , where nh is the parameter to be calculated and is the sample size in terms of number of households to be selected; z is the statistic that defines the level of confidence desired; r is an estimate of a key indicator to be measured by the survey; f is the sample design effect, deff, assumed to be 2.0 (default value); k is a multiplier required to account for the anticipated rate of non response; p is the proportion of the total population accounted for by the target population and upon which the parameter r is based; n ̃ is the average household size (number of persons per household); and e is the margin of error to be attained. Recommended values for some of the parameters are as follows. The z statistic to be used should be 1.96 for the 95%CI The default value, of the sample design effect, is usually set at 2.0 unless there is supporting empirical data from previous or related surveys that suggest a different value. The non-response multiplier, k, should be chosen to reflect the country’s own experience with non response—typically under 10%.\nThe parameter p can usually be calculated from the results of the most recent census. For the margin of error, e, it is recommended that the level of precision be set at 10 percent of r; thus e = 0.10r. A smaller sample size can be obtained with a less stringent margin of error, e = 0.15r, but the survey results would of course be much less reliable. Substituting some selected values gives a reduced formula.\n\nThe following example entails a smaller base population—children under age 5. Example In country X, the main survey indicator is determined to be the mortality rate among children under age 5, thought to be about 5 percentage points. In this case, r = 0.05, and p is estimated to be about 0.15, or 0.035. Again, we wish to estimate the mortality rate with a 10 percent margin of relative error: then e = 0.10r (or 0.005 standard error). The values for the expected non-response rate, design effect, and average household size are again the ones we have recommended. Formula gives nearly 10,704 households (84.50.95)/(0.05*0.15), a much larger sample size than that of the previous example. Again, the primary reason for this is related to the size of the base population, that is, to say children under age 5, who constitute only 15% of the total. The estimated parameter r is also small and this and a small p combine to force a large sample size. The final example is for a case where the total population is the target population. In that case, p = 1 and can be ignored; however, formulae (3.8) and (3.9) may be still used if the recommended values of the parameters are utilized. Example In country D, the main survey indicator is determined to be the proportion of persons in the entire population who had an acute health condition during the preceding week. That propor tion is thought to be between 5 and 10 per cent, in which case the smaller value is used because n r h = - ( . 84 5 1 ) ( )/( ) r p ( ). (3.9)"
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#sampling-strategies-43",
+    "href": "static/slides/Sampling/Survey.html#sampling-strategies-43",
+    "title": "Survey Methodology Design",
+    "section": "Sampling strategies 43",
+    "text": "Sampling strategies 43\nit will give a larger sample size (the conservative approach). In this case, r = 0.05 and p is of course 1.0. Again, we wish to estimate the acute rate with a 10 per cent margin of relative error: e = 0.10r 6 (or 0.005 standard error) and the values for the expected non response rate, design effect and average household size are again the ones that we have recommended. Formula (3.9) yields a little over 1,600 households (84.5*0.95)/(0.05)"
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#management-of-survey-operations",
+    "href": "static/slides/Sampling/Survey.html#management-of-survey-operations",
+    "title": "Survey Methodology Design",
+    "section": "Management of survey operations",
+    "text": "Management of survey operations\n\nThere must be a clear and well‑defined line of command from the survey manager to the interviewer.\nIt should be noted that control forms for monitoring the progress of the survey have been found useful.\nTo reduce the high number of non-responses due to refusals, it is important to make publicity about the survey.\n\nFor example, it may be necessary to arrange meetings with local opinion leaders in selected areas.\n\nDuring such meetings, people would be briefed on the objectives of the survey.\nIn addition, the leaders should be requested to persuade people in their area to provide requisite information to the interviewers.\nBefore entry into the field, it is important that the relevant legal provisions for conducting the survey be published.\nThe announcement should, among other information, give the survey’s objectives and duration and the topics to be covered therein."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#sampling-strategies-1",
+    "href": "static/slides/Sampling/Survey.html#sampling-strategies-1",
+    "title": "Survey Methodology Design",
+    "section": "Sampling strategies",
+    "text": "Sampling strategies\nit will give a larger sample size (the conservative approach). In this case, r = 0.05 and p is of course 1.0. Again, we wish to estimate the acute rate with a 10 per cent margin of relative error: e = 0.10r 6 (or 0.005 standard error) and the values for the expected non response rate, design effect and average household size are again the ones that we have recommended. Formula (3.9) yields a little over 1,600 households (84.5*0.95)/(0.05)"
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#concept-of-survey-planning-and-execution",
+    "href": "static/slides/Sampling/Survey.html#concept-of-survey-planning-and-execution",
+    "title": "Survey Methodology Design",
+    "section": "Concept of Survey Planning and Execution",
+    "text": "Concept of Survey Planning and Execution\n\nSurveys are essential tools for collecting data from a defined population to make inferences about broader trends, behaviors, or characteristics.\nEffective survey execution involves careful planning, proper implementation, and monitoring.\n\nThe following key concepts are relevant to any survey process:\n1. Survey Planning:\n\n i. Objectives of the Survey: Every survey must have clearly defined objectives.\n\nThese objectives should articulate the purpose of the survey, the desired information, and the target population.\nClarity on objectives ensures that survey results are relevant and useful for decision-making.\nIt’s critical to align the survey objectives with the available resources, including time and budget."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#sampling-strategies-2",
+    "href": "static/slides/Sampling/Survey.html#sampling-strategies-2",
+    "title": "Survey Methodology Design",
+    "section": "Sampling Strategies",
+    "text": "Sampling Strategies\nIntroduction to Sampling Strategies:\n\nSurveys typically do not involve collecting data from the entire population due to practical constraints.\nInstead, sampling strategies are employed to select a representative subset of the population, which allows researchers to make inferences about the broader population.\nThe goal of sampling is to ensure that the selected sample is representative and that the findings can be generalized with known levels of precision and accuracy.\n\nProbability Sampling vs. Non-Probability Sampling:\n\nProbability Sampling: In probability sampling, every unit in the population has a known, non-zero chance of being selected.\n\nThis method is grounded in statistical theory and allows for the calculation of sampling error and the application of inferential statistics.\nIt is the preferred method for surveys when the goal is to make generalizable claims about the entire population."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#construction-and-use-of-sample-weights",
+    "href": "static/slides/Sampling/Survey.html#construction-and-use-of-sample-weights",
+    "title": "Survey Methodology Design",
+    "section": "Construction and Use of Sample Weights",
+    "text": "Construction and Use of Sample Weights\nIntroduction to Sample Weights:\n\nIn most surveys, not every individual or unit has the same probability of being selected.\nTo ensure that survey results accurately reflect the entire population, sample weights are applied during the analysis phase.\nSample weights adjust for unequal probabilities of selection, non-response, and other factors that could lead to biased estimates.\nThey are essential for producing valid, generalizable results.\n\nNeed for Sample Weights:\n\nSample weights are necessary to ensure that each unit’s contribution to the survey results is proportional to its representation in the population.\nWithout weights, some groups may be over-represented or under-represented, leading to biased conclusions.\nUnequal Probabilities of Selection: In complex survey designs (e.g., stratified or cluster sampling), different units may have varying probabilities of being selected.\n\nWeights correct for these differences to ensure that the sample represents the population accurately."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#estimation-of-sampling-errors-for-survey-data",
+    "href": "static/slides/Sampling/Survey.html#estimation-of-sampling-errors-for-survey-data",
+    "title": "Survey Methodology Design",
+    "section": "Estimation of Sampling Errors for Survey Data",
+    "text": "Estimation of Sampling Errors for Survey Data\nIntroduction to Sampling Errors:\n\nIn survey research, sampling error refers to the difference between an estimate derived from a sample and the actual population parameter.\nSampling errors occur because surveys observe only a portion of the population rather than the entire population.\nUnderstanding and estimating these errors is crucial for determining the reliability and precision of survey estimates.\n\nImportance of Estimating Sampling Errors:\nEstimating sampling errors allows researchers to:\n\nQuantify Uncertainty: Sampling errors provide a measure of how much an estimate might differ from the true population value.\nEvaluate Precision: Larger sampling errors suggest less precision in survey estimates, while smaller errors indicate more reliable estimates.\nCompare Estimates: Sampling errors allow for the comparison of different survey estimates by providing confidence intervals and margins of error.\nDetermine Sample Size: Knowledge of sampling errors helps researchers calculate the optimal sample size to achieve a desired level of precision."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#reporting-and-using-survey-data",
+    "href": "static/slides/Sampling/Survey.html#reporting-and-using-survey-data",
+    "title": "Survey Methodology Design",
+    "section": "Reporting and Using Survey Data",
+    "text": "Reporting and Using Survey Data\nIntroduction to Reporting and Using Survey Data:\n\nOnce survey data has been collected and analyzed, the next crucial step is reporting and effectively using the results.\nSurvey data is typically used to inform decision-making, guide policy, support research, and provide insights into various populations or phenomena.\nClear, accurate, and transparent reporting is essential to ensure that the results are understandable, reliable, and actionable.\n\nImportance of Clear and Accurate Reporting:\n\nReporting survey results involves more than just presenting raw data.\nProper reporting includes a clear explanation of the survey methodology, the results, and any limitations.\nThis ensures that data users can interpret the findings correctly and apply them to their specific needs.\nKey Aspects of Survey Reporting:\n\n\nMethodology: A detailed description of the survey design, sampling methods, and data collection process is essential for understanding the validity of the results.\nFindings: Present the key results clearly and concisely, focusing on answering the research questions or survey objectives.\nInterpretation: Offer interpretations of the findings, highlighting their implications and how they can inform policy, research, or practice.\nLimitations: Acknowledge any potential biases, sampling errors, or limitations that may affect the interpretation of the results."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-6",
+    "href": "static/slides/Sampling/Survey.html#section-6",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Field Supervision:\n\nImportance of Supervision: Supervision is critical to ensure that interviewers adhere to the survey protocols and to provide immediate feedback where errors are detected.\n\nSupervisors should also ensure that logistical issues, such as travel and material availability, do not disrupt the survey process.\n\nMonitoring: Monitoring fieldwork ensures the consistency and completeness of data collection.\n\nIt involves verifying that interviewers are following procedures correctly and that any deviations or errors are corrected in real-time.\nSupervisors may also randomly check completed questionnaires to ensure accuracy and adherence to guidelines."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-7",
+    "href": "static/slides/Sampling/Survey.html#section-7",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Probability Sampling vs. Non-Probability Sampling:\n\nProbability Sampling: In probability sampling, every unit in the population has a known, non-zero chance of being selected.\n\nThis method is grounded in statistical theory and allows for the calculation of sampling error and the application of inferential statistics.\nIt is the preferred method when the goal is to make generalizable claims about the entire population.\n\nAdvantages:\n\nAllows for generalization from sample to population.\nReduces selection bias.\nPermits the estimation of sampling errors."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-8",
+    "href": "static/slides/Sampling/Survey.html#section-8",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Common Methods:\n\nSimple Random Sampling: Each unit in the population has an equal chance of being selected.\nSystematic Sampling: Every nth unit from a list of the population is selected after a random start.\nStratified Sampling: The population is divided into subgroups (strata) based on shared characteristics, and samples are drawn from each stratum.\nCluster Sampling: The population is divided into clusters (often geographic), and a random sample of clusters is selected, followed by data collection from all or a sample of units within the selected clusters."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-9",
+    "href": "static/slides/Sampling/Survey.html#section-9",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Non-Probability Sampling: In non-probability sampling, not all units have a known or equal chance of being selected.\n\nThis method is often used when probability sampling is impractical, but it does not allow for generalization to the population.\n\nCommon Methods:\n\nConvenience Sampling: Selecting units that are easiest to reach.\nQuota Sampling: Ensuring specific quotas from various subgroups are met, but not through random selection.\nJudgmental Sampling: The researcher selects units based on their judgment of which will be most informative.\n\nLimitations:\n\nIncreased risk of selection bias.\nCannot calculate sampling error or confidently generalize to the population."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-10",
+    "href": "static/slides/Sampling/Survey.html#section-10",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Sample Size Determination:\n\nDetermining an Appropriate Sample Size: Sample size is a critical aspect of survey design, impacting the precision of estimates and the ability to detect meaningful differences in the population.\n\nDetermining the appropriate sample size involves balancing statistical, practical, and financial considerations.\n\n\nFactors Affecting Sample Size:\n\nMagnitude of Survey Estimates: If the population exhibits significant variability on the key variables, larger samples may be necessary.\nTarget Population: The overall size of the population and the subgroups within it affect the required sample size.\nPrecision and Confidence Levels: Higher precision and confidence levels require larger samples.\nClustering Effects: In cluster sampling, the need to account for intra-cluster correlation means larger samples are often required."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-11",
+    "href": "static/slides/Sampling/Survey.html#section-11",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Non-Response: Anticipated non-response rates must be accounted for by adjusting the sample size upward to ensure sufficient data is collected.\nSample Size Calculation: The formula for calculating sample size typically considers the desired level of precision, the variability in the population, the confidence level, and the anticipated non-response rate.\n\nStratification:\n\nStratified Sampling: In stratified sampling, the population is divided into distinct subgroups (strata) that share similar characteristics.\n\nSamples are then drawn from each stratum either proportionately (based on the size of each stratum) or disproportionately (based on analytical needs)."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-12",
+    "href": "static/slides/Sampling/Survey.html#section-12",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Benefits of Stratification:\n\nIncreases precision by reducing variability within each stratum.\nEnsures adequate representation of all subgroups.\nAllows for separate estimates for each stratum, which may be of interest for certain analyses.\n\nSample Allocation:\n\nProportional Allocation: The sample size in each stratum is proportional to the size of the stratum in the population.\nOptimal Allocation: Takes into account both the size of each stratum and the variability within each stratum to allocate the sample more efficiently."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-13",
+    "href": "static/slides/Sampling/Survey.html#section-13",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Cluster Sampling:\n\nCluster Sampling Overview: In cluster sampling, the population is divided into naturally occurring groups or clusters (e.g., geographic areas), and a sample of clusters is selected.\n\nThis is often used when it is impractical to sample individuals directly, especially in large geographic areas.\n\nCharacteristics of Cluster Sampling:\n\nEconomical for surveys involving large populations spread over wide areas.\nReduces fieldwork costs, as data is collected from specific clusters rather than dispersed individuals."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-14",
+    "href": "static/slides/Sampling/Survey.html#section-14",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Design Effects (deff): Clustering often increases the sampling error due to the similarity of units within each cluster (intra-cluster correlation).\n\nThe design effect (deff) is a factor that accounts for this increased variance in sample estimates.\nA larger design effect typically requires larger samples to achieve the desired level of precision.\n\nCalculating deff: It is calculated as the ratio of the actual variance of a survey estimate under the given sampling design to the variance under simple random sampling.\n\nMulti-Stage Sampling:\n\nSampling in Stages: Multi-stage sampling involves selecting samples in two or more stages.\n\nFor example, first selecting clusters (e.g., geographic areas), and then selecting units (e.g., individuals or households) within each cluster."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-15",
+    "href": "static/slides/Sampling/Survey.html#section-15",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Two-Stage Sampling:\n\nStage 1: Select a random sample of clusters (e.g., villages or schools).\nStage 2: Select a random sample of individuals within each selected cluster.\n\nBenefits of Multi-Stage Sampling:\n\nReduces the overall cost of surveys.\nAllows for practical fieldwork implementation by focusing resources on specific clusters.\nProvides flexibility in sample design, especially for geographically dispersed populations."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-16",
+    "href": "static/slides/Sampling/Survey.html#section-16",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Sampling with Probability Proportional to Size (PPS):\n\nPPS Sampling: In Probability Proportional to Size (PPS) sampling, the probability of selecting a cluster is proportional to its size (e.g., the number of individuals in a village).\n\nThis method ensures that larger clusters have a higher chance of being selected, which can improve the efficiency of the sample design.\n\nPPES (Probability Proportional to Estimated Size): In some cases, estimates of population sizes may be used when the actual sizes are unknown.\n\nPPES allows for more flexible sampling in cases where population data may not be fully accurate."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-17",
+    "href": "static/slides/Sampling/Survey.html#section-17",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Special Topics in Sampling:\n\nTwo-Phase Sampling: Two-phase sampling involves conducting an initial survey on a broad sample and then selecting a subsample from the first phase for further, more detailed data collection.\n\nThis approach is useful when specific subpopulations need to be studied in more depth.\n\nSampling for Trend Estimation: When estimating trends over time, repeated surveys are conducted on the same population.\n\nSampling strategies need to account for changes in the population and the need for consistent, comparable estimates over multiple survey waves."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-18",
+    "href": "static/slides/Sampling/Survey.html#section-18",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Dealing with Implementation Issues:\n\nCommon Implementation Challenges:\n\nTarget Population Definition and Coverage: Defining the population too narrowly or too broadly can affect the generalizability of results.\nSample Size Constraints: Budget limitations may result in smaller-than-ideal sample sizes, reducing the precision of estimates.\nNon-Response: High non-response rates can introduce bias. It is essential to develop strategies for dealing with non-response, such as reweighting data or conducting follow-ups with non-respondents.\n\nWhen Sampling Goes Wrong:\n\nIf issues arise during sampling implementation, such as oversampling or undersampling certain groups, corrective actions must be taken.\nThese could include adjusting the sample weights or re-sampling affected units."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-19",
+    "href": "static/slides/Sampling/Survey.html#section-19",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Sampling Frames and Master Samples\n\nIntroduction to Sampling Frames:\n\nA sampling frame is a critical component in any survey design, essentially the list or database from which a sample is drawn.\nThe quality and completeness of the sampling frame directly impact the reliability and validity of the survey results.\n\n\nDefinition and Properties of Sampling Frames:\n\nSampling Frame: A comprehensive and up-to-date list of all units in the population from which a sample can be drawn.\n\nExamples: Lists of households, business directories, voter registers, and school rosters.\n\nProperties of a Good Sampling Frame:\n\nCompleteness: It should include every unit in the population without duplication or omissions.\nAccuracy: The information in the frame should be up-to-date to avoid sampling errors.\nNon-overlapping Units: Each unit should appear only once in the frame to avoid bias.\nOperational Feasibility: The frame must be easy to use and access for drawing samples."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-20",
+    "href": "static/slides/Sampling/Survey.html#section-20",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Common Challenges with Sampling Frames:\n\nOutdated Information: Outdated data can lead to the selection of units that no longer exist or have changed.\nIncomplete Coverage: Important subgroups of the population may be missed, leading to under-coverage.\nDuplication: If units appear multiple times, they may be overrepresented, leading to bias.\n\n\nTypes of Sampling Frames:\n\nList Frames: A list frame consists of a list of individual units that make up the population.\n\nExamples: A list of registered voters for an electoral survey or a customer database for a market survey.\nAdvantages: Provides direct access to units and can be used for simple random sampling.\nDisadvantages: List frames can become outdated quickly, especially in dynamic populations."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#sampling-frames-and-master-samples",
+    "href": "static/slides/Sampling/Survey.html#sampling-frames-and-master-samples",
+    "title": "Survey Methodology Design",
+    "section": "Sampling Frames and Master Samples",
+    "text": "Sampling Frames and Master Samples\nIntroduction to Sampling Frames:\n\nA sampling frame is a critical component in any survey design.\nIt is essentially the list or database from which a sample is drawn.\nThe quality and completeness of the sampling frame directly impact the reliability and validity of the survey results.\nA well-constructed sampling frame should accurately represent the population of interest and minimize the risk of coverage errors, where some units of the population are omitted or included multiple times."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-21",
+    "href": "static/slides/Sampling/Survey.html#section-21",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Area Frames:\n\nArea Frame: An area frame divides a geographic region into identifiable areas or clusters (e.g., districts, neighborhoods), from which a sample is drawn.\n\nThis is commonly used in multi-stage sampling.\n\nAdvantages:\n\nEffective when no list of individuals exists or is feasible to compile.\nAllows sampling over large geographical areas and can incorporate complex designs.\n\nDisadvantages:\n\nArea frames may be less precise and result in clustering effects, requiring larger sample sizes to achieve the same level of precision."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-22",
+    "href": "static/slides/Sampling/Survey.html#section-22",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Common Problems with Sampling Frames:\n\nUnder-Coverage: A common issue where certain segments of the population are missing from the frame.\n\nFor example, people in remote areas or individuals without formal addresses might be excluded from list frames.\n\nOver-Coverage: Occurs when units that should not be included appear in the sampling frame.\n\nFor example, a list of households might include vacant or abandoned properties, which should not be sampled.\n\nDuplication: If units appear multiple times in the frame, they may have a higher probability of being selected, leading to bias in the sample.\n\nIt is important to clean the frame to remove duplicates.\n\nFrame Maintenance: Maintaining an up-to-date frame is challenging, particularly in populations where frequent changes occur (e.g., households moving, new businesses opening).\n\nContinuous updates are necessary to ensure the frame remains accurate and representative."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-23",
+    "href": "static/slides/Sampling/Survey.html#section-23",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Purpose of Documentation:\n\nProvides a clear and complete description of the sample design, including assumptions and decisions.\nFacilitates evaluation by allowing reviewers to understand how the sample was drawn and what challenges were encountered.\nEnhances transparency and credibility in the survey results.\nAllows future surveys to replicate or build upon the existing design.\n\nKey Elements of Sample Documentation:\n\n\nSample Design Overview: A description of the overall sampling strategy, including the population, sample size, and sampling methods.\nSelection Probabilities: Information on how units were selected, including the probabilities assigned at each stage of sampling.\nStratification and Clustering: Details on the use of stratification or clustering and how these decisions affected sample selection and design.\nWeighting Procedures: A description of how weights were assigned to account for unequal probabilities of selection, non-response, and other factors.\nSurvey Instruments: The questionnaires and tools used to collect data from the sampled units.\nField Implementation: Procedures for carrying out the survey in the field, including instructions given to interviewers and any challenges faced during data collection.\nResponse Rates: Documentation of response rates and any issues related to non-response or refusal to participate.\nAdjustments: Any changes made during the survey, such as sample modifications or corrective actions taken in response to field issues."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-24",
+    "href": "static/slides/Sampling/Survey.html#section-24",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Types of Documentation:\n\nDesign Variables: In any survey, specific design variables are created to track the sampling process.\n\nThese include variables such as strata, clusters, and selection probabilities.\nProper labeling and documentation of these variables are essential for accurate analysis.\nExamples of Design Variables:\n\nStratum ID: Indicates the stratum to which each unit belongs.\nCluster ID: Identifies the cluster from which a unit was selected.\nSelection Probability: Records the probability with which each unit was selected.\n\n\nSelection Probabilities: Documenting the selection probabilities for each unit in the sample ensures that the sampling process is properly understood and can be evaluated.\n\nThese probabilities are critical for weighting the data during analysis.\n\nImportance: Ensures that analysts can correctly apply weights to adjust for unequal probabilities of selection and provide valid population estimates."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-25",
+    "href": "static/slides/Sampling/Survey.html#section-25",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Response Rates and Coverage Rates:\n\nResponse Rates: Response rates indicate the proportion of sampled units that provided usable data.\n\nHigh response rates are essential for minimizing bias, while low response rates can introduce bias into survey results, particularly if non-respondents differ systematically from respondents.\n\nTypes of Response Rates:\n\nUnit Response Rate: The percentage of sampled units that responded to the survey.\nItem Response Rate: The percentage of responses for specific survey questions or items.\n\nCoverage Rates: Coverage refers to how well the sample frame covers the target population. Coverage rates measure the proportion of the population included in the sampling frame, as well as any groups that might have been excluded. Poor coverage can lead to under-coverage bias, where certain segments of the population are not represented in the sample.\nEvaluating Coverage:\n\nCompare the characteristics of the population with those of the sampled units to identify potential coverage gaps.\nUse external data sources (e.g., census data) to assess whether any key demographic groups were missed or over-represented."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-26",
+    "href": "static/slides/Sampling/Survey.html#section-26",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Weighting and Adjustments:\n\nSurvey weights are essential for producing accurate and representative estimates, particularly in complex survey designs where unequal probabilities of selection, non-response, and coverage issues arise.\n\nWeighting adjusts for these factors to ensure that survey results accurately reflect the population.\n\nBase Weights: Base weights are calculated based on the inverse of the selection probabilities.\n\nFor example, if a unit has a selection probability of 1/1000, its base weight would be 1000, meaning that each selected unit represents 1000 units in the population.\n\nAdjustments for Non-Response: Weights are typically adjusted to account for non-response.\n\nFor instance, if a subgroup of the population has a lower response rate, the weights for the responding units in that subgroup are increased to compensate for the missing data.\n\nApproach: Post-stratification, where the sample is reweighted based on known population characteristics (e.g., age, gender, or region), is a common method to adjust for non-response."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-27",
+    "href": "static/slides/Sampling/Survey.html#section-27",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Weighting for Unequal Selection Probabilities: In surveys where different units have different probabilities of being selected, weights are used to correct for these differences. For example, in cluster sampling, individuals in larger clusters might have a higher chance of being selected, requiring a weight adjustment to ensure that their data does not disproportionately influence the results.\n\nEvaluation of Sampling Costs:\n\nUnderstanding and documenting the costs associated with different stages of the survey is crucial for assessing the efficiency of the sample design.\nSurveys are resource-intensive, and sampling costs are influenced by factors such as the number of units sampled, the geographic area covered, and the complexity of the survey design.\nTypes of Costs:\n\n\nFieldwork Costs: Include interviewer salaries, transportation, and other expenses related to collecting data.\nData Processing Costs: Include costs for coding, data entry, and quality control.\nSampling Costs: Cover the expenses related to designing the sample, selecting units, and maintaining sampling frames."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-28",
+    "href": "static/slides/Sampling/Survey.html#section-28",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Importance of Cost Evaluation:\n\nHelps optimize future surveys by identifying areas where efficiencies can be gained.\nAllows for comparison between different sampling designs in terms of cost-effectiveness.\n\n\nLimitations and Evaluation of Survey Data:\n\nAll surveys have limitations, and it is essential to evaluate these limitations as part of the documentation process.\nThe most common limitations involve sampling error, non-sampling error, and data quality issues.\nSampling Error: Sampling error occurs because the survey only observes a subset of the population rather than the entire population.\n\nIt is an inherent part of any sampling process and can be quantified through measures like standard error and confidence intervals.\nSampling errors can be minimized by increasing the sample size or improving the sampling design.\n\nNon-Sampling Error: Non-sampling errors arise from issues unrelated to the sampling process, such as measurement errors, interviewer bias, or data processing mistakes.\n\nThese errors are often more challenging to detect and correct than sampling errors."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-29",
+    "href": "static/slides/Sampling/Survey.html#section-29",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Examples of Non-Sampling Errors:\n\nMeasurement Error: Respondents misinterpret questions or provide incorrect answers.\nProcessing Error: Mistakes during data entry or coding.\nInterviewer Error: Interviewers influencing responses or misrecording answers.\n\nEvaluating Data Quality:\n\nData Quality Checks: Include checks for consistency, outliers, and missing values.\nPilot Testing: Conducting a pilot survey before full data collection helps identify and address potential issues with the survey instrument or process."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-30",
+    "href": "static/slides/Sampling/Survey.html#section-30",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Non-Response: In most surveys, some individuals or units do not respond.\n\nWeights are adjusted to compensate for non-response by increasing the influence of similar respondents who did participate.\n\nPopulation Estimates: Weights are used to extrapolate from the sample to the population, allowing survey results to estimate totals, proportions, and averages for the entire population.\n\nDevelopment of Sample Weights:\n\nThe process of developing sample weights involves several steps to ensure that the final weights reflect the population and correct for any biases that may have occurred during the sampling and data collection process.\n\n1. Base Weights:\n\nThe base weight is the initial weight assigned to each sampled unit and is the inverse of its probability of selection.\nFormula: \\[\\text{Base Weight} = \\frac{1}{\\text{Selection Probability}}\\]\n\nFor example, if a unit has a selection probability of 0.01 (i.e., 1 out of 100), its base weight would be 100. This means the selected unit represents 100 units in the population."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#documentation-and-evaluation-of-sample-designs",
+    "href": "static/slides/Sampling/Survey.html#documentation-and-evaluation-of-sample-designs",
+    "title": "Survey Methodology Design",
+    "section": "Documentation and Evaluation of Sample Designs",
+    "text": "Documentation and Evaluation of Sample Designs\nIntroduction to Documentation and Evaluation of Sample Designs:\n\nSurvey sampling involves multiple steps, from designing the sample to collecting and analyzing data.\nProper documentation and evaluation are crucial to ensure that the sample design is accurately implemented and that its effectiveness is assessed.\nThis process helps in identifying potential issues, improving future surveys, and ensuring transparency and reproducibility in the sampling process.\n\nImportance of Sample Documentation:\nDocumentation involves recording all aspects of the sample design, implementation, and analysis.\n\nIt serves as a reference for survey practitioners, analysts, and stakeholders, ensuring that decisions made throughout the sampling process are transparent and can be replicated."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-31",
+    "href": "static/slides/Sampling/Survey.html#section-31",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "2. Adjustments for Unknown Eligibility:\n\nIn some cases, not all sampled units may be eligible for the survey.\nFor example, a household might no longer exist, or an individual may not meet the eligibility criteria (e.g., age).\nWeights must be adjusted to account for this.\nApproach: Survey managers may adjust the base weights to reflect the probability that a sampled unit is eligible, based on available data about the population.\n\n3. Adjustments for Duplicates:\n\nIf a sampling frame contains duplicate entries, adjustments are needed to ensure that units that appear more than once in the frame are not over-represented in the sample.\nMethod: By identifying duplicates in the frame, the corresponding weights can be reduced so that no unit is given more influence than it should have."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-32",
+    "href": "static/slides/Sampling/Survey.html#section-32",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Weighting for Unequal Probabilities of Selection:\n\nUnequal selection probabilities arise in several situations, such as when the population is stratified, or when cluster sampling is used.\nIn these cases, weights must adjust for the differing probabilities of inclusion to ensure fair representation of all groups in the final analysis.\nStratified Sampling: In stratified sampling, the population is divided into subgroups (strata), and samples are drawn separately from each stratum.\n\nIf the sampling rates differ across strata, weights are needed to account for the varying probabilities of selection.\n\nCluster Sampling: In cluster sampling, individuals within selected clusters may have a higher probability of being included in the sample than individuals in non-selected clusters.\n\nWeights adjust for this by ensuring that the population within non-sampled clusters is represented proportionally."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-33",
+    "href": "static/slides/Sampling/Survey.html#section-33",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Adjusting Weights for Non-Response:\n\nNon-response is a common issue in surveys, where some sampled units do not provide data.\nThis can lead to bias if the non-respondents differ from respondents in significant ways.\nWeights are adjusted to account for non-response, ensuring that the survey results remain representative of the population.\nNon-Response Bias: Non-response bias occurs when individuals who do not respond to the survey differ in key ways from those who do.\n\nFor example, younger individuals may be less likely to respond, leading to an over-representation of older individuals if weights are not adjusted.\n\nMethods to Adjust for Non-Response:\n\n\nPost-Stratification: After data collection, weights are adjusted to match known population totals (e.g., from census data) for specific demographic variables, such as age, gender, or region.\nResponse Propensity Modeling: This method uses statistical models to predict the likelihood of response based on available data and adjusts the weights accordingly.\n\nBy applying these techniques, survey managers can reduce the impact of non-response and produce more accurate, representative results."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-34",
+    "href": "static/slides/Sampling/Survey.html#section-34",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Adjusting for Non-Coverage:\n\nNon-coverage occurs when certain segments of the population are excluded from the sampling frame.\nThis might happen due to practical limitations, such as the inability to reach remote areas or populations not included in administrative records.\nAdjusting weights for non-coverage ensures that these omitted groups are accounted for in the final analysis.\nSources of Non-Coverage:\n\nGeographic Non-Coverage: Some areas (e.g., rural or hard-to-reach regions) may not be included in the sampling frame, leading to an under-representation of these populations.\nDemographic Non-Coverage: Certain demographic groups (e.g., transient populations, undocumented individuals) might be excluded from the frame.\n\nCompensating for Non-Coverage: To adjust for non-coverage, survey managers typically use external data sources (e.g., census data, administrative records) to estimate the size and characteristics of the under-covered population. Weights are then adjusted to ensure that these groups are represented proportionally."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-35",
+    "href": "static/slides/Sampling/Survey.html#section-35",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Sampling Variance and Weighting:\n\nOne challenge of using weights is that they tend to increase the variance of survey estimates.\nThis is known as sampling variance, and it occurs because weights introduce more variability into the analysis.\nIncrease in Variance: Weights increase the effective size of certain units in the sample, which can lead to higher variability in the survey estimates.\n\nThis is particularly true when there are large differences between the weights applied to different units (i.e., when the weights vary significantly across the sample)."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-36",
+    "href": "static/slides/Sampling/Survey.html#section-36",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Compensating for Increased Variance:\n\n\nTrimming of Weights: Trimming involves reducing extreme weights to control for excessively high variability. This method helps in stabilizing the estimates, but care must be taken to ensure that this does not introduce bias.\nDesign Effect: The design effect (deff) measures the increase in variance due to the sample design and weighting.\n\nSurveys with complex designs (e.g., stratification, clustering, and weighting) often have higher design effects, meaning larger sample sizes are required to achieve the same level of precision as in simple random sampling.\n\n\nTrimming of Weights:\n\nWeight trimming is the process of reducing the influence of extreme weights to prevent inflated variance in survey estimates.\nWhile applying weights is necessary for accurate representation, extremely large or small weights can distort the results.\nReasons for Trimming:\n\nTo reduce the impact of outliers or highly variable units.\nTo improve the precision of survey estimates by controlling variance."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-37",
+    "href": "static/slides/Sampling/Survey.html#section-37",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Approaches to Weight Trimming:\n\n\nThreshold Trimming: Set a maximum allowable weight, and any weight exceeding this threshold is capped at that value.\nRelative Trimming: Adjust weights relative to the overall distribution of weights in the sample, ensuring that no unit has an overly disproportionate influence on the results.\n\n\nWhile trimming can help improve the precision of estimates, it must be done carefully to avoid introducing bias.\nIt is important to evaluate the impact of trimming on the final survey results."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-38",
+    "href": "static/slides/Sampling/Survey.html#section-38",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Sampling Variance Under Simple Random Sampling:\n\nThe simplest form of sampling error estimation occurs in simple random sampling (SRS), where every unit in the population has an equal chance of being selected.\nFor SRS, the sampling variance of an estimate can be calculated using standard formulas.\nFormula for the Sampling Variance: Var(Y^)=1n(N−nN−1)S2\n\\[\\text{Var}(\\hat{Y}) = \\frac{1}{n}\\left(\\frac{N-n}{N-1} \\right)S^2\\]\n\nWhere: - \\(\\hat{Y}\\) is the estimate (e.g., mean or proportion). - n is the sample size. - N is the population size. - \\(S^2\\) is the variance of the population.\n\nThis formula provides the basis for estimating the standard error (SE), which is the square root of the sampling variance."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-39",
+    "href": "static/slides/Sampling/Survey.html#section-39",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Standard Error: The standard error (SE) represents the average expected deviation of the sample estimate from the true population parameter. It is calculated as:\n\n\\[SE = \\sqrt{\\text{Var}(\\hat{Y})}\\]\n\nConfidence Intervals: Using the standard error, confidence intervals (CI) can be constructed to quantify the uncertainty of an estimate. A typical 95% CI is calculated as:\n\n\\[CI = \\hat{Y} \\pm 1.96 \\times SE\\]\n\nThis interval indicates that there is a 95% chance the true population parameter lies within the interval."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-40",
+    "href": "static/slides/Sampling/Survey.html#section-40",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Sampling Variance in More Complex Designs:\n\nIn practice, most surveys use complex designs such as stratified sampling, cluster sampling, or multi-stage sampling, where calculating sampling variance is more complicated.\nThese designs introduce additional sources of variance that need to be accounted for.\n\n1. Stratified Sampling:\n\nIn stratified sampling, the population is divided into strata (subgroups), and separate samples are drawn from each stratum.\nStratified designs generally reduce sampling variance by increasing homogeneity within each stratum.\nStratified Variance Formula:\n\n\\[\\text{Var}(\\hat{Y}) = \\sum_{h=1}^{H} \\left(\\frac{N_h^2}{N^2} \\right) \\left( \\frac{1}{n_h} \\left(\\frac{N_h - n_h}{N_h-1} \\right) S_h^2 \\right)\\]\nWhere: - h is the stratum index. - H is the number of strata. - \\(N_h\\) and \\(n_h\\) are the population and sample sizes for stratum h. - \\(S_h^2\\) is the variance within stratum h.\n\nStratified sampling reduces overall variance because it allows for more efficient sampling by accounting for differences among strata."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-41",
+    "href": "static/slides/Sampling/Survey.html#section-41",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "2. Cluster Sampling:\n\nIn cluster sampling, the population is divided into clusters, and a random sample of clusters is selected.\nIndividuals within selected clusters are then sampled.\nClustering often increases sampling variance because individuals within clusters tend to be more similar to each other (intra-cluster correlation), leading to less diversity in the data.\nDesign Effect (deff): The design effect (deff) is a multiplier that adjusts the variance to account for the effects of clustering. It is calculated as:\n\n\\[deff = 1 + (m - 1) \\rho\\]\nWhere:\n\nm is the average number of units per cluster.\n\\(\\rho\\) is the intra-class correlation (the similarity between individuals within clusters).\nThe design effect increases as \\(\\rho\\) increases or the cluster size grows, leading to higher sampling variance."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-42",
+    "href": "static/slides/Sampling/Survey.html#section-42",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Variance Formula for Cluster Sampling:\n\n\\[\\text{Var}(\\hat{Y}) = \\frac{deff}{n} \\left(\\frac{S^2}{m} \\right)\\]\n\nCluster sampling usually requires larger sample sizes to achieve the same precision as SRS due to increased variance within clusters.\n\n3. Multi-Stage Sampling:\n\nIn multi-stage sampling, the sampling process occurs in multiple stages.\n\nFor example, a country might be divided into districts (first stage), and then households are sampled within selected districts (second stage).\n\nEach stage adds a layer of complexity to variance estimation.\nVariance in Multi-Stage Designs: Multi-stage sampling typically combines aspects of stratification and clustering, so the variance depends on both the design effect and the stratification of units across stages.\nEstimating variance for multi-stage designs often requires specialized software or formulas that account for multiple levels of selection."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-43",
+    "href": "static/slides/Sampling/Survey.html#section-43",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Design Effect (deff) and Its Impact on Variance:\n\nThe design effect quantifies how much the sampling variance is inflated due to the use of a complex design compared to simple random sampling.\nThe higher the design effect, the more variability there is in the sample estimate, and larger sample sizes may be needed to achieve the desired precision.\nInterpreting the Design Effect:\n\\(**deff = 1**:\\) No inflation in variance; this is equivalent to SRS.\n\\(**deff &gt; 1**:\\) The sampling variance is higher than under SRS, typically due to clustering or unequal weights.\n\\(**deff &lt; 1**:\\) Occurs when stratification or weighting reduces variance compared to SRS.\nThe design effect is a crucial factor in sample size calculations, as it directly affects the precision of survey estimates."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-44",
+    "href": "static/slides/Sampling/Survey.html#section-44",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Methods of Estimating Sampling Variance for Complex Survey Designs:\n\nDue to the complexity of real-world survey designs, different methods are used to estimate sampling variance.\nThese include both exact methods and approximation techniques.\n\n1. Exact Methods:\n\nUltimate Cluster Method: The ultimate cluster method treats each cluster in a multi-stage design as a single unit and estimates the variance based on the variation between clusters rather than within them.\nThis method simplifies variance estimation but may lead to slightly inflated variance estimates.\n\n2. Approximation Techniques:\n\nLinearization: Linearization approximates the variance of a complex statistic (e.g., a ratio or nonlinear function) by treating it as a linear function of the data.\nThis approach is often used for calculating standard errors of complex survey statistics.\n\nReplication Methods: Replication methods create multiple “replicates” of the sample by repeatedly drawing subsamples (or jackknife samples) from the original data and calculating the variance across the replicates.\nJackknife Replication: Repeatedly removes one unit (or a small set of units) from the sample and recalculates the estimate, then measures the variability between the replicates.\nBalanced Repeated Replication (BRR): Uses specially designed replicate samples to calculate variances efficiently.\nBootstrap Methods: Randomly resamples the data with replacement and calculates variances across these resamples.\n\n\nReplication methods are computationally intensive but provide robust estimates of sampling variance, especially for complex survey designs."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-45",
+    "href": "static/slides/Sampling/Survey.html#section-45",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Components of a Survey Report:\n\nA comprehensive survey report typically includes the following sections:\n\n1. Executive Summary:\n\nThe executive summary provides a brief overview of the survey, its objectives, key findings, and recommendations.\nIt is written for decision-makers who may not have time to read the full report.\nIt should focus on the most important results and their implications.\nKey Elements:\n\nObjectives of the survey.\nOverview of the methodology.\nSummary of the key findings.\nMajor recommendations or conclusions."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-46",
+    "href": "static/slides/Sampling/Survey.html#section-46",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "2. Introduction:\n\nThe introduction explains the context and purpose of the survey.\nIt should outline why the survey was conducted, what specific questions it aimed to answer, and the population or phenomena of interest.\nContextual Information:\n\nBackground on the issue or topic being studied.\nThe importance of the survey for policy or decision-making.\nSpecific objectives or research questions.\n\n\n3. Methodology:\n\nThis section provides a detailed description of how the survey was conducted.\nIt includes information about the survey design, sampling methods, data collection process, and analysis techniques.\nDetailed Breakdown:\n\nSampling Design: Explain how the sample was selected (e.g., stratified, random, cluster), the sampling frame used, and any stratification or clustering done.\nSample Size: Include the sample size and how it was determined, accounting for non-response and the target population size.\nData Collection Methods: Describe how data was collected (e.g., face-to-face interviews, online questionnaires) and any quality control measures.\nWeighting: If weights were applied, explain how they were calculated and why they were necessary.\nData Processing: Provide details on how the data was cleaned, coded, and prepared for analysis."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-47",
+    "href": "static/slides/Sampling/Survey.html#section-47",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "4. Findings:\n\nThis section presents the survey’s results in a structured and easy-to-understand format.\nUse tables, charts, and graphs to display key data points, trends, and comparisons.\nData Presentation:\n\nPresent the results in a logical order, typically starting with overall findings and then breaking them down by subgroups (e.g., age, gender, region).\nUse descriptive statistics (e.g., means, medians, percentages) to summarize key data points.\nInclude cross-tabulations and comparisons between different subgroups, where relevant.\nHighlight significant findings, trends, and patterns in the data.\n\n\n5. Interpretation and Discussion:\n\nAfter presenting the data, this section provides an interpretation of the results.\nIt explains what the findings mean, how they answer the research questions, and what their implications are for the broader context or specific stakeholders."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-48",
+    "href": "static/slides/Sampling/Survey.html#section-48",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Key Considerations:\n\nRelate the findings to the survey’s objectives and research questions.\n\nDiscuss how the results compare with previous research or expected outcomes.\nHighlight the practical implications of the results, such as how they can be used to inform policy, improve services, or address specific issues.\nConsider unexpected results and explore potential explanations.\n\n\n6. Limitations:\n\nAll surveys have limitations, and it’s important to acknowledge them transparently.\nThis section discusses any factors that may have affected the accuracy or reliability of the results, such as sampling errors, non-response bias, or measurement errors.\nExamples of Limitations:\nSampling Error: If the sample was not perfectly representative of the population, the results might not generalize as intended.\n\nNon-Response Bias: If certain groups were less likely to respond to the survey, their under-representation could skew the results.\n\n\n-   **Measurement Error**: If some questions were misinterpreted by respondents, this could affect the accuracy of the data.\n-   **Limitations of the Data Collection Method**: Online surveys, for instance, may exclude individuals without internet access, leading to coverage bias."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-49",
+    "href": "static/slides/Sampling/Survey.html#section-49",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "7. Recommendations:\n\nBased on the survey’s findings, this section offers actionable recommendations for stakeholders, policymakers, or researchers.\nThese recommendations should be directly linked to the survey’s objectives and should address the key findings.\nTypes of Recommendations:\nPolicy Recommendations: Based on the findings, suggest specific policy actions or interventions.\nProgrammatic Recommendations: Propose ways to improve services, programs, or processes.\nResearch Recommendations: Highlight areas where further research is needed to explore questions that arose during the survey.\n\n8. Appendices:\n\nThe appendices provide additional information that supports the main report but is too detailed to include in the main text.\nThis might include the survey questionnaire, sampling tables, detailed statistical outputs, or technical notes on the survey design."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-50",
+    "href": "static/slides/Sampling/Survey.html#section-50",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Presentation of Data:\nThe way data is presented is critical to ensuring that it is easily understood and effectively communicates the survey’s findings. Tables, graphs, and charts are essential tools for summarizing large amounts of data and making comparisons.\n\nTypes of Visual Data Presentation:\n\n\nTables: Use tables to display detailed numeric data, cross-tabulations, and comparisons across different subgroups.\nCharts and Graphs: Use bar charts, pie charts, line graphs, and histograms to visualize trends, distributions, and differences between groups.\nMaps: For geographically-based surveys, maps are useful for showing regional differences or spatial patterns.\n\n\nBest Practices for Data Presentation:\n\n\n\nKeep visuals simple and easy to interpret.\nLabel axes, categories, and values clearly.\nUse consistent colors and formats across charts and tables.\nAvoid overloading charts with too much information; each visual should focus on one key message."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-51",
+    "href": "static/slides/Sampling/Survey.html#section-51",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Using Survey Data:\n\nSurvey data can be used in a variety of ways, depending on the survey’s purpose and the needs of the data users.\nCommon uses of survey data include informing policy decisions, guiding program development, conducting academic research, and making business or organizational decisions.\n\n1. Policy and Decision-Making:\n\nSurvey data is often used to inform policy at the national, regional, or local level.\nBy providing evidence on the needs, preferences, or behaviors of a population, survey data helps policymakers develop and implement effective policies.\nExamples:\n\nHealth surveys might inform public health strategies by identifying underserved populations or areas with high disease prevalence.\nLabor force surveys provide insights into employment trends, helping governments design job creation programs."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-52",
+    "href": "static/slides/Sampling/Survey.html#section-52",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "2. Program and Service Improvement:\n\nOrganizations and service providers use survey data to assess the effectiveness of their programs, identify areas for improvement, and develop strategies for better service delivery.\nExamples:\nEducational surveys may reveal gaps in student performance across different regions, prompting changes in resource allocation. - Customer satisfaction surveys help businesses identify strengths and areas for improvement in their services or products.\n\n3. Academic and Market Research:\n\nResearchers use survey data to test hypotheses, explore trends, and generate new knowledge.\nBusinesses use survey data for market research to understand consumer preferences, segment markets, and develop targeted marketing strategies.\n\nEthical Considerations in Reporting Survey Data:\n\nEthical reporting is an essential part of using survey data responsibly.\nResearchers must ensure that the data is presented accurately and without bias, and that the privacy and confidentiality of survey respondents are maintained."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-53",
+    "href": "static/slides/Sampling/Survey.html#section-53",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Best Practices for Ethical Reporting:\n\nAccuracy: Present the data accurately, without manipulating or misrepresenting the findings.\nTransparency: Be open about the survey’s limitations, sampling errors, and any issues that may have affected the data.\nConfidentiality: Ensure that individual responses remain confidential, especially when dealing with sensitive data.\nNon-Bias: Avoid selective reporting of results that could lead to misleading conclusions."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-54",
+    "href": "static/slides/Sampling/Survey.html#section-54",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "3. Survey Planning and Data Processing System:\n\nImportance of Early Planning:\n\nSurvey planning must align with the data processing system to avoid complications during later stages.\nDefine what data will be collected, how it will be processed, and how the system will handle any anomalies or errors.\n\nObjectives and Content:\n\nThe complexity of the data processing system depends on the survey’s objectives and the amount of data collected.\n\nSurvey Procedures:\n\nProper documentation of survey procedures (questionnaire structure, coding schemes, etc.) is vital to efficient data processing."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-55",
+    "href": "static/slides/Sampling/Survey.html#section-55",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "4. Design of Data Processing Systems:\n\nElements of a Household Survey Data Processing System:\n\nData Entry: Efficiently input collected data, whether manually or using automated systems.\nCoding: Assign numerical values to responses for standardized processing.\nQuality Control: Validate data at every stage to ensure consistency and reduce errors.\n\nSystem Design Principles:\n\nFlexibility: Handle a variety of data formats (e.g., numeric, categorical, open-ended).\nScalability: The system must accommodate large datasets if needed.\nSecurity: Safeguard sensitive respondent data through encryption and access control."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-56",
+    "href": "static/slides/Sampling/Survey.html#section-56",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "5. Survey Operations and Data Processing:\n5.1 Frame Creation and Sample Design:\n\nSampling Frame:\n\nThe list or database of households or individuals from which the sample is drawn.\nThe quality of the sampling frame directly impacts the quality of the data.\n\nSample Design:\n\nDesign decisions (e.g., stratification, clustering) must be considered in data processing, especially when it comes to weighting and adjusting survey results.\n\n\n5.2 Data Collection and Management:\n\nData Collection Methods:\n\nPaper-based or electronic collection methods affect the type and complexity of the data processing system.\nManual systems require data entry, while electronic systems may automate parts of data validation.\n\nData Management:\n\nManage the flow of data from the field through a centralized data management system.\nSystems must track responses, follow up on non-response, and ensure completeness."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-57",
+    "href": "static/slides/Sampling/Survey.html#section-57",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "5.3 Data Preparation:\n\nCoding and Data Cleaning:\n\nResponses need to be categorized using pre-defined codes, especially for open-ended questions.\nCleaning involves detecting and fixing errors, such as incorrect responses or missing data.\n\nData Validation:\n\nValidation checks confirm that all necessary responses are present, and that they follow logical consistency rules (e.g., no impossible answers).\n\n\n6. Quality Control in Data Processing:\n\nWhy Quality Control is Important:\n\nEnsures that data accurately reflects what was collected.\nMinimizes the risk of processing errors, which can skew analysis."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-58",
+    "href": "static/slides/Sampling/Survey.html#section-58",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "Quality Control Techniques:\n\nDouble Data Entry: Enter data twice to catch entry errors by comparing both datasets.\nAutomated Error Checks: Use software to detect outliers or inconsistent answers.\nManual Reviews: Survey supervisors review and validate a sample of data entries to ensure accuracy.\n\n\n7. Coding and Classification:\n\nDefinition of Coding:\n\nAssigning numerical or categorical codes to survey responses for easier processing and analysis.\n\nCoding Open-Ended Questions:\n\nRequires careful design of coding categories to ensure that responses are classified meaningfully and consistently.\n\nClassification Systems:\n\nUse standard classification systems (e.g., for occupation, education, or industry) to categorize responses, ensuring comparability across surveys and datasets."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-59",
+    "href": "static/slides/Sampling/Survey.html#section-59",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "8. Data Entry Systems:\n\nManual Data Entry:\n\nTyping survey responses into a database by hand, common for paper-based surveys.\nRequires careful validation to avoid errors.\n\nAutomated Data Entry:\n\nDigital tools (e.g., scanning technologies or direct electronic data capture) streamline entry and reduce human errors.\n\nError Detection and Prevention:\n\nAutomated systems should include real-time error checks, flagging outliers or impossible values during data entry.\n\n\n9. Data Cleaning and Editing:\n\nThe Role of Data Cleaning:\n\nData cleaning involves detecting and correcting errors, such as incomplete responses, duplicate records, or illogical data points.\n\nTypes of Errors:\n\nMissing Data: Responses that were not provided.\nInconsistent Data: Logical inconsistencies in the data (e.g., a respondent’s age is recorded as 200 years).\n\nEditing Rules:\n\nUse a set of predefined rules to ensure that corrections and edits are consistent across the dataset."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-60",
+    "href": "static/slides/Sampling/Survey.html#section-60",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "10. Data Validation and Verification:\n\nValidation Checks:\n\nEnsure that all data points are accurate and logical.\nCross-validate data where possible (e.g., comparing age and date of birth to verify consistency).\n\nVerification:\n\nDouble-check a portion of the data to confirm that processing procedures were followed correctly.\nUse random spot checks or systematic verification of complex sections of the dataset.\n\n\n11. Final Dataset Preparation:\n\nProducing the Final Dataset:\n\nAfter cleaning and validation, the dataset is finalized for analysis.\nEnsure all variables are labeled clearly, and all missing data has been handled appropriately.\n\nDocumentation:\n\nAccompany the dataset with metadata explaining the survey methodology, coding schemes, variable definitions, and any changes made during data processing."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-61",
+    "href": "static/slides/Sampling/Survey.html#section-61",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "2. Importance of Sample Design:\n\nSample design is integral to ensuring that survey results are reliable and generalizable to the entire population.\nKey considerations in sample design:\n\nSample size and structure: Influences the precision and reliability of survey estimates.\nCost: Efficient design minimizes cost while ensuring accurate results.\n\n\n3. Stratified Sampling:\n3.1. Definition and Concept:\n\nStratified sampling divides the population into subgroups (strata) that are internally homogeneous but externally heterogeneous.\nThis technique reduces variability within each stratum and increases the precision of survey estimates."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#data-processing-for-household-surveys",
+    "href": "static/slides/Sampling/Survey.html#data-processing-for-household-surveys",
+    "title": "Survey Methodology Design",
+    "section": "Data Processing for Household Surveys",
+    "text": "Data Processing for Household Surveys\n1. Introduction to Data Processing for Household Surveys:\n\nData processing is the critical step that transforms raw survey data into usable information for analysis.\nIt involves activities such as data preparation, entry, validation, and cleaning to ensure that the final dataset is accurate and reliable.\nProper planning and execution of data processing is essential to maintain data integrity throughout the survey cycle.\n\n2. The Household Survey Cycle:\n\nThe survey cycle refers to the full sequence of steps from planning to reporting:\n\nSurvey Planning: Objectives, sample design, and questionnaire development.\nData Collection: Fieldwork to collect responses.\nData Processing: Entry, cleaning, and validation of survey data.\nAnalysis and Reporting: Producing summaries, tables, and conclusions from the processed data."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-62",
+    "href": "static/slides/Sampling/Survey.html#section-62",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "3.2. Advantages of Stratified Sampling:\n\nImproves precision by reducing variability within strata.\nAllows the use of different sampling procedures in different strata.\nUseful for skewed populations where larger sampling fractions are required for certain strata.\n\n3.3. Proportional Allocation:\n\nProportional allocation is used when each stratum’s sample size is proportional to the size of the stratum in the population.\nFormula: \\[n_h = \\frac{N_h}{N} \\times n\\] where:\n\n\\(n_h\\) = sample size for stratum h\n\\(N_h\\) = population size for stratum h\nN = total population size\nn = total sample size"
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-63",
+    "href": "static/slides/Sampling/Survey.html#section-63",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "3.4. Optimum Allocation:\n\nIn optimum allocation, strata with higher variability receive larger sample sizes to minimize overall variance.\nFormula: \\[n_h = \\frac{W_h s_h}{\\sum W_h s_h} \\times n\\] where:\n\\(W_h\\) = weight of stratum h (proportion of the population in the stratum)\n\\(s_h\\) = standard deviation of stratum h\nn = total sample size"
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-64",
+    "href": "static/slides/Sampling/Survey.html#section-64",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "3.5. Estimation of Mean and Variance:\n\nStratified sample mean:\n\n\\[\\bar{x}_{st} = \\sum W_h \\bar{x}_h\\]\nwhere \\(W_h\\) is the weight of each stratum, and \\(\\bar{x}_h\\) is the mean of the sample in each stratum.\n\nVariance of the overall mean:\n\n\\[V(\\bar{x}_{st}) = \\sum \\frac{W_h^2 \\sigma_h^2}{n_h}\\]\nwhere \\(\\sigma_h^2\\) is the variance within each stratum."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-65",
+    "href": "static/slides/Sampling/Survey.html#section-65",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "4. Cluster Sampling:\n4.1. Definition and Concept:\n\nCluster sampling involves selecting groups (clusters) of units rather than individual units directly. This method is often used when a list of the entire population is unavailable, but a list of clusters (e.g., villages or blocks) is available.\nAfter selecting clusters, all units within selected clusters are surveyed.\n\n4.2. Advantages of Cluster Sampling:\n\nReduces cost and time associated with data collection.\nAllows for more efficient fieldwork as data collection is concentrated in selected clusters.\n\n4.3. Disadvantages of Cluster Sampling:\n\nIncreases variance due to intra-cluster homogeneity (similarity between units within the same cluster)."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-66",
+    "href": "static/slides/Sampling/Survey.html#section-66",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "4.4. Estimation in Cluster Sampling:\n\nCluster mean:\n\n\\[\\bar{x}_c = \\frac{1}{n_c} \\sum x_{ij}\\]\nwhere \\(n_c\\) is the number of clusters, and \\(x_{ij}\\) is the value of the \\(j^{th}\\) unit in cluster iii.\n\nVariance of the cluster mean:\n\n\\[V(\\bar{x}_c) = \\frac{\\sigma_c^2}{n_c}\\] where \\(\\sigma_c^2\\) is the variance within clusters."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-67",
+    "href": "static/slides/Sampling/Survey.html#section-67",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "5. Systematic Sampling:\n5.1. Definition:\n\nIn systematic sampling, every \\(k^{th}\\) element from a list is selected, starting from a randomly chosen element.\nSampling interval k is calculated as: \\(k = \\frac{N}{n}\\) where N is the population size, and n is the sample size.\n\n5.2. Advantages of Systematic Sampling:\n\nSimple to implement.\nProvides implicit stratification if the population list is ordered according to some variable."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-68",
+    "href": "static/slides/Sampling/Survey.html#section-68",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "5.3. Disadvantages:\n\nIf there is periodicity in the data, systematic sampling may result in biased estimates.\n\n5.4. Estimation in Systematic Sampling:\n\nSample mean:\n\n\\[\\bar{x}_{sys} = \\frac{1}{n} \\sum x_i\\]\nwhere \\(x_i\\) are the selected units.\n\nVariance estimation: Systematic sampling can be treated as simple random sampling for variance estimation if there is no periodicity:\n\n\\[V(\\bar{x}_{sys}) = \\frac{s^2}{n}\\]\nwhere \\(s^2\\) is the variance of the sample."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#annex-i-overview-of-sample-survey-design",
+    "href": "static/slides/Sampling/Survey.html#annex-i-overview-of-sample-survey-design",
+    "title": "Survey Methodology Design",
+    "section": "Annex I: Overview of Sample Survey Design",
+    "text": "Annex I: Overview of Sample Survey Design\n1. Introduction to Survey Sampling:\n\nSurvey sampling involves selecting a subset of the population to represent the entire group. It allows researchers to estimate population parameters without surveying the entire population.\nTypes of sampling:\n\nProbability Sampling: Each unit in the population has a known, non-zero chance of being selected.\nNon-Probability Sampling: Selection is based on subjective criteria and not every unit has a chance of being selected (focus of this annex is on probability sampling)."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-69",
+    "href": "static/slides/Sampling/Survey.html#section-69",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "6. Comparison of Sampling Methods:\n\nSimple Random Sampling (SRS): Every unit has an equal chance of selection. It’s the baseline method but rarely used in large-scale surveys due to cost and logistical difficulties.\nStratified Sampling: More efficient than SRS when the population has distinct subgroups. It provides better precision, especially when there is high variability between strata.\nCluster Sampling: Cost-effective but increases variance due to similarities within clusters.\nSystematic Sampling: Easy to implement and works well if there is no periodicity in the population."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-70",
+    "href": "static/slides/Sampling/Survey.html#section-70",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "2. Importance of Sample Design:\n\nSample design is integral to ensuring that survey results are reliable and generalizable to the entire population.\nKey considerations in sample design:\n\nSample size and structure: Influences the precision and reliability of survey estimates.\nCost: Efficient design minimizes cost while ensuring accurate results.\n\n\n3. Stratified Sampling:\n3.1. Definition and Concept:\n\nStratified sampling divides the population into subgroups (strata) that are internally homogeneous but externally heterogeneous.\nThis technique reduces variability within each stratum and increases the precision of survey estimates."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-71",
+    "href": "static/slides/Sampling/Survey.html#section-71",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "3.2. Advantages of Stratified Sampling:\n\nImproves precision by reducing variability within strata.\nAllows the use of different sampling procedures in different strata.\nUseful for skewed populations where larger sampling fractions are required for certain strata.\n\n3.3. Proportional Allocation:\n\nProportional allocation is used when each stratum’s sample size is proportional to the size of the stratum in the population.\nFormula: \\[n_h = \\frac{N_h}{N} \\times n\\] where:\n\n\\(n_h\\) = sample size for stratum h\n\\(N_h\\) = population size for stratum h\nN = total population size\nn = total sample size"
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-72",
+    "href": "static/slides/Sampling/Survey.html#section-72",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "3.4. Optimum Allocation:\n\nIn optimum allocation, strata with higher variability receive larger sample sizes to minimize overall variance.\nFormula: \\[n_h = \\frac{W_h s_h}{\\sum W_h s_h} \\times n\\] where:\n\\(W_h\\) = weight of stratum h (proportion of the population in the stratum)\n\\(s_h\\) = standard deviation of stratum h\nn = total sample size"
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-73",
+    "href": "static/slides/Sampling/Survey.html#section-73",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "3.5. Estimation of Mean and Variance:\n\nStratified sample mean:\n\n\\[\\bar{x}_{st} = \\sum W_h \\bar{x}_h\\]\nwhere \\(W_h\\) is the weight of each stratum, and \\(\\bar{x}_h\\) is the mean of the sample in each stratum.\n\nVariance of the overall mean:\n\n\\[V(\\bar{x}_{st}) = \\sum \\frac{W_h^2 \\sigma_h^2}{n_h}\\]\nwhere \\(\\sigma_h^2\\) is the variance within each stratum."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-74",
+    "href": "static/slides/Sampling/Survey.html#section-74",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "4. Cluster Sampling:\n4.1. Definition and Concept:\n\nCluster sampling involves selecting groups (clusters) of units rather than individual units directly. This method is often used when a list of the entire population is unavailable, but a list of clusters (e.g., villages or blocks) is available.\nAfter selecting clusters, all units within selected clusters are surveyed.\n\n4.2. Advantages of Cluster Sampling:\n\nReduces cost and time associated with data collection.\nAllows for more efficient fieldwork as data collection is concentrated in selected clusters.\n\n4.3. Disadvantages of Cluster Sampling:\n\nIncreases variance due to intra-cluster homogeneity (similarity between units within the same cluster)."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-75",
+    "href": "static/slides/Sampling/Survey.html#section-75",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "4.4. Estimation in Cluster Sampling:\n\nCluster mean:\n\n\\[\\bar{x}_c = \\frac{1}{n_c} \\sum x_{ij}\\]\nwhere \\(n_c\\) is the number of clusters, and \\(x_{ij}\\) is the value of the \\(j^{th}\\) unit in cluster iii.\n\nVariance of the cluster mean:\n\n\\[V(\\bar{x}_c) = \\frac{\\sigma_c^2}{n_c}\\] where \\(\\sigma_c^2\\) is the variance within clusters."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-76",
+    "href": "static/slides/Sampling/Survey.html#section-76",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "5. Systematic Sampling:\n5.1. Definition:\n\nIn systematic sampling, every \\(k^{th}\\) element from a list is selected, starting from a randomly chosen element.\nSampling interval k is calculated as: \\(k = \\frac{N}{n}\\) where N is the population size, and n is the sample size.\n\n5.2. Advantages of Systematic Sampling:\n\nSimple to implement.\nProvides implicit stratification if the population list is ordered according to some variable."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-77",
+    "href": "static/slides/Sampling/Survey.html#section-77",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "5.3. Disadvantages:\n\nIf there is periodicity in the data, systematic sampling may result in biased estimates.\n\n5.4. Estimation in Systematic Sampling:\n\nSample mean:\n\n\\[\\bar{x}_{sys} = \\frac{1}{n} \\sum x_i\\]\nwhere \\(x_i\\) are the selected units.\n\nVariance estimation: Systematic sampling can be treated as simple random sampling for variance estimation if there is no periodicity:\n\n\\[V(\\bar{x}_{sys}) = \\frac{s^2}{n}\\]\nwhere \\(s^2\\) is the variance of the sample."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#section-78",
+    "href": "static/slides/Sampling/Survey.html#section-78",
+    "title": "Survey Methodology Design",
+    "section": "",
+    "text": "6. Comparison of Sampling Methods:\n\nSimple Random Sampling (SRS): Every unit has an equal chance of selection. It’s the baseline method but rarely used in large-scale surveys due to cost and logistical difficulties.\nStratified Sampling: More efficient than SRS when the population has distinct subgroups. It provides better precision, especially when there is high variability between strata.\nCluster Sampling: Cost-effective but increases variance due to similarities within clusters.\nSystematic Sampling: Easy to implement and works well if there is no periodicity in the population."
+  },
+  {
+    "objectID": "static/slides/Sampling/Survey.html#sampling-and-sampling-strategies",
+    "href": "static/slides/Sampling/Survey.html#sampling-and-sampling-strategies",
+    "title": "Survey Methodology Design",
+    "section": "Sampling and Sampling Strategies",
+    "text": "Sampling and Sampling Strategies\nWhat is sampling?:\n\nSurveys typically do not involve collecting data from the entire population due to practical constraints.\nInstead, sampling strategies are employed to select a representative subset of the population, allowing researchers to make inferences about the broader population.\nThe goal of sampling is to ensure that the selected sample is representative and that the findings can be generalized with known levels of precision and accuracy."
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#what-is-a-shinydashboard",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#what-is-a-shinydashboard",
+    "title": "",
+    "section": "What is a shinydashboard?",
+    "text": "What is a shinydashboard?\n\n\nShinydashboard, is a specialised package for creating dashboards.\noperates on the two fundamental elements of every Shiny app:\n\nthe User Interface (UI): controls the layout and appearance of dashboard\nthe server function: contains instructions needed to build dashboard\n\n\nA shinyApp() is also needed to integrate the UI and server together\nHowever, Shinydashboard distinguishes itself through its unique UI setup, offering a structured, customizable environment for data presentation and interaction.\n\ni.e., UI is defined by dashboardPage() and not fluidPage()\n\n\n\n\n\nCodeui&lt;- dashboardPage(header,sidebar,body)\nserver &lt;- function(input, output){\n    ...\n} \nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#key-components-of-the-user-interface-ui",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#key-components-of-the-user-interface-ui",
+    "title": "",
+    "section": "key components of the user interface ui,",
+    "text": "key components of the user interface ui,\n\n\ndashboardHeader, dashboardSidebar, and dashboardBody functions.\nThe UI of a dashboard consists of following three main components and the code shows how they created\n\n\n\nthree main components as:\n\nthe header,\nthe sidebar, and\nthe body.\n\n\n\nCodeheader &lt;- dashboardHeader(...)\nsidebar &lt;- dashboardSidebar(...)\nbody &lt;- dashboardBody(...)\n# a shinydashboard ui\nui &lt;- dashboardPage(header, sidebar, body)\n\n\n\n\n\nThe dashboardPage function then integrates these elements within the UI.\nThe UI is like the restaurant and server is like the waiter\n\nIn particular, the UI can be further broken down into smaller components"
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#an-empty-shinydashboard",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#an-empty-shinydashboard",
+    "title": "",
+    "section": "An empty shinydashboard",
+    "text": "An empty shinydashboard\n\nCodelibrary(shiny) \nlibrary(shinydashboard)   \nheader &lt;- dashboardHeader(title = \"Basic Dashboard\", titleWidth = 400)  \nsidebar &lt;- dashboardSidebar()  \nbody &lt;- dashboardBody()  \nui&lt;-dashboardPage(header,sidebar,body) \nserver &lt;- function(input, output) {} \nshinyApp(ui, server)"
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#dashboard-header-dashboardheader",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#dashboard-header-dashboardheader",
+    "title": "",
+    "section": "Dashboard Header dashboardHeader\n",
+    "text": "Dashboard Header dashboardHeader\n\n\nThe dashboard header, created with dashboardHeader, is a visual element in shinydashboard’s layout.\n\nby default coloured blue.\n\n\nwe can change the color with argument skin = \"green\" in side the dashboardPage(), i.e., dashboardPage(skin = \"green\", header, sidebar, body)\n\n\n\n\nAdjust Title Width in dashboardHeader: The titleWidth argument in dashboardHeader allows customization of the title section’s width.\n\nA higher value provides more space for longer titles.\n\n\n\nDisabling the Header: To hide the header, use dashboardHeader(disable = TRUE).\n\nThis can be useful for minimalistic designs or specific use cases where the header is not required."
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#dashboard-sidebar-sidebarmenu",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#dashboard-sidebar-sidebarmenu",
+    "title": "",
+    "section": "Dashboard Sidebar sidebarMenu()\n",
+    "text": "Dashboard Sidebar sidebarMenu()\n\n\nThe sidebar usually contains a sidebarMenu(), which needs a unique ID and a list of menu items.\nEach menuItem() consists of the title, a tabName that will be used to refer to the tab later, and an icon. There are a list of the available free icons at fontawesome.\nEach menuItem can correspond to different content displayed in the main body of the dashboard.\nIts width can also be adjusted to be in line with the header width.\nWe can also disable the sidebarMenu if it’s unwanted, by setting specifying: dashboardSidebar(disable = TRUE)"
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#dashboard-body-dashboardbody",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#dashboard-body-dashboardbody",
+    "title": "",
+    "section": "Dashboard Body dashboardBody()\n",
+    "text": "Dashboard Body dashboardBody()\n\n\nThe main part of the app goes inside dashboardBody().\nIt’s the area to displays outputs and accommodate user inputs.\nThe tabName has to match the name you used in the sidebar menuItem(), so that tab shows when the user clicks on the corresponding menu item.\n\nBody Structure\n\nTab items can be structured in several ways. At the simplest, you can just list each element after the tabName.\n\n\n\n\nCodetabItem(tabName = \"dashboard\",   \ntextInput(\"given\", \"Given Name\"), \ntextInput(\"surname\", \"Surname\"),\nselectInput(\"pet\", \"What is your favourite pet?\",\n                    c(\"cats\", \"dogs\", \"ferrets\")),\ntextAreaInput(\"bio\", NULL, height = \"100px\", \n    placeholder = \"brief bio\") )"
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#static-vs-dynamic-content",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#static-vs-dynamic-content",
+    "title": "",
+    "section": "Static vs Dynamic Content",
+    "text": "Static vs Dynamic Content\ninfoBox\n\ninfoBox is a UI component in shinydashboard designed to display key metrics, such as numerical or textual values, along with icons for visual emphasis.\nIt’s effective for showcasing statistics like user count, sales figures, or progress metrics.\nStatic infoBox displays fixed data, ideal for constants or baseline metrics.\nDynamic infoBox, enabled through infoBoxOutput and renderInfoBox, updates in response to user interactions or live data feeds.\n\nAppearance Customization:\n\nThe fill parameter alters the background fill.\n\nfill=FALSE (default) gives a cleaner look, while fill=TRUE provides a more pronounced, filled background."
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#types-of-inputs-in-shinydashboard",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#types-of-inputs-in-shinydashboard",
+    "title": "",
+    "section": "Types of Inputs in shinydashboard",
+    "text": "Types of Inputs in shinydashboard\n\nInputs are ways that users can communicate information to the Shiny app.\n\n1.Free text\nCollect small amounts of text with textInput(), passwords with passwordInput(), and paragraphs of text with textAreaInput().\n\nCode  textInput(\"name\", \"What's your name?\"),\n  passwordInput(\"password\", \"What's your password?\"),\n  textAreaInput(\"story\", \"Tell me about yourself\", rows = 3)"
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#outputs",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#outputs",
+    "title": "",
+    "section": "Outputs",
+    "text": "Outputs\n\nOutput are ways that the Shiny app can dynamically display information to the user.\nOutputs in the UI create placeholders that are later filled by the server function.\nLike inputs, outputs take a unique ID as their first argument: if your UI specification creates an output with ID “plot”, you’ll access it in the server function with output$plot.\nEach output function on the front end is coupled with a render function in the back end.\nThere are three main types of output, corresponding to the three things you usually include in a report: text, tables, and plots.\nThe following sections show you the basics of the output functions on the front end, along with the corresponding render functions in the back end."
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#plots",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#plots",
+    "title": "",
+    "section": "Plots",
+    "text": "Plots\nYou can display any type of R graphic (base, ggplot2, or otherwise) with plotOutput() and renderPlot():\n\nCode# in ui\nplotOutput(\"plot\", width = \"400px\")\n\n\n\nCode# in the server function \noutput$plot &lt;- renderPlot({\n    ggplot(iris, aes(x = Species, y = .data[[input$y]], color = Species)) +  \n        geom_violin(show.legend = FALSE) + stat_summary(show.legend = FALSE) + \n        ylab(input$y) })\n\n\n\nIf you want to create dynamic plots that change with input, note how you need to use y = .data[[input$y]] inside aes(), instead of just y = input$y."
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#images",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#images",
+    "title": "",
+    "section": "Images",
+    "text": "Images\n\n\nimageOutput() takes the same arguments as plotOutput().\nYou can leave width and height as their defaults if you are going to set those values in the render function.\n\n\nCode# in the UI function \nimageOutput(\"demo_image\")\n\n\n\n\nrenderImage() needs to return a named list with at least an src with the image path.\nYou can also set the width and height (numeric values are in pixels), class and alt (the alt-text for screen readers).\n\n\nCode# in the server function \noutput$demo_image &lt;- renderImage({\n    list(src = \"images/flower.jpg\",  width = 100, height = 100, \n             alt = \"A flower\") }, deleteFile = FALSE)\n\n\n\nThe deleteFile argument is currently optional, but triggers periodic warnings that it won’t be optional in the future.\nYou should set it to TRUE if you’re making a temporary file (this stops unneeded plots using memory) and FALSE if you’re referencing a file you previously saved."
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#tables",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#tables",
+    "title": "",
+    "section": "Tables",
+    "text": "Tables\nThere are two options for displaying data frames in tables:\n\ntableOutput() and renderTable() render a static table of data, showing all the data at once.\ndataTableOutput() and renderDataTable() render a dynamic table, showing a fixed number of rows along with controls to change which rows are visible.\ntableOutput() is most useful for small, fixed summaries (e.g. model coefficients);\ndataTableOutput() is most appropriate if you want to expose a complete data frame to the user.\n\n\nCodeui &lt;- dashboardPage(\n    tableOutput(\"static\"),\n  dataTableOutput(\"dynamic\")\n    )\nserver &lt;- function(input, output) {\n      output$static &lt;- renderTable(head(mtcars))\n      output$dynamic &lt;- renderDataTable(mtcars, options = list(pageLength = 5))\n    }"
+  },
+  {
+    "objectID": "static/slides/shinydashboard/Shinydashboard.html#dynamic-html",
+    "href": "static/slides/shinydashboard/Shinydashboard.html#dynamic-html",
+    "title": "",
+    "section": "Dynamic HTML",
+    "text": "Dynamic HTML\n\nIf you want to dynamically create parts of the UI, you can use uiOutput().\n\n\nCode# in the UI function \nuiOutput(\"demo_ui\")\n\n\n\nYou can create the UI using renderUI() to return HTML created.\n\n\nCode# in the server function \noutput$demo_ui &lt;- renderUI({cols &lt;- names(iris)[1:4]   \nselectInput(\"y\", \"Column to plot\", cols, \"Sepal.Length\") })\n\n\n\nThe function htmlOutput() is a synonym for uiOutput(), so you might see that in some code examples, but I use uiOutput() to make the connection with renderUI() clearer, since there is no renderHTML()."
   }
 ]

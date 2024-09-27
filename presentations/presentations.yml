@@ -43,5 +43,10 @@
     - title: RMarkdown  
       href: https://yebelay.github.io/Introduction-to-RMarkdown/RMarkdown-presentation.html#1
       code: https://github.com/Yebelay/Introduction-to-RMarkdown/blob/main/RMarkdown%20presentation.Rmd
-      thumbnail: img/Rmarkdown1.jpg               
+      thumbnail: img/Rmarkdown1.jpg     
+    
+    - title: Shinydasboard 
+      href: https://yebelay.rbind.io/static/slides/shinydashboard/Shinydashboard.html
+      code: https://github.com/Yebelay/quarto_site/blob/main/static/slides/shinydashboard/Shinydashboard.qmd
+      thumbnail: img/dashboard.jpg
                        

@@ -1,0 +1,1426 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<link href="../../../Icon.png" rel="icon" type="image/png">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.549">
+<meta name="author" content="Yebelay Berehan">
+<title>Yebelay Berehan - How to create a Shiny Dashboard Yebelay Berehan - How to create a Shiny Dashboard Yebelay Berehan - How to create a Shiny Dashboard Yebelay Berehan Welcome to my website Welcome to my website</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+<link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+<style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #24292e;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #24292e; } /* Normal */
+    code span.al { color: #ff5555; font-weight: bold; } /* Alert */
+    code span.an { color: #6a737d; } /* Annotation */
+    code span.at { color: #d73a49; } /* Attribute */
+    code span.bn { color: #005cc5; } /* BaseN */
+    code span.bu { color: #d73a49; } /* BuiltIn */
+    code span.cf { color: #d73a49; } /* ControlFlow */
+    code span.ch { color: #032f62; } /* Char */
+    code span.cn { color: #005cc5; } /* Constant */
+    code span.co { color: #6a737d; } /* Comment */
+    code span.cv { color: #6a737d; } /* CommentVar */
+    code span.do { color: #6a737d; } /* Documentation */
+    code span.dt { color: #d73a49; } /* DataType */
+    code span.dv { color: #005cc5; } /* DecVal */
+    code span.er { color: #ff5555; text-decoration: underline; } /* Error */
+    code span.ex { color: #d73a49; font-weight: bold; } /* Extension */
+    code span.fl { color: #005cc5; } /* Float */
+    code span.fu { color: #6f42c1; } /* Function */
+    code span.im { color: #032f62; } /* Import */
+    code span.in { color: #6a737d; } /* Information */
+    code span.kw { color: #d73a49; } /* Keyword */
+    code span.op { color: #24292e; } /* Operator */
+    code span.ot { color: #6f42c1; } /* Other */
+    code span.pp { color: #d73a49; } /* Preprocessor */
+    code span.re { color: #6a737d; } /* RegionMarker */
+    code span.sc { color: #005cc5; } /* SpecialChar */
+    code span.ss { color: #032f62; } /* SpecialString */
+    code span.st { color: #032f62; } /* String */
+    code span.va { color: #e36209; } /* Variable */
+    code span.vs { color: #032f62; } /* VerbatimString */
+    code span.wa { color: #ff5555; } /* Warning */
+  </style>
+<link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto.css">
+<link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+<link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+<style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+<style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+<meta property="og:title" content="Yebelay Berehan - How to create a Shiny Dashboard Yebelay Berehan Welcome to my website Welcome to my website">
+<meta property="og:site_name" content="Yebelay Berehan">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="cover1.jpg" data-background-opacity="2.5" data-background-size="stretch" class="quarto-title-block center"><h1 class="title"></h1>
+<p><span style="color:white"><span style="font-size: 270%;"><strong>How to create a Shiny Dashboard</strong></span></span></p>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+<span style="color:black">Yebelay Berehan</span> 
+</div>
+        <p class="quarto-title-affiliation">
+            </p>
+<p><span style="color:green">Center for Evaluation and Development (C4ED)</span><br><br><br><br><span style="color:darkblue">2024</span></p>
+          
+    </div>
+</div>
+
+</section><section id="what-is-a-shinydashboard" class="slide level2"><h2>What is a shinydashboard?</h2>
+<ul>
+<li>
+<code>Shinydashboard</code>, is a specialised package for creating dashboards.</li>
+<li>operates on the two fundamental elements of every Shiny app:
+<ul>
+<li>the User Interface (UI): controls the layout and appearance of dashboard</li>
+<li>the server function: contains instructions needed to build dashboard</li>
+</ul>
+</li>
+<li>A <code>shinyApp()</code> is also needed to integrate the UI and server together</li>
+<li>However, <code>Shinydashboard</code> distinguishes itself through its unique UI setup, offering a structured, customizable environment for data presentation and interaction.
+<ul>
+<li>i.e., UI is defined by <code>dashboardPage()</code> and not <code>fluidPage()</code>
+</li>
+</ul>
+</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>ui<span class="ot">&lt;-</span> <span class="fu">dashboardPage</span>(header,sidebar,body)</span>
+<span id="cb1-2"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output){</span>
+<span id="cb1-3"><a></a>    ...</span>
+<span id="cb1-4"><a></a>} </span>
+<span id="cb1-5"><a></a><span class="fu">shinyApp</span>(ui, server)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="key-components-of-the-user-interface-ui" class="slide level2"><h2>key components of the user interface <code>ui</code>,</h2>
+<ul>
+<li>
+<code>dashboardHeader</code>, <code>dashboardSidebar</code>, and <code>dashboardBody</code> functions.</li>
+<li>The UI of a dashboard consists of following three main components and the code shows how they created</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:40%;">
+<p><strong>three main components as:</strong></p>
+<ul>
+<li>the header,</li>
+<li>the sidebar, and</li>
+<li>the body.</li>
+</ul>
+</div><div class="column" style="width:60%;">
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(...)</span>
+<span id="cb2-2"><a></a>sidebar <span class="ot">&lt;-</span> <span class="fu">dashboardSidebar</span>(...)</span>
+<span id="cb2-3"><a></a>body <span class="ot">&lt;-</span> <span class="fu">dashboardBody</span>(...)</span>
+<span id="cb2-4"><a></a><span class="co"># a shinydashboard ui</span></span>
+<span id="cb2-5"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">dashboardPage</span>(header, sidebar, body)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div>
+</div>
+<ul>
+<li>The <code>dashboardPage</code> function then integrates these elements within the UI.</li>
+<li>The <strong>UI</strong> is like the <em>restaurant</em> and <strong>server</strong> is like the <em>waiter</em>
+</li>
+<li>In particular, the UI can be further broken down into smaller components</li>
+</ul></section><section id="an-empty-shinydashboard" class="slide level2"><h2>An empty shinydashboard</h2>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">library</span>(shiny) </span>
+<span id="cb3-2"><a></a><span class="fu">library</span>(shinydashboard)   </span>
+<span id="cb3-3"><a></a>header <span class="ot">&lt;-</span> <span class="fu">dashboardHeader</span>(<span class="at">title =</span> <span class="st">"Basic Dashboard"</span>, <span class="at">titleWidth =</span> <span class="dv">400</span>)  </span>
+<span id="cb3-4"><a></a>sidebar <span class="ot">&lt;-</span> <span class="fu">dashboardSidebar</span>()  </span>
+<span id="cb3-5"><a></a>body <span class="ot">&lt;-</span> <span class="fu">dashboardBody</span>()  </span>
+<span id="cb3-6"><a></a>ui<span class="ot">&lt;-</span><span class="fu">dashboardPage</span>(header,sidebar,body) </span>
+<span id="cb3-7"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {} </span>
+<span id="cb3-8"><a></a><span class="fu">shinyApp</span>(ui, server)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/fig1.jpg" class="quarto-figure quarto-figure-center" width="1400" height="280"></p>
+</figure>
+</div>
+</section><section id="dashboard-header-dashboardheader" class="slide level2"><h2>Dashboard Header <code>dashboardHeader</code>
+</h2>
+<ul>
+<li>The dashboard header, created with <code>dashboardHeader</code>, is a visual element in shinydashboard’s layout.
+<ul>
+<li>by default coloured blue.</li>
+</ul>
+</li>
+<li>we can change the color with argument <code>skin = "green"</code> in side the <code>dashboardPage()</code>, i.e., <code>dashboardPage(skin = "green", header, sidebar, body)</code>
+</li>
+</ul>
+<ol type="1">
+<li>
+<em>Adjust Title Width in <code>dashboardHeader</code>:</em> The <code>titleWidth</code> argument in <code>dashboardHeader</code> allows customization of the title section’s width.
+<ul>
+<li>A higher value provides more space for longer titles.</li>
+</ul>
+</li>
+<li>
+<em>Disabling the Header:</em> To hide the header, use <code>dashboardHeader(disable = TRUE)</code>.
+<ul>
+<li>This can be useful for minimalistic designs or specific use cases where the header is not required.</li>
+</ul>
+</li>
+</ol></section><section id="dashboard-sidebar-sidebarmenu" class="slide level2"><h2>Dashboard Sidebar <code>sidebarMenu()</code>
+</h2>
+<ul>
+<li><p>The sidebar usually contains a <code>sidebarMenu()</code>, which needs a unique ID and a list of menu items.</p></li>
+<li><p>Each <code>menuItem()</code> consists of the <code>title</code>, a <code>tabName</code> that will be used to refer to the tab later, and an <code>icon</code>. There are a list of the available free icons at <a href="https://fontawesome.com/icons?d=gallery&amp;m=free">fontawesome</a>.</p></li>
+<li><p>Each <code>menuItem</code> can <span style="color:#0275D8;"><strong>correspond to different content displayed in the main body of the dashboard</strong></span>.</p></li>
+<li><p>Its width can also be adjusted to be in line with the header width.</p></li>
+<li><p>We can also disable the sidebarMenu if it’s unwanted, by setting specifying: <code>dashboardSidebar(disable = TRUE)</code></p></li>
+</ul></section><section class="slide level2"><h4 id="key-features-of-sidebar">Key Features of Sidebar:</h4>
+<ul>
+<li><p><span style="color:#0275D8;"><strong>Function:</strong></span> <code>sidebarMenu()</code> within <code>dashboardSidebar()</code> organizes your navigation tabs.</p></li>
+<li><p><span style="color:#0275D8;"><strong>Navigation Tabs:</strong></span> Use <code>menuItem()</code> within <code>sidebarMenu()</code> to create tabs similar to tabPanel in Shiny.</p></li>
+<li>
+<p><span style="color:#0275D8;"><strong>Content Linking:</strong></span> <span style="color:#FF5733;">Each <code>menuItem()</code> in <code>sidebarMenu()</code> corresponds to a <code>tabItem()</code> in the body</span>.</p>
+<ul>
+<li>Ensure their <code>tabName</code> attributes match for proper content display.</li>
+</ul>
+</li>
+<li><p><em>Icons:</em> Use <code>icon()</code> within <code>menuItem()</code> for visual representation.</p></li>
+<li>
+<p><em>Badges:</em> Add <code>badgeLabel</code> and <code>badgeColor</code> to highlight or categorize menu items.</p>
+<ul>
+<li>Note: Badges cannot be added to a tab containing subtabs.</li>
+</ul>
+</li>
+<li><p><em>External Links:</em> Include <code>href</code> in <code>menuItem()</code> for external URLs.</p></li>
+<li>
+<p>Control tab opening behaviour with the <code>newtab</code> argument.</p>
+<ul>
+<li>By default, external links open in a new browser tab</li>
+</ul>
+</li>
+</ul></section><section class="slide level2"><div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>sidebar <span class="ot">&lt;-</span> <span class="fu">dashboardSidebar</span>(<span class="at">width =</span> <span class="dv">300</span>, </span>
+<span id="cb4-2"><a></a>                   <span class="fu">sidebarMenu</span>(</span>
+<span id="cb4-3"><a></a>    <span class="fu">menuItem</span>(<span class="st">"Main Dashboard"</span>, <span class="at">tabName =</span> <span class="st">"dashboard"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"dashboard"</span>)),</span>
+<span id="cb4-4"><a></a>    <span class="fu">menuItem</span>(<span class="st">"Widgets"</span>, <span class="at">tabName =</span> <span class="st">"widgets"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"th"</span>),</span>
+<span id="cb4-5"><a></a>                     <span class="at">badgeLabel =</span> <span class="st">"Newly added"</span>, <span class="at">badgeColor =</span> <span class="st">"green"</span>),</span>
+<span id="cb4-6"><a></a>    <span class="fu">menuItem</span>(<span class="st">"Charts"</span>, <span class="at">tabName =</span> <span class="st">"charts"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"chart"</span>)),</span>
+<span id="cb4-7"><a></a>    <span class="fu">menuItem</span>(<span class="st">"Tables"</span>, <span class="at">tabName =</span> <span class="st">"tables"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"table"</span>)),</span>
+<span id="cb4-8"><a></a>    <span class="fu">menuItem</span>(<span class="st">"my website Link"</span>, <span class="at">href =</span> <span class="st">"https://yebelay.rbind.io"</span>, </span>
+<span id="cb4-9"><a></a>                     <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"external-link"</span>))) ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/fig2.jpg" class="quarto-figure quarto-figure-center" width="2600" height="300"></p>
+</figure>
+</div>
+</section><section class="slide level2"><h4 id="incorporating-inputs-and-interactive-elements">Incorporating Inputs and Interactive Elements</h4>
+<ul>
+<li>Include Shiny inputs like <code>sliderInput</code> and <code>textInput</code> in the sidebar for user interaction.</li>
+<li>Sidebar Search Form: Use <code>sidebarSearchForm()</code> with <code>textId</code> and <code>buttonId</code>.
+<ul>
+<li>Server-Side Correspondence: Access input values in the server function using <code>input$searchText</code> and <code>input$searchButton</code>.</li>
+</ul>
+</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>sidebar <span class="ot">&lt;-</span> <span class="fu">dashboardSidebar</span>(<span class="at">width =</span> <span class="dv">300</span>, <span class="fu">sidebarMenu</span>(</span>
+<span id="cb5-2"><a></a>    <span class="fu">menuItem</span>(<span class="st">"Main Dashboard"</span>, <span class="at">tabName =</span> <span class="st">"dashboard"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"dashboard"</span>)),</span>
+<span id="cb5-3"><a></a>    <span class="fu">menuItem</span>(<span class="st">"Widgets"</span>, <span class="at">tabName =</span> <span class="st">"widgets"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"th"</span>), </span>
+<span id="cb5-4"><a></a>                     <span class="at">badgeLabel =</span> <span class="st">"Newly added"</span>, <span class="at">badgeColor =</span> <span class="st">"green"</span>), </span>
+<span id="cb5-5"><a></a>    <span class="fu">menuItem</span>(<span class="st">"Charts"</span>, <span class="at">tabName =</span> <span class="st">"charts"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"chart"</span>)),</span>
+<span id="cb5-6"><a></a>    <span class="fu">menuItem</span>(<span class="st">"Tables"</span>, <span class="at">tabName =</span> <span class="st">"tables"</span>,<span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"table"</span>)),</span>
+<span id="cb5-7"><a></a>    <span class="fu">sliderInput</span>(<span class="st">"slider"</span>, <span class="st">"Slider"</span>, <span class="at">min =</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">100</span>, <span class="at">value =</span> <span class="dv">50</span>),</span>
+<span id="cb5-8"><a></a>    <span class="fu">checkboxInput</span>(<span class="st">"checkbox"</span>, <span class="st">"Checkbox"</span>, <span class="at">value =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb5-9"><a></a>    <span class="fu">radioButtons</span>(<span class="st">"radio"</span>, <span class="st">"Radio Buttons"</span>,</span>
+<span id="cb5-10"><a></a>                             <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"Option 1"</span>, <span class="st">"Option 2"</span>, <span class="st">"Option 3"</span>)),</span>
+<span id="cb5-11"><a></a>    <span class="fu">sidebarSearchForm</span>(<span class="at">textId =</span> <span class="st">"search"</span>, <span class="at">buttonId =</span> <span class="st">"searchButton"</span>, </span>
+<span id="cb5-12"><a></a>                                        <span class="at">label =</span> <span class="st">"Search..."</span>))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2">
+<img data-src="images/fig4.jpg" class="quarto-figure quarto-figure-center r-stretch" width="1600"></section><section id="dashboard-body-dashboardbody" class="slide level2"><h2>Dashboard Body <code>dashboardBody()</code>
+</h2>
+<ul>
+<li><p>The main part of the app goes inside <code>dashboardBody()</code>.</p></li>
+<li><p>It’s the area to displays outputs and accommodate user inputs.</p></li>
+<li><p>The <code>tabName</code> has to match the name you used in the sidebar <code>menuItem()</code>, so that tab shows when the user clicks on the corresponding menu item.</p></li>
+</ul>
+<h3 id="body-structure"><strong>Body Structure</strong></h3>
+<ul>
+<li>Tab items can be structured in several ways. At the simplest, you can just list each element after the <code>tabName</code>.</li>
+</ul>
+<div class="columns">
+<div class="column" style="width:65%;">
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">tabItem</span>(<span class="at">tabName =</span> <span class="st">"dashboard"</span>,   </span>
+<span id="cb6-2"><a></a><span class="fu">textInput</span>(<span class="st">"given"</span>, <span class="st">"Given Name"</span>), </span>
+<span id="cb6-3"><a></a><span class="fu">textInput</span>(<span class="st">"surname"</span>, <span class="st">"Surname"</span>),</span>
+<span id="cb6-4"><a></a><span class="fu">selectInput</span>(<span class="st">"pet"</span>, <span class="st">"What is your favourite pet?"</span>,</span>
+<span id="cb6-5"><a></a>                    <span class="fu">c</span>(<span class="st">"cats"</span>, <span class="st">"dogs"</span>, <span class="st">"ferrets"</span>)),</span>
+<span id="cb6-6"><a></a><span class="fu">textAreaInput</span>(<span class="st">"bio"</span>, <span class="cn">NULL</span>, <span class="at">height =</span> <span class="st">"100px"</span>, </span>
+<span id="cb6-7"><a></a>    <span class="at">placeholder =</span> <span class="st">"brief bio"</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</div><div class="column" style="width:35%;">
+<div class="quarto-figure quarto-figure-center">
+<figure><p><img data-src="images/fig5.jpg" class="quarto-figure quarto-figure-center" width="1200"></p>
+</figure>
+</div>
+</div>
+</div>
+</section><section class="slide level2"><h3 id="boxes"><strong>Boxes</strong></h3>
+<p>Most <strong><code>shinydashboard</code></strong> apps organise the parts inside boxes.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">tabItem</span>(<span class="at">tabName =</span> <span class="st">"dashboard"</span>, </span>
+<span id="cb7-2"><a></a>                <span class="fu">box</span>(<span class="fu">textInput</span>(<span class="st">"given"</span>, <span class="st">"Given Name"</span>),</span>
+<span id="cb7-3"><a></a>                        <span class="fu">textInput</span>(<span class="st">"surname"</span>, <span class="st">"Surname"</span>),</span>
+<span id="cb7-4"><a></a>                        <span class="fu">selectInput</span>(<span class="st">"pet"</span>, <span class="st">"What is your favourite pet?"</span>,</span>
+<span id="cb7-5"><a></a>                                                <span class="fu">c</span>(<span class="st">"cats"</span>, <span class="st">"dogs"</span>, <span class="st">"ferrets"</span>))),</span>
+<span id="cb7-6"><a></a>                <span class="fu">box</span>(<span class="fu">textAreaInput</span>(<span class="st">"bio"</span>, <span class="cn">NULL</span>, <span class="at">height =</span> <span class="st">"100px"</span>,</span>
+<span id="cb7-7"><a></a>                                                    <span class="at">placeholder =</span> <span class="st">"brief bio"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/fig6.jpg" class="quarto-figure quarto-figure-center r-stretch" width="1600"></section><section class="slide level2"><ul>
+<li>You can add titles to the boxes, make them collapsible and/or give them solid headers.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">tabItem</span>(<span class="at">tabName =</span> <span class="st">"dashboard"</span>,</span>
+<span id="cb8-2"><a></a>                <span class="fu">box</span>(<span class="at">title =</span> <span class="st">"Personal Info"</span>, <span class="at">collapsible =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb8-3"><a></a>                        <span class="fu">textInput</span>(<span class="st">"given"</span>, <span class="st">"Given Name"</span>),</span>
+<span id="cb8-4"><a></a>                        <span class="fu">textInput</span>(<span class="st">"surname"</span>, <span class="st">"Surname"</span>),</span>
+<span id="cb8-5"><a></a>                        <span class="fu">selectInput</span>(<span class="st">"pet"</span>, <span class="st">"What is your favourite pet?"</span>,</span>
+<span id="cb8-6"><a></a>                                                <span class="fu">c</span>(<span class="st">"cats"</span>, <span class="st">"dogs"</span>, <span class="st">"ferrets"</span>))),</span>
+<span id="cb8-7"><a></a>                <span class="fu">box</span>(<span class="at">title =</span> <span class="st">"Biography"</span>, <span class="at">solidHeader =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb8-8"><a></a>                        <span class="fu">textAreaInput</span>(<span class="st">"bio"</span>, <span class="cn">NULL</span>, <span class="at">height =</span> <span class="st">"100px"</span>, </span>
+<span id="cb8-9"><a></a>                                                    <span class="at">placeholder =</span> <span class="st">"brief bio"</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/fig7.jpg" class="quarto-figure quarto-figure-center r-stretch" width="4900"></section><section class="slide level2"><h3 id="info-and-value-boxes"><strong>Info and Value Boxes</strong></h3>
+<ul>
+<li><p>You can use an <code>infoBox()</code> or a <code>valueBox()</code> to highlight a small amount of information.</p></li>
+<li><p>The default background is aqua, but the basic template changes this to the skin colour.</p></li>
+<li><p>However, you can customise this by setting the <code>color</code> argument.</p></li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">tabItem</span>(<span class="at">tabName =</span> <span class="st">"dashboard"</span>,</span>
+<span id="cb9-2"><a></a>                <span class="fu">infoBox</span>(<span class="st">"Default InfoBox"</span>, <span class="st">"Value"</span>, <span class="st">"Subtitle"</span>), </span>
+<span id="cb9-3"><a></a>                <span class="fu">valueBox</span>(<span class="st">"Default ValueBox"</span>, <span class="st">"With subtitle"</span>),</span>
+<span id="cb9-4"><a></a>                <span class="fu">valueBox</span>(<span class="st">"No subtitle"</span>, <span class="st">""</span>) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><strong><code>Shinydashboard</code></strong> uses a grid system that is <code>12</code> units across. The default width of boxes is <code>6</code>, and info and value boxes are <code>4</code>.</p>
+</section><section class="slide level2"><h3 id="tab-boxes"><strong>Tab Boxes</strong></h3>
+<p>Create a box with multiple tabs using <code>tabBox()</code>, which contains <code>tabPanel()</code>.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">tabItem</span>(<span class="at">tabName =</span> <span class="st">"dashboard"</span>, </span>
+<span id="cb10-2"><a></a>                <span class="fu">tabBox</span>(<span class="at">title =</span> <span class="st">"Test Yourself 1"</span>, </span>
+<span id="cb10-3"><a></a>                             <span class="fu">tabPanel</span>(<span class="st">"Question"</span>, <span class="st">"What function creates tabBox contents?"</span>),</span>
+<span id="cb10-4"><a></a>                             <span class="fu">tabPanel</span>(<span class="st">"Answer"</span>, <span class="st">"tabPanel()"</span>) ), </span>
+<span id="cb10-5"><a></a>                <span class="fu">tabBox</span>(<span class="at">title =</span> <span class="st">"Test Yourself 2"</span>,</span>
+<span id="cb10-6"><a></a>                             <span class="at">side =</span> <span class="st">"right"</span>, <span class="at">selected =</span> <span class="st">"Question"</span>, </span>
+<span id="cb10-7"><a></a>                             <span class="fu">tabPanel</span>(<span class="st">"Answer"</span>, <span class="st">"selected"</span>),</span>
+<span id="cb10-8"><a></a>                             <span class="fu">tabPanel</span>(<span class="st">"Question"</span>, <span class="st">"What attribute changes the default tab?"</span>)) )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/fig8.jpg" class="quarto-figure quarto-figure-center r-stretch" width="2900"></section><section class="slide level2"><h3 id="row-layout"><strong>Row Layout</strong></h3>
+<ul>
+<li>You can arrange the boxes inside a <code>fluidRow()</code>.</li>
+<li>Set the box height in pixels. If the window gets too narrow, the boxes will move to stack instead of be in rows.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">tabItem</span>(<span class="at">tabName =</span> <span class="st">"dashboard"</span>, </span>
+<span id="cb11-2"><a></a>                <span class="fu">fluidRow</span>(<span class="fu">box</span>(<span class="st">"A"</span>, <span class="at">title =</span> <span class="st">"2x100"</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">height =</span> <span class="dv">100</span>), </span>
+<span id="cb11-3"><a></a>                            <span class="fu">box</span>(<span class="st">"B"</span>, <span class="at">title =</span> <span class="st">"1x100"</span>, <span class="at">width =</span> <span class="dv">1</span>, <span class="at">height =</span> <span class="dv">100</span>), </span>
+<span id="cb11-4"><a></a>                            <span class="fu">box</span>(<span class="st">"C"</span>, <span class="at">title =</span> <span class="st">"2x200"</span>, <span class="at">width =</span> <span class="dv">2</span>, <span class="at">height =</span> <span class="dv">200</span>), </span>
+<span id="cb11-5"><a></a>                            <span class="fu">box</span>(<span class="st">"D"</span>, <span class="at">title =</span> <span class="st">"3x300"</span>, <span class="at">width =</span> <span class="dv">3</span>, <span class="at">height =</span> <span class="dv">300</span>),</span>
+<span id="cb11-6"><a></a>                            <span class="fu">box</span>(<span class="st">"E"</span>, <span class="at">title =</span> <span class="st">"4x100"</span>, <span class="at">width =</span> <span class="dv">4</span>, <span class="at">height =</span> <span class="dv">100</span>),</span>
+<span id="cb11-7"><a></a>                            <span class="fu">box</span>(<span class="st">"F"</span>, <span class="at">title =</span> <span class="st">"5x100"</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">height =</span> <span class="dv">100</span>),</span>
+<span id="cb11-8"><a></a>                            <span class="fu">box</span>(<span class="st">"G"</span>, <span class="at">title =</span> <span class="st">"7x100"</span>, <span class="at">width =</span> <span class="dv">7</span>, <span class="at">height =</span> <span class="dv">100</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/fig9.jpg" class="quarto-figure quarto-figure-center r-stretch" width="6900"></section><section class="slide level2"><h3 id="column-layout"><strong>Column Layout</strong></h3>
+<ul>
+<li>Alternatively, you can arrange boxes or other elements inside a <code>column()</code> with a specific <code>width</code>.</li>
+<li>Elements inside this column have a width relative to the column width, so no matter what value you set the column <code>width</code> to, an element inside with a <code>width</code> of <code>6</code> will be half the column width.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="fu">tabItem</span>(<span class="at">tabName =</span> <span class="st">"dashboard"</span>, </span>
+<span id="cb12-2"><a></a>                <span class="fu">column</span>(<span class="at">width =</span> <span class="dv">6</span>,</span>
+<span id="cb12-3"><a></a>                    <span class="fu">box</span>(<span class="st">"A"</span>, <span class="at">title =</span> <span class="st">"12x100"</span>, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">100</span>),</span>
+<span id="cb12-4"><a></a>                    <span class="fu">box</span>(<span class="st">"B"</span>, <span class="at">title =</span> <span class="st">"6x100"</span>, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">100</span>), </span>
+<span id="cb12-5"><a></a>                    <span class="fu">box</span>(<span class="st">"C"</span>, <span class="at">title =</span> <span class="st">"6x200"</span>, <span class="at">width =</span> <span class="dv">6</span>, <span class="at">height =</span> <span class="dv">200</span>)),      </span>
+<span id="cb12-6"><a></a>                <span class="fu">column</span>(<span class="at">width =</span> <span class="dv">4</span>,</span>
+<span id="cb12-7"><a></a>                    <span class="fu">box</span>(<span class="st">"D"</span>, <span class="at">title =</span> <span class="st">"12x300"</span>, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">300</span>),</span>
+<span id="cb12-8"><a></a>                    <span class="fu">box</span>(<span class="st">"E"</span>, <span class="at">title =</span> <span class="st">"12x100"</span>, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">100</span>)),</span>
+<span id="cb12-9"><a></a>                <span class="fu">column</span>(<span class="at">width =</span> <span class="dv">2</span>,</span>
+<span id="cb12-10"><a></a>                    <span class="fu">box</span>(<span class="st">"F"</span>, <span class="at">title =</span> <span class="st">"12x100"</span>, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">100</span>),</span>
+<span id="cb12-11"><a></a>                    <span class="fu">box</span>(<span class="st">"G"</span>, <span class="at">title =</span> <span class="st">"12x100"</span>, <span class="at">width =</span> <span class="dv">12</span>, <span class="at">height =</span> <span class="dv">100</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2">
+<img data-src="images/fig10.jpg" class="quarto-figure quarto-figure-center r-stretch" width="2900"></section><section class="slide level2"><h4 id="integrating-boxes-as-building-blocks">Integrating Boxes as Building Blocks</h4>
+<ul>
+<li>
+<em>Boxes</em>: Create layout elements with <code><a href="https://rdrr.io/r/graphics/box.html">box()</a></code>. These containers can hold various UI components.</li>
+<li>
+<em>Placement and Organization</em>: Place boxes within <code>fluidRow()</code> for a structured layout.</li>
+<li>
+<em>Customization Options</em>:
+<ul>
+<li>Titles: Use the <code>title</code> argument for descriptive headings.</li>
+<li>Status Colors: Add colour to box headers with the <code>status</code> argument (e.g., “primary” for blue, “warning” for yellow).</li>
+<li>Solid Headers: Set <code>solidHeader = TRUE</code> for a more prominent header.</li>
+</ul>
+</li>
+<li>Collapsibility: Add interactivity with <code>collapsible = TRUE</code>, allowing users to collapse or expand the box content.</li>
+<li>Background Colors: Customize the box’s background with the <code>background</code> argument for a unique look.</li>
+</ul></section><section class="slide level2"><div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># Sample dashboardBody with various box customisations </span></span>
+<span id="cb13-2"><a></a>body <span class="ot">=</span> <span class="fu">dashboardBody</span>(<span class="fu">fluidRow</span>(</span>
+<span id="cb13-3"><a></a>    <span class="fu">box</span>(<span class="at">title =</span> <span class="st">"Box 1"</span>, <span class="at">status =</span> <span class="st">"primary"</span>, <span class="st">"Content"</span>, <span class="at">solidHeader =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-4"><a></a>    <span class="fu">box</span>(<span class="at">title =</span> <span class="st">"Box 2"</span>, <span class="fu">plotOutput</span>(<span class="st">"plot1"</span>, <span class="at">height =</span> <span class="dv">250</span>), <span class="at">solidHeader =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-5"><a></a>    <span class="fu">box</span>(<span class="at">title =</span> <span class="st">"Box 3"</span>, <span class="at">status =</span> <span class="st">"warning"</span>, <span class="st">"Content"</span>, <span class="at">solidHeader =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb13-6"><a></a>            <span class="at">collapsible =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb13-7"><a></a>    <span class="fu">box</span>(<span class="at">title =</span> <span class="st">"Box 4"</span>, <span class="at">background =</span> <span class="st">"black"</span>, <span class="st">"Content"</span>))) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/fig11.jpg" class="quarto-figure quarto-figure-center r-stretch" width="2900"></section><section id="static-vs-dynamic-content" class="slide level2"><h2>Static vs Dynamic Content</h2>
+<h4 id="infobox">infoBox</h4>
+<ul>
+<li><p><code>infoBox</code> is a UI component in <code>shinydashboard</code> designed to display key metrics, such as numerical or textual values, along with icons for visual emphasis.</p></li>
+<li><p>It’s effective for showcasing statistics like user count, sales figures, or progress metrics.</p></li>
+<li><p>Static infoBox displays fixed data, ideal for constants or baseline metrics.</p></li>
+<li><p>Dynamic infoBox, enabled through <code>infoBoxOutput</code> and <code>renderInfoBox</code>, updates in response to user interactions or live data feeds.</p></li>
+</ul>
+<p><strong>Appearance Customization:</strong></p>
+<ul>
+<li>The <code>fill</code> parameter alters the background fill.</li>
+<li>
+<code>fill=FALSE</code> (default) gives a cleaner look, while <code>fill=TRUE</code> provides a more pronounced, filled background.</li>
+</ul></section><section class="slide level2"><div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Dashboard Body with infoBox examples </span></span>
+<span id="cb14-2"><a></a>body <span class="ot">=</span> <span class="fu">dashboardBody</span>(</span>
+<span id="cb14-3"><a></a>    <span class="fu">fluidRow</span>(<span class="fu">infoBox</span>(<span class="st">"New Users"</span>, <span class="dv">20</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"users"</span>)), </span>
+<span id="cb14-4"><a></a>                     <span class="fu">infoBoxOutput</span>(<span class="st">"learningBox"</span>)),</span>
+<span id="cb14-5"><a></a>    <span class="fu">fluidRow</span>(<span class="fu">infoBox</span>(<span class="st">"New Users"</span>, <span class="dv">20</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"users"</span>), <span class="at">fill =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb14-6"><a></a>                     <span class="fu">infoBoxOutput</span>(<span class="st">"learningBox2"</span>)), </span>
+<span id="cb14-7"><a></a>    <span class="fu">fluidRow</span>(<span class="fu">box</span>(<span class="at">width =</span> <span class="dv">4</span>, <span class="fu">actionButton</span>(<span class="st">"count"</span>, <span class="st">"Increment progress"</span>)))) </span>
+<span id="cb14-8"><a></a></span>
+<span id="cb14-9"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {output<span class="sc">$</span>learningBox <span class="ot">&lt;-</span> <span class="fu">renderInfoBox</span>({</span>
+<span id="cb14-10"><a></a>        <span class="fu">infoBox</span>(<span class="st">"Progress"</span>, <span class="fu">paste0</span>(<span class="dv">25</span> <span class="sc">+</span> input<span class="sc">$</span>count, <span class="st">"%"</span>), <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"list"</span>), </span>
+<span id="cb14-11"><a></a>                        <span class="at">color =</span> <span class="st">"orange"</span>)})   </span>
+<span id="cb14-12"><a></a>    output<span class="sc">$</span>learningBox2 <span class="ot">&lt;-</span> <span class="fu">renderInfoBox</span>({</span>
+<span id="cb14-13"><a></a>        <span class="fu">infoBox</span>(<span class="st">"Progress"</span>, <span class="fu">paste0</span>(<span class="dv">25</span> <span class="sc">+</span> input<span class="sc">$</span>count, <span class="st">"%"</span>), </span>
+<span id="cb14-14"><a></a>                        <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"list"</span>), <span class="at">color =</span> <span class="st">"orange"</span>, <span class="at">fill =</span> <span class="cn">TRUE</span>)})} </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2">
+<img data-src="images/fig13.jpg" class="quarto-figure quarto-figure-center r-stretch" width="2900"></section><section class="slide level2"><h4 id="valuebox">valueBox</h4>
+<ul>
+<li>
+<code>valueBox</code>, while similar in purpose to <code>infoBox</code>, offers a different aesthetic. It’s another way to present figures or indicators visually.</li>
+</ul>
+<p><strong>Usage and Customization</strong>:</p>
+<ul>
+<li>
+<code>valueBox</code> can be static or dynamic, suitable for various data presentation needs.</li>
+<li>Like <code>infoBox</code>, <code>valueBox</code> supports the <code>fill</code> parameter for background customisation.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a>sidebar <span class="ot">&lt;-</span> <span class="fu">dashboardSidebar</span>(</span>
+<span id="cb15-2"><a></a>    <span class="fu">sliderInput</span>(<span class="st">"number"</span>, <span class="st">"Choose a number:"</span>, <span class="at">min=</span> <span class="dv">1</span>, <span class="at">max =</span> <span class="dv">100</span>, <span class="at">value =</span> <span class="dv">50</span>)) </span>
+<span id="cb15-3"><a></a>body <span class="ot">&lt;-</span> <span class="fu">dashboardBody</span>(</span>
+<span id="cb15-4"><a></a>    <span class="fu">fluidRow</span>(<span class="fu">valueBox</span>(<span class="dv">100</span>, <span class="st">"Static Value"</span>,<span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"thumbs-up"</span>), </span>
+<span id="cb15-5"><a></a>                    <span class="at">color =</span> <span class="st">"green"</span>), <span class="fu">valueBoxOutput</span>(<span class="st">"dynamicValueBox"</span>)))  </span>
+<span id="cb15-6"><a></a></span>
+<span id="cb15-7"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb15-8"><a></a>    output<span class="sc">$</span>dynamicValueBox <span class="ot">&lt;-</span> <span class="fu">renderValueBox</span>({</span>
+<span id="cb15-9"><a></a>        <span class="fu">valueBox</span>(input<span class="sc">$</span>number, <span class="st">"Dynamic Value"</span>, <span class="at">icon =</span> <span class="fu">icon</span>(<span class="st">"refresh"</span>), </span>
+<span id="cb15-10"><a></a>                         <span class="at">color =</span> <span class="st">"blue"</span>)}) } </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2">
+<img data-src="images/fig14.jpg" class="quarto-figure quarto-figure-center r-stretch" width="2900"></section><section id="types-of-inputs-in-shinydashboard" class="slide level2"><h2>Types of Inputs in shinydashboard</h2>
+<ul>
+<li>Inputs are ways that users can communicate information to the Shiny app.</li>
+</ul>
+<p><span style="color:#FF5733;"><strong>1.</strong></span><strong>Free text</strong></p>
+<p>Collect small amounts of text with <a href="https://rdrr.io/pkg/shiny/man/textInput.html"><code>textInput()</code></a>, passwords with <code>passwordInput()</code>, and paragraphs of text with <a href="https://rdrr.io/pkg/shiny/man/textAreaInput.html"><code>textAreaInput()</code></a>.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>  <span class="fu">textInput</span>(<span class="st">"name"</span>, <span class="st">"What's your name?"</span>),</span>
+<span id="cb16-2"><a></a>  <span class="fu">passwordInput</span>(<span class="st">"password"</span>, <span class="st">"What's your password?"</span>),</span>
+<span id="cb16-3"><a></a>  <span class="fu">textAreaInput</span>(<span class="st">"story"</span>, <span class="st">"Tell me about yourself"</span>, <span class="at">rows =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/free-text.png" class="quarto-figure quarto-figure-center r-stretch"></section><section class="slide level2"><h3 id="numeric-inputs"><strong>Numeric inputs</strong></h3>
+<p>To collect numeric values, create a constrained text box with <a href="https://rdrr.io/pkg/shiny/man/numericInput.html"><code>numericInput()</code></a> or a slider with <a href="https://rdrr.io/pkg/shiny/man/sliderInput.html"><code>sliderInput()</code></a>. If you supply a length-2 numeric vector for the default value of <a href="https://rdrr.io/pkg/shiny/man/sliderInput.html"><code>sliderInput()</code></a>, you get a “range” slider with two ends.</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="fu">numericInput</span>(<span class="st">"num"</span>, <span class="st">"Number one"</span>, <span class="at">value =</span> <span class="dv">0</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>)</span>
+<span id="cb17-2"><a></a>  <span class="fu">sliderInput</span>(<span class="st">"num2"</span>, <span class="st">"Number two"</span>, <span class="at">value =</span> <span class="dv">50</span>, <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>)</span>
+<span id="cb17-3"><a></a>  <span class="fu">sliderInput</span>(<span class="st">"rng"</span>, <span class="st">"Range"</span>, <span class="at">value =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>), <span class="at">min =</span> <span class="dv">0</span>, <span class="at">max =</span> <span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/numeric.png" class="quarto-figure quarto-figure-center r-stretch"></section><section class="slide level2"><p><span style="color:#FF5733;"><strong>3. selectInput</strong></span></p>
+<ul>
+<li>
+<code>selectInput()</code> creates a drop-down menu.</li>
+<li>Set the first <code>choice</code> to <code>""</code> to default to <code>NA</code>.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>demo_select <span class="ot">&lt;-</span> <span class="fu">selectInput</span>(<span class="st">"demo_select"</span>,<span class="at">label =</span> <span class="st">"Do you like Shiny?"</span>,</span>
+<span id="cb18-2"><a></a>             <span class="at">choices =</span> <span class="fu">list</span>(<span class="st">""</span>,<span class="st">"Yes, I do"</span> <span class="ot">=</span> <span class="st">"y"</span>, <span class="st">"No, I don't"</span> <span class="ot">=</span> <span class="st">"n"</span>),</span>
+<span id="cb18-3"><a></a>             <span class="at">selected =</span> <span class="cn">NULL</span>, <span class="at">width =</span> <span class="st">"100%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>If you set <code>multiple</code> to <code>TRUE</code>, you can also make a select where users can choose multiple options.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>genders <span class="ot">&lt;-</span> <span class="fu">list</span>( <span class="st">"Non-binary"</span> <span class="ot">=</span> <span class="st">"nb"</span>, <span class="st">"Male"</span> <span class="ot">=</span> <span class="st">"m"</span>, <span class="st">"Female"</span> <span class="ot">=</span> <span class="st">"f"</span>, </span>
+<span id="cb19-2"><a></a>                                 <span class="st">"Agender"</span> <span class="ot">=</span> <span class="st">"a"</span>, <span class="st">"Gender Fluid"</span> <span class="ot">=</span> <span class="st">"gf"</span> )  </span>
+<span id="cb19-3"><a></a>    demo_select_multi <span class="ot">&lt;-</span> <span class="fu">selectInput</span>(<span class="st">"demo_select2"</span>,</span>
+<span id="cb19-4"><a></a>                            <span class="at">label =</span> <span class="st">"Gender (select all that apply)"</span>,</span>
+<span id="cb19-5"><a></a>                            <span class="at">choices =</span> genders, <span class="at">selected =</span> <span class="cn">NULL</span>,</span>
+<span id="cb19-6"><a></a>                            <span class="at">multiple =</span> <span class="cn">TRUE</span>, <span class="at">selectize =</span> <span class="cn">FALSE</span>, <span class="at">size =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2"><p><span style="color:#FF5733;"><strong>4. checkboxGroupInput</strong></span></p>
+<ul>
+<li>However, this interface almost always looks better with <code>checkboxGroupInput()</code>.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a>demo_cbgi <span class="ot">&lt;-</span>   <span class="fu">checkboxGroupInput</span>(<span class="st">"demo_cbgi"</span>,</span>
+<span id="cb20-2"><a></a>                            <span class="at">label =</span> <span class="st">"Gender (select all that apply)"</span>,</span>
+<span id="cb20-3"><a></a>                            <span class="at">choices =</span> genders)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p><span style="color:#FF5733;"><strong>5. checkboxInput</strong></span></p>
+<ul>
+<li>You can also make a single checkbox with <code>checkboxInput()</code>.</li>
+<li>The <code>value</code> is <code>TRUE</code> when checked and <code>FALSE</code> when not.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a>demo_cb <span class="ot">&lt;-</span> <span class="fu">checkboxInput</span>(<span class="st">"demo_cb"</span>,<span class="at">label =</span> <span class="st">"I love R"</span>,<span class="at">value =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>
+<code>sliderInput()</code> allows you to choose numbers between a <code>min</code> and <code>max</code> value.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a>demo_slider <span class="ot">&lt;-</span> <span class="fu">sliderInput</span>(<span class="st">"demo_slider"</span>, <span class="at">label =</span> <span class="st">"Age"</span>, <span class="at">min =</span><span class="dv">0</span>,  <span class="at">max =</span><span class="dv">100</span>,</span>
+<span id="cb22-2"><a></a>                     <span class="at">value=</span><span class="dv">0</span>,  <span class="at">step =</span> <span class="dv">1</span>, <span class="at">width =</span> <span class="st">"100%"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2"><p><span style="color:#FF5733;"><strong>6. radioButtons</strong></span></p>
+<ul>
+<li>If you want users to only be able to choose one option and there are a small number of short options, <code>radioButton()</code> is a good interface.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a>demo_radio <span class="ot">&lt;-</span> <span class="fu">radioButtons</span>(<span class="st">"demo_radio"</span>, <span class="at">label =</span> <span class="st">"Choose one"</span>,</span>
+<span id="cb23-2"><a></a>                            <span class="at">choices =</span> <span class="fu">c</span>(<span class="st">"Cats"</span>, <span class="st">"Dogs"</span>), </span>
+<span id="cb23-3"><a></a>                            <span class="at">selected =</span> <span class="fu">character</span>(<span class="dv">0</span>), <span class="at">inline =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>Radio buttons default to selecting the first item unless you set <code>selected</code> to a choice value or <code>character(0)</code> to start with no selection.</li>
+</ul></section><section class="slide level2"><p><span style="color:#FF5733;"><strong>7. dateInput</strong></span></p>
+<ul>
+<li>Collect a single day with <a href="https://rdrr.io/pkg/shiny/man/dateInput.html"><code>dateInput()</code></a> or a range of two days with <a href="https://rdrr.io/pkg/shiny/man/dateRangeInput.html"><code>dateRangeInput()</code></a>. These provide a convenient calendar picker, and additional arguments like <code>datesdisabled</code> and <code>daysofweekdisabled</code> allow you to restrict the set of valid inputs.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="fu">f</span>(<span class="fu">dateInput</span>(<span class="st">"dob"</span>, <span class="st">"When were you born?"</span>),</span>
+<span id="cb24-2"><a></a>  <span class="fu">dateRangeInput</span>(<span class="st">"holiday"</span>, <span class="st">"When do you want to go on vacation next?"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+
+<img data-src="images/date.png" class="quarto-figure quarto-figure-center r-stretch"><ul>
+<li>IMHO, the default of <code>"yyyy-mm-dd"</code> is the best because it sorts into chronological order. Don’t let me catch you storing dates like <code>"m/d/yyyy"</code>.</li>
+</ul></section><section class="slide level2"><p><span style="color:#FF5733;"><strong>8. fileInput</strong></span></p>
+<ul>
+<li>Users can upload one or more files with <code>fileInput()</code>.</li>
+<li>The argument <code>accept</code> lets you limit this to certain file types, but some browsers can bypass this requirement, so it’s not fool-proof.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a>demo_file <span class="ot">&lt;-</span> <span class="fu">fileInput</span>(<span class="st">"demo_file"</span>,<span class="at">label =</span> <span class="st">"Upload a data table"</span>, </span>
+<span id="cb25-2"><a></a>            <span class="at">multiple =</span> <span class="cn">FALSE</span>, <span class="at">accept =</span> <span class="fu">c</span>(<span class="st">".csv"</span>, <span class="st">".tsv"</span>), <span class="at">buttonLabel =</span> <span class="st">"Upload"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<p>Note that:</p>
+<ul>
+<li>select inputs, checkbox groups, and radio buttons use the argument <code>selected</code> and not <code>value()</code>.</li>
+<li>If you want to set all the values in a checkbox group or radio button group to unchecked, set <code>selected = character(0)</code>.</li>
+</ul></section><section id="outputs" class="slide level2"><h2>Outputs</h2>
+<ul>
+<li><p>Output are ways that the Shiny app can dynamically display information to the user.</p></li>
+<li><p>Outputs in the UI create placeholders that are later filled by the server function.</p></li>
+<li><p>Like inputs, outputs take a unique ID as their first argument: if your UI specification creates an output with ID “<code>plot</code>”, you’ll access it in the server function with <code>output$plot</code>.</p></li>
+<li><p>Each output function on the front end is coupled with a render function in the back end.</p></li>
+<li><p>There are three main types of output, corresponding to the three things you usually include in a report: <code>text</code>, <code>tables</code>, and <code>plots</code>.</p></li>
+<li><p>The following sections show you the basics of the output functions on the front end, along with the corresponding render functions in the back end.</p></li>
+</ul></section><section class="slide level2"><p><strong>Text</strong></p>
+<ul>
+<li>Output regular text with <a href="https://rdrr.io/pkg/shiny/man/textOutput.html"><code>textOutput()</code></a> and fixed code and console output with <a href="https://rdrr.io/pkg/shiny/man/textOutput.html"><code>verbatimTextOutput()</code></a>.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">dasboardPage</span>( <span class="fu">textOutput</span>(<span class="st">"text"</span>), <span class="fu">verbatimTextOutput</span>(<span class="st">"code"</span>) )</span>
+<span id="cb26-2"><a></a></span>
+<span id="cb26-3"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) { </span>
+<span id="cb26-4"><a></a>    output<span class="sc">$</span>text <span class="ot">&lt;-</span> <span class="fu">renderText</span>({<span class="st">"Hello friend!"</span>})</span>
+<span id="cb26-5"><a></a>output<span class="sc">$</span>code <span class="ot">&lt;-</span> <span class="fu">renderPrint</span>({ <span class="fu">summary</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) }) }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li><p><img data-src="images/output_text.png"></p></li>
+<li>
+<p>The two render functions which behave slightly differently:</p>
+<ul>
+<li><p><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html"><code>renderText()</code></a> combines the result into a single string, and is usually paired with <a href="https://rdrr.io/pkg/shiny/man/textOutput.html"><code>textOutput()</code></a></p></li>
+<li><p><a href="https://rdrr.io/pkg/shiny/man/renderPrint.html"><code>renderPrint()</code></a> <em>prints</em> the result, as if you were in an R console, and is usually paired with <a href="https://rdrr.io/pkg/shiny/man/textOutput.html"><code>verbatimTextOutput()</code></a>.</p></li>
+</ul>
+</li>
+</ul></section><section id="plots" class="slide level2"><h2>Plots</h2>
+<p>You can display any type of R graphic (base, ggplot2, or otherwise) with <a href="https://rdrr.io/pkg/shiny/man/plotOutput.html"><code>plotOutput()</code></a> and <a href="https://rdrr.io/pkg/shiny/man/renderPlot.html"><code>renderPlot()</code></a>:</p>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="co"># in ui</span></span>
+<span id="cb27-2"><a></a><span class="fu">plotOutput</span>(<span class="st">"plot"</span>, <span class="at">width =</span> <span class="st">"400px"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co"># in the server function </span></span>
+<span id="cb28-2"><a></a>output<span class="sc">$</span>plot <span class="ot">&lt;-</span> <span class="fu">renderPlot</span>({</span>
+<span id="cb28-3"><a></a>    <span class="fu">ggplot</span>(iris, <span class="fu">aes</span>(<span class="at">x =</span> Species, <span class="at">y =</span> .data[[input<span class="sc">$</span>y]], <span class="at">color =</span> Species)) <span class="sc">+</span>  </span>
+<span id="cb28-4"><a></a>        <span class="fu">geom_violin</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> <span class="fu">stat_summary</span>(<span class="at">show.legend =</span> <span class="cn">FALSE</span>) <span class="sc">+</span> </span>
+<span id="cb28-5"><a></a>        <span class="fu">ylab</span>(input<span class="sc">$</span>y) })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>If you want to create dynamic plots that change with input, note how you need to use <code>y = .data[[input$y]]</code> inside <code>aes()</code>, instead of just <code>y = input$y</code>.</li>
+</ul></section><section id="images" class="slide level2"><h2>Images</h2>
+<ul>
+<li>
+<code>imageOutput()</code> takes the same arguments as <code>plotOutput()</code>.</li>
+<li>You can leave <code>width</code> and <code>height</code> as their defaults if you are going to set those values in the render function.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="co"># in the UI function </span></span>
+<span id="cb29-2"><a></a><span class="fu">imageOutput</span>(<span class="st">"demo_image"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>
+<code>renderImage()</code> needs to return a named list with at least an <code>src</code> with the image path.</li>
+<li>You can also set the <code>width</code> and <code>height</code> (numeric values are in pixels), <code>class</code> and <code>alt</code> (the alt-text for screen readers).</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="co"># in the server function </span></span>
+<span id="cb30-2"><a></a>output<span class="sc">$</span>demo_image <span class="ot">&lt;-</span> <span class="fu">renderImage</span>({</span>
+<span id="cb30-3"><a></a>    <span class="fu">list</span>(<span class="at">src =</span> <span class="st">"images/flower.jpg"</span>,  <span class="at">width =</span> <span class="dv">100</span>, <span class="at">height =</span> <span class="dv">100</span>, </span>
+<span id="cb30-4"><a></a>             <span class="at">alt =</span> <span class="st">"A flower"</span>) }, <span class="at">deleteFile =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li><p>The <code>deleteFile</code> argument is currently optional, but triggers periodic warnings that it won’t be optional in the future.</p></li>
+<li><p>You should set it to <code>TRUE</code> if you’re making a temporary file (this stops unneeded plots using memory) and <code>FALSE</code> if you’re referencing a file you previously saved.</p></li>
+</ul></section><section id="tables" class="slide level2"><h2>Tables</h2>
+<p>There are two options for displaying data frames in tables:</p>
+<ul>
+<li><p><a href="https://rdrr.io/pkg/shiny/man/renderTable.html"><code>tableOutput()</code></a> and <a href="https://rdrr.io/pkg/shiny/man/renderTable.html"><code>renderTable()</code></a> render a static table of data, showing all the data at once.</p></li>
+<li><p><a href="https://rdrr.io/pkg/shiny/man/renderDataTable.html"><code>dataTableOutput()</code></a> and <a href="https://rdrr.io/pkg/shiny/man/renderDataTable.html"><code>renderDataTable()</code></a> render a dynamic table, showing a fixed number of rows along with controls to change which rows are visible.</p></li>
+<li><p><a href="https://rdrr.io/pkg/shiny/man/renderTable.html"><code>tableOutput()</code></a> is most useful for small, fixed summaries (e.g.&nbsp;model coefficients);</p></li>
+<li><p><a href="https://rdrr.io/pkg/shiny/man/renderDataTable.html"><code>dataTableOutput()</code></a> is most appropriate if you want to expose a complete data frame to the user.</p></li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a>ui <span class="ot">&lt;-</span> <span class="fu">dashboardPage</span>(</span>
+<span id="cb31-2"><a></a>    <span class="fu">tableOutput</span>(<span class="st">"static"</span>),</span>
+<span id="cb31-3"><a></a>  <span class="fu">dataTableOutput</span>(<span class="st">"dynamic"</span>)</span>
+<span id="cb31-4"><a></a>    )</span>
+<span id="cb31-5"><a></a>server <span class="ot">&lt;-</span> <span class="cf">function</span>(input, output) {</span>
+<span id="cb31-6"><a></a>      output<span class="sc">$</span>static <span class="ot">&lt;-</span> <span class="fu">renderTable</span>(<span class="fu">head</span>(mtcars))</span>
+<span id="cb31-7"><a></a>      output<span class="sc">$</span>dynamic <span class="ot">&lt;-</span> <span class="fu">renderDataTable</span>(mtcars, <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">5</span>))</span>
+<span id="cb31-8"><a></a>    }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section class="slide level2"><ul>
+<li><p>If you have a long table to show, or one that you want users to be able to sort or search, use <code><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html">DT::dataTableOutput()</a></code> (or its synonym <code>DTOutput()</code>).</p></li>
+<li><p>The basic <strong><code>shiny</code></strong> package has <code>dataTableOutput()</code> and <code>renderDataTable()</code> functions, but they can be buggy.</p></li>
+<li><p>The versions in the <strong><code>DT</code></strong> package are better and have <a href="https://rstudio.github.io/DT/">many additional functions</a>, so I use those.</p></li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># in the UI function </span></span>
+<span id="cb32-2"><a></a>DT<span class="sc">::</span><span class="fu">dataTableOutput</span>(<span class="st">"demo_datatable"</span>, <span class="at">width =</span> <span class="st">"50%"</span>, <span class="at">height =</span> <span class="st">"auto"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>The paired render function is <code>renderDataTable()</code> (or its synonym <code>renderDT()</code>).</li>
+<li>You can customise data tables in many ways, but we will stick with a basic example here that limits the number of rows shown at once to <code>10</code>.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="co"># in the server function </span></span>
+<span id="cb33-2"><a></a>output<span class="sc">$</span>demo_datatable <span class="ot">&lt;-</span> DT<span class="sc">::</span><span class="fu">renderDataTable</span>({iris }, </span>
+<span id="cb33-3"><a></a>                        <span class="at">options =</span> <span class="fu">list</span>(<span class="at">pageLength =</span> <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+</section><section id="dynamic-html" class="slide level2"><h2>Dynamic HTML</h2>
+<ul>
+<li>If you want to dynamically create parts of the UI, you can use <code>uiOutput()</code>.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># in the UI function </span></span>
+<span id="cb34-2"><a></a><span class="fu">uiOutput</span>(<span class="st">"demo_ui"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>You can create the UI using <code>renderUI()</code> to return HTML created.</li>
+</ul>
+<div class="cell">
+<details open="" class="code-fold"><summary>Code</summary><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="co"># in the server function </span></span>
+<span id="cb35-2"><a></a>output<span class="sc">$</span>demo_ui <span class="ot">&lt;-</span> <span class="fu">renderUI</span>({cols <span class="ot">&lt;-</span> <span class="fu">names</span>(iris)[<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>]   </span>
+<span id="cb35-3"><a></a><span class="fu">selectInput</span>(<span class="st">"y"</span>, <span class="st">"Column to plot"</span>, cols, <span class="st">"Sepal.Length"</span>) })</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>The function <code>htmlOutput()</code> is a synonym for <code>uiOutput()</code>, so you might see that in some code examples, but I use <code>uiOutput()</code> to make the connection with <code>renderUI()</code> clearer, since there is no <code>renderHTML()</code>.</li>
+</ul>
+
+<div class="quarto-auto-generated-content">
+<div class="footer footer-default">
+
+</div>
+</div>
+</section>
+</div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="../../../site_libs/revealjs/dist/reveal.js"></script><!-- reveal.js plugins --><script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script><script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script><script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script><script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script><script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script><script src="../../../site_libs/revealjs/plugin/multiplex/socket.io.js"></script><script src="../../../site_libs/revealjs/plugin/multiplex/multiplex.js"></script><script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script><script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script><script src="../../../site_libs/revealjs/plugin/search/search.js"></script><script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script><script src="../../../site_libs/revealjs/plugin/math/math.js"></script><script>window.define = window.backupDefine; window.backupDefine = undefined;</script><script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true,"boardmarkerWidth":3},
+'multiplex': {"secret":"17273771291083098551","id":"d2b045efd34e65a0","url":"https://reveal-multiplex.glitch.me/"},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script><script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        // dispatch for htmlwidgets
+        function fireSlideEnter() {
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+        }
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+          fireSlideEnter();
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script><script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+
+
+</body></html>
